@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeCustomerComponent } from './components/home-customer/home-customer.component';
 import { RankingComponent } from './components/ranking/ranking.component';
 import { HeaderBarbershopComponent } from './components/header-barbershop/header-barbershop.component';
+import { HeaderCustomerComponent } from './header-customer/header-customer.component';
 
 
 const appRoutes: Routes = [
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
     HomeBarbershopComponent,
     HomeCustomerComponent,
     RankingComponent,
-    HeaderBarbershopComponent
+    HeaderBarbershopComponent,
+    HeaderCustomerComponent
   ],
   imports: [
     BrowserModule,
