@@ -10,9 +10,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    bottom: unset;
-    height: 7pc;
-    width: 100%;
 }
 
 .perfil{

@@ -10,8 +10,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    bottom: unset;
     height: 7pc;
+    position: fixed;
     width: 100%;
 }
 
@@ -25,11 +25,13 @@
 }
 
 .perfil img{
+
     width: 100px;
     height: 100px;
 }
 
 .funciones{
+
     display: flex;
     flex-direction: row;
     width: 60%;
