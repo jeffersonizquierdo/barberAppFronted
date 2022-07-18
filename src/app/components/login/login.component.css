@@ -1,0 +1,68 @@
+.formLogin{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login{
+    width: 435px;
+    height: 490px;
+    display: flex;
+    flex-direction: column;
+    background-color:rgba(158, 155, 155, 0.199);
+    border:solid 3px gray;
+    border-radius: 6px;
+}
+.login form{
+    margin-top: 30px;
+}
+.labelLogin{
+    font-family: 'Lobster', cursive;
+    font-size: 45px;
+    color: rgba(68, 67, 67, 0.925);
+}
+.btnlogearse{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnlogearse button:hover{
+    transform: scale(1.1);
+}
+.email{
+    margin-top:20px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+}
+.contraseña{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    margin-left: 40px;
+}
+.redes{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 35px;
+}
+.redes button {
+    width: 40px;
+    background-size: cover;
+    background-position: center;
+    background: none;
+    border: none;
+    border-radius: 40px;
+}
+.redes button:hover{
+    transform: scale(1.1);
+}
+.redes button img{
+    width: 40px;
+    background-size: cover;
+    border-radius: 40px;
+}
