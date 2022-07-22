@@ -10,6 +10,8 @@ import { RankingComponent } from './components/ranking/ranking.component';
 import { HeaderBarbershopComponent } from './components/header-barbershop/header-barbershop.component';
 import { TableAppointmentComponent } from './components/table-appointment/table-appointment.component';
 import { HeaderCustomerComponent } from './components/header-customer/header-customer.component';
+import { ManageCutsComponent } from './manage-cuts/manage-cuts.component';
+import { ManageCatalogueComponent } from './manage-catalogue/manage-catalogue.component';
 
 
 const appRoutes: Routes = [
@@ -28,7 +30,9 @@ const appRoutes: Routes = [
     RankingComponent,
     HeaderBarbershopComponent,
     HeaderCustomerComponent,
-    TableAppointmentComponent
+    TableAppointmentComponent,
+    ManageCutsComponent,
+    ManageCatalogueComponent
   ],
   imports: [
     BrowserModule,
