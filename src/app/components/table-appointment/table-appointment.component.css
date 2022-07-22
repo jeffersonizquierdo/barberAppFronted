@@ -3,9 +3,14 @@
     padding: 0%;
 }
 
+.page{
+    display: flex;
+    flex-direction: row;
+}
+
 .table{
 
-    background-color: #adadad;
+    background-color: #171f2a;
     color: white;
     display: flex;
     flex-direction: column;

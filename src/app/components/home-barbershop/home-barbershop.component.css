@@ -9,6 +9,11 @@
     flex-direction: column;
 }
 
+.bodyPage{
+    display: flex;
+    flex-direction: row;
+}
+
 .medium{
     width: 100%;
     display: flex;

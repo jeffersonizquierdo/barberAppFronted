@@ -5,15 +5,16 @@
 
 .ranking{
 
-    background-color: #202020;
+    background-color: #171f2a;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 39.5pc;
     padding: 10px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 5px;
+    -webkit-box-shadow: 7px 4px 7px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 4px 7px 0px rgba(0,0,0,0.75);
+    box-shadow: 7px 4px 7px 0px rgba(0,0,0,0.75);
 }
 
 h3{
@@ -37,8 +38,9 @@ h3{
 }
 
 .lista li{
-    background-color: rgb(255, 208, 0);
-    border-radius: 15px;
+
+    border-radius: 10px;
+    border: solid 1px white;
 }
 
 span{
@@ -54,6 +56,14 @@ span{
     padding-left: 3px;
 }
 
+.elemento a{
+    text-decoration: none;
+}
+
+.elemento10 a{
+    text-decoration: none;
+}
+
 .elemento10{
     display: flex;
     flex-direction: row;
@@ -65,4 +75,10 @@ span{
 
 .elemento10 span{
     margin-right:0px;
+}
+
+.starts{
+    display: flex;
+    flex-direction: row;
+    width: 110px;
 }

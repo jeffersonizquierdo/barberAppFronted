@@ -5,12 +5,13 @@
 
 .header{
 
-    background-color: #1465bb;
+    background-color: #171f2a;
     color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     height: 6pc;
+    margin-bottom: 20px;
 }
 
 .perfil{

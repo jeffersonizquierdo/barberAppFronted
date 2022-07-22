@@ -10,6 +10,8 @@ import { RankingComponent } from './components/ranking/ranking.component';
 import { HeaderBarbershopComponent } from './components/header-barbershop/header-barbershop.component';
 import { TableAppointmentComponent } from './components/table-appointment/table-appointment.component';
 import { HeaderCustomerComponent } from './components/header-customer/header-customer.component';
+import { PromotionComponent } from './components/promotion/promotion.component';
+import { ManagePromotionComponent } from './components/manage-promotion/manage-promotion.component';
 
 
 const appRoutes: Routes = [
@@ -28,7 +30,9 @@ const appRoutes: Routes = [
     RankingComponent,
     HeaderBarbershopComponent,
     HeaderCustomerComponent,
-    TableAppointmentComponent
+    TableAppointmentComponent,
+    PromotionComponent,
+    ManagePromotionComponent
   ],
   imports: [
     BrowserModule,
