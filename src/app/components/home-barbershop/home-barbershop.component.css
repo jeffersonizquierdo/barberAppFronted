@@ -15,8 +15,8 @@
 }
 
 .medium{
-    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
 }
