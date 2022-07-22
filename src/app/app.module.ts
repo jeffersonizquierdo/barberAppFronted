@@ -10,8 +10,9 @@ import { RankingComponent } from './components/ranking/ranking.component';
 import { HeaderBarbershopComponent } from './components/header-barbershop/header-barbershop.component';
 import { TableAppointmentComponent } from './components/table-appointment/table-appointment.component';
 import { HeaderCustomerComponent } from './components/header-customer/header-customer.component';
-import { ManageCutsComponent } from './manage-cuts/manage-cuts.component';
-import { ManageCatalogueComponent } from './manage-catalogue/manage-catalogue.component';
+import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
+import { ManageCutsComponent } from './components/manage-cuts/manage-cuts.component';
+
 
 
 const appRoutes: Routes = [
@@ -19,6 +20,8 @@ const appRoutes: Routes = [
   
   {path:'homebarbershop', component:HomeBarbershopComponent},
   {path:'homecustomer', component:HomeCustomerComponent},
+  {path:'managecuts', component:ManageCutsComponent},
+  {path:'managecatalogue', component:ManageCatalogueComponent},
 
 ]
 
