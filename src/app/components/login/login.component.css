@@ -1,68 +1,91 @@
-.formLogin{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+h1, h2, h3, h4, h5, h6, a {
+    margin:0; padding:0;
+}
+.login {
+    margin:0 auto;
+    max-width:500px;
+}
+.login-header {
+    color:black;
+    text-align:center;
+    font-size:300%;
 }
 
-.login{
-    width: 435px;
-    height: 490px;
-    display: flex;
-    flex-direction: column;
-    background-color:rgba(158, 155, 155, 0.199);
-    border:solid 3px gray;
-    border-radius: 6px;
+.login-form {
+    border:.5px solid #fff;
+    background:#171f2a;
+    border-radius:10px;
+    box-shadow:0px 0px 10px #000;
 }
-.login form{
-    margin-top: 30px;
+.login-form h3 {
+    text-align:left;
+    margin-left:40px;
+    color:#fff;
 }
-.labelLogin{
-    font-family: 'Lobster', cursive;
-    font-size: 45px;
-    color: rgba(68, 67, 67, 0.925);
+.login-form {
+    box-sizing:border-box;
+    padding-top:15px;
+    padding-bottom:10%;
+    text-align:center;
 }
-.btnlogearse{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.login input[type="text"],
+.login input[type="password"] {
+    max-width:400px;
+    width: 80%;
+    line-height:3em;
+    font-family: 'Ubuntu', sans-serif;
+    margin:1em 2em;
+    border-radius:5px;
+    border:2px solid #f2f2f2;
+    outline:none;
+    padding-left:10px;
 }
-.btnlogearse button:hover{
-    transform: scale(1.1);
+.login-form input[type="button"] {
+    height:30px;
+    width:100px;
+    background:#fff;
+    border:1px solid #f2f2f2;
+    border-radius:20px;
+    color: slategrey;
+    text-transform:uppercase;
+    font-family: 'Ubuntu', sans-serif;
+    cursor:pointer;
+    margin-bottom: 10px;
 }
-.email{
-    margin-top:20px;
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 40px;
+.login-form input:hover{transform: scale(1.1);}
+.sign-up{
+    color:#f2f2f2;
+    cursor:pointer;
+    text-decoration:underline;
 }
-.contraseña{
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    margin-left: 40px;
+.sign-up:hover{
+    color: #3c88c4;
 }
-.redes{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 35px;
+.no-access {
+    color:#E86850;
+    margin:20px 0px 20px 0%;
+    text-decoration:underline;
+    cursor:pointer;
 }
-.redes button {
-    width: 40px;
-    background-size: cover;
-    background-position: center;
-    background: none;
-    border: none;
-    border-radius: 40px;
+.no-access:hover{
+    color:#e8675067;
 }
-.redes button:hover{
-    transform: scale(1.1);
+.try-again {
+    color:#f2f2f2;
+    text-decoration:underline;
+    cursor:pointer;
 }
-.redes button img{
-    width: 40px;
-    background-size: cover;
-    border-radius: 40px;
+
+/*Media Query*/
+@media only screen and (min-width : 150px) and (max-width : 530px){
+    .login-form h3 {
+        text-align:center;
+        margin:0;
+    }
+    .sign-up, .no-access {
+        margin:10px 0;
+    }
+    .login-button {
+        margin-bottom:10px;
+    }
 }

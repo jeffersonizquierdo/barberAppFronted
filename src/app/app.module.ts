@@ -1,30 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-
-
 import { AppComponent } from './app.component';
-import { HeaderHomeComponent } from './components/header-home/header-home.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeMainComponent } from './components/home-main/home-main.component';
 import { LoginComponent } from './components/login/login.component';
 import { SingInComponent } from './components/sing-in/sing-in.component';
-// bootstrap
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// bootstrap
+import { BookingComponent } from './components/booking/booking.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { HeaderHomeComponent } from './components/header-home/header-home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderHomeComponent,
-    HomeComponent,
+    HomeMainComponent,
     LoginComponent,
     SingInComponent,
-    SliderComponent
+    BookingComponent,
+    SliderComponent,
+    HeaderHomeComponent 
   ],
   imports: [
     BrowserModule,
-    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
