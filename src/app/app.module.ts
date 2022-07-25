@@ -12,6 +12,8 @@ import { TableAppointmentComponent } from './components/table-appointment/table-
 import { HeaderCustomerComponent } from './components/header-customer/header-customer.component';
 import { PromotionComponent } from './components/promotion/promotion.component';
 import { ManagePromotionComponent } from './components/manage-promotion/manage-promotion.component';
+import { BarbershopMeshShiftsComponent } from './components/barbershop-mesh-shifts/barbershop-mesh-shifts.component';
+import { BarberMeshShiftsComponent } from './components/barber-mesh-shifts/barber-mesh-shifts.component';
 
 
 const appRoutes: Routes = [
@@ -19,6 +21,8 @@ const appRoutes: Routes = [
   
   {path:'homebarbershop', component:HomeBarbershopComponent},
   {path:'homecustomer', component:HomeCustomerComponent},
+  {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
+  {path:'barbermeshshifts', component:BarberMeshShiftsComponent},
 
 ]
 
@@ -32,7 +36,9 @@ const appRoutes: Routes = [
     HeaderCustomerComponent,
     TableAppointmentComponent,
     PromotionComponent,
-    ManagePromotionComponent
+    ManagePromotionComponent,
+    BarbershopMeshShiftsComponent,
+    BarberMeshShiftsComponent
   ],
   imports: [
     BrowserModule,
