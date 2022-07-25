@@ -38,7 +38,7 @@ const appRoutes: Routes = [
     PromotionComponent,
     ManagePromotionComponent,
     BarbershopMeshShiftsComponent,
-    BarberMeshShiftsComponent
+    BarberMeshShiftsComponent,
   ],
   imports: [
     BrowserModule,
