@@ -44,6 +44,16 @@ header button{
 .centro{
     border: 1px solid black;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contenido-perfil{
+    border: 1px solid black;
+    height: 100%;
+    width: 70%;
 }
 
 .titulos{
@@ -51,4 +61,18 @@ header button{
     padding-bottom: 24%;
     border: 1px solid black;
 
+}
+
+.titulos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.certificado{
+    border: 1px solid black;
+    height: 300px;
+    width: 250px;
+    border-radius: 20px;
 }
