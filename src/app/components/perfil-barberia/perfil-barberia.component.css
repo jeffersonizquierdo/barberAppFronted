@@ -6,10 +6,16 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: #171f2a;
+    color: white;
 }
 
 header button{
     margin-right: 100px;
+    background-color: #1465bb;
+    width: 124px;
+    border-radius: 10px;
+    color: white;
 }
 
 
@@ -38,7 +44,8 @@ header button{
     width: 30%;
     padding-bottom: 24%;
     border: 1px solid black;
-
+    background-color: #171f2a;
+    color: white;
 }
 
 .centro{
@@ -48,19 +55,24 @@ header button{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: #121d2d;
+    color: white;
 }
 
 .contenido-perfil{
     border: 1px solid black;
     height: 100%;
     width: 70%;
+    background-color: #171f2a;
+    color: white;
 }
 
 .titulos{
     width: 30%;
     padding-bottom: 24%;
     border: 1px solid black;
-
+    background-color: #171f2a;
+    color: white;
 }
 
 .titulos{

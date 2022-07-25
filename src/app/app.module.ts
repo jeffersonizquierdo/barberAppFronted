@@ -20,6 +20,8 @@ const appRoutes: Routes = [
   {path:'homebarbershop', component:HomeBarbershopComponent},
   {path:'homecustomer', component:HomeCustomerComponent},
   {path:'perfilBarberia', component:PerfilBarberiaComponent},
+  {path:'perfilBarbero', component:PerfilBarberoComponent},
+
 
 ]
 
