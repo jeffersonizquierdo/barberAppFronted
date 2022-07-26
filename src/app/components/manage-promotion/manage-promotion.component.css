@@ -1,0 +1,48 @@
+form {
+
+    color: white;
+    margin-bottom: 100px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-control{
+
+    width: 400px;
+    margin-top: 30px;
+    background-color: #171f2a;
+    color: white;
+    border: none;
+}
+
+.postFile{
+    width: 300px;
+    border: 1px white dashed;
+    margin: 40px 0 40px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 20px;
+    border-radius: 5px;
+}
+
+.btnFile{
+
+    width: 150px;
+    border: none;
+    border-radius: 2px;
+    background-color: #9b9b9b;
+}
+
+.btnPostPromotion{
+    width: 100px;
+    height: 30px;
+    border: none;
+    background-color: #1465bb;
+    color: white;
+    border-radius: 5px;
+}
