@@ -1,4 +1,4 @@
-<div class="login">
+<div class="sing-in">
     <div class="sing-in-header">
       <h1>Sing In</h1>
     </div>
@@ -13,9 +13,11 @@
       <br>
       <div class="type-of-user">
         <h3>Type of User:</h3>
-        <label for=""><input type="radio" name="type"/>Cliente</label>
-        <label for=""><input type="radio" name="type"/>Barbero</label>
-        <label for=""><input type="radio" name="type"/>Barberia</label>
+        <div class="btn-type">
+          <label for=""><input type="radio" name="type"/>Cliente</label>
+          <label for=""><input type="radio" name="type"/>Barbero</label>
+          <label for=""><input type="radio" name="type"/>Barberia</label>
+        </div>
       </div>
       <br>
       <h3>Email:</h3>
@@ -24,9 +26,13 @@
       <h3>Password:</h3>
       <input type="password" placeholder="password"/>
       <br>
-      <input type="button" value="Next" class="sing-in-next"/>
-      <br>
-      <a class="sign-up">Login!</a>
+      <div class="container-home-next">
+        <div class="home-sing-in"><img src="../../../assets/images/icons8-casa-64.png" alt="" class="img-home-sing-in"></div>
+        <br>
+        <input type="button" value="Next" class="sing-in-next"/>
+        <br>
+      </div>
+        <a class="sign-up">Login!</a>
       <br>
     </div>
   </div>

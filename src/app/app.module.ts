@@ -7,6 +7,9 @@ import { SingInComponent } from './components/sing-in/sing-in.component';
 import { BookingComponent } from './components/booking/booking.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { HeaderHomeComponent } from './components/header-home/header-home.component';
+import { SingInBarberComponent } from './components/sing-in-barber/sing-in-barber.component';
+import { SingInBarbershopComponent } from './components/sing-in-barbershop/sing-in-barbershop.component';
+import { SingInCustomerComponent } from './components/sing-in-customer/sing-in-customer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { HeaderHomeComponent } from './components/header-home/header-home.compon
     SingInComponent,
     BookingComponent,
     SliderComponent,
-    HeaderHomeComponent 
+    HeaderHomeComponent,
+    SingInBarberComponent,
+    SingInBarbershopComponent,
+    SingInCustomerComponent 
   ],
   imports: [
     BrowserModule,

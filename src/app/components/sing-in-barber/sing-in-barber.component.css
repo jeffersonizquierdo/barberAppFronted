@@ -13,6 +13,18 @@
     border-radius:10px;
     box-shadow:0px 0px 10px #000;
 }
+.container-age{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-top: 30px;
+}
+.container-gender{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    
+}
 .sing-in-form h3 {
     text-align:left;
     margin-left:40px;
@@ -26,7 +38,6 @@
     text-align:center;
 }
 .sing-in input[type="text"],
-.sing-in input[type="password"],
 .sing-in input[type="email"] {
     max-width:400px;
     width: 80%;
@@ -36,7 +47,34 @@
     border:2px solid #f2f2f2;
     outline:none;
     padding-left:10px;
+    height: 200px;
 }
+.sing-in input[type="number"]{
+    max-width:400px;
+    width: 80%;
+    margin:1em 2em;
+    border-radius:5px;
+    border:2px solid #f2f2f2;
+    outline:none;
+    padding-left:10px;
+    font-size: inherit;
+    font-family: 'Ubuntu', sans-serif;    
+    margin-top: 3px;
+}
+.sing-in select{
+    max-width: 400px;
+    width: 59%;
+    border-radius: 5px;
+    border: 2px solid #f2f2f2;
+    outline: none;
+    padding-left: 10px;
+    font-size: inherit;
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 3px;
+    margin-left: -7px;
+    margin-bottom: 6px;
+}
+
 .sing-in input[type="button"] {
     height:30px;
     width:100px;
@@ -87,4 +125,17 @@ h1{
     display: flex;
     flex-direction: row;
     margin: 10px 0 20px 0;
+}
+.input-Apodo{
+    max-width:400px;
+    width: 80%;
+    margin:1em 2em;
+    border-radius:5px;
+    border:2px solid #f2f2f2;
+    outline:none;
+    padding-left:10px;
+    font-size: inherit;
+    font-family: 'Ubuntu', sans-serif;    
+    margin-top: 3px;
+    margin-left: 0px;
 }
