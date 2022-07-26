@@ -22,10 +22,25 @@ h1{
 }
 .container-contenido{
     border: 1px solid black;
-   
-    width: 20%;
-    height: 20px;
+    width: 19%;
+    height: 137px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
 }
+.container-contenido a{
+    font-size: 40px;
+    display: flex;
+    justify-content: end;
+}
+
+.container-agregar a img{
+    margin: 16px 63px;
+    width: 97px;
+    height: 87px;
+
+}
+
 .container-agregar{
-    border: 1px solid black;
+    text-align: center;
 }
