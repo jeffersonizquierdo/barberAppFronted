@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+  
+}
+h1{
+    margin: 69px 82px;
+    font-size: 58px;
+}
+.container-one{
+    display: flex;
+    justify-content: center;
+}
+.container-two{
+    border: 2px solid black;
+    display: flex;
+    width: 57%;
+    height: 429px;
+    border-radius: 10px;
+    gap: 10%;
+    
+}
+.container-contenido{
+    border: 1px solid black;
+   
+    width: 20%;
+    height: 20px;
+}
+.container-agregar{
+    border: 1px solid black;
+}
