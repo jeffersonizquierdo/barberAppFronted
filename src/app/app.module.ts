@@ -24,7 +24,6 @@ import { SingInComponent } from './components/sing-in/sing-in.component';
 import { SingInBarberComponent } from './components/sing-in-barber/sing-in-barber.component';
 import { SingInBarbershopComponent } from './components/sing-in-barbershop/sing-in-barbershop.component';
 import { SingInCustomerComponent } from './components/sing-in-customer/sing-in-customer.component';
-import { HistoriesCutsComponent } from './histories-cuts/histories-cuts.component';
 
 
 
