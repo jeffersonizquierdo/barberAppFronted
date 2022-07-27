@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: lato;
+}
+
+.img-slider{
+	width: 100%;
+}
+
+.slider-frame {
+	width: 600px;
+    height: auto;
+	overflow: hidden;
+	border: solid 2px white;
+	border-radius: 2px;
+	margin-left: 15px;
+}
+
+.slider-frame ul {
+	display: flex;
+	padding: 0;
+	width: 600%;
+	animation: slide 20s infinite alternate ease-in-out;
+}
+
+.slider-frame li {
+	width: 100%;
+	list-style: none;
+}
+
+.slider-frame img {
+	width: 100%;
+	border-radius: 2px;
+}
+
+@keyframes slide {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+	75% {margin-left: -300%;}
+	100% {margin-left: -300%;}
+}

@@ -1,0 +1,90 @@
+.sing-in {
+    margin:0 auto;
+    max-width:500px;
+}
+.sing-in-header {
+    color:black;
+    text-align:center;
+    font-size:300%;
+}
+.sing-in-form {
+    border:.5px solid #fff;
+    background:#171f2a;
+    border-radius:10px;
+    box-shadow:0px 0px 10px #000;
+}
+.sing-in-form h3 {
+    text-align:left;
+    margin-left:40px;
+    color:#fff;
+    font-size: 25px;
+}
+.sing-in-form {
+    box-sizing:border-box;
+    padding-top:15px;
+    padding-bottom:10%;
+    text-align:center;
+}
+.sing-in input[type="text"],
+.sing-in input[type="password"],
+.sing-in input[type="email"] {
+    max-width:400px;
+    width: 80%;
+    font-family: 'Ubuntu', sans-serif;
+    margin:1em 2em;
+    border-radius:5px;
+    border:2px solid #f2f2f2;
+    outline:none;
+    padding-left:10px;
+}
+.sing-in input[type="button"] {
+    height:30px;
+    width:100px;
+    background:#fff;
+    border:1px solid #f2f2f2;
+    border-radius:20px;
+    color: slategrey;
+    cursor:pointer;
+    margin-bottom: 10px;
+    margin-left: 245px;
+    margin-top: 15px;
+}
+h1{
+    color: white;
+    margin-top: 40px;
+}
+.type-of-user{
+    display: flex;
+    flex-direction: column;
+}
+.btn-type{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    color: white;
+    margin-top: 10px;
+}
+.sing-in a{ 
+    font-size: 22px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.home-sing-in{
+    border-radius: 50px;
+    background-color: white;
+    margin-left: 50px;
+    width: 52px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.img-home-sing-in{
+    width: 78%;
+    background-position: center;
+    margin-top: 4px;
+}
+.container-home-next{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0 20px 0;
+}
