@@ -16,6 +16,13 @@ import { ManagePromotionComponent } from './components/manage-promotion/manage-p
 import { BarberMeshShiftsComponent } from './components/barber-mesh-shifts/barber-mesh-shifts.component';
 import { BarbershopMeshShiftsComponent } from './components/barbershop-mesh-shifts/barbershop-mesh-shifts.component';
 import { HeaderBarberComponent } from './components/header-barber/header-barber.component';
+import { HomeMainComponent } from './components/home-main/home-main.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { HeaderHomeComponent } from './components/header-home/header-home.component';
+import { SingInComponent } from './components/sing-in/sing-in.component';
+import { SingInBarberComponent } from './components/sing-in-barber/sing-in-barber.component';
+import { SingInBarbershopComponent } from './components/sing-in-barbershop/sing-in-barbershop.component';
+import { SingInCustomerComponent } from './components/sing-in-customer/sing-in-customer.component';
 
 
 const appRoutes: Routes = [
@@ -32,6 +39,13 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    HomeMainComponent,
+    SliderComponent,
+    HeaderHomeComponent,
+    SingInComponent,
+    SingInBarberComponent,
+    SingInBarbershopComponent,
+    SingInCustomerComponent,
     HomeBarbershopComponent,
     HomeCustomerComponent,
     RankingComponent,
