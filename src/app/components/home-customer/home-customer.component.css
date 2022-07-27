@@ -1,0 +1,16 @@
+*{
+  margin: 0%;
+  padding: 0%;
+}
+
+.bodyPage{
+  display: flex;
+  flex-direction: row;
+}
+
+.medium{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
