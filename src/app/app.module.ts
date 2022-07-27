@@ -1,3 +1,4 @@
+import { HomeBarberComponent } from './components/home-barber/home-barber.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +15,7 @@ import { PromotionComponent } from './components/promotion/promotion.component';
 import { ManagePromotionComponent } from './components/manage-promotion/manage-promotion.component';
 import { BarberMeshShiftsComponent } from './components/barber-mesh-shifts/barber-mesh-shifts.component';
 import { BarbershopMeshShiftsComponent } from './components/barbershop-mesh-shifts/barbershop-mesh-shifts.component';
+import { HeaderBarberComponent } from './components/header-barber/header-barber.component';
 
 
 const appRoutes: Routes = [
@@ -23,6 +25,7 @@ const appRoutes: Routes = [
   {path:'homecustomer', component:HomeCustomerComponent},
   {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
   {path:'barbermeshshifts', component:BarberMeshShiftsComponent},
+  {path:'homebarber', component:HomeBarberComponent},
 
 ]
 
@@ -38,7 +41,9 @@ const appRoutes: Routes = [
     PromotionComponent,
     ManagePromotionComponent,
     BarberMeshShiftsComponent,
-    BarbershopMeshShiftsComponent
+    BarbershopMeshShiftsComponent,
+    HomeBarberComponent,
+    HeaderBarberComponent
   ],
   imports: [
     BrowserModule,
