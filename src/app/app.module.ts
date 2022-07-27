@@ -14,7 +14,7 @@ import { PromotionComponent } from './components/promotion/promotion.component';
 import { ManagePromotionComponent } from './components/manage-promotion/manage-promotion.component';
 import { BarberMeshShiftsComponent } from './components/barber-mesh-shifts/barber-mesh-shifts.component';
 import { BarbershopMeshShiftsComponent } from './components/barbershop-mesh-shifts/barbershop-mesh-shifts.component';
-import { HistoriesCutsComponent } from './histories-cuts/histories-cuts.component';
+import { HistoriesCutsComponent } from './components/histories-cuts/histories-cuts.component';
 
 
 const appRoutes: Routes = [
