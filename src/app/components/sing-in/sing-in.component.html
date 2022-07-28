@@ -1,38 +1,49 @@
 <div class="sing-in">
-    <div class="sing-in-header">
-      <h1>Sing In</h1>
-    </div>
-    <div class="sing-in-form">
-      <h3>Name:</h3>
-      <input type="text" placeholder="Name"/><br>
-      <h3>Last Name:</h3>
-      <input type="text" placeholder="Last Name"/>
-      <br>
-      <h3>City:</h3>
-      <input type="text" placeholder="City"/>
-      <br>
-      <div class="type-of-user">
-        <h3>Type of User:</h3>
-        <div class="btn-type">
-          <label for=""><input type="radio" name="type"/>Cliente</label>
-          <label for=""><input type="radio" name="type"/>Barbero</label>
-          <label for=""><input type="radio" name="type"/>Barberia</label>
-        </div>
+
+    <form>
+
+      <h3>Registro de usuario</h3>
+
+      <div class="inputData" >
+        <input class="intp" type="text" name="name" autocomplete="off" required >
+        <div class="line" ></div>
+        <label for="name">Nombre</label>
       </div>
-      <br>
-      <h3>Email:</h3>
-      <input type="email" placeholder="Email"/>
-      <br>
-      <h3>Password:</h3>
-      <input type="password" placeholder="password"/>
-      <br>
+
+      <div class="inputData" >
+        <input class="intp" type="text" name="ciudad" autocomplete="off" required >
+        <div class="line" ></div>
+        <label for="ciudad">Ciudad</label>
+      </div>
+
+      <h3>Tipo de usuario</h3>
+
+      <div class="btn-type">
+        <label for=""><input type="radio" name="type"/>Cliente</label>
+        <label for=""><input type="radio" name="type"/>Barbero</label>
+        <label for=""><input type="radio" name="type"/>Barberia</label>
+      </div>
+
+      <div class="inputData" >
+        <input class="intp" type="email" name="email" autocomplete="off" required >
+        <div class="line" ></div>
+        <label for="email">Correo</label>
+      </div>
+
+      <div class="inputData" >
+        <input class="intp" type="password" name="password" autocomplete="off" required >
+        <div class="line" ></div>
+        <label for="password">Contraseña</label>
+      </div>
+
       <div class="container-home-next">
-        <div class="home-sing-in"><img src="../../../assets/images/icons8-casa-64.png" alt="" class="img-home-sing-in"></div>
-        <br>
-        <input type="button" value="Next" class="sing-in-next"/>
-        <br>
+        <div class="home-sing-in"><a href=""><img src="../../../assets/images/icons8-casa-64.png" alt="" class="img-home-sing-in"></a></div>
+        <button type="submit" ><a href="">Siguiente</a></button>
       </div>
-        <a class="sign-up">Login!</a>
-      <br>
-    </div>
-  </div>
+
+      <a href="http://localhost:4200/login" class="sign-up">Ya tengo una cuenta</a>
+
+    </form>
+
+
+</div>
