@@ -2,7 +2,10 @@ import { user } from 'src/app/models/User';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+<<<<<<< HEAD
 import { Router } from '@angular/router';
+=======
+>>>>>>> 6ce734748ec467e6c1957f825bde3d0c4dfb2e2a
 
 
 @Injectable({

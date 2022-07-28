@@ -2,6 +2,7 @@ export class user{
 
     id:Number;
     name:string;
+<<<<<<< HEAD
     city:string;
     typeuser: Number;
     email:string;
@@ -16,4 +17,9 @@ export class user{
         this.email = email;
         this.password = password;
     }
+=======
+    typeuser: Number;
+    email:string;
+    password: string;
+>>>>>>> 6ce734748ec467e6c1957f825bde3d0c4dfb2e2a
 }

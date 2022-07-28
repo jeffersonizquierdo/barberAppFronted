@@ -15,6 +15,7 @@ export class SingInComponent implements OnInit {
   ngOnInit(): void {
   }
 
+<<<<<<< HEAD
   id:Number = 1;
   name:string;
   city: string;
@@ -29,6 +30,17 @@ export class SingInComponent implements OnInit {
 
 
     this.userService.saveUser(newUser);
+=======
+  newUser: user={id:1, name:'Jefferson', email:'jeffersondavid803@gmail.com',
+        password:'123', typeuser:1}
+
+  saveUser(){
+    this.userService.saveUser(this.newUser).subscribe(
+      res => {
+        console.log(res);
+        this.router.navigate(['/login'])
+      }, err => console.log(err));
+>>>>>>> 6ce734748ec467e6c1957f825bde3d0c4dfb2e2a
   }
 
 }

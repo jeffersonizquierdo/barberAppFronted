@@ -27,7 +27,10 @@ import { SingInCustomerComponent } from './components/sing-in-customer/sing-in-c
 import { LoginComponent } from './components/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6ce734748ec467e6c1957f825bde3d0c4dfb2e2a
 
 
 const appRoutes: Routes = [
@@ -38,10 +41,15 @@ const appRoutes: Routes = [
   {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
   {path:'barbermeshshifts', component:BarberMeshShiftsComponent},
   {path:'homebarber', component:HomeBarberComponent},
+<<<<<<< HEAD
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
 
+=======
+  {path:'singup', component:SingInComponent},
+  {path:'login', component:LoginComponent},
+>>>>>>> 6ce734748ec467e6c1957f825bde3d0c4dfb2e2a
 
 ]
 
