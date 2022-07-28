@@ -24,6 +24,7 @@ import { SingInBarberComponent } from './components/sing-in-barber/sing-in-barbe
 import { SingInBarbershopComponent } from './components/sing-in-barbershop/sing-in-barbershop.component';
 import { SingInCustomerComponent } from './components/sing-in-customer/sing-in-customer.component';
 import { LoginComponent } from './components/login/login.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -68,7 +69,9 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
+    
 
   ],
   providers: [],
