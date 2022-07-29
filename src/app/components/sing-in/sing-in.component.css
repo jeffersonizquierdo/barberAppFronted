@@ -1,90 +1,142 @@
 .sing-in {
     margin:0 auto;
     max-width:500px;
-}
-.sing-in-header {
-    color:black;
-    text-align:center;
-    font-size:300%;
-}
-.sing-in-form {
-    border:.5px solid #fff;
-    background:#171f2a;
-    border-radius:10px;
-    box-shadow:0px 0px 10px #000;
-}
-.sing-in-form h3 {
-    text-align:left;
-    margin-left:40px;
-    color:#fff;
-    font-size: 25px;
-}
-.sing-in-form {
-    box-sizing:border-box;
-    padding-top:15px;
-    padding-bottom:10%;
-    text-align:center;
-}
-.sing-in input[type="text"],
-.sing-in input[type="password"],
-.sing-in input[type="email"] {
-    max-width:400px;
-    width: 80%;
-    font-family: 'Ubuntu', sans-serif;
-    margin:1em 2em;
-    border-radius:5px;
-    border:2px solid #f2f2f2;
-    outline:none;
-    padding-left:10px;
-}
-.sing-in input[type="button"] {
-    height:30px;
-    width:100px;
-    background:#fff;
-    border:1px solid #f2f2f2;
-    border-radius:20px;
-    color: slategrey;
-    cursor:pointer;
-    margin-bottom: 10px;
-    margin-left: 245px;
-    margin-top: 15px;
-}
-h1{
     color: white;
-    margin-top: 40px;
+    background-color: #2d2d4f;
+    padding: 50px;
+    border-radius: 20px;
 }
-.type-of-user{
+
+form{
     display: flex;
     flex-direction: column;
+    gap: 30px;
+
 }
+
+form h3{
+    text-align: center;
+}
+
 .btn-type{
     display: flex;
+    flex-direction: row;
+    gap: 40px;
     justify-content: center;
-    align-items: center;
-    gap: 50px;
-    color: white;
-    margin-top: 10px;
 }
-.sing-in a{ 
-    font-size: 22px;
-    cursor: pointer;
-    margin-right: 10px;
+
+.btn-type label {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
+
+.btn-type input {  
+    width: 15px;
+}
+
 .home-sing-in{
-    border-radius: 50px;
-    background-color: white;
-    margin-left: 50px;
-    width: 52px;
-    cursor: pointer;
-    margin-top: 5px;
+    background-color: rgb(182, 182, 182);
+    border-radius: 100%;
+    padding: 5px;
 }
-.img-home-sing-in{
-    width: 78%;
-    background-position: center;
-    margin-top: 4px;
-}
+
 .container-home-next{
     display: flex;
     flex-direction: row;
-    margin: 10px 0 20px 0;
+    height: 40px;
+    align-items: center;
+    gap: 270px;
+    padding: 0  10px;
+}
+
+.container-home-next img{
+    width: 40px;
+}
+
+.container-home-next button{
+
+    width: 80px;
+    background-color: rgb(22, 112, 216);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    right: -20px;
+}
+
+.container-home-next button a{
+    color: white;
+}
+
+
+.wrapper{
+    background-color: #2d2d4f;
+    width: 100%;
+    padding: 15px 5px 5px 5px;
+}
+.inputData{
+    width: 100%;
+    position: relative;
+    background-color: #2d2d4f;
+    border-radius: 10px;
+    border: none;
+}
+
+.inputData input{
+    border-bottom: 1px solid white;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #2d2d4f;
+    color: #ffffff;
+}
+
+.inputData input:focus ~ label,
+.inputData input:valid ~ label{
+    transform: translateY(-13px);
+    font-size: 15px;
+}
+.wrapper input[type="email"]:focus ~ label,
+.inputData input:valid ~ labe{
+    transform: translateY(-13px);
+    font-size: 15px;
+}
+
+.inputData label{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: rgb(145, 145, 145);
+    pointer-events: none;
+    transition: all 0.4s ease;
+}
+
+ .inputData .line{
+    position: absolute;
+    bottom: 0px;
+    height: 2px;
+    width: 100%;
+}
+
+.inputData .line::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+
+.inputData input:focus ~ .line:before,
+.inputData input:valid ~ .line:before{
+    transform: scaleX(1);
+}
+
+form a{
+    text-decoration: none;
+    color: rgb(186, 186, 186);
+    text-align: center;
 }

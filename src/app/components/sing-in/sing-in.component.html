@@ -1,38 +1,67 @@
 <div class="sing-in">
-    <div class="sing-in-header">
-      <h1>Sing In</h1>
-    </div>
-    <div class="sing-in-form">
-      <h3>Name:</h3>
-      <input type="text" placeholder="Name"/><br>
-      <h3>Last Name:</h3>
-      <input type="text" placeholder="Last Name"/>
-      <br>
-      <h3>City:</h3>
-      <input type="text" placeholder="City"/>
-      <br>
-      <div class="type-of-user">
-        <h3>Type of User:</h3>
-        <div class="btn-type">
-          <label for=""><input type="radio" name="type"/>Cliente</label>
-          <label for=""><input type="radio" name="type"/>Barbero</label>
-          <label for=""><input type="radio" name="type"/>Barberia</label>
-        </div>
+
+  <form>
+
+    <h3>Registro de usuario</h3>
+
+
+    <div class="wrapper" >
+      <div class="inputData" >
+        <input class="intp" type="text" name="nickname" autocomplete="off" required [(ngModel)] = "nickname">
+        <div class="line" ></div>
+        <label for="nickname">Apodo</label>
       </div>
-      <br>
-      <h3>Email:</h3>
-      <input type="email" placeholder="Email"/>
-      <br>
-      <h3>Password:</h3>
-      <input type="password" placeholder="password"/>
-      <br>
-      <div class="container-home-next">
-        <div class="home-sing-in"><img src="../../../assets/images/icons8-casa-64.png" alt="" class="img-home-sing-in"></div>
-        <br>
-        <input type="button" value="Next" class="sing-in-next"/>
-        <br>
-      </div>
-        <a class="sign-up">Login!</a>
-      <br>
     </div>
-  </div>
+
+    <div class="wrapper" >
+      <div class="inputData" >
+        <input class="intp" type="text" name="city" autocomplete="off" required  [(ngModel)]="city" >
+        <div class="line" ></div>
+        <label for="city">Ciudad</label>
+      </div>
+    </div>
+
+    <h3>Tipo de usuario</h3>
+
+    <div class="btn-type">
+      <label for=""><input [(ngModel)]="typeUser" value="3" type="radio" name="type"/>Cliente</label>
+      <label for=""><input [(ngModel)]="typeUser" value="2" type="radio" name="type"/>Barbero</label>
+      <label for=""><input [(ngModel)]="typeUser" value="1" type="radio" name="type"/>Barberia</label>
+    </div>
+
+    <div class="wrapper" >
+      <div class="inputData" >
+        <input class="intp" type="text" name="cellphone" autocomplete="off" required [(ngModel)]="cellphone" >
+        <div class="line" ></div>
+        <label for="cellphone">Telefono</label>
+      </div>
+    </div>
+
+    <div class="wrapper" >
+      <div class="inputData" >
+        <input class="intp" type="text" name="email" autocomplete="off" required [(ngModel)]="email" >
+        <div class="line" ></div>
+        <label for="email">Correo</label>
+      </div>
+    </div>
+
+    <div class="wrapper" >
+      <div class="inputData" >
+        <input class="intp" type="password" name="constraseña" autocomplete="off" required [(ngModel)]="password">
+        <div class="line" ></div>
+        <label for="constraseña">Contraseña</label>
+      </div>
+    </div>
+
+    <div class="container-home-next">
+      <div class="home-sing-in"><a href=""><img src="../../../assets/images/icons8-casa-64.png" alt="" class="img-home-sing-in"></a></div>
+      <button (click)="saveUser()" type="button" ><a href="">Siguiente</a></button>
+    </div>
+
+    <a href="http://localhost:4200/login" class="sign-up">Ya tengo una cuenta</a>
+
+  </form>
+
+  {{typeUser}}
+
+</div>
