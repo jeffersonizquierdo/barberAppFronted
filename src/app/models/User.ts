@@ -1,25 +1,23 @@
 export class user{
 
     id:Number;
-    name:string;
-<<<<<<< HEAD
-    city:string;
-    typeuser: Number;
+    cellphone: string;
+    city: string;
     email:string;
+    nickname: string;
     password: string;
+    type_user: Number;
 
-    constructor(id:Number, name:string, city:string, typeUser:Number, email:string, password:string){
+    constructor(id:Number, cellphone: string, city: string, email:string, nickname: string, password: string, type_user: Number){
 
-        this.id = id,
-        this.name = name;
+
+        this.id =id;
+        this.cellphone = cellphone;
         this.city = city;
-        this.typeuser = typeUser;
         this.email = email;
+        this.nickname = nickname;
         this.password = password;
+        this.type_user = type_user;
+
     }
-=======
-    typeuser: Number;
-    email:string;
-    password: string;
->>>>>>> 6ce734748ec467e6c1957f825bde3d0c4dfb2e2a
 }
