@@ -29,6 +29,7 @@ body{
     width: 70px;
     height: 70px;border-radius: 50%;
 }
+
 .story .porfile img{
     width: 60px;
     height: 60px;
@@ -50,39 +51,4 @@ body{
 .title{
     font-size: 15px;
     text-align: center;
-}
-@keyframes story{
-    0%{
-        background: linear-gradient(144deg,rgba(255,255,255) 0%,rgba(255,255,255) 25%, #ba1d18 13%, rgb(255, 255, 255) 53%, #144fcd 100%  );
-    }
-    10%{
-        background: linear-gradient(180deg,rgba(255,255,255) 0%,rgba(255,255,255) 25%, #ba1d18 13%, rgb(255, 255, 255) 53%, #144fcd 100%  );
-    }
-    20%{
-        background: linear-gradient(216deg,rgba(255,255,255) 0%,rgba(255,255,255) 25%, #ba1d18 13%, rgb(255, 255, 255) 53%, #144fcd 100%  );
-    }
-    30%{
-        background: linear-gradient(252deg,rgba(255,255,255) 0%,rgba(255,255,255) 25%, #ba1d18 13%, rgb(255, 255, 255) 53%, #144fcd 100%  );
-    }
-    40%{
-        background: linear-gradient(288deg,rgba(255,255,255) 0%,rgba(255,255,255) 25%, #ba1d18 13%, rgb(255, 255, 255) 53%, #144fcd 100%  );
-    }
-    50%{
-        background: linear-gradient(324deg,rgba(255,255,255) 0%,rgba(255,255,255) 25%, #ba1d18 13%, rgb(255, 255, 255) 53%, #144fcd 100%  );
-    }
-    60%{
-        background: linear-gradient(360deg,rgba(255,255,255) 0%,rgba(255,255,255) 25%, #ba1d18 13%, rgb(255, 255, 255) 53%, #144fcd 100%  );
-    }
-    70%{
-        background: linear-gradient(396deg,rgba(255,255,255) 0%,rgba(255,255,255) 25%, #ba1d18 13%, rgb(255, 255, 255) 53%, #144fcd 100%  );
-    }
-    80%{
-        background: linear-gradient(432deg,rgba(255,255,255) 0%,rgba(255,255,255) 25%, #ba1d18 13%, rgb(255, 255, 255) 53%, #144fcd 100%  );
-    }
-    90%{
-        background: linear-gradient(468deg,rgba(255,255,255) 0%,rgba(255,255,255) 25%, #ba1d18 13%, rgb(255, 255, 255) 53%, #144fcd 100%  );
-    }
-    0%{
-        background: linear-gradient(504deg,rgba(255,255,255) 0%,rgba(255,255,255) 25%, #ba1d18 13%, rgb(255, 255, 255) 53%, #144fcd 100%  );
-    }
 }
