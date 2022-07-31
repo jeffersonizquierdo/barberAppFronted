@@ -21,14 +21,13 @@ export class SingInComponent implements OnInit {
   email:string;
   nickname: string
   password: string;
-  typeUser: string;
+  typeUser: Number;
   
   mostrar(){
     console.log(this.typeUser);
   }
 
-
-  saveUser()  {
+   saveUser()  {
 
     let newUser = new user(this.id, this.cellphone, this.city, this.email, this.nickname, this.password, this.typeUser);
 
