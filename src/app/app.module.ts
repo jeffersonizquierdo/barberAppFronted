@@ -37,6 +37,9 @@ const appRoutes: Routes = [
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
+  {path:'singupbarbershop', component:SingInBarbershopComponent},
+  {path:'singupbarber', component:SingInBarberComponent},
+  {path:'singupcustomer', component:SingInCustomerComponent},
 
 
 ]

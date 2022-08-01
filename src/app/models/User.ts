@@ -6,10 +6,9 @@ export class user{
     email:string;
     nickname: string;
     password: string;
-    typeUser: string;
+    typeUser: Number;
 
-    constructor(id:Number, cellphone: string, city: string, email:string, nickname: string, password: string, typeUser: string){
-
+    constructor(id:Number, cellphone: string, city: string, email:string, nickname: string, password: string, typeUser: Number){
 
         this.id = id;
         this.cellphone = cellphone;
@@ -18,6 +17,5 @@ export class user{
         this.nickname = nickname;
         this.password = password;
         this.typeUser = typeUser;
-
     }
 }
