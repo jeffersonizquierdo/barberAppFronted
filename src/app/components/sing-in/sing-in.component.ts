@@ -35,7 +35,13 @@ export class SingInComponent implements OnInit {
       response => console.log(response)
     );;
 
-    this.router.navigate(['login'])
+    if (this.typeUser == 1){
+      this.router.navigate(['singupbarbershop'])
+    } else if (this.typeUser == 2){
+      this.router.navigate(['singupbarber'])
+    } else if(this.typeUser == 3){
+      this.router.navigate(['singupcustomer'])
+    }
 
   }
 
