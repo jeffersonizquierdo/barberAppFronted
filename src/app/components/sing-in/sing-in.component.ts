@@ -1,5 +1,5 @@
 import { user } from './../../models/User';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { UserServiceService } from 'src/app/services/user/user-service.service';
 import { Router } from '@angular/router';
 
@@ -13,7 +13,7 @@ export class SingInComponent implements OnInit {
   constructor(private userService:UserServiceService, private router: Router) { }
 
   ngOnInit(): void { 
-  }
+  }     
 
   id:number;
   cellphone: string;
@@ -23,24 +23,28 @@ export class SingInComponent implements OnInit {
   password: string;
   typeUser: Number;
   
+  mostrarComponentes:true;
+
+  newUser:user
+
   mostrar(){
     console.log(this.typeUser);
   }
 
    saveUser()  {
 
-    let newUser = new user(this.id, this.cellphone, this.city, this.email, this.nickname, this.password, this.typeUser);
+    this.newUser = new user(this.id, this.cellphone, this.city, this.email, this.nickname, this.password, this.typeUser);
 
-    this.userService.saveUser(newUser).subscribe(
+    this.userService.saveUser(this.newUser).subscribe(
       response => console.log(response)
     );;
 
     if (this.typeUser == 1){
-      this.router.navigate(['singupbarbershop'])
+      this.router.navigate(['singupbarbershop', this.newUser])
     } else if (this.typeUser == 2){
-      this.router.navigate(['singupbarber'])
+      this.router.navigate(['singupbarber', this.newUser])
     } else if(this.typeUser == 3){
-      this.router.navigate(['singupcustomer'])
+      this.router.navigate(['singupcustomer', this.newUser])
     }
 
   }

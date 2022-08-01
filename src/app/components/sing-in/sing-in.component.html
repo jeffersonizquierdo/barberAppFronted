@@ -60,6 +60,8 @@
 
     <a href="http://localhost:4200/login" class="sign-up">Ya tengo una cuenta</a>
 
+    <app-sing-in-barbershop [routerLink]="['/singupbarbershop', newUser]" *ngIf="mostrarComponentes" ></app-sing-in-barbershop>
+
   </form>
 
   {{typeUser}}

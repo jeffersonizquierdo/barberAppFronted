@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { user } from 'src/app/models/User';
 
 @Component({
   selector: 'app-sing-in-barbershop',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingInBarbershopComponent implements OnInit {
 
-  constructor() { }
+ 
+  @Input() user:user;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    this.user = this.route.snapshot.params['user']
+    console.log(user);
+    
+
   }
+ 
+  savebarbershop(){
+
+  }
+  
 
 }
