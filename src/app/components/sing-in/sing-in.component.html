@@ -21,14 +21,6 @@
       </div>
     </div>
 
-    <h3>Tipo de usuario</h3>
-
-    <div class="btn-type">
-      <label for=""><input [(ngModel)]="typeUser" value="3" type="radio" name="type"/>Cliente</label>
-      <label for=""><input [(ngModel)]="typeUser" value="2" type="radio" name="type"/>Barbero</label>
-      <label for=""><input [(ngModel)]="typeUser" value="1" type="radio" name="type"/>Barberia</label>
-    </div>
-
     <div class="wrapper" >
       <div class="inputData" >
         <input class="intp" type="text" name="cellphone" autocomplete="off" required [(ngModel)]="cellphone" >
@@ -53,6 +45,91 @@
       </div>
     </div>
 
+    <h3>Tipo de usuario</h3>
+
+    <div class="btn-type">
+      <label for=""><input [(ngModel)]="typeUser" (click)="dataTypeUser(3)" value="3" type="radio" name="type"/>Cliente</label>
+      <label for=""><input [(ngModel)]="typeUser" (click)="dataTypeUser(2)" value="2" type="radio" name="type"/>Barbero</label>
+      <label for=""><input [(ngModel)]="typeUser" (click)="dataTypeUser(1)" value="1" type="radio" name="type"/>Barberia</label>
+    </div>
+
+    <div *ngIf="registrerBarbershop == true">
+
+      <div class="wrapper" >
+        <div class="inputData" >
+          <input class="intp" type="text" name="location" autocomplete="off" required [(ngModel)]="locationBarbershop"/>
+          <div class="line" ></div>
+          <label for="location">Direccion</label>
+        </div>
+      </div>
+
+
+      <div style="margin-top: 30px;" class="wrapper" >
+        <div class="inputData" >
+          <input class="intp" type="text" name="description" autocomplete="off" required [(ngModel)]="descriptionbarbershop">
+          <div class="line" ></div>
+          <label for="description">Descripcion</label>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div *ngIf="registrerBarber == true" >
+
+      <div class="wrapper" >
+        <div class="inputData" >
+          <input class="intp" type="date" name="age" autocomplete="off" required  [(ngModel)]="dateBarber">
+          <div class="line" ></div>
+          <label style="margin-bottom: 10px;" for="age">Fecha de Nacimiento</label>
+        </div>
+      </div>
+
+      <div style="margin-top: 40px;" class="wrapper" >
+        <div class="inputData" >
+          <select name="select" class="select-gender">
+            <option value="value1"  [(ngModel)]="genderBarber" class="option">Masculino</option>
+            <option value="value2"  [(ngModel)]="genderBarber" class="option" selected>Femenino</option>
+          </select>
+          <div class="line" ></div>
+          <label style="margin-bottom: 20px;" for="gender">Genero</label>
+        </div>
+      </div>
+
+      <div  style="margin-top: 30px;" class="wrapper" >
+        <div class="inputData" >
+          <input class="intp" type="text" name="description" autocomplete="off" required  [(ngModel)]="descriptionbarber">
+          <div class="line" ></div>
+          <label for="description">Descripcion</label>
+        </div>
+      </div>
+
+    </div>
+
+    <div *ngIf="registrerCustomer == true" >
+
+      <div class="wrapper" >
+        <div class="inputData" >
+          <input class="intp" type="date" name="age" autocomplete="off" required  [(ngModel)]="dateCustomer" >
+          <div class="line" ></div>
+          <label style="margin-bottom: 10px;" for="age">Fecha de Nacimiento</label>
+        </div>
+      </div>
+
+      <div style="margin-top: 40px;" class="wrapper" >
+        <div class="inputData" >
+          <select name="select" class="select-gender">
+            <option value="m" [(ngModel)]="genderCustomer" class="option">Masculino</option>
+            <option value="f" [(ngModel)]="genderCustomer" class="option" selected>Femenino</option>
+          </select>
+          <div class="line" ></div>
+          <label style="margin-bottom: 20px;" for="gender">Genero</label>
+        </div>
+      </div>
+
+    </div>
+
+
     <div class="container-home-next">
       <div class="home-sing-in"><a href=""><img src="../../../assets/images/icons8-casa-64.png" alt="" class="img-home-sing-in"></a></div>
       <button (click)="saveUser()"><a>Siguiente</a></button>
@@ -60,10 +137,9 @@
 
     <a href="http://localhost:4200/login" class="sign-up">Ya tengo una cuenta</a>
 
-    <app-sing-in-barbershop [routerLink]="['/singupbarbershop', newUser]" *ngIf="mostrarComponentes" ></app-sing-in-barbershop>
-
   </form>
 
   {{typeUser}}
+  {{genderCustomer}}
 
 </div>

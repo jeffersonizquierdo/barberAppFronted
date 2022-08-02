@@ -18,9 +18,6 @@ import { HomeMainComponent } from './components/home-main/home-main.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { HeaderHomeComponent } from './components/header-home/header-home.component';
 import { SingInComponent } from './components/sing-in/sing-in.component';
-import { SingInBarberComponent } from './components/sing-in-barber/sing-in-barber.component';
-import { SingInBarbershopComponent } from './components/sing-in-barbershop/sing-in-barbershop.component';
-import { SingInCustomerComponent } from './components/sing-in-customer/sing-in-customer.component';
 import { LoginComponent } from './components/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
 
@@ -28,7 +25,6 @@ import {HttpClientModule} from '@angular/common/http';
 
 const appRoutes: Routes = [
 
-  
   {path:'homebarbershop', component:HomeBarbershopComponent},
   {path:'homecustomer', component:HomeCustomerComponent},
   {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
@@ -37,11 +33,6 @@ const appRoutes: Routes = [
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
-  {path:'singupbarbershop/:user', component:SingInBarbershopComponent},
-  {path:'singupbarber/:user', component:SingInBarberComponent},
-  {path:'singupcustomer/:user', component:SingInCustomerComponent},
-
-
 ]
 
 @NgModule({
@@ -51,9 +42,7 @@ const appRoutes: Routes = [
     SliderComponent,
     HeaderHomeComponent,
     SingInComponent,
-    SingInBarberComponent,
-    SingInBarbershopComponent,
-    SingInCustomerComponent,
+
     HomeBarbershopComponent,
     HomeCustomerComponent,
     RankingComponent,
