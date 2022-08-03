@@ -23,6 +23,7 @@ import { SingInBarbershopComponent } from './components/sing-in-barbershop/sing-
 import { SingInCustomerComponent } from './components/sing-in-customer/sing-in-customer.component';
 import { LoginComponent } from './components/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
 
 
 
@@ -63,7 +64,8 @@ const appRoutes: Routes = [
     BarberMeshShiftsComponent,
     BarbershopMeshShiftsComponent,
     HomeBarberComponent,
-    HistoriesCutsComponent
+    HistoriesCutsComponent,
+    ManageCatalogueComponent
 
   ],
   imports: [
