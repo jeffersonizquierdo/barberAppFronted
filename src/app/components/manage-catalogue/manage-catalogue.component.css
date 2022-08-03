@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+  
+}
+h1{
+    margin: 69px 82px;
+    font-size: 58px;
+}
+.container-one{
+    display: flex;
+    justify-content: center;
+}
+.container-two{
+    border: 2px solid black;
+    display: flex;
+    width: 57%;
+    height: 429px;
+    border-radius: 10px;
+    gap: 10%;
+    
+}
+.container-contenido{
+    border: 1px solid black;
+    width: 19%;
+    height: 137px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+.container-contenido a{
+    font-size: 40px;
+    display: flex;
+    justify-content: end;
+}
+
+.container-agregar a img{
+    margin: 16px 63px;
+    width: 97px;
+    height: 87px;
+
+}
+
+.container-agregar{
+    text-align: center;
+}
