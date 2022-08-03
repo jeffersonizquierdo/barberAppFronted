@@ -1,0 +1,96 @@
+<div  class="header">
+
+    <div class="perfil" >
+        <img src="../../../assets/images/LogoBarberApp.jpg">
+    </div>
+
+    <div *ngIf="anonymous" class="funciones">
+        <div class="form-group-col-md-3" >
+            <div class="wrapper" >
+                <div class="inputData" >
+                  <input class="intp" type="text" name="search" required>
+                  <label for="search">Buscar</label>
+                </div>
+            </div>
+        </div>
+ 
+        <ul class="linksAnonymous" >
+            <li><img src="../../../assets/images/usuario.png" alt="login" alt=""><a href="">Iniciar Sesion</a></li>
+            <li><img src="../../../assets/images/agregar-simbolo-de-usuario.png" alt=""><a href="http://localhost:4200/singup">Registrarse</a></li>
+        </ul>
+    </div>
+
+
+    <div *ngIf="barbershop" class="funciones">
+
+        <div class="name" >
+            <a>Name barbershop</a>
+        </div>
+
+
+        <div class="form-group-col-md-3">
+            <div class="wrapper" >
+                <div class="inputData" >
+                  <input class="intp" type="text" name="search" required>
+                  <label for="search">Buscar</label>
+                </div>
+            </div>
+
+        </div>
+ 
+        <ul class="links" >
+            <li><a href="">Barberos</a></li>
+            <li><a href="">Cuts</a></li>
+            <li><a href="">Mayas de Turnos</a></li>
+            <li><a href="">Salir</a></li>
+        </ul>
+    </div>
+
+
+    <div *ngIf="barber" class="funciones">
+
+        <div class="name" >
+            <a>Name Barber</a>
+        </div>
+
+        <div class="form-group-col-md-3" >
+            <div class="wrapper" >
+                <div class="inputData" >
+                  <input class="intp" type="text" name="search" required>
+                  <label for="search">Buscar</label>
+                </div>
+            </div>
+        </div>
+ 
+        <ul class="links" >
+            <li><a href="">Vinculaciones</a></li>
+            <li><a href="">Cuts</a></li>
+            <li><a href="">Catalogo</a></li>
+            <li><a href="">Mayas de Turnos</a></li>
+            <li><a href="">Salir</a></li>
+        </ul>
+    </div>
+
+
+    <div *ngIf="customer" class="funciones">
+
+        <div class="name" >
+            <a href="" >Name Customer</a>
+        </div>
+
+        <div class="form-group-col-md-3" >
+            <div class="wrapper" >
+                <div class="inputData" >
+                  <input class="intp" type="text" name="search" required>
+                  <label for="search">Buscar</label>
+                </div>
+            </div>
+        </div>
+ 
+        <ul class="links" >
+            <li><a href="">Reservar</a></li>
+            <li><a href="">Salir</a></li>
+        </ul>
+    </div>
+
+</div>

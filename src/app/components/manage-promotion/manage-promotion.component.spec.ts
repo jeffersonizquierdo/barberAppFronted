@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeaderBarbershopComponent } from './header-barbershop.component';
+import { ManagePromotionComponent } from './manage-promotion.component';
 
-describe('HeaderBarbershopComponent', () => {
-  let component: HeaderBarbershopComponent;
-  let fixture: ComponentFixture<HeaderBarbershopComponent>;
+describe('ManagePromotionComponent', () => {
+  let component: ManagePromotionComponent;
+  let fixture: ComponentFixture<ManagePromotionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeaderBarbershopComponent ]
+      declarations: [ ManagePromotionComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeaderBarbershopComponent);
+    fixture = TestBed.createComponent(ManagePromotionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

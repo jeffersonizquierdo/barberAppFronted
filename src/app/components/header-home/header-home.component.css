@@ -1,0 +1,183 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.header{
+
+    background-color: #171f2a;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 6pc;    
+    -webkit-box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.52);
+    -moz-box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.52);
+    box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.52);
+    margin-bottom: 40px;
+    padding: 0 0 0 150px;
+}
+
+.perfil{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 5%;
+}
+
+.perfil img{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
+
+.form-group-col-md-3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 500px;
+}
+
+.funciones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
+}
+
+.form-control{
+    background-color: #eeeeee;
+    color: #202020;
+    border: none;
+    height: 40px;
+}
+
+
+
+.linksAnonymous{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 80px;
+    margin-left: 100px;
+}
+
+.linksAnonymous li img{
+    width: 30px;
+}
+
+.linksAnonymous  a{
+   text-decoration: none;
+   color: #ffffff;
+   margin: 0 5px;
+}
+
+.linksAnonymous li:hover{
+
+    background-color: #394b63;
+    border-radius: 10px;
+    height: 35px;
+    
+ }
+
+
+ .linksAnonymous li{
+
+
+    border-radius: 10px;
+    height: 35px;
+    
+ }
+
+.links {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 30px;
+}
+
+
+.name a{
+
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.links ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.links li {
+
+}
+
+.links li a {
+    
+    text-decoration: none;
+    color: white  ;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .2s;
+}
+
+.links li a:hover {
+    background-size: 100% 1px;
+    color: aliceblue;
+}
+
+
+.wrapper{
+    background-color: #ffffff;
+    width: 100%;
+    padding: 10px 0  0 10px;
+    height: 40px;
+    border-radius: 15px;
+
+}
+
+
+.inputData{
+    width: 100%;
+    position: relative;
+    border-radius: 10px;
+    border: none;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.inputData input{
+    border-bottom: 1px solid white;
+    width: 100%;
+    height: 20px;
+    border: none;
+    outline: none;
+    color: #000000;
+    border-radius: 15px;
+}
+
+.inputData input:focus ~ label,
+.inputData input:valid ~ label{
+    transform: translateY(-13px);
+    font-size: 15px;
+    font-size: 0px;
+}
+.wrapper input[type="email"]:focus ~ label,
+.inputData input:valid ~ labe{
+    transform: translateY(-10px);
+
+}
+
+.inputData label{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: rgb(190, 190, 190);
+    pointer-events: none;
+    transition: all 0.4s ease;
+}

@@ -1,0 +1,54 @@
+:root{
+    background-color: white;
+}
+body{
+    background-color: var(--background-color);
+}
+
+#stories-container{
+    display: flex;
+    background-color: #171f2a;
+    -webkit-box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.9);
+    -moz-box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.9);
+    box-shadow: 0px 0px 35px 10px rgba(0,0,0,0.9);
+    border: 2px solid rgb(0, 0, 0);
+}
+.story{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+.story .porfile{
+    background: linear-gradient(144deg, #ba1d18 13%, rgb(255, 255, 255) 53%, #144fcd 100% );
+    padding: 5px;
+    box-sizing: border-box;
+    width: 70px;
+    height: 70px;border-radius: 50%;
+}
+
+.story .porfile img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    border: solid 5px white;
+}
+.story.active .porfile{
+    animation-name: story;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.story .porfile.empty{
+    background: #ccc;
+}
+
+.title{
+    font-size: 15px;
+    text-align: center;
+}
