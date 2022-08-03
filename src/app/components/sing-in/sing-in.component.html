@@ -87,9 +87,9 @@
 
       <div style="margin-top: 40px;" class="wrapper" >
         <div class="inputData" >
-          <select name="select" class="select-gender">
-            <option value="value1"  [(ngModel)]="genderBarber" class="option">Masculino</option>
-            <option value="value2"  [(ngModel)]="genderBarber" class="option" selected>Femenino</option>
+          <select required name="genderCustomer" [(ngModel)]="genderBarber" class="select-gender">
+            <option value="femenino" class="option"  >Femenino</option>
+            <option value="masculino" class="option" >Masculino</option>
           </select>
           <div class="line" ></div>
           <label style="margin-bottom: 20px;" for="gender">Genero</label>
@@ -118,9 +118,9 @@
 
       <div style="margin-top: 40px;" class="wrapper" >
         <div class="inputData" >
-          <select name="select" class="select-gender">
-            <option value="m" [(ngModel)]="genderCustomer" class="option">Masculino</option>
-            <option value="f" [(ngModel)]="genderCustomer" class="option" selected>Femenino</option>
+          <select required name="genderCustomer" [(ngModel)]="genderCustomer" class="select-gender">
+            <option value="femenino" class="option"  >Femenino</option>
+            <option value="masculino" class="option" >Masculino</option>
           </select>
           <div class="line" ></div>
           <label style="margin-bottom: 20px;" for="gender">Genero</label>
@@ -139,7 +139,6 @@
 
   </form>
 
-  {{typeUser}}
   {{genderCustomer}}
 
 </div>

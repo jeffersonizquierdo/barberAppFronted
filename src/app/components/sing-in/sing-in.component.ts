@@ -1,10 +1,13 @@
 import { user } from './../../models/User';
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { UserServiceService } from 'src/app/services/user/user-service.service';
 import { Router } from '@angular/router';
 import { Barbershop } from 'src/app/models/barbershop';
 import { BarberService } from 'src/app/services/barber/barber.service';
 import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
+import { Customer } from 'src/app/models/Customer';
+import { CustomerService } from 'src/app/services/customer/customer.service';
+import { Barber } from 'src/app/models/Barber';
 
 @Component({
   selector: 'app-sing-in',
@@ -13,7 +16,8 @@ import { BarbershopService } from 'src/app/services/barbershop/barbershop.servic
 })
 export class SingInComponent implements OnInit {
 
-  constructor(private userService:UserServiceService, private router: Router, private barbershopService: BarbershopService) { }
+  constructor(private userService:UserServiceService, private router: Router, private barbershopService: BarbershopService,
+    private customerService: CustomerService, private barberService: BarberService) { }
 
   ngOnInit(): void { 
   }
@@ -41,6 +45,7 @@ export class SingInComponent implements OnInit {
   dateBarber:Date;
   genderBarber: string;
   descriptionbarber:string
+  idCatalogue:Number
 
   // Customer Data
   dateCustomer:Date;
@@ -50,6 +55,8 @@ export class SingInComponent implements OnInit {
   //Objetos 
   newUser:user
   newBarbershop: Barbershop;
+  newCustomer: Customer;
+  newBarber:Barber;
 
 
   dataTypeUser (value : number){
@@ -77,9 +84,14 @@ export class SingInComponent implements OnInit {
 
   saveUser() {
 
-    if (this.typeUser == 1) this.saveBarbershop(this.newUser,  this.newBarbershop)    
+    if (this.typeUser == 1) this.saveBarbershop(this.newUser, this.newBarbershop);
+    if (this.typeUser == 2) this.saveBarber(this.newUser, this.newBarber)
+    if (this.typeUser == 3) this.saveCustomer(this.newUser, this.newCustomer);
+
+    
   }
 
+  ////////////////////////////////////////////////////////////////////
   saveBarbershop(newUser:user, newBarbershop: Barbershop){
 
     newUser = new user(this.id, this.cellphone, this.city, this.email, this.nickname, this.password, this.typeUser);
@@ -87,11 +99,53 @@ export class SingInComponent implements OnInit {
     this.userService.saveUser(newUser).subscribe(
       response => console.log(response)
     );
-    newBarbershop = new Barbershop(newUser.id, this.descriptionbarbershop, this.locationBarbershop, 0);
+    newBarbershop = new Barbershop(this.id, newUser.email, this.descriptionbarbershop, this.locationBarbershop, 0);
 
     this.barbershopService.saveBarbeshop(newBarbershop).subscribe(
       response => console.log(response)
     );
+  }
+
+  ////////////////////////////////////////////////////////////////////
+  saveBarber(newUser: user, newBarber: Barber){
+
+    newUser = new user(this.id, this.cellphone, this.city, this.email, this.nickname, this.password, this.typeUser);
+
+    this.userService.saveUser(newUser).subscribe(
+      response => console.log(response)
+    );
+
+    newBarber = new Barber(this.id, this.dateCustomer,this.email, this.genderBarber, 0, 1)
+    this.barberService.saveBarber(newBarber).subscribe(
+
+      response => console.log(response)
+      
+      
+    );
+    console.log(this.email)
+
+  }
+
+
+  ////////////////////////////////////////////////////////////////////
+  saveCustomer(newUser: user, newCustomer: Customer){
+
+    newUser = new user(this.id, this.cellphone, this.city, this.email, this.nickname, this.password, this.typeUser);
+
+    this.userService.saveUser(newUser).subscribe(
+      response => console.log(response)
+    );
+
+    newCustomer = new Customer(this.id, this.dateCustomer, newUser.email, this.genderCustomer);
+    console.log(this.genderCustomer);
+    
+
+    this.customerService.saveCustomer(newCustomer).subscribe(
+      response => console.log(response)
+    );
+
+
+
   }
 
 }
