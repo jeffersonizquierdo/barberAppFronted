@@ -1,5 +1,5 @@
 h1, h2, h3, h4, h5, h6, a {
-    margin:0; padding:0;
+    margin:10; padding:0;
 }
 .login {
     margin:0 auto;
@@ -21,6 +21,7 @@ h1, h2, h3, h4, h5, h6, a {
     text-align:left;
     margin-left:40px;
     color:#fff;
+    font-size: 25px;
 }
 .login-form {
     box-sizing:border-box;
@@ -32,7 +33,6 @@ h1, h2, h3, h4, h5, h6, a {
 .login input[type="password"] {
     max-width:400px;
     width: 80%;
-    line-height:3em;
     font-family: 'Ubuntu', sans-serif;
     margin:1em 2em;
     border-radius:5px;
@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6, a {
     cursor:pointer;
     margin-bottom: 10px;
 }
-.login-form input:hover{transform: scale(1.1);}
+
 .sign-up{
     color:#f2f2f2;
     cursor:pointer;

@@ -1,0 +1,92 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.page{
+    display: flex;
+    flex-direction: row;
+}
+
+.table{
+
+    background-color: #171f2a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    -webkit-box-shadow: -4px 0px 9px -1px rgba(0,0,0,0.52);
+    -moz-box-shadow: -4px 0px 9px -1px rgba(0,0,0,0.52);
+    box-shadow: -4px 0px 9px -1px rgba(0,0,0,0.52);
+}
+
+h3{
+    margin: 20px;
+}
+
+.lista{
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style:none;
+    border: none;
+}
+
+.lista  img{
+
+    width: 20px;
+    height: 25px;
+    margin-left: 5px;
+}
+
+.lista li{
+
+}
+
+span{
+    margin-right: 6px;
+}
+
+.complete{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #202020;
+    width: 210px;
+    border-radius: 7px;
+}
+
+.complete a{
+    color: white;
+    text-decoration: none;
+}
+
+.progres{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    border-radius: 7px;
+}
+
+.progres a{
+    color: #202020;
+    text-decoration: none;
+} 
+
+.pending{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #d90000;
+    border-radius: 7px;
+}
+
+.pending a{
+    color: white;
+    text-decoration: none;
+} 

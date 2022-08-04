@@ -1,92 +1,183 @@
-header{
-    background-color: #171f2a;
-}
-.divheader{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.divlogo{
-    width: 100px;
-    margin: 20px;
-}
-.divlogo:hover{
-    transform: scale(1.2);
-}
-.logo{
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    border-radius: 50px;
-    -webkit-box-shadow: 3px 4px 14px 3px rgba(0,0,0,0.66); 
-    box-shadow: 3px 4px 14px 3px rgba(0,0,0,0.66);
+*{
+    margin: 0%;
+    padding: 0%;
 }
 
-.botones{
+.header{
+
+    background-color: #171f2a;
+    color: white;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
+    height: 6pc;    
+    -webkit-box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.52);
+    -moz-box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.52);
+    box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.52);
+    margin-bottom: 40px;
+    padding: 0 0 0 150px;
+}
+
+.perfil{
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 70px;
-    margin-right: 50px;
+    width: 5%;
 }
-.div-sing-in-login{
+
+.perfil img{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
+
+.form-group-col-md-3{
     display: flex;
     flex-direction: row;
-    gap: 50px;
-    
+    justify-content: space-around;
+    gap: 500px;
 }
-.div-sing-in-login a{
-    text-decoration: none; 
-    border-radius: 30px;
-    border: 1px;
-    -webkit-box-shadow: 3px 4px 14px 3px rgba(0,0,0,0.66); 
-    box-shadow: 3px 4px 14px 3px rgb(0 0 0 / 66%);
-    
-}
-.div-sing-in-login a:hover{
-    transform: scale(1.1);
-    color: #3c88c4;
-}
-.log{
-    width: 30px;
-    margin-right: 3px;
-}
-.divbusqueda{
+
+.funciones{
     display: flex;
-    gap: 12px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 95%;
 }
-.divbusqueda input{
-    border-radius: 100px;
-    width: 230px;
-    height: 33px;
-    text-align: center;
-    font-size: 20px;
-    background-color: rgba(153, 150, 150, 0.301);
-    box-shadow: 3px 4px 14px 3px rgb(0 0 0 / 66%);
-    border: 1px;
-    background-color: rgba(153, 150, 150, 0.301);
-    box-shadow: 3px 4px 14px 3px rgb(0 0 0 / 66%);
+
+.form-control{
+    background-color: #eeeeee;
+    color: #202020;
+    border: none;
+    height: 40px;
 }
-.divbusqueda button{
-    box-shadow: 3px 4px 14px 3px rgb(0 0 0 / 66%);
-    border-radius: 100px;
-    width: 75px;
-    background-color: #3c88c4;
-    color: white;
-    border: 1px;
-    -webkit-box-shadow: 3px 4px 14px 3px rgba(0,0,0,0.66); 
-    box-shadow: 3px 4px 14px 3px rgba(0,0,0,0.66);
+
+
+
+.linksAnonymous{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 80px;
+    margin-left: 100px;
 }
-.divbusqueda input:hover{
-    transform: scale(1.1);
+
+.linksAnonymous li img{
+    width: 30px;
+}
+
+.linksAnonymous  a{
+   text-decoration: none;
+   color: #ffffff;
+   margin: 0 5px;
+}
+
+.linksAnonymous li:hover{
+
+    background-color: #394b63;
+    border-radius: 10px;
+    height: 35px;
     
+ }
+
+
+ .linksAnonymous li{
+
+
+    border-radius: 10px;
+    height: 35px;
+    
+ }
+
+.links {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 30px;
 }
-.divbusqueda button:hover{
-    transform: scale(1.1);
-}
-.btn{
-    border-radius: 2px;
+
+
+.name a{
+
+    font-size: 15px;
     color: white;
+    text-decoration: none;
 }
-.btn:hover{color:#3c88c4;}
+
+.links ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.links li {
+
+}
+
+.links li a {
+    
+    text-decoration: none;
+    color: white  ;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .2s;
+}
+
+.links li a:hover {
+    background-size: 100% 1px;
+    color: aliceblue;
+}
+
+
+.wrapper{
+    background-color: #ffffff;
+    width: 100%;
+    padding: 10px 0  0 10px;
+    height: 40px;
+    border-radius: 15px;
+
+}
+
+
+.inputData{
+    width: 100%;
+    position: relative;
+    border-radius: 10px;
+    border: none;
+    height: 30px;
+    border-radius: 15px;
+}
+
+.inputData input{
+    border-bottom: 1px solid white;
+    width: 100%;
+    height: 20px;
+    border: none;
+    outline: none;
+    color: #000000;
+    border-radius: 15px;
+}
+
+.inputData input:focus ~ label,
+.inputData input:valid ~ label{
+    transform: translateY(-13px);
+    font-size: 15px;
+    font-size: 0px;
+}
+.wrapper input[type="email"]:focus ~ label,
+.inputData input:valid ~ labe{
+    transform: translateY(-10px);
+
+}
+
+.inputData label{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: rgb(190, 190, 190);
+    pointer-events: none;
+    transition: all 0.4s ease;
+}
