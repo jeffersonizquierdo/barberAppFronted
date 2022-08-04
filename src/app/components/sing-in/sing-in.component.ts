@@ -44,7 +44,7 @@ export class SingInComponent implements OnInit {
   // Barber Data
   dateBarber:Date;
   genderBarber: string;
-  descriptionbarber:string
+  descriptionBarber:string
   idCatalogue:Number
 
   // Customer Data
@@ -79,7 +79,6 @@ export class SingInComponent implements OnInit {
       this.registrerBarber = false;
       this.registrerCustomer = false;
     }
- 
   }
 
   saveUser() {
@@ -87,43 +86,32 @@ export class SingInComponent implements OnInit {
     if (this.typeUser == 1) this.saveBarbershop(this.newUser, this.newBarbershop);
     if (this.typeUser == 2) this.saveBarber(this.newUser, this.newBarber)
     if (this.typeUser == 3) this.saveCustomer(this.newUser, this.newCustomer);
-
-    
   }
 
   ////////////////////////////////////////////////////////////////////
   saveBarbershop(newUser:user, newBarbershop: Barbershop){
 
     newUser = new user(this.id, this.cellphone, this.city, this.email, this.nickname, this.password, this.typeUser);
-
     this.userService.saveUser(newUser).subscribe(
       response => console.log(response)
     );
     newBarbershop = new Barbershop(this.id, newUser.email, this.descriptionbarbershop, this.locationBarbershop, 0);
-
     this.barbershopService.saveBarbeshop(newBarbershop).subscribe(
       response => console.log(response)
     );
   }
 
   ////////////////////////////////////////////////////////////////////
-  saveBarber(newUser: user, newBarber: Barber){
+  saveBarber(newUser:user, newBarber:Barber){
 
     newUser = new user(this.id, this.cellphone, this.city, this.email, this.nickname, this.password, this.typeUser);
-
     this.userService.saveUser(newUser).subscribe(
       response => console.log(response)
     );
-
-    newBarber = new Barber(this.id, this.dateCustomer,this.email, this.genderBarber, 0, 1)
+    newBarber = new Barber(this.id, this.dateBarber,this.email, this.descriptionBarber,this.genderBarber, 0, 1)
     this.barberService.saveBarber(newBarber).subscribe(
-
       response => console.log(response)
-      
-      
     );
-    console.log(this.email)
-
   }
 
 
@@ -135,17 +123,10 @@ export class SingInComponent implements OnInit {
     this.userService.saveUser(newUser).subscribe(
       response => console.log(response)
     );
-
     newCustomer = new Customer(this.id, this.dateCustomer, newUser.email, this.genderCustomer);
-    console.log(this.genderCustomer);
-    
-
     this.customerService.saveCustomer(newCustomer).subscribe(
       response => console.log(response)
     );
-
-
-
   }
 
 }
