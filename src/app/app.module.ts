@@ -23,7 +23,10 @@ import {HttpClientModule} from '@angular/common/http';
 import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
 
 //external
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
 
 
 
@@ -58,6 +61,7 @@ const appRoutes: Routes = [
     HomeBarberComponent,
     HistoriesCutsComponent,
     ManageCatalogueComponent,
+    ListCatalogueComponent,
     
 
   ],
@@ -67,7 +71,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FormsModule,
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgbModalModule,
+    BrowserAnimationsModule
     
 
   ],

@@ -1,46 +1,23 @@
-*{
-    padding: 0;
-    margin: 0;
-  
-}
-h1{
-    font-size: 58px;
-    color: white;
-}
 .container-main{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.container-catalogue{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid white;
-    width: 57%;
-    height: 429px;
     border-radius: 10px;
-    gap: 10%;
-    -webkit-box-shadow: 2px 7px 18px -6px rgba(0,0,0,0.75);
-    -moz-box-shadow: 2px 7px 18px -6px rgba(0,0,0,0.75);
-    box-shadow: 2px 7px 18px -6px rgba(0,0,0,0.75);
-    
-}
-.img{
+    border: 1px solid white;
+    width: 400px;
+    height: 400px;
     color: white;
-    width: 80px;
-    background-color: aqua;
-
 }
-
-.container-agregar a img{
-    margin: 16px 63px;
-    width: 97px;
-    height: 87px;
-
-}
-
-.container-agregar{
-    text-align: center;
+.postFile{
+    width: 360px;
+    height: 115px;
+    border: 1px white dashed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 20px;
+    border-radius: 5px;
 }

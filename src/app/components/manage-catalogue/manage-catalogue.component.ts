@@ -36,17 +36,12 @@ export class ManageCatalogueComponent implements OnInit {
 
   onUpload(){
     this.spinner.show();
-    this.catalogueService.upload(this.imagen).subscribe(
-      data=>{
-        this.spinner.hide();
-        this.router.navigate(['/']);
-      },
-      err=>{
-        this.spinner.hide();
-        alert(err.console.error.mensaje);
-        this.reset();
+    this.catalogueService.upload(this.imagen, "perfil").subscribe( (response:any) => {
+      if(response){
+        console.log(response.url);
+        
       }
-    )
+    })
   }
 
   reset(){
