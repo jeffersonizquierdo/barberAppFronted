@@ -20,6 +20,10 @@ import { HeaderHomeComponent } from './components/header-home/header-home.compon
 import { SingInComponent } from './components/sing-in/sing-in.component';
 import { LoginComponent } from './components/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
+
+//external
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -52,7 +56,9 @@ const appRoutes: Routes = [
     BarberMeshShiftsComponent,
     BarbershopMeshShiftsComponent,
     HomeBarberComponent,
-    HistoriesCutsComponent
+    HistoriesCutsComponent,
+    ManageCatalogueComponent,
+    
 
   ],
   imports: [
@@ -60,7 +66,8 @@ const appRoutes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule
     
 
   ],
