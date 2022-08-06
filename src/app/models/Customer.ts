@@ -1,16 +1,27 @@
 export class Customer{
 
   id:Number;
-  age:Date;
   email:string;
-  gender:string;
+  password: string;
+  nickname: string;
+  city: string;
+  cellphone: string;
+  typeUser: Number;
+  photo:string;
+  age:Date;
 
-  constructor(id:Number, age:Date, email:string, gender:string){
+  constructor(id:Number,email:string, password: string, nickname: string, city: string, cellphone: string,
+    typeUser: Number,photo:string, age:Date){
 
     this.id = id;
-    this.age = age;
     this.email = email;
-    this.gender = gender;
+    this.password = password;
+    this.nickname = nickname;
+    this.city = city;
+    this.cellphone = cellphone;
+    this.typeUser = typeUser;
+    this.photo = photo;
+    this.age = age;
   }
 
 }

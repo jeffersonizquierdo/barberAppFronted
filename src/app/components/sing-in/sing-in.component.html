@@ -66,7 +66,7 @@
 
       <div style="margin-top: 30px;" class="wrapper" >
         <div class="inputData" >
-          <input class="intp" type="text" name="description" autocomplete="off" required [(ngModel)]="descriptionbarbershop">
+          <input class="intp" type="text" name="description" autocomplete="off" required [(ngModel)]="descriptionBarbershop">
           <div class="line" ></div>
           <label for="description">Descripcion</label>
         </div>
@@ -79,20 +79,9 @@
 
       <div class="wrapper" >
         <div class="inputData" >
-          <input class="intp" type="date" name="age" autocomplete="off" required  [(ngModel)]="dateBarber">
+          <input class="intp" type="date" name="age" autocomplete="off" required  [(ngModel)]="ageBarber">
           <div class="line" ></div>
           <label style="margin-bottom: 10px;" for="age">Fecha de Nacimiento</label>
-        </div>
-      </div>
-
-      <div style="margin-top: 40px;" class="wrapper" >
-        <div class="inputData" >
-          <select required name="genderCustomer" [(ngModel)]="genderBarber" class="select-gender">
-            <option value="femenino" class="option"  >Femenino</option>
-            <option value="masculino" class="option" >Masculino</option>
-          </select>
-          <div class="line" ></div>
-          <label style="margin-bottom: 20px;" for="gender">Genero</label>
         </div>
       </div>
 
@@ -110,20 +99,9 @@
 
       <div class="wrapper" >
         <div class="inputData" >
-          <input class="intp" type="date" name="age" autocomplete="off" required  [(ngModel)]="dateCustomer" >
+          <input class="intp" type="date" name="age" autocomplete="off" required  [(ngModel)]="ageCustomer" >
           <div class="line" ></div>
           <label style="margin-bottom: 10px;" for="age">Fecha de Nacimiento</label>
-        </div>
-      </div>
-
-      <div style="margin-top: 40px;" class="wrapper" >
-        <div class="inputData" >
-          <select required name="genderCustomer" [(ngModel)]="genderCustomer" class="select-gender">
-            <option value="femenino" class="option"  >Femenino</option>
-            <option value="masculino" class="option" >Masculino</option>
-          </select>
-          <div class="line" ></div>
-          <label style="margin-bottom: 20px;" for="gender">Genero</label>
         </div>
       </div>
 
@@ -138,7 +116,5 @@
     <a href="http://localhost:4200/login" class="sign-up">Ya tengo una cuenta</a>
 
   </form>
-
-  {{genderCustomer}}
 
 </div>

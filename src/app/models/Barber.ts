@@ -1,22 +1,34 @@
+import { Barbershop } from 'src/app/models/barbershop';
 export class Barber{
 
   id:Number;
-  age:Date;
   email:string;
-  gender:string;
-  description:string;
+  password: string;
+  nickname: string;
+  city: string;
+  cellphone: string;
+  typeUser: Number;
+  photo:string;
+  age:Date;
+  description: string;
   qualification:Number;
-  idCatalogue:Number;
+  listBarbershpops: Barbershop[] = [];
 
-  constructor(id:Number, age:Date, email:string, description:string, gender:string, qualification:Number, idCatalogue:Number){
+  constructor(id:Number, email:string, password:string, nickname:string, city: string, cellphone:string, typeUser: Number,
+    photo: string, age:Date, description:string, qualification:Number){
 
     this.id = id;
-    this.age = age;
     this.email = email;
-    this.gender = gender;
-    this.qualification = qualification;
+    this.password = password;
+    this.nickname = nickname;
+    this.city = city;
+    this.cellphone = cellphone;
+    this.typeUser = typeUser;
+    this.photo = photo
+    this.age = age;
     this.description = description;
-    this.idCatalogue = idCatalogue;
+    this.qualification = qualification;
+    
   }
 
 }

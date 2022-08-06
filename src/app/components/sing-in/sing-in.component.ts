@@ -1,6 +1,4 @@
-import { user } from './../../models/User';
 import { Component, OnInit} from '@angular/core';
-import { UserServiceService } from 'src/app/services/user/user-service.service';
 import { Router } from '@angular/router';
 import { Barbershop } from 'src/app/models/barbershop';
 import { BarberService } from 'src/app/services/barber/barber.service';
@@ -16,7 +14,7 @@ import { Barber } from 'src/app/models/Barber';
 })
 export class SingInComponent implements OnInit {
 
-  constructor(private userService:UserServiceService, private router: Router, private barbershopService: BarbershopService,
+  constructor(private router: Router, private barbershopService: BarbershopService,
     private customerService: CustomerService, private barberService: BarberService) { }
 
   ngOnInit(): void { 
@@ -28,32 +26,30 @@ export class SingInComponent implements OnInit {
   registrerCustomer = false;
   
 
-  // User Data
+  // General Data
   id:number;
-  cellphone: string;
-  city: string;
   email:string;
-  nickname: string
   password: string;
+  nickname: string
+  city: string;
+  cellphone: string;
   typeUser: Number;
+  photo:string;
 
   // Barbershop Data
   locationBarbershop:string;
-  descriptionbarbershop:string
+  descriptionBarbershop:string
+  idCatalogue:Number;
 
   // Barber Data
-  dateBarber:Date;
-  genderBarber: string;
+  ageBarber:Date;
   descriptionBarber:string
-  idCatalogue:Number
 
   // Customer Data
-  dateCustomer:Date;
-  genderCustomer:string;
+  ageCustomer:Date;
 
 
   //Objetos 
-  newUser:user
   newBarbershop: Barbershop;
   newCustomer: Customer;
   newBarber:Barber;
@@ -83,32 +79,26 @@ export class SingInComponent implements OnInit {
 
   saveUser() {
 
-    if (this.typeUser == 1) this.saveBarbershop(this.newUser, this.newBarbershop);
-    if (this.typeUser == 2) this.saveBarber(this.newUser, this.newBarber)
-    if (this.typeUser == 3) this.saveCustomer(this.newUser, this.newCustomer);
+    if (this.typeUser == 1) this.saveBarbershop(this.newBarbershop);
+    if (this.typeUser == 2) this.saveBarber( this.newBarber)
+    if (this.typeUser == 3) this.saveCustomer( this.newCustomer);
   }
 
   ////////////////////////////////////////////////////////////////////
-  saveBarbershop(newUser:user, newBarbershop: Barbershop){
+  saveBarbershop(newBarbershop: Barbershop){
 
-    newUser = new user(this.id, this.cellphone, this.city, this.email, this.nickname, this.password, this.typeUser);
-    this.userService.saveUser(newUser).subscribe(
-      response => console.log(response)
-    );
-    newBarbershop = new Barbershop(this.id, newUser.email, this.descriptionbarbershop, this.locationBarbershop, 0);
+    newBarbershop = new Barbershop(this.id, this.email, this.password, this.nickname, this.city, this.cellphone, this.typeUser, this.photo, this.descriptionBarbershop, this.locationBarbershop, 0, this.idCatalogue);
     this.barbershopService.saveBarbeshop(newBarbershop).subscribe(
       response => console.log(response)
     );
+    console.log(newBarbershop.listBarbers);
+    
   }
 
   ////////////////////////////////////////////////////////////////////
-  saveBarber(newUser:user, newBarber:Barber){
+  saveBarber(newBarber:Barber){
 
-    newUser = new user(this.id, this.cellphone, this.city, this.email, this.nickname, this.password, this.typeUser);
-    this.userService.saveUser(newUser).subscribe(
-      response => console.log(response)
-    );
-    newBarber = new Barber(this.id, this.dateBarber,this.email, this.descriptionBarber,this.genderBarber, 0, 1)
+    newBarber = new Barber(this.id, this.email, this.password, this.nickname, this.city, this.cellphone, this.typeUser, this.photo, this.ageBarber, this.descriptionBarber, 0)
     this.barberService.saveBarber(newBarber).subscribe(
       response => console.log(response)
     );
@@ -116,14 +106,9 @@ export class SingInComponent implements OnInit {
 
 
   ////////////////////////////////////////////////////////////////////
-  saveCustomer(newUser: user, newCustomer: Customer){
+  saveCustomer(newCustomer: Customer){
 
-    newUser = new user(this.id, this.cellphone, this.city, this.email, this.nickname, this.password, this.typeUser);
-
-    this.userService.saveUser(newUser).subscribe(
-      response => console.log(response)
-    );
-    newCustomer = new Customer(this.id, this.dateCustomer, newUser.email, this.genderCustomer);
+    newCustomer = new Customer(this.id, this.email, this.password, this.nickname, this.city, this.cellphone, this.typeUser, this.photo, this.ageCustomer);
     this.customerService.saveCustomer(newCustomer).subscribe(
       response => console.log(response)
     );
