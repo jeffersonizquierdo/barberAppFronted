@@ -1,3 +1,4 @@
+import  swal  from 'sweetalert2';
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { Barbershop } from 'src/app/models/barbershop';
@@ -89,8 +90,11 @@ export class SingInComponent implements OnInit {
 
     newBarbershop = new Barbershop(this.id, this.email, this.password, this.nickname, this.city, this.cellphone, this.typeUser, this.photo, this.descriptionBarbershop, this.locationBarbershop, 0, this.idCatalogue);
     this.barbershopService.saveBarbeshop(newBarbershop).subscribe(
-      response => console.log(response)
+      (response: any) => console.log(response)
+      
+      
     );
+
     console.log(newBarbershop.listBarbers);
     
   }
@@ -100,7 +104,14 @@ export class SingInComponent implements OnInit {
 
     newBarber = new Barber(this.id, this.email, this.password, this.nickname, this.city, this.cellphone, this.typeUser, this.photo, this.ageBarber, this.descriptionBarber, 0)
     this.barberService.saveBarber(newBarber).subscribe(
-      response => console.log(response)
+      response =>{
+
+        console.log(response);
+        
+        swal.fire('Nuevo Barbero', `Hola ${this.nickname} te damos la bienvenida a BarberApp` , 'success')
+        this.router.navigate(['/login'])
+        
+      }
     );
   }
 
