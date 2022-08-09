@@ -69,7 +69,7 @@ export class SingInComponent implements OnInit {
     } else if (value == 3){
       this.registrerBarber = false;
       this.registrerBarbershop = false;
-      this.registrerCustomer = true; 
+      this.registrerCustomer = true;
     } 
     else{
       this.registrerBarbershop = false;
@@ -90,12 +90,18 @@ export class SingInComponent implements OnInit {
 
     newBarbershop = new Barbershop(this.id, this.email, this.password, this.nickname, this.city, this.cellphone, this.typeUser, this.photo, this.descriptionBarbershop, this.locationBarbershop, 0, this.idCatalogue);
     this.barbershopService.saveBarbeshop(newBarbershop).subscribe(
-      (response: any) => console.log(response)
+      
+      response => {
+
+        console.log(response);
+        swal.fire('Nuevo Cliente', `Hola ${this.nickname} te damos la bienvenida a BarberApp` , 'success')
+        this.router.navigate(['/login'])
+
+      }
       
       
     );
 
-    console.log(newBarbershop.listBarbers);
     
   }
 
@@ -121,7 +127,13 @@ export class SingInComponent implements OnInit {
 
     newCustomer = new Customer(this.id, this.email, this.password, this.nickname, this.city, this.cellphone, this.typeUser, this.photo, this.ageCustomer);
     this.customerService.saveCustomer(newCustomer).subscribe(
-      response => console.log(response)
+      response => {
+
+        console.log(response);
+        swal.fire('Nuevo Cliente', `Hola ${this.nickname} te damos la bienvenida a BarberApp` , 'success')
+        this.router.navigate(['/login'])
+        
+      }
     );
   }
 
