@@ -10,18 +10,8 @@ export class CatalogueService {
   imageURL = 'http://localhost:8080/cloudinary/'
   constructor(private httpClient: HttpClient) { }
 
-  public list(): Observable<Catalogue[]>{
-    return this.httpClient.get<Catalogue[]>(this.imageURL+'list');
-  }
-
-  // public upload(imagen: File): Observable<any>{
-  //   const formData = new FormData();
-  //   formData.append('multipartFile', imagen);
-  //   return this.httpClient.post<any>(this.imageURL+'upload', formData);
-  // }
-
-  // public delete(id:number):Observable<any>{
-  //   return this.httpClient.delete<any>(this.imageURL + `delete/${id}`);
+  // public list(): Observable<Catalogue[]>{
+  //   return this.httpClient.get<Catalogue[]>(this.imageURL+'list');
   // }
 
   upload(imagen:File, folderimage:string){
@@ -37,8 +27,12 @@ export class CatalogueService {
 
     return this.httpClient.post<Catalogue>("http://localhost:8080/images/save", newCatalogue)
   }
-  // listCatalogo():Catalogue{
-  //   CatalogueList:Catalogue[]=[];
-  //   return CatalogueList;
-  // }
+
+  listCatalogo():  Observable<Catalogue>{
+    return this.httpClient.get<Catalogue>("http://localhost:8080/images/consult/")
+  } 
+
+  deleteCatalogue(id:Number):any{
+
+  }
 }
