@@ -90,8 +90,12 @@ export class SingInComponent implements OnInit {
 
     newBarbershop = new Barbershop(this.id, this.email, this.password, this.nickname, this.city, this.cellphone, this.typeUser, this.photo, this.descriptionBarbershop, this.locationBarbershop, 0);
     this.barbershopService.saveBarbeshop(newBarbershop).subscribe(
-      (response: any) => console.log(response)
-      
+      response  => {
+        
+        console.log(response);
+        swal.fire('Nuevo Barbero', `Hola ${this.nickname} te damos la bienvenida a BarberApp` , 'success')
+        this.router.navigate(['/login'])
+      }
       
     );
 
@@ -121,7 +125,11 @@ export class SingInComponent implements OnInit {
 
     newCustomer = new Customer(this.id, this.email, this.password, this.nickname, this.city, this.cellphone, this.typeUser, this.photo, this.ageCustomer);
     this.customerService.saveCustomer(newCustomer).subscribe(
-      response => console.log(response)
+      response =>{
+        console.log(response);
+        swal.fire('Nuevo Cliente', `Hola ${this.nickname} te damos la bienvenida a BarberApp` , 'success')
+        this.router.navigate(['/login'])
+      }
     );
   }
 

@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable} from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { Customer } from 'src/app/models/Customer';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,19 @@ export class CustomerService {
 
   saveCustomer(newCustomer: Customer): Observable<Customer>{
 
-  return this.http.post<Customer>("http://localhost:8080/customer/save", newCustomer, {headers: this.httpHeadres});
+  return this.http.post<Customer>("http://localhost:8080/customer/save", newCustomer, {headers: this.httpHeadres}).pipe(
+
+
+    catchError(e =>{
+
+      console.error(e.error.Mensaje);
+      Swal.fire(e.error.Mensaje, e.error.Error, 'error');
+      return throwError(e);
+    }
+
+
+
+  ));
 
   }
 }
