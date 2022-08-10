@@ -88,7 +88,7 @@ export class SingInComponent implements OnInit {
   ////////////////////////////////////////////////////////////////////
   saveBarbershop(newBarbershop: Barbershop){
 
-    newBarbershop = new Barbershop(this.id, this.email, this.password, this.nickname, this.city, this.cellphone, this.typeUser, this.photo, this.descriptionBarbershop, this.locationBarbershop, 0, this.idCatalogue);
+    newBarbershop = new Barbershop(this.id, this.email, this.password, this.nickname, this.city, this.cellphone, this.typeUser, this.photo, this.descriptionBarbershop, this.locationBarbershop, 0);
     this.barbershopService.saveBarbeshop(newBarbershop).subscribe(
       (response: any) => console.log(response)
       

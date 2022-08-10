@@ -12,12 +12,11 @@ export class Barbershop{
   description: string;
   location:string;
   qualification: Number;
-  idCatalogue:Number;
   listBarbers:Barber[] = [];
 
 
   constructor(id:Number, email:string, password: string, nickname:string, city:string, cellphone:string,
-    typeUser:Number, photo:string, description:string, location:string, qualification:Number, idCatalogue:Number){
+    typeUser:Number, photo:string, description:string, location:string, qualification:Number){
  
     this.id = id;
     this.email = email;
@@ -30,7 +29,6 @@ export class Barbershop{
     this.description = description;
     this.location = location;
     this.qualification = qualification;
-    this.idCatalogue = idCatalogue;
 
   }
 

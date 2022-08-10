@@ -1,3 +1,4 @@
+import { Barbershop } from 'src/app/models/barbershop';
 import { ViewChild } from '@angular/core';
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -45,13 +46,19 @@ export class ManageCatalogueComponent implements OnInit {
     fr.readAsDataURL(this.imagen);
   }
 
+  newBarbershop:Barbershop;
+
+
   onUpload(){
+    this.newBarbershop = new Barbershop(1, "barber", "dsd", "dsddsd", "Cali", "3000", 1, "photo", "descriptionBarbershop", "locationBarbershop", 0);
     this.spinner.show();
     this.catalogueService.upload(this.imagen, "hairstyle").subscribe( (response:any) => {
       if(response){
         console.log(response.url);
         this.imageURL=response.url
-        this.newCatalogue = new Catalogue(this.id, this.description, this.name, this.imageURL,  1);
+        this.newCatalogue = new Catalogue(this.id, this.description, this.name, this.imageURL,this.newBarbershop);
+        console.log(this.newCatalogue);
+        
         this.catalogueService.saveCatalogue(this.newCatalogue).subscribe(
           response => console.log(response)
       )}
