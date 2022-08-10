@@ -1,21 +1,30 @@
 
-<app-header-barbershop></app-header-barbershop>
-<h1>catalogo</h1>
-<div class="container-one">
-    <div class="container-two">
-      <div class="container-contenido">
-          <a>⁝</a>
-      </div>
-      <div class="container-contenido">
-        <a>⁝</a>
-    </div>
-    <div class="container-contenido">
-      <a>⁝</a>
-  </div>
-            
-      <div class="container-agregar">
-            <a href=""><img src="../../../assets/images/mas.png" alt=""></a>
-            <p>Agregar Elemento</p>
-      </div>
-    </div>
+<div class="container-main">
+  <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Subiendo imagen...</p>
+  </ngx-spinner>
+  
+    <form (ngSubmit)="onUpload()" novalidate enctype="multipart/form-data">
+      <div class="postFile">
+        <div class="custom-file">
+          <label for="imagen">Arrastre su Imagen</label>
+          <input type="file"  id="imagen" #catalogueInputFile
+          (change)="onFileChange($event)" accept="image/gif, image/jpeg, image/jpg, image/png, video/*" multiple="min=4 max=4">
+        </div>
+      </div> 
+        <div>
+          <label for="">Nombre del corte<input type="text" name="name" id="name" [(ngModel)]="name"></label>
+          <label for="">descripcion del corte<input type="text" name="description" id="description" [(ngModel)]="description"></label>
+        </div>
+        <div *ngIf="imagen" class="mt-5">
+            <h5>Vista Previa:</h5>
+            <div>
+                <li><img class="image-thumbnail" style="max-width: 100px" [src]="imagenMin"></li>
+            </div>
+        </div>
+        <div class="form-group d-flex justify-content-between my-3">
+            <button type="submit" class="btn btn-outline-success" [disabled]="!imagen"><i class="fas fa-upload"></i> Subir</button>
+            <button class="btn btn-outline-danger" [disabled]="!imagen" (click)="reset()"><i class="fas fa-sync-alt"></i> Reset</button>
+        </div>
+    </form>      
 </div>
