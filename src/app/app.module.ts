@@ -20,6 +20,13 @@ import { HeaderHomeComponent } from './components/header-home/header-home.compon
 import { SingInComponent } from './components/sing-in/sing-in.component';
 import { LoginComponent } from './components/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
+
+//external
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
 
 
 
@@ -52,7 +59,10 @@ const appRoutes: Routes = [
     BarberMeshShiftsComponent,
     BarbershopMeshShiftsComponent,
     HomeBarberComponent,
-    HistoriesCutsComponent
+    HistoriesCutsComponent,
+    ManageCatalogueComponent,
+    ListCatalogueComponent,
+    
 
   ],
   imports: [
@@ -60,7 +70,10 @@ const appRoutes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule,
+    NgbModalModule,
+    BrowserAnimationsModule
     
 
   ],
