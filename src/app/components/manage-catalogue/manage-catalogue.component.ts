@@ -56,7 +56,7 @@ export class ManageCatalogueComponent implements OnInit {
       if(response){
         console.log(response.url);
         this.imageURL=response.url
-        this.newCatalogue = new Catalogue(this.id, this.description, this.name, this.imageURL,this.newBarbershop);
+        this.newCatalogue = new Catalogue(this.id, this.name, this.imageURL, this.description,this.newBarbershop);
         console.log(this.newCatalogue);
         
         this.catalogueService.saveCatalogue(this.newCatalogue).subscribe(

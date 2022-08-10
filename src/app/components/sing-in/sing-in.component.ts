@@ -3,9 +3,9 @@ import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { Barbershop } from 'src/app/models/barbershop';
 import { BarberService } from 'src/app/services/barber/barber.service';
+import { CustomerService } from 'src/app/services/customer/customer.service';
 import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
 import { Customer } from 'src/app/models/Customer';
-import { CustomerService } from 'src/app/services/customer/customer.service';
 import { Barber } from 'src/app/models/Barber';
 
 @Component({
