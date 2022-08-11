@@ -56,11 +56,15 @@ export class ManageCatalogueComponent implements OnInit {
       if(response){
         console.log(response.url);
         this.imageURL=response.url
-        this.newCatalogue = new Catalogue(this.id, this.description, this.name, this.imageURL,this.newBarbershop);
+        this.newCatalogue = new Catalogue(this.id, this.name, this.imageURL, this.description,this.newBarbershop);
         console.log(this.newCatalogue);
         
         this.catalogueService.saveCatalogue(this.newCatalogue).subscribe(
-          response => console.log(response)
+          response =>{
+            this.reset();
+            console.log(response)
+          } 
+          
       )}
     })
     this.spinner.hide();
@@ -70,6 +74,8 @@ export class ManageCatalogueComponent implements OnInit {
     this.imagen = null;
     this.imagenMin = null;
     this.imagenFile.nativeElement.value='';
+    this.description="";
+    this.name="";
   }
 
 }
