@@ -90,24 +90,12 @@ export class SingInComponent implements OnInit {
 
     newBarbershop = new Barbershop(this.id, this.email, this.password, this.nickname, this.city, this.cellphone, this.typeUser, this.photo, this.descriptionBarbershop, this.locationBarbershop, 0);
     this.barbershopService.saveBarbeshop(newBarbershop).subscribe(
-<<<<<<< HEAD
       response  => {
         
         console.log(response);
-        swal.fire('Nuevo Barbero', `Hola ${this.nickname} te damos la bienvenida a BarberApp` , 'success')
+        swal.fire('Nuevo Barberias', `Hola ${this.nickname} te damos la bienvenida a BarberApp` , 'success')
         this.router.navigate(['/login'])
       }
-=======
-      
-      response => {
-
-        console.log(response);
-        swal.fire('Nuevo Cliente', `Hola ${this.nickname} te damos la bienvenida a BarberApp` , 'success')
-        this.router.navigate(['/login'])
-
-      }
-      
->>>>>>> 49822602bd0dd85b0174ddc3d481695afc255c83
       
     );
 
@@ -136,20 +124,14 @@ export class SingInComponent implements OnInit {
 
     newCustomer = new Customer(this.id, this.email, this.password, this.nickname, this.city, this.cellphone, this.typeUser, this.photo, this.ageCustomer);
     this.customerService.saveCustomer(newCustomer).subscribe(
-<<<<<<< HEAD
+
       response =>{
         console.log(response);
         swal.fire('Nuevo Cliente', `Hola ${this.nickname} te damos la bienvenida a BarberApp` , 'success')
         this.router.navigate(['/login'])
-=======
-      response => {
 
-        console.log(response);
-        swal.fire('Nuevo Cliente', `Hola ${this.nickname} te damos la bienvenida a BarberApp` , 'success')
-        this.router.navigate(['/login'])
-        
->>>>>>> 49822602bd0dd85b0174ddc3d481695afc255c83
       }
+
     );
   }
 
