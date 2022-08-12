@@ -21,3 +21,52 @@
     gap: 20px;
     border-radius: 5px;
 }
+
+
+.wrapper{
+    background-color: #ffffff;
+    width: 100%;
+    padding: 15px 5px 0px 5px;
+    height: 50px;
+    border: n ;
+
+}
+.inputData{
+    width: 100%;
+    position: relative;
+    border-radius: 10px;
+    border: none;
+}
+
+.inputData input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #000000;
+}
+
+.inputData input:focus ~ label,
+.inputData input:valid ~ label{
+    transform: translateY(-10px);
+    font-size: 15px;
+}
+.wrapper input[type="email"]:focus ~ label,
+.inputData input:valid ~ labe{
+    transform: translateY(-13px);
+}
+
+.inputData label{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: rgb(145, 145, 145);
+    pointer-events: none;
+    transition: all 0.4s ease;
+    font-size: 13px;
+}
+
+
+
+
+

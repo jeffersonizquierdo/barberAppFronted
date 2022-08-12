@@ -1,4 +1,5 @@
 import { Barber } from 'src/app/models/Barber';
+import { Catalogue } from './catalogue';
 export class Barbershop{
 
   id:Number;
@@ -13,6 +14,7 @@ export class Barbershop{
   location:string;
   qualification: Number;
   listBarbers:Barber[] = [];
+  catalogue:Catalogue[] = [];
 
 
   constructor(id:Number, email:string, password: string, nickname:string, city:string, cellphone:string,
