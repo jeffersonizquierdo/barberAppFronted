@@ -6,6 +6,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { Catalogue } from 'src/app/models/catalogue';
 import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
 
+
 @Component({
   selector: 'app-manage-catalogue',
   templateUrl: './manage-catalogue.component.html',
@@ -62,12 +63,14 @@ export class ManageCatalogueComponent implements OnInit {
         this.catalogueService.saveCatalogue(this.newCatalogue).subscribe(
           response =>{
             this.reset();
+            this.spinner.hide();
+            this.router.navigate(["/catalogue"])
             console.log(response)
           } 
           
       )}
     })
-    this.spinner.hide();
+    
   }
 
   reset(){
