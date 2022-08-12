@@ -17,14 +17,12 @@ export class BarberService {
 
     return this.http.post<any>("http://localhost:8080/barber/save", newBarber, {headers: this.httpHeadres}).pipe(
 
-    
+    catchError(e =>{
 
-      catchError(e =>{
-
-        console.error(e.error.Mensaje);
-        swal.fire(e.error.Mensaje, e.error.Error, 'error');
-        return throwError(e);
-      })
+      console.error(e.error.Mensaje);
+      swal.fire(e.error.Mensaje, e.error.Error, 'error');
+      return throwError(e);
+    })
     )
     
   }

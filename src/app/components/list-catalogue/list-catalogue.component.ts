@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Catalogue } from 'src/app/models/catalogue';
+import {  NgxSpinnerService } from 'ngx-spinner';
 import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
 
 @Component({
@@ -9,16 +9,32 @@ import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
 })
 export class ListCatalogueComponent implements OnInit {
 
-  imagenes:Catalogue[]=[];
+  images:any=[];
 
-  constructor(private imagenService:CatalogueService) { }
+  constructor(private imagenService:CatalogueService, private spinner:NgxSpinnerService) { }
 
   ngOnInit(): void {
-    this.imagenService.list().subscribe(
+   this.loaderImage();
+  }
+
+  loaderImage():void{
+    this.imagenService.listCatalogo().subscribe(
       data =>{
-        this.imagenes = data;
+        this.images = data;
       }
     )
   }
 
+  deleter(id:Number): void{
+    this.spinner.show();
+    this.imagenService.deleteCatalogue(id).subscribe(
+      data=>{
+        this.spinner.hide();
+        this.loaderImage()
+      },err=>{
+        this.spinner.show();
+        console.log(err);
+      }
+    )
+  }
 }
