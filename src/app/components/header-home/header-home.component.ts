@@ -12,8 +12,8 @@ export class HeaderHomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  anonymous = true;
-  barbershop = false;
+  anonymous = false;
+  barbershop = true;
   barber = false;
   customer = false;
 
