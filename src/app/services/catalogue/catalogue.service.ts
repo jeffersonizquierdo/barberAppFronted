@@ -29,7 +29,7 @@ export class CatalogueService {
   }
 
   listCatalogo():  Observable<Catalogue>{
-    return this.httpClient.get<Catalogue>("http://localhost:8080/images/catalogue")
+    return  this.httpClient.get<Catalogue>(`http://localhost:8080/barbershop/consultCatalogue/${1}`)
   } 
 
   deleteCatalogue(id:Number):any{
