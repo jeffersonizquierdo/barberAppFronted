@@ -21,6 +21,8 @@ export class ListCatalogueComponent implements OnInit {
     this.imagenService.listCatalogo().subscribe(
       data =>{
         this.images = data;
+        console.log(this.images);
+        
       }
     )
   }

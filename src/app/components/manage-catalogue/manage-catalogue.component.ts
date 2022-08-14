@@ -6,6 +6,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { Catalogue } from 'src/app/models/catalogue';
 import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
 
+
 @Component({
   selector: 'app-manage-catalogue',
   templateUrl: './manage-catalogue.component.html',
@@ -13,6 +14,10 @@ import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
 })
 export class ManageCatalogueComponent implements OnInit {
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7aeba78be5908d90c8a447e40a6af923bfd31d97
   imagen:File;
   imagenMin:File;
   description:string;
@@ -54,25 +59,29 @@ export class ManageCatalogueComponent implements OnInit {
       if(response){
         console.log(response.url);
         this.imageURL=response.url
-        this.newCatalogue = new Catalogue(this.id, this.name, this.imageURL, this.description,this.newBarbershop);
+        this.newCatalogue = new Catalogue(this.id,  this.name, this.imageURL, this.description,this.newBarbershop);
         console.log(this.newCatalogue);
         
         this.catalogueService.saveCatalogue(this.newCatalogue).subscribe(
           response =>{
             this.reset();
-            console.log(response)
+            console.log(response);
+            this.spinner.hide();
+            this.router.navigate(["/app-home-main"])
           } 
-          
       )}
     })
-    this.spinner.hide();
+    
   }
 
   reset(){
     this.imagen = null;
     this.imagenMin = null;
+<<<<<<< HEAD
     this.description="";
     this.name="";
+=======
+>>>>>>> 7aeba78be5908d90c8a447e40a6af923bfd31d97
   }
 
 }

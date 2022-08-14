@@ -40,7 +40,7 @@ const appRoutes: Routes = [
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
-  {path:'catalogue', component:ManageCatalogueComponent},
+  {path:'manage-catalogue', component:ManageCatalogueComponent},
 ]
 
 @NgModule({
