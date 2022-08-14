@@ -15,13 +15,12 @@
       </div> 
 
 
-      <div  style="margin-top: 30px;" class="wrapper" >
+      <div style="margin-top: 30px;" class="wrapper">
         <div class="inputData" >
           <input class="intp" type="text" name="description" autocomplete="off" required  [(ngModel)]="name">
           <label for="description">Nombre</label>
         </div>
       </div>
-
 
 
       <div  style="margin-top: 30px;" class="des" >
@@ -30,15 +29,16 @@
         </div>
       </div>
       
-        <div *ngIf="imagen" class="mt-5">
-            <h5>Vista Previa:</h5>
-            <div>
-                <li><img class="image-thumbnail" style="max-width: 100px" [src]="imagenMin"></li>
-            </div>
-        </div>
+      <div *ngIf="imagen" class="mt-5">
+          <h5>Vista Previa:</h5>
+          <div>
+              <li><img class="image-thumbnail" style="max-width: 100px" [src]="imagenMin"></li>
+          </div>
+      </div>
+
         <div class="form-group d-flex justify-content-between my-3">
             <button (click)="onUpload()"  ype="submit" class="btn btn-outline-success" [disabled]="!imagen"><i class="fas fa-upload"></i> Subir</button>
             <button class="btn btn-outline-danger" [disabled]="!imagen" (click)="reset()"><i class="fas fa-sync-alt"></i> Reset</button>
         </div>
-    </form>      
+    </form>
 </div>

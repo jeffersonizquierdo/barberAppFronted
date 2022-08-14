@@ -13,8 +13,6 @@ import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
 })
 export class ManageCatalogueComponent implements OnInit {
 
-  @ViewChild('imagenInputFile', {static: false}) imagenFile: ElementRef;
-
   imagen:File;
   imagenMin:File;
   description:string;
@@ -73,7 +71,6 @@ export class ManageCatalogueComponent implements OnInit {
   reset(){
     this.imagen = null;
     this.imagenMin = null;
-    this.imagenFile.nativeElement.value='';
     this.description="";
     this.name="";
   }

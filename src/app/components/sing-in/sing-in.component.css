@@ -2,9 +2,10 @@
     margin:0 auto;
     max-width:500px;
     color: white;
-    background-color: #2d2d4f;
+    background-color: #171f2a;
     padding: 50px;
     border-radius: 20px;
+    box-shadow: 1px 5px 16px 8px rgba(0,0,0,0.75);
 }
 
 form{
@@ -72,14 +73,14 @@ form h3{
 
 
 .wrapper{
-    background-color: #2d2d4f;
+    background-color: #171f2a;
     width: 100%;
     padding: 15px 5px 5px 5px;
 }
 .inputData{
     width: 100%;
     position: relative;
-    background-color: #2d2d4f;
+    background-color: #171f2a;
     border-radius: 10px;
     border: none;
 }
@@ -90,7 +91,7 @@ form h3{
     width: 100%;
     border: none;
     outline: none;
-    background-color: #2d2d4f;
+    background-color: #171f2a;
     color: #ffffff;
 }
 
@@ -140,8 +141,4 @@ form a{
     text-decoration: none;
     color: rgb(186, 186, 186);
     text-align: center;
-}
-
-.des{
-    outline: none;
 }
