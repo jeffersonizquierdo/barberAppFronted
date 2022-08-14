@@ -14,10 +14,6 @@ import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
 })
 export class ManageCatalogueComponent implements OnInit {
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7aeba78be5908d90c8a447e40a6af923bfd31d97
   imagen:File;
   imagenMin:File;
   description:string;
@@ -77,11 +73,9 @@ export class ManageCatalogueComponent implements OnInit {
   reset(){
     this.imagen = null;
     this.imagenMin = null;
-<<<<<<< HEAD
     this.description="";
     this.name="";
-=======
->>>>>>> 7aeba78be5908d90c8a447e40a6af923bfd31d97
+
   }
 
 }
