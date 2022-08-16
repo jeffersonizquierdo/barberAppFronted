@@ -39,4 +39,8 @@ export class ListCatalogueComponent implements OnInit {
       }
     )
   }
+
+  openModal(){
+    alert("modal")
+  }
 }

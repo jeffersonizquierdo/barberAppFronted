@@ -33,6 +33,6 @@ export class CatalogueService {
   } 
 
   deleteCatalogue(id:Number):any{
-
+    return  this.httpClient.get<Catalogue>(`http://localhost:8080/barbershop/consultCatalogue/${id}`)
   }
 }

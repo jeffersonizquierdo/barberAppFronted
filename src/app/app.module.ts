@@ -27,6 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
+import { OpenModalComponent } from './components/open-modal/open-modal.component';
+import { LoadPublicityComponent } from './components/load-publicity/load-publicity.component';
 
 
 
@@ -63,6 +65,8 @@ const appRoutes: Routes = [
     HistoriesCutsComponent,
     ManageCatalogueComponent,
     ListCatalogueComponent,
+    OpenModalComponent,
+    LoadPublicityComponent,
     
 
   ],
