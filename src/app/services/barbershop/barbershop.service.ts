@@ -3,9 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Barbershop } from 'src/app/models/barbershop';
-import Swal from 'sweetalert2';
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -23,7 +20,7 @@ export class BarbershopService {
       catchError(e =>{
 
         console.error(e.error.Mensaje);
-        Swal.fire(e.error.Mensaje, e.error.Error, 'error');
+        swal.fire(e.error.Mensaje, e.error.Error, 'error');
         return throwError(e);
       }));
   }

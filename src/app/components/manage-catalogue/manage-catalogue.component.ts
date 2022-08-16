@@ -13,8 +13,6 @@ import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
 })
 export class ManageCatalogueComponent implements OnInit {
 
-  @ViewChild('imagenInputFile', {static: false}) imagenFile: ElementRef;
-
   imagen:File;
   imagenMin:File;
   description:string;
@@ -50,6 +48,7 @@ export class ManageCatalogueComponent implements OnInit {
 
 
   onUpload(){
+
     this.newBarbershop = new Barbershop(1, "barber", "dsd", "dsddsd", "Cali", "3000", 1, "photo", "descriptionBarbershop", "locationBarbershop", 0);
     this.spinner.show();
     this.catalogueService.upload(this.imagen, "hairstyle").subscribe( (response:any) => {
@@ -67,13 +66,14 @@ export class ManageCatalogueComponent implements OnInit {
           
       )}
     })
+    
     this.spinner.hide();
+    this.router.navigate([""])
   }
 
   reset(){
     this.imagen = null;
     this.imagenMin = null;
-    this.imagenFile.nativeElement.value='';
     this.description="";
     this.name="";
   }

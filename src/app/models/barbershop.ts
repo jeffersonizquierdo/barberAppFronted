@@ -16,7 +16,6 @@ export class Barbershop{
   listBarbers:Barber[] = [];
   catalogue:Catalogue[] = [];
 
-
   constructor(id:Number, email:string, password: string, nickname:string, city:string, cellphone:string,
     typeUser:Number, photo:string, description:string, location:string, qualification:Number){
  
