@@ -32,6 +32,7 @@ import { ListCatalogueComponent } from './components/list-catalogue/list-catalog
 
 const appRoutes: Routes = [
 
+  {path:'', component:HomeMainComponent},
   {path:'homebarbershop', component:HomeBarbershopComponent},
   {path:'homecustomer', component:HomeCustomerComponent},
   {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
@@ -40,7 +41,7 @@ const appRoutes: Routes = [
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
-  {path:'manage-catalogue', component:ManageCatalogueComponent},
+  {path:'managecatalogue', component:ManageCatalogueComponent},
 ]
 
 @NgModule({
@@ -50,7 +51,6 @@ const appRoutes: Routes = [
     SliderComponent,
     HeaderHomeComponent,
     SingInComponent,
-
     HomeBarbershopComponent,
     HomeCustomerComponent,
     RankingComponent,
@@ -63,6 +63,7 @@ const appRoutes: Routes = [
     HistoriesCutsComponent,
     ManageCatalogueComponent,
     ListCatalogueComponent,
+    LoginComponent
     
 
   ],

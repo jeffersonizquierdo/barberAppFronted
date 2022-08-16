@@ -1,6 +1,6 @@
 <div class="login">
 
-  <form class="login-form">    
+  <form method="post " class="login-form">    
 
 
       <h3>Iniciar sesion</h3>
@@ -8,7 +8,7 @@
 
   <div class="wrapper" >
       <div class="inputData" >
-        <input class="intp" type="text" name="email" autocomplete="off" required>
+        <input class="intp" type="text" name="email" autocomplete="off" autofocus required [(ngModel)]="usuario.username">
         <div class="line" ></div>
         <label for="email">Correo</label>
       </div>
@@ -16,7 +16,7 @@
 
     <div class="wrapper" >
       <div class="inputData" >
-        <input class="intp" type="password" name="constraseña" autocomplete="off" required>
+        <input class="intp" type="password" name="constraseña" autocomplete="off" required  [(ngModel)]="usuario.password">
         <div class="line" ></div>
         <label for="constraseña">Contraseña</label>
       </div>
@@ -28,13 +28,10 @@
       <label for=""><input value="1" type="radio" name="type"/>Barberia</label>
     </div>
     
-    <input type="button" value="Login" class="login-button"/>
+    <input (click)="login()" type="submit"  value="Login" class="login-button"/>
     <br>
     <a  href="singup" class="sign-up">Registrarse!</a>
     <br>
     <h6 class="no-access">¿No puedes acceder a tu cuenta?</h6>
   </form>
-</div>
-<div class="error-page">
-  <div class="try-again">Error: Try again?</div>
 </div>
