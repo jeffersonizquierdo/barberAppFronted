@@ -6,6 +6,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { Catalogue } from 'src/app/models/catalogue';
 import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
 
+
 @Component({
   selector: 'app-manage-catalogue',
   templateUrl: './manage-catalogue.component.html',
@@ -55,20 +56,23 @@ export class ManageCatalogueComponent implements OnInit {
       if(response){
         console.log(response.url);
         this.imageURL=response.url
-        this.newCatalogue = new Catalogue(this.id, this.name, this.imageURL, this.description,this.newBarbershop);
+        this.newCatalogue = new Catalogue(this.id,  this.name, this.imageURL, this.description,this.newBarbershop);
         console.log(this.newCatalogue);
         
         this.catalogueService.saveCatalogue(this.newCatalogue).subscribe(
           response =>{
             this.reset();
-            console.log(response)
+            console.log(response);
+            this.spinner.hide();
+            this.router.navigate(["/app-home-main"])
           } 
-          
       )}
     })
     
+
     this.spinner.hide();
     this.router.navigate([""])
+
   }
 
   reset(){
@@ -76,6 +80,7 @@ export class ManageCatalogueComponent implements OnInit {
     this.imagenMin = null;
     this.description="";
     this.name="";
+
   }
 
 }

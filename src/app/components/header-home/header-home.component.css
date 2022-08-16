@@ -73,22 +73,6 @@
    margin: 0 5px;
 }
 
-.linksAnonymous li:hover{
-
-    background-color: #394b63;
-    border-radius: 10px;
-    height: 35px;
-    
- }
-
-
- .linksAnonymous li{
-
-
-    border-radius: 10px;
-    height: 35px;
-    
- }
 
 .links {
     display: flex;
@@ -181,3 +165,28 @@
     pointer-events: none;
     transition: all 0.4s ease;
 }
+
+
+.boton {
+    color: #fff !important;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: #171f2a;
+    border: 2px solid none;
+    position: relative;
+  }
+  .boton:before {
+    content:"";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 0px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.224);
+    transition: all .4s ease;
+  }
+  .boton:hover:before {
+  width: 100%;
+  border-radius: 18px;
+  }
