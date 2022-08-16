@@ -190,6 +190,7 @@
 
 .menu_bar{
     display: block;
+    padding: 36px 0 36px 0;
 }
 
 .bt-menu{
@@ -207,7 +208,7 @@
     nav{
         display: none;
         right: 3px;
-        top: 96px;
+        top: 35px;
         position: absolute;
         padding: 0 3px 5px 10px;
         z-index: 10000;
@@ -233,6 +234,7 @@
 
     .menu_bar:hover nav{
         display: block;
+        transition: 2s;
     }
 
     .name{
