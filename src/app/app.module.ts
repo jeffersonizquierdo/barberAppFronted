@@ -30,6 +30,7 @@ import { ListCatalogueComponent } from './components/list-catalogue/list-catalog
 
 
 
+
 const appRoutes: Routes = [
 
   {path:'homebarbershop', component:HomeBarbershopComponent},
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
   {path:'manage-catalogue', component:ManageCatalogueComponent},
+  {path:'hola', component:PromotionComponent},
 ]
 
 @NgModule({
