@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.contenedor{
+    display: flex;
+    justify-content: flex-end;
+
+
+   
+}
+
+.contenedor .card{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.colum{
+    background-color: white;
+    width: 497px;
+    height: 478px;
+    border-radius: 10px;
+}
+.title{
+    height: 43px;
+    text-align: center;
+    margin: 23px 0px
+}
+
+.description{
+    text-align: center;
+    padding: 51px;
+}
+.button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card{
+    margin: 80px 11%;
+}

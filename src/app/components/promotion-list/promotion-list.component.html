@@ -1,0 +1,29 @@
+<div class="contenedor">
+  <div class="card" *ngFor="let imagen  of images">
+   
+    <div class="colum">
+      <div class="title">
+        <h3 class="card-title">{{imagen .name}}</h3>
+      </div>
+       
+        <img  class="card-img-top"  style="height: 200px; width: 100%; display: block;" src="{{imagen.url}}" alt="">
+        
+        <div class="description">
+          <p class="card-text">{{imagen.description}}</p>
+        </div>
+        <div class="button">
+          <button  class="btn btn-outline-prymary"><i class="far fa-eye"></i> Ver</button>
+          <button  class="btn btn-outline-danger"><i class="far fa-trash-alt"></i>Borrar</button>
+        </div>
+        <div class="card-footer text-muted">
+          2 days ago
+        </div>
+    </div>
+
+
+
+
+  </div>
+</div>
+
+
