@@ -31,10 +31,13 @@ export class ListCatalogueComponent implements OnInit {
     this.spinner.show();
     this.imagenService.deleteCatalogue(id).subscribe(
       data=>{
-        this.spinner.hide();
-        this.loaderImage()
+        if(data){
+          this.spinner.hide();
+          this.loaderImage()
+        }
       },err=>{
-        this.spinner.show();
+        this.spinner.hide();;
+        alert(err);
         console.log(err);
       }
     )
