@@ -22,17 +22,10 @@
                 <a [routerLink]="['/singup']"><li class="boton"><img src="../../../assets/images/agregar-simbolo-de-usuario.png" alt="">Registrarse</li></a>
             </div>
 
-            <ul class="dropdown">
-                <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  {{authService.usuario.nombre}}
-                </a>
-              
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <div class="login">
+                <a *ngIf="authService.isAuthenticated() == true"  [routerLink]="['/login']"><li class="boton"><button (click)="logout()" >Cerrar Sesion</button></li></a>
+            </div>
 
-                    <button class="dropdown-item" type="submit">Sing Out</button>
- 
-                </ul>
-            </ul>
         </ul>
 
         

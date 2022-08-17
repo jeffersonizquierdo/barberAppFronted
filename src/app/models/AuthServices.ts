@@ -1,8 +1,11 @@
 import { HttpClient, HttpHeaders} from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 import { Observable } from "rxjs";
+import Swal from "sweetalert2";
 import { HeaderHomeComponent } from "../components/header-home/header-home.component";
 import { Usaurio } from "./Usuarios";
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +18,7 @@ export class AuthServices{
   private _token:string;
 
 
-  constructor(private http:HttpClient){
+  constructor(private http:HttpClient, private router:Router){
 
     
 
@@ -25,8 +28,8 @@ export class AuthServices{
 
     if(this._usuario != null) return this._usuario;
 
-    else if (this._usuario == null && sessionStorage.getItem('usuario') != null){
-      this._usuario = JSON.parse(sessionStorage.getItem('usaurio')) as Usaurio;
+    else if (this._usuario == null && localStorage.getItem('usuario') != null){
+      this._usuario = JSON.parse(localStorage.getItem('usaurio')) as Usaurio;
 
       return this._usuario
     }
@@ -39,8 +42,8 @@ export class AuthServices{
 
     if(this._token != null) return this._token;
 
-    else if (this._token == null && sessionStorage.getItem('token') != null){
-      this._token = sessionStorage.getItem('token');
+    else if (this._token == null && localStorage.getItem('token') != null){
+      this._token = localStorage.getItem('token');
 
       return this._token
     }
@@ -76,11 +79,11 @@ export class AuthServices{
     this._usuario.email = payload.email;
     this._usuario.roles = payload.authorities;
 
-    console.log(this.usuario.roles + 'wwwwwwwwwwwww');
+  
     
    //(this.usuario.roles)
     
-    sessionStorage.setItem('usuario', JSON.stringify(this._usuario))
+    localStorage.setItem('usuario', JSON.stringify(this._usuario))
 
   }
 
@@ -88,7 +91,7 @@ export class AuthServices{
   saveToken(accessToken:string):void{
 
     this._token = accessToken;
-    sessionStorage.setItem('token', accessToken)
+    localStorage.setItem('token', accessToken)
 
   }
 
@@ -107,12 +110,23 @@ export class AuthServices{
 
     let payload = this.dataToken(this.token)
 
-    if (payload != null && payload.user_name && payload.user_name.length > 0){
+    if (payload != null  && payload.user_name.length > 0){
 
       return true;
     }
 
     return false;
+
+  }
+
+  logout():void{
+
+    this._token = null;
+    this._usuario = null;
+    localStorage.removeItem("token");
+    localStorage.removeItem("usuario")
+    localStorage.clear()
+    this.router.navigate(["/login"])
 
   }
 

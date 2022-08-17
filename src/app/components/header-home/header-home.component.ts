@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthServices } from 'src/app/models/AuthServices';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-header-home',
   templateUrl: './header-home.component.html',
@@ -19,22 +19,12 @@ export class HeaderHomeComponent implements OnInit {
   customer = false;
 
 
-  // changeHeader(e:any){
 
+  logout():void{
 
-  //   if(e == 'ROLE_BARBERSHOP') {
-
-  //     this.anonymous = false;
-  //     this.barbershop = true;
-  //     this.barber = false;
-  //     this.customer = false;
-  //   }
-
-  //   else if (e == null){
-  //     return;
-  //   }
-
-
-  // }
+    Swal.fire('Login', `session cerrada`, 'info')
+    this.authService.logout();
+    
+  }
 
 }

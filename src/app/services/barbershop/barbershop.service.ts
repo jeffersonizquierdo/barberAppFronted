@@ -4,12 +4,13 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Barbershop } from 'src/app/models/barbershop';
 import { Router } from '@angular/router';
+import { AuthServices } from 'src/app/models/AuthServices';
 @Injectable({
   providedIn: 'root'
 })
 export class BarbershopService {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private authService: AuthServices) { }
 
   private httpHeadres = new HttpHeaders({'Content-Type' : 'application/json'})
 
@@ -41,6 +42,20 @@ export class BarbershopService {
 
     return false;
 
+  }
+
+
+
+  private addAuthorizationHeader(){
+
+    let token = this.authService;
+
+    if (token != null){
+
+      return this.httpHeadres.append('Authorization', 'Bearer' + token)
+    }
+
+    return this.httpHeadres
 
   }
 

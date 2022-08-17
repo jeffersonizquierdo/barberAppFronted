@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
 
     if(this.authServices.isAuthenticated()){
       Swal.fire('Login', `Hola ${this.authServices.usuario.username} ya estas autenticado`, 'info')
-      this.router.navigate(['/homebarbershop'])
     }
   }
 
@@ -47,7 +46,7 @@ export class LoginComponent implements OnInit {
 
       let usuario = this.authServices.usuario;
 
-      this.router.navigate(['/homebarbershop'])
+      this.router.navigate(['/homebarbershop/1'])
       Swal.fire('Login', 'Hola ' + usuario.username + ', bienvenido', 'success');
     
     }, error => {
