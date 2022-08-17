@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 import { Barbershop } from 'src/app/models/barbershop';
 import { Promotion } from 'src/app/models/Pomotion';
 import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
@@ -21,7 +23,7 @@ export class PromotionComponent implements OnInit {
   imagenMin:File;
   images:any;
   
-  constructor(private catalogueService:CatalogueService,private router:Router, private promotionService:PromotionService) { }
+  constructor(private catalogueService:CatalogueService,private router:Router, private promotionService:PromotionService ,private spinner:NgxSpinnerService) { }
 
   ngOnInit(): void {
     
@@ -36,6 +38,7 @@ export class PromotionComponent implements OnInit {
   }
   savePromotion(){
     this.newBarbershop = new Barbershop(1, "barber", "dsd", "dsddsd", "Cali", "3000", 1, "photo", "descriptionBarbershop", "locationBarbershop", 0);
+    this.spinner.show();
     this.catalogueService.upload(this.imagen, "promotionsimages").subscribe( (response:any) => {
       if(response){
         console.log(response.url);
@@ -47,7 +50,8 @@ export class PromotionComponent implements OnInit {
           response =>{
             this.reset();
             console.log(response); 
-            this.router.navigate(["/app-home-main"])
+            this.spinner.hide();
+            window.location.reload();
           } 
       )}
     })

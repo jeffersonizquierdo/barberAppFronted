@@ -64,14 +64,14 @@ export class ManageCatalogueComponent implements OnInit {
             this.reset();
             console.log(response);
             this.spinner.hide();
-            this.router.navigate(["/app-home-main"])
+      
           } 
       )}
     })
     
 
     this.spinner.hide();
-    this.router.navigate([""])
+
 
   }
 

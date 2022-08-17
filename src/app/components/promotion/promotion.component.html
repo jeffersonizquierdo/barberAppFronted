@@ -1,22 +1,10 @@
-<div class="container" *ngFor="let imagen of images">
-
-
-  <div class="profile">
-    <img src="{{imagen.url}}" alt="">
-    <p><a href="">{{imagen.name}}</a></p>
-  </div>
-  
-
-  <p class="description" > {{imagen.description}}</p>
-  
-  <img class="image" src="{{imagen.url}}" alt="">
-
-</div>
-
-
 <app-promotion-list></app-promotion-list>
 
 <div class="container-main"> 
+
+    <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+      <p style="font-size: 20px; color: white">Subiendo promosion...</p>
+    </ngx-spinner>
     <form novalidate enctype="multipart/form-data">
       <div class="postFile">
         <div class="custom-file">

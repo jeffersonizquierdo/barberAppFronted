@@ -20,4 +20,10 @@ export class PromotionService {
   listPromotion():  Observable<Promotion>{
     return  this.httpClient.get<Promotion>(`http://localhost:8080/barbershop/consultPromotion/${1}`)
   } 
+
+
+  deletepromotion(id: Number) {
+    return this.httpClient.delete<Promotion>( ` http://localhost:8080/promotions/delete/${id}`)
+  }
+
 }

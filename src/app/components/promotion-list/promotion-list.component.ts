@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { PromotionService } from 'src/app/services/pormotion/promotion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-promotion-list',
@@ -9,7 +11,7 @@ import { PromotionService } from 'src/app/services/pormotion/promotion.service';
 export class PromotionListComponent implements OnInit {
   imagen:File; 
   images:any;
-  constructor(private promotionService:PromotionService) { }
+  constructor(private promotionService:PromotionService ,private sniper2:NgxSpinnerService) { }
 
   ngOnInit(): void {
 
@@ -26,4 +28,27 @@ export class PromotionListComponent implements OnInit {
     )
   }
 
+  delete  (id:Number):void{
+
+    // Swal.fire({
+    //   title: 'Desea elimnar esta promocion',
+    //   icon: 'question',
+    //   iconHtml: '?',
+    //   confirmButtonText: 'si',
+    //   cancelButtonText: 'no',
+    //   showCancelButton: true,
+    //   showCloseButton: true
+    // })
+
+    this.promotionService.deletepromotion(id).subscribe(
+      data=>{
+        if(data){
+          this.loaderImage()
+        }
+      },err=>{
+        alert(err)
+        console.log(err)
+      }
+    )
+  }
 }
