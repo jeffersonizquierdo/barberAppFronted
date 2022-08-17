@@ -20,28 +20,46 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    if(this.authServices.isAuthenticated()){
+      Swal.fire('Login', `Hola ${this.authServices.usuario.username} ya estas autenticado`, 'info')
+      this.router.navigate(['/homebarbershop'])
+    }
   }
 
   login():void{
      
     console.log(this.usuario);
+
     if(  this.usuario.password == null || this.usuario.username == null){
+
       Swal.fire('Error Login', 'usuario o consrtaseña vacias!', 'error')
       return;
+
     }
-      this.authServices.login(this.usuario).subscribe( response => {
-        console.log(response);
+
+    this.authServices.login(this.usuario).subscribe( response => {
+    
+      console.log(response);
         
-
-      let payload = JSON.parse(atob(response.access_token.split(".")[1]))
-      console.log(payload);
-
       this.authServices.saveUser(response.access_token);
       this.authServices.saveToken(response.access_token);
 
+      let usuario = this.authServices.usuario;
+
       this.router.navigate(['/homebarbershop'])
-      Swal.fire('Login', 'Hola ' + payload.user_name + ', bienvenido', 'success')})
+      Swal.fire('Login', 'Hola ' + usuario.username + ', bienvenido', 'success');
     
+    }, error => {
+
+      if(error.status == 400){
+        Swal.fire('Error Login', 'usuario o contraseña incorrecta!', 'error')
+      }
+
+    }  
+   );
+
+   
   }
  
 
