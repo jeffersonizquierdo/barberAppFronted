@@ -1,6 +1,5 @@
 import { Barbershop } from 'src/app/models/barbershop';
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Catalogue } from 'src/app/models/catalogue';
 import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
@@ -25,7 +24,7 @@ export class ManageCatalogueComponent implements OnInit {
   //object
   newCatalogue: Catalogue
 
-  constructor(private catalogueService:CatalogueService,private router:Router,private spinner: NgxSpinnerService){}
+  constructor(private catalogueService:CatalogueService,private spinner: NgxSpinnerService){}
 
   ngOnInit(): void {
   }
@@ -63,7 +62,7 @@ export class ManageCatalogueComponent implements OnInit {
             this.reset();
             console.log(response);
             this.spinner.hide();
-            this.router.navigate(["/"])
+            window.location.reload();
           } 
       )}
     })
