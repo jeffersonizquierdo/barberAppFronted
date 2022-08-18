@@ -1,0 +1,27 @@
+<h1>Catalogo</h1>
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">Eliminando...</p>
+</ngx-spinner>
+<div class="containerCatalogue" *ngFor="let image of images">
+    <div class="catalogue" >
+        <div class="card mb-3 animated zoomIn" >
+            <h3 class="card-header">{{image.name}}</h3>
+            <div class="card-body">
+                <h5 class="card-titlr"><b>ID:</b>{{image.id}}</h5>
+            </div>
+            <img style="height: 200px; width: 100%; display: block;" src="{{image.url}}" alt="">
+            
+            <div class="card-body">
+              <p class="card-text">{{image.description}}</p>
+            </div>
+            <div class="card-body d-flex justify-content-between">
+              <button  class="btn btn-outline-prymary" (click)="openModal()"><i class="far fa-eye"></i> Ver</button>
+              <button  class="btn btn-outline-danger" (click)="deleter(image.id)"><i class="far fa-trash-alt"></i>Borrar</button>
+            </div>
+            <div class="card-footer text-muted">
+              2 days ago
+            </div>
+        </div>
+    </div>
+    
+</div>
