@@ -26,9 +26,15 @@ import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
+<<<<<<< HEAD
 
 import { PromotionListComponent } from './components/promotion-list/promotion-list.component';
 
+=======
+import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
+import { OpenModalComponent } from './components/open-modal/open-modal.component';
+import { LoadPublicityComponent } from './components/load-publicity/load-publicity.component';
+>>>>>>> 900f1b37845e67e85166e540fc7b8112575ce755
 
 
 
@@ -64,8 +70,15 @@ const appRoutes: Routes = [
     BarbershopMeshShiftsComponent,
     HomeBarberComponent,
     HistoriesCutsComponent,
+<<<<<<< HEAD
 
     PromotionListComponent,
+=======
+    ManageCatalogueComponent,
+    ListCatalogueComponent,
+    OpenModalComponent,
+    LoadPublicityComponent,
+>>>>>>> 900f1b37845e67e85166e540fc7b8112575ce755
     
 
   ],
