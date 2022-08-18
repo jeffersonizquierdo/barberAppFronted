@@ -28,6 +28,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { PromotionListComponent } from './components/promotion-list/promotion-list.component';
+import { ListBarberComponent } from './components/list-barber/list-barber.component';
 
 
 
@@ -66,6 +67,7 @@ const appRoutes: Routes = [
     HistoriesCutsComponent,
 
     PromotionListComponent,
+      ListBarberComponent,
     
 
   ],
