@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ManageCatalogueComponent } from './manage-catalogue.component';
+import { OpenModalComponent } from './open-modal.component';
 
-describe('ManageCatalogueComponent', () => {
-  let component: ManageCatalogueComponent;
-  let fixture: ComponentFixture<ManageCatalogueComponent>;
+describe('OpenModalComponent', () => {
+  let component: OpenModalComponent;
+  let fixture: ComponentFixture<OpenModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ManageCatalogueComponent ]
+      declarations: [ OpenModalComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ManageCatalogueComponent);
+    fixture = TestBed.createComponent(OpenModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

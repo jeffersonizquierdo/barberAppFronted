@@ -20,13 +20,22 @@ import { HeaderHomeComponent } from './components/header-home/header-home.compon
 import { SingInComponent } from './components/sing-in/sing-in.component';
 import { LoginComponent } from './components/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
-import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
+
 
 //external
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
+
+
+import { PromotionListComponent } from './components/promotion-list/promotion-list.component';
+import { ListBarberComponent } from './components/list-barber/list-barber.component';
+
+
 import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
+import { OpenModalComponent } from './components/open-modal/open-modal.component';
+import { LoadPublicityComponent } from './components/load-publicity/load-publicity.component';
+import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
 
 
 
@@ -40,7 +49,8 @@ const appRoutes: Routes = [
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
-  {path:'manage-catalogue', component:ManageCatalogueComponent},
+  {path:'h', component:ManageCatalogueComponent},
+  {path:'hola', component:PromotionComponent},
 ]
 
 @NgModule({
@@ -61,8 +71,16 @@ const appRoutes: Routes = [
     BarbershopMeshShiftsComponent,
     HomeBarberComponent,
     HistoriesCutsComponent,
+
+
+    PromotionListComponent,
+    ListBarberComponent,
+
     ManageCatalogueComponent,
     ListCatalogueComponent,
+    OpenModalComponent,
+    LoadPublicityComponent,
+
     
 
   ],

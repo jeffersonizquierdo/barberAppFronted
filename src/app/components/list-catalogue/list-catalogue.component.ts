@@ -11,7 +11,7 @@ export class ListCatalogueComponent implements OnInit {
 
   images:any=[];
 
-  constructor(private imagenService:CatalogueService, private spinner:NgxSpinnerService) { }
+  constructor(private imagenService:CatalogueService, private spinner2:NgxSpinnerService) { }
 
   ngOnInit(): void {
    this.loaderImage();
@@ -28,15 +28,22 @@ export class ListCatalogueComponent implements OnInit {
   }
 
   deleter(id:Number): void{
-    this.spinner.show();
+    this.spinner2.show();
     this.imagenService.deleteCatalogue(id).subscribe(
       data=>{
-        this.spinner.hide();
-        this.loaderImage()
+        if(data){
+          this.spinner2.hide();
+          this.loaderImage()
+        }
       },err=>{
-        this.spinner.show();
+        this.spinner2.hide();;
+        alert(err);
         console.log(err);
       }
     )
+  }
+
+  openModal(){
+    alert("modal")
   }
 }
