@@ -94,7 +94,6 @@ export class SingInComponent implements OnInit {
         
         console.log(response);
         swal.fire('Nuevo Barberias', `Hola ${this.nickname} te damos la bienvenida a BarberApp` , 'success')
-        this.router.navigate(['/login'])
       }
       
     );

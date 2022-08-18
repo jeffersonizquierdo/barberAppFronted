@@ -34,16 +34,18 @@ import { PromotionListComponent } from './components/promotion-list/promotion-li
 
 const appRoutes: Routes = [
 
-  {path:'homebarbershop', component:HomeBarbershopComponent},
-  {path:'homecustomer', component:HomeCustomerComponent},
+  {path:'', component:HomeMainComponent},
+  {path:'homebarbershop/:id', component:HomeBarbershopComponent},
+  {path:'homecustomer/:id', component:HomeCustomerComponent},
   {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
   {path:'barbermeshshifts', component:BarberMeshShiftsComponent},
-  {path:'homebarber', component:HomeBarberComponent},
+  {path:'homebarber/:id', component:HomeBarberComponent},
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
   {path:'manage-catalogue', component:ManageCatalogueComponent},
   {path:'hola', component:PromotionComponent},
+
 ]
 
 @NgModule({
@@ -53,7 +55,6 @@ const appRoutes: Routes = [
     SliderComponent,
     HeaderHomeComponent,
     SingInComponent,
-
     HomeBarbershopComponent,
     HomeCustomerComponent,
     RankingComponent,
@@ -66,7 +67,9 @@ const appRoutes: Routes = [
     HistoriesCutsComponent,
     ManageCatalogueComponent,
     ListCatalogueComponent,
-    PromotionListComponent,
+    PromotionListComponent;
+    LoginComponent
+
     
 
   ],
