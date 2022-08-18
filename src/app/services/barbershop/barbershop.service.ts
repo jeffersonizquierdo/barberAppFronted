@@ -36,6 +36,10 @@ export class BarbershopService {
   private isNoAuthorizado(e):Boolean{
 
     if(e.status == 401 || e.status == 403){
+
+      if (this.authService.isAuthenticated()){
+        this.authService.logout();
+      }
       this.router.navigate(['/login'])
       return true;
     }

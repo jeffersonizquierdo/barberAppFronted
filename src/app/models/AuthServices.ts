@@ -123,9 +123,9 @@ export class AuthServices{
 
     this._token = null;
     this._usuario = null;
-    localStorage.removeItem("token");
-    localStorage.removeItem("usuario")
     localStorage.clear()
+    console.log("ddddddddddd");
+    
     this.router.navigate(["/login"])
 
   }

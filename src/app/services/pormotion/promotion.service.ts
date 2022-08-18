@@ -17,9 +17,9 @@ export class PromotionService {
     return this.httpClient.post<Promotion>("http://localhost:8080/promotions/save", newCatalogue)
   }
 
-  listPromotion():  Observable<Promotion>{
-    return  this.httpClient.get<Promotion>(`http://localhost:8080/barbershop/consultPromotion/${1}`)
-  } 
+  // listPromotion():  Observable<Promotion>{
+  //   return  this.httpClient.get<Promotion>(`http://localhost:8080/barbershop/consultPromotion/${1}`)
+  // } 
 
 
   deletepromotion(id: Number) {
