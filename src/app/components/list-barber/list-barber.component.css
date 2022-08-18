@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+  
+}
+
+.contenedor-main{
+    padding: 10px;
+    width: 1200px;
+    margin: 22px 6%;
+    height: 90px;
+}
+
+h1{
+    color: white;
+   text-align: center;
+   margin-top:20px ;
+}
+.imagen img{
+    height: 63px;
+    width: 81px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+    
+}
+
+

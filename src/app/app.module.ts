@@ -49,8 +49,9 @@ const appRoutes: Routes = [
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
-
-  {path:'hola', component:PromotionComponent},
+  {path:'p', component:LoadPublicityComponent},
+  {path:'promotions', component:PromotionComponent},
+  {path:'list-barber', component:ListBarberComponent},
 ]
 
 @NgModule({
@@ -60,7 +61,6 @@ const appRoutes: Routes = [
     SliderComponent,
     HeaderHomeComponent,
     SingInComponent,
-
     HomeBarbershopComponent,
     HomeCustomerComponent,
     RankingComponent,
@@ -71,11 +71,8 @@ const appRoutes: Routes = [
     BarbershopMeshShiftsComponent,
     HomeBarberComponent,
     HistoriesCutsComponent,
-
-
     PromotionListComponent,
     ListBarberComponent,
-
     ManageCatalogueComponent,
     ListCatalogueComponent,
     OpenModalComponent,
