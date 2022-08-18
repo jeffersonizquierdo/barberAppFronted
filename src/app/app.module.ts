@@ -27,9 +27,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
+
 import { PromotionListComponent } from './components/promotion-list/promotion-list.component';
 import { ListBarberComponent } from './components/list-barber/list-barber.component';
 
+
+import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
+import { OpenModalComponent } from './components/open-modal/open-modal.component';
+import { LoadPublicityComponent } from './components/load-publicity/load-publicity.component';
+import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
 
 
 
@@ -66,8 +72,15 @@ const appRoutes: Routes = [
     HomeBarberComponent,
     HistoriesCutsComponent,
 
+
     PromotionListComponent,
-      ListBarberComponent,
+    ListBarberComponent,
+
+    ManageCatalogueComponent,
+    ListCatalogueComponent,
+    OpenModalComponent,
+    LoadPublicityComponent,
+
     
 
   ],
