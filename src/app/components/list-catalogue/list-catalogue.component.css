@@ -1,14 +1,16 @@
 h1{
     color: white;
+    margin-bottom: 30px;
 }
-.containerCatalogue{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 800px;
+.containerCatalogue {
+    display: flex;
+    justify-content: flex-end;
+
 }
 .catalogue{
     background-color: #171f2a;
     border-radius: 4px;
+    margin-right: 10px;
     -webkit-box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.52);
     -moz-box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.52);
     box-shadow: 0px 5px 9px -1px rgba(0,0,0,0.52);
@@ -16,4 +18,11 @@ h1{
 .card3{
     background-color: #171f2a;
     border-radius: 4px;
+}
+
+.intento{
+    display: grid;
+    grid-template-rows: 500px 500px;
+    grid-template-columns: 300px 300px 300px 300px;
+    justify-content: end;
 }
