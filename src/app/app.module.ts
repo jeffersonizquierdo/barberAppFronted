@@ -36,6 +36,8 @@ import { ListCatalogueComponent } from './components/list-catalogue/list-catalog
 import { OpenModalComponent } from './components/open-modal/open-modal.component';
 import { LoadPublicityComponent } from './components/load-publicity/load-publicity.component';
 import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
+import { ListBarbershopComponent } from './components/list-barbershop/list-barbershop.component';
+import { ToShowPublicationsComponent } from './components/to-show-publications/to-show-publications.component';
 
 
 
@@ -49,8 +51,10 @@ const appRoutes: Routes = [
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
-
-  {path:'hola', component:PromotionComponent},
+  {path:'p', component:LoadPublicityComponent},
+  {path:'promotions', component:PromotionComponent},
+  {path:'list-barber', component:ListBarberComponent},
+  {path:'list-barbershop', component:ListBarbershopComponent},
 ]
 
 @NgModule({
@@ -60,7 +64,6 @@ const appRoutes: Routes = [
     SliderComponent,
     HeaderHomeComponent,
     SingInComponent,
-
     HomeBarbershopComponent,
     HomeCustomerComponent,
     RankingComponent,
@@ -71,15 +74,14 @@ const appRoutes: Routes = [
     BarbershopMeshShiftsComponent,
     HomeBarberComponent,
     HistoriesCutsComponent,
-
-
     PromotionListComponent,
     ListBarberComponent,
-
     ManageCatalogueComponent,
     ListCatalogueComponent,
     OpenModalComponent,
     LoadPublicityComponent,
+    ListBarbershopComponent,
+    ToShowPublicationsComponent,
 
     
 
