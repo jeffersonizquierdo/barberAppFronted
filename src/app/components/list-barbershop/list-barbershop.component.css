@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header h1{
+    color: white;
+    text-align: center;
+}
+
+.header .input {
+    text-align: center;
+    margin: 49px 0;
+}
+
+.input input{
+    width: 49%;
+    height: 45px;
+    border-radius: 11px;
+    font-size: 21px;
+    text-align: center;
+
+}
+.contenedor-main{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+}
+.card-title{
+    text-align: center;
+    height: 45px;
+}
+
+.card-text{
+    height: 115px;
+}
+a{
+    padding: 10px;
+}
