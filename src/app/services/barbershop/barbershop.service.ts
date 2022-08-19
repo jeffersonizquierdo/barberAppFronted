@@ -26,4 +26,10 @@ export class BarbershopService {
   }
 
 
+  listBarber():  Observable<Barbershop>{
+    return  this.http.get<Barbershop>(`http://localhost:8080/barbershop/consultall`)
+  } 
+
+
+
 }
