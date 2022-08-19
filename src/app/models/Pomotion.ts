@@ -1,7 +1,6 @@
 import { Barbershop } from "./barbershop";
 
-export class Promotion
- {
+export class Promotion{
 
 
     id: Number;
@@ -19,3 +18,4 @@ export class Promotion
     }
 
 }
+

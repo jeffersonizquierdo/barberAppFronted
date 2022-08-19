@@ -26,17 +26,16 @@ import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
-
-
 import { PromotionListComponent } from './components/promotion-list/promotion-list.component';
 import { ListBarberComponent } from './components/list-barber/list-barber.component';
-
-
 import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
 import { OpenModalComponent } from './components/open-modal/open-modal.component';
 import { LoadPublicityComponent } from './components/load-publicity/load-publicity.component';
 import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
 import { ListBarbershopComponent } from './components/list-barbershop/list-barbershop.component';
+import { ToShowPublicationsComponent } from './components/to-show-publications/to-show-publications.component';
+import { CardLoaderComponent } from './components/card-loader/card-loader.component';
+import { UploadCutsComponent } from './components/upload-cuts/upload-cuts.component';
 
 
 
@@ -55,6 +54,9 @@ const appRoutes: Routes = [
   {path:'promotions', component:PromotionComponent},
   {path:'list-barber', component:ListBarberComponent},
   {path:'list-barbershop', component:ListBarbershopComponent},
+  {path:'show-publication', component:ToShowPublicationsComponent},
+  {path:'upload-cuts', component:UploadCutsComponent},
+
 ]
 
 @NgModule({
@@ -81,7 +83,9 @@ const appRoutes: Routes = [
     OpenModalComponent,
     LoadPublicityComponent,
     ListBarbershopComponent,
-
+    ToShowPublicationsComponent,
+    CardLoaderComponent,
+    UploadCutsComponent,
 
     
 

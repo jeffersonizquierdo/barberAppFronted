@@ -20,6 +20,7 @@ export class ManageCatalogueComponent implements OnInit {
   id:number;
   imageURL:string
   
+  
 
   //object
   newCatalogue: Catalogue
