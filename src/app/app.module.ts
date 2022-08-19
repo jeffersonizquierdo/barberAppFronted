@@ -36,6 +36,8 @@ import { ListCatalogueComponent } from './components/list-catalogue/list-catalog
 import { OpenModalComponent } from './components/open-modal/open-modal.component';
 import { LoadPublicityComponent } from './components/load-publicity/load-publicity.component';
 import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
+import { ListBarbershopComponent } from './components/list-barbershop/list-barbershop.component';
+
 
 
 
@@ -52,6 +54,7 @@ const appRoutes: Routes = [
   {path:'p', component:LoadPublicityComponent},
   {path:'promotions', component:PromotionComponent},
   {path:'list-barber', component:ListBarberComponent},
+  {path:'list-barbershop', component:ListBarbershopComponent},
 ]
 
 @NgModule({
@@ -77,6 +80,8 @@ const appRoutes: Routes = [
     ListCatalogueComponent,
     OpenModalComponent,
     LoadPublicityComponent,
+    ListBarbershopComponent,
+
 
     
 
