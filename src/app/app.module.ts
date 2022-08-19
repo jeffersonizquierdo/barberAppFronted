@@ -26,32 +26,20 @@ import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 4cd48b3eb2fc627234ad396f5176910dfd05c187
 
 import { PromotionListComponent } from './components/promotion-list/promotion-list.component';
 import { ListBarberComponent } from './components/list-barber/list-barber.component';
 
-
-<<<<<<< HEAD
-=======
 import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
-import { OpenModalComponent } from './components/open-modal/open-modal.component';
-import { LoadPublicityComponent } from './components/load-publicity/load-publicity.component';
->>>>>>> 900f1b37845e67e85166e540fc7b8112575ce755
-=======
-import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
-import { OpenModalComponent } from './components/open-modal/open-modal.component';
 import { LoadPublicityComponent } from './components/load-publicity/load-publicity.component';
 import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
 import { ListBarbershopComponent } from './components/list-barbershop/list-barbershop.component';
 import { ToShowPublicationsComponent } from './components/to-show-publications/to-show-publications.component';
 import { CardLoaderComponent } from './components/card-loader/card-loader.component';
 import { UploadCutsComponent } from './components/upload-cuts/upload-cuts.component';
->>>>>>> 4cd48b3eb2fc627234ad396f5176910dfd05c187
+import { DetailsComponent } from './components/details/details.component';
+
 
 
 
@@ -90,28 +78,18 @@ const appRoutes: Routes = [
     BarbershopMeshShiftsComponent,
     HomeBarberComponent,
     HistoriesCutsComponent,
-<<<<<<< HEAD
-<<<<<<< HEAD
-
     PromotionListComponent,
-=======
-=======
     PromotionListComponent,
     ListBarberComponent,
->>>>>>> 4cd48b3eb2fc627234ad396f5176910dfd05c187
     ManageCatalogueComponent,
     ListCatalogueComponent,
-    OpenModalComponent,
     LoadPublicityComponent,
-<<<<<<< HEAD
->>>>>>> 900f1b37845e67e85166e540fc7b8112575ce755
-=======
+
     ListBarbershopComponent,
     ToShowPublicationsComponent,
     CardLoaderComponent,
     UploadCutsComponent,
-
->>>>>>> 4cd48b3eb2fc627234ad396f5176910dfd05c187
+    DetailsComponent,
     
 
   ],
@@ -127,6 +105,7 @@ const appRoutes: Routes = [
     
 
   ],
+  // entryComponents[DetailsComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
