@@ -11,6 +11,7 @@ import { PromotionService } from 'src/app/services/pormotion/promotion.service';
   selector: 'app-promotion',
   templateUrl: './promotion.component.html',
   styleUrls: ['./promotion.component.css']
+  
 })
 export class PromotionComponent implements OnInit {
   imagen:File;   
