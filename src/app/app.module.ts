@@ -36,6 +36,10 @@ import { ListCatalogueComponent } from './components/list-catalogue/list-catalog
 import { OpenModalComponent } from './components/open-modal/open-modal.component';
 import { LoadPublicityComponent } from './components/load-publicity/load-publicity.component';
 import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
+import { ListBarbershopComponent } from './components/list-barbershop/list-barbershop.component';
+import { ToShowPublicationsComponent } from './components/to-show-publications/to-show-publications.component';
+import { CardLoaderComponent } from './components/card-loader/card-loader.component';
+import { UploadCutsComponent } from './components/upload-cuts/upload-cuts.component';
 
 
 
@@ -60,7 +64,6 @@ const appRoutes: Routes = [
     SliderComponent,
     HeaderHomeComponent,
     SingInComponent,
-
     HomeBarbershopComponent,
     HomeCustomerComponent,
     RankingComponent,
@@ -71,15 +74,16 @@ const appRoutes: Routes = [
     BarbershopMeshShiftsComponent,
     HomeBarberComponent,
     HistoriesCutsComponent,
-
-
     PromotionListComponent,
     ListBarberComponent,
-
     ManageCatalogueComponent,
     ListCatalogueComponent,
     OpenModalComponent,
     LoadPublicityComponent,
+    ListBarbershopComponent,
+    ToShowPublicationsComponent,
+    CardLoaderComponent,
+    UploadCutsComponent,
 
     
 

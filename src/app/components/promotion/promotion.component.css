@@ -30,3 +30,12 @@
 .des{
   margin-bottom: 100px;
 }
+
+.custom-file{
+  height: 100px;
+  border: 1px white dashed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
