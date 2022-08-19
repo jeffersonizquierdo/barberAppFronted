@@ -12,6 +12,6 @@ export class CutsService {
 
   savecuts(newcuts: Cuts): Observable<Cuts>{
 
-    return this.httpClient.post<Cuts>("http://localhost:8080/promotions/save", newcuts)
+    return this.httpClient.post<Cuts>("http://localhost:8080/cuts/save", newcuts)
   }
 }
