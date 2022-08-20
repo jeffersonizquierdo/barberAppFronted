@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import {  NgxSpinnerService } from 'ngx-spinner';
 import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
 
