@@ -42,11 +42,12 @@ import { UploadCutsComponent } from './components/upload-cuts/upload-cuts.compon
 
 const appRoutes: Routes = [
 
-  {path:'homebarbershop', component:HomeBarbershopComponent},
-  {path:'homecustomer', component:HomeCustomerComponent},
+  {path:'', component:HomeMainComponent},
+  {path:'homebarbershop/:id', component:HomeBarbershopComponent},
+  {path:'homecustomer/:id', component:HomeCustomerComponent},
   {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
   {path:'barbermeshshifts', component:BarberMeshShiftsComponent},
-  {path:'homebarber', component:HomeBarberComponent},
+  {path:'homebarber/:id', component:HomeBarberComponent},
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
@@ -56,6 +57,9 @@ const appRoutes: Routes = [
   {path:'list-barbershop', component:ListBarbershopComponent},
   {path:'show-publication', component:ToShowPublicationsComponent},
   {path:'upload-cuts', component:UploadCutsComponent},
+  {path:'manage-catalogue', component:ManageCatalogueComponent},
+  {path:'hola', component:PromotionComponent},
+
 
 ]
 
@@ -86,6 +90,8 @@ const appRoutes: Routes = [
     ToShowPublicationsComponent,
     CardLoaderComponent,
     UploadCutsComponent,
+    PromotionListComponent,
+    LoginComponent
 
     
 

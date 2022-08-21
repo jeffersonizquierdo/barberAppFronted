@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthServices } from 'src/app/models/AuthServices';
+import { Usaurio } from 'src/app/models/Usuarios';
 
 @Component({
   selector: 'app-home-barbershop',
@@ -10,6 +13,12 @@ export class HomeBarbershopComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
+
+  
+
+ 
+
 
 }
