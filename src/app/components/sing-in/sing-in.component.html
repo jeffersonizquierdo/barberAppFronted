@@ -7,7 +7,7 @@
 
     <div class="wrapper" >
       <div class="inputData" >
-        <input class="intp" type="text" name="nickname" autocomplete="off" required [(ngModel)] = "nickname">
+        <input class="intp" type="text" name="nickname" autocomplete="off" required [(ngModel)] = "usuario.username">
         <div class="line" ></div>
         <label for="nickname">Apodo</label>
       </div>
@@ -15,7 +15,15 @@
 
     <div class="wrapper" >
       <div class="inputData" >
-        <input class="intp" type="text" name="city" autocomplete="off" required  [(ngModel)]="city" >
+        <input class="intp" type="date" name="age" autocomplete="off" required  [(ngModel)]="usuario.date" >
+        <div class="line" ></div>
+        <label style="margin-bottom: 10px;" for="age">Fecha de Nacimiento</label>
+      </div>
+    </div>
+
+    <div class="wrapper" >
+      <div class="inputData" >
+        <input class="intp" type="text" name="city" autocomplete="off" required  [(ngModel)]="usuario.city" >
         <div class="line" ></div>
         <label for="city">Ciudad</label>
       </div>
@@ -23,7 +31,7 @@
 
     <div class="wrapper" >
       <div class="inputData" >
-        <input class="intp" type="text" name="cellphone" autocomplete="off" required [(ngModel)]="cellphone" >
+        <input class="intp" type="text" name="cellphone" autocomplete="off" required [(ngModel)]="usuario.cellphone" >
         <div class="line" ></div>
         <label for="cellphone">Telefono</label>
       </div>
@@ -31,7 +39,7 @@
 
     <div class="wrapper" >
       <div class="inputData" >
-        <input class="intp" type="text" name="email" autocomplete="off" required [(ngModel)]="email" >
+        <input class="intp" type="text" name="email" autocomplete="off" required [(ngModel)]="usuario.email" >
         <div class="line" ></div>
         <label for="email">Correo</label>
       </div>
@@ -39,7 +47,7 @@
 
     <div class="wrapper" >
       <div class="inputData" >
-        <input class="intp" type="password" name="constraseña" autocomplete="off" required [(ngModel)]="password">
+        <input class="intp" type="password" name="constraseña" autocomplete="off" required [(ngModel)]="usuario.password">
         <div class="line" ></div>
         <label for="constraseña">Contraseña</label>
       </div>
@@ -48,61 +56,9 @@
     <h3>Tipo de usuario</h3>
 
     <div class="btn-type">
-      <label for=""><input [(ngModel)]="typeUser" (click)="dataTypeUser(3)" value="3" type="radio" name="type"/>Cliente</label>
-      <label for=""><input [(ngModel)]="typeUser" (click)="dataTypeUser(2)" value="2" type="radio" name="type"/>Barbero</label>
-      <label for=""><input [(ngModel)]="typeUser" (click)="dataTypeUser(1)" value="1" type="radio" name="type"/>Barberia</label>
-    </div>
-
-    <div *ngIf="registrerBarbershop == true">
-
-      <div class="wrapper" >
-        <div class="inputData" >
-          <input class="intp" type="text" name="location" autocomplete="off" required [(ngModel)]="locationBarbershop"/>
-          <div class="line" ></div>
-          <label for="location">Direccion</label>
-        </div>
-      </div>
-
-
-      <div style="margin-top: 30px;" class="wrapper" >
-        <div class="inputData" >
-          <input class="intp" type="text" name="description" autocomplete="off" required [(ngModel)]="descriptionBarbershop">
-          <div class="line" ></div>
-          <label for="description">Descripcion</label>
-        </div>
-      </div>
-
-    </div>
-
-
-    <div *ngIf="registrerBarber == true" >
-
-      <div class="wrapper" >
-        <div class="inputData" >
-          <input class="intp" type="date" name="age" autocomplete="off" required  [(ngModel)]="ageBarber">
-          <label style="margin-bottom: 10px;" for="age">Fecha de Nacimiento</label>
-        </div>
-      </div>
-
-      <div  style="margin-top: 30px;" class="wrapper" >
-        <div class="inputData" >
-          <input class="intp" type="text" name="description" autocomplete="off" required  [(ngModel)]="descriptionBarber">
-          <label for="description">Descripcion</label>
-        </div>
-      </div>
-
-    </div>
-
-    <div *ngIf="registrerCustomer == true" >
-
-      <div class="wrapper" >
-        <div class="inputData" >
-          <input class="intp" type="date" name="age" autocomplete="off" required  [(ngModel)]="ageCustomer" >
-          <div class="line" ></div>
-          <label style="margin-bottom: 10px;" for="age">Fecha de Nacimiento</label>
-        </div>
-      </div>
-
+      <label for=""><input (click)="dataTypeUser(3)" type="radio" name="type"/>Cliente</label>
+      <label for=""><input (click)="dataTypeUser(3)" type="radio" name="type"/>Barbero</label>
+      <label for=""><input (click)="dataTypeUser(3)" type="radio" name="type"/>Barberia</label>
     </div>
 
 
