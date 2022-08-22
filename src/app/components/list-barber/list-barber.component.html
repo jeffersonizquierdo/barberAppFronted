@@ -3,30 +3,28 @@
 
 <div class="contenedor-main">
   
+    <div  class="containerbarber" *ngFor="let barberos of barber">
+        <table class="table table-dark table-borderless">
+            <thead>
+                <tr>
+                <th scope="col">id</th>
+                <th scope="col">imagen</th>
+                <th scope="col">nombre</th>
+                <th scope="col">button</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr>
+                <th scope="row">{{barberos.id}}</th>
+                <td class="imagen"><img src="{{barberos.photo}}" alt=""></td>
+                <td>{{barberos.nickname}}</td>
+                <td><button class="btn btn-outline-secondary">desvincular</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-    <table class="table table-dark table-borderless">
-        <thead>
-            <tr>
-            <th scope="col">id</th>
-            <th scope="col">imagen</th>
-            <th scope="col">nombre</th>
-            <th scope="col">button</th>
-            </tr>
-        </thead>
-        <tbody class="table-group-divider">
-            <tr>
-            <th scope="row">1</th>
-            <td class="imagen"><img src="../../../assets/images/appointment.jpg" alt=""></td>
-            <td>barber1</td>
-            <td><button class="btn btn-outline-secondary">desvincular</button></td>
-            </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td class="imagen"><img src="../../../assets/images/appointment.jpg" alt=""></td>
-            <td>barber1</td>
-            <td><button class="btn btn-outline-secondary">desvincular</button></td>
-            </tr>
-            <tr>
-        </tbody>
-    </table>
+   
 </div>
+
+
