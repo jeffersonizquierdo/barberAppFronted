@@ -59,6 +59,10 @@ const appRoutes: Routes = [
   {path:'list-barbershop', component:ListBarbershopComponent},
   {path:'show-publication', component:ToShowPublicationsComponent},
   {path:'upload-cuts', component:UploadCutsComponent},
+  {path:'profile-barber', component:ProfileBarberComponent},
+  {path:'profile-barbershop', component:ProfileBarbershopComponent},
+  {path:'profile-client', component:ProfileClientComponent},
+
 
 ]
 
