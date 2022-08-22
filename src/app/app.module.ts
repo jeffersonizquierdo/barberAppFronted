@@ -37,6 +37,9 @@ import { ListBarbershopComponent } from './components/list-barbershop/list-barbe
 import { ToShowPublicationsComponent } from './components/to-show-publications/to-show-publications.component';
 import { CardLoaderComponent } from './components/card-loader/card-loader.component';
 import { UploadCutsComponent } from './components/upload-cuts/upload-cuts.component';
+import { ProfileBarberComponent } from './components/profile-barber/profile-barber.component';
+import { ProfileClientComponent } from './components/profile-client/profile-client.component';
+import { ProfileBarbershopComponent } from './components/profile-barbershop/profile-barbershop.component';
 
 
 
@@ -60,6 +63,10 @@ const appRoutes: Routes = [
   {path:'upload-cuts', component:UploadCutsComponent},
   {path:'manage-catalogue', component:ManageCatalogueComponent},
   {path:'hola', component:PromotionComponent},
+  {path:'profile-barber', component:ProfileBarberComponent},
+  {path:'profile-barbershop', component:ProfileBarbershopComponent},
+  {path:'profile-client', component:ProfileClientComponent},
+
 
 
 ]
@@ -92,7 +99,10 @@ const appRoutes: Routes = [
     CardLoaderComponent,
     UploadCutsComponent,
     PromotionListComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileClientComponent,
+    ProfileBarbershopComponent,
+
 
     
 

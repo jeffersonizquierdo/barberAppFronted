@@ -22,7 +22,7 @@ export class ListBarbershopComponent implements OnInit {
 
 
   loader():void{
-    this.BabrebrshopService.listBarber().subscribe(
+    this.BabrebrshopService.listBarbershop().subscribe(
       data =>{
         this.barbershop =data;
         console.log(this.barbershop.description);

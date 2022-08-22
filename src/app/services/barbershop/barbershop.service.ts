@@ -5,6 +5,7 @@ import { catchError, Observable, throwError } from 'rxjs';
 import { Barbershop } from 'src/app/models/barbershop';
 import { Router } from '@angular/router';
 import { AuthServices } from 'src/app/models/AuthServices';
+import { Barber } from 'src/app/models/Barber';
 @Injectable({
   providedIn: 'root'
 })
@@ -34,8 +35,14 @@ export class BarbershopService {
 
 
 
-  listBarber():  Observable<Barbershop>{
+  listBarbershop():  Observable<Barbershop>{
+
     return  this.http.get<Barbershop>(`http://localhost:8080/barbershop/consultall`)
+  } 
+
+  listBarber():  Observable<Barber>{
+
+    return  this.http.get<Barber>(`http://localhost:8080/barbershop/consultBabrber/${1}`)
   } 
 
 
