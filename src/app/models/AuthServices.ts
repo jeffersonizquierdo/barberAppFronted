@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 import Swal from "sweetalert2";
 import { HeaderHomeComponent } from "../components/header-home/header-home.component";
-import { Usaurio } from "./Usuarios";
+import { Usaurio } from "./Usuario";
 
 
 @Injectable({
@@ -75,13 +75,12 @@ export class AuthServices{
     let payload = this.dataToken(accessToken)
 
     this._usuario = new Usaurio();
+    this._usuario.id = payload.id;
     this._usuario.username = payload.user_name;
     this._usuario.email = payload.email;
     this._usuario.roles = payload.authorities;
 
-  
-    
-   //(this.usuario.roles)
+    //(this.usuario.roles)
     
     localStorage.setItem('usuario', JSON.stringify(this._usuario))
 

@@ -33,6 +33,12 @@ export class BarbershopService {
   }
 
 
+
+  listBarber():  Observable<Barbershop>{
+    return  this.http.get<Barbershop>(`http://localhost:8080/barbershop/consultall`)
+  } 
+
+
   private isNoAuthorizado(e):Boolean{
 
     if(e.status == 401 || e.status == 403){

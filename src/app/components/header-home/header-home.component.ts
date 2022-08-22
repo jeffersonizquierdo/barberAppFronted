@@ -22,8 +22,9 @@ export class HeaderHomeComponent implements OnInit {
 
   logout():void{
 
-    Swal.fire('Login', `session cerrada`, 'info')
+    
     this.authService.logout();
+    Swal.fire('Login', `session cerrada`, 'success')
     
   }
 

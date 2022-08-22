@@ -20,15 +20,23 @@ import { HeaderHomeComponent } from './components/header-home/header-home.compon
 import { SingInComponent } from './components/sing-in/sing-in.component';
 import { LoginComponent } from './components/login/login.component';
 import {HttpClientModule} from '@angular/common/http';
-import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
+
 
 //external
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
 import { PromotionListComponent } from './components/promotion-list/promotion-list.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ListBarberComponent } from './components/list-barber/list-barber.component';
+import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
+import { OpenModalComponent } from './components/open-modal/open-modal.component';
+import { LoadPublicityComponent } from './components/load-publicity/load-publicity.component';
+import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
+import { ListBarbershopComponent } from './components/list-barbershop/list-barbershop.component';
+import { ToShowPublicationsComponent } from './components/to-show-publications/to-show-publications.component';
+import { CardLoaderComponent } from './components/card-loader/card-loader.component';
+import { UploadCutsComponent } from './components/upload-cuts/upload-cuts.component';
 
 
 
@@ -44,8 +52,15 @@ const appRoutes: Routes = [
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
+  {path:'p', component:LoadPublicityComponent},
+  {path:'promotions', component:PromotionComponent},
+  {path:'list-barber', component:ListBarberComponent},
+  {path:'list-barbershop', component:ListBarbershopComponent},
+  {path:'show-publication', component:ToShowPublicationsComponent},
+  {path:'upload-cuts', component:UploadCutsComponent},
   {path:'manage-catalogue', component:ManageCatalogueComponent},
   {path:'hola', component:PromotionComponent},
+
 
 ]
 
@@ -66,8 +81,16 @@ const appRoutes: Routes = [
     BarbershopMeshShiftsComponent,
     HomeBarberComponent,
     HistoriesCutsComponent,
+    PromotionListComponent,
+    ListBarberComponent,
     ManageCatalogueComponent,
     ListCatalogueComponent,
+    OpenModalComponent,
+    LoadPublicityComponent,
+    ListBarbershopComponent,
+    ToShowPublicationsComponent,
+    CardLoaderComponent,
+    UploadCutsComponent,
     PromotionListComponent,
     LoginComponent
 

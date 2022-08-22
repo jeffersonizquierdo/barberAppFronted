@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListCatalogueComponent } from './list-catalogue.component';
+import { ToShowPublicationsComponent } from './to-show-publications.component';
 
-describe('ListCatalogueComponent', () => {
-  let component: ListCatalogueComponent;
-  let fixture: ComponentFixture<ListCatalogueComponent>;
+describe('ToShowPublicationsComponent', () => {
+  let component: ToShowPublicationsComponent;
+  let fixture: ComponentFixture<ToShowPublicationsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListCatalogueComponent ]
+      declarations: [ ToShowPublicationsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListCatalogueComponent);
+    fixture = TestBed.createComponent(ToShowPublicationsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

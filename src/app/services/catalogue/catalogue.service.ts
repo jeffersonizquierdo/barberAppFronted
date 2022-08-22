@@ -36,6 +36,6 @@ export class CatalogueService {
   } 
 
   deleteCatalogue(id:Number):any{
-
+    return  this.httpClient.delete<Catalogue>(`http://localhost:8080/images/delete/${id}`)
   }
 }
