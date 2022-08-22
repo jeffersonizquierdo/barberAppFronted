@@ -22,8 +22,10 @@
                 <a [routerLink]="['/singup']"><li class="boton"><img src="../../../assets/images/agregar-simbolo-de-usuario.png" alt="">Registrarse</li></a>
             </div>
 
-            <div class="login">
-                <a *ngIf="authService.isAuthenticated() == true"  [routerLink]="['/login']"><li class="boton"><button (click)="logout()" >Cerrar Sesion</button></li></a>
+            <div *ngIf="authService.isAuthenticated() == true" class="login">
+                
+                <button (click)="logout()" >Cerrar Sesion</button>
+                
             </div>
 
         </ul>

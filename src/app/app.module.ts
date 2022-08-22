@@ -28,6 +28,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
 import { PromotionListComponent } from './components/promotion-list/promotion-list.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 

@@ -123,9 +123,7 @@ export class AuthServices{
 
     this._token = null;
     this._usuario = null;
-    localStorage.clear()
-    console.log("ddddddddddd");
-    
+    localStorage.clear()    
     this.router.navigate(["/login"])
 
   }
