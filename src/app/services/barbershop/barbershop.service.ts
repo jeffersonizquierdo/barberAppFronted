@@ -3,13 +3,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Barbershop } from 'src/app/models/barbershop';
+import { Router } from '@angular/router';
+import { AuthServices } from 'src/app/models/AuthServices';
 import { Barber } from 'src/app/models/Barber';
 @Injectable({
   providedIn: 'root'
 })
 export class BarbershopService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router, private authService: AuthServices) { }
 
   private httpHeadres = new HttpHeaders({'Content-Type' : 'application/json'})
 
@@ -20,14 +22,21 @@ export class BarbershopService {
 
       catchError(e =>{
 
+        if(this.isNoAuthorizado(e)){
+          return throwError(e)
+        }
+
         console.error(e.error.Mensaje);
         swal.fire(e.error.Mensaje, e.error.Error, 'error');
+        
         return throwError(e);
       }));
   }
 
 
+
   listBarbershop():  Observable<Barbershop>{
+
     return  this.http.get<Barbershop>(`http://localhost:8080/barbershop/consultall`)
   } 
 
@@ -37,5 +46,34 @@ export class BarbershopService {
   } 
 
 
+  private isNoAuthorizado(e):Boolean{
+
+    if(e.status == 401 || e.status == 403){
+
+      if (this.authService.isAuthenticated()){
+        this.authService.logout();
+      }
+      this.router.navigate(['/login'])
+      return true;
+    }
+
+    return false;
+
+  }
+
+
+
+  private addAuthorizationHeader(){
+
+    let token = this.authService;
+
+    if (token != null){
+
+      return this.httpHeadres.append('Authorization', 'Bearer' + token)
+    }
+
+    return this.httpHeadres
+
+  }
 
 }

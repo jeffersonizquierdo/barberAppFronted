@@ -27,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { PromotionListComponent } from './components/promotion-list/promotion-list.component';
+import { AuthGuard } from './guards/auth.guard';
 import { ListBarberComponent } from './components/list-barber/list-barber.component';
 import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
 import { OpenModalComponent } from './components/open-modal/open-modal.component';
@@ -45,11 +46,12 @@ import { ProfileBarbershopComponent } from './components/profile-barbershop/prof
 
 const appRoutes: Routes = [
 
-  {path:'homebarbershop', component:HomeBarbershopComponent},
-  {path:'homecustomer', component:HomeCustomerComponent},
+  {path:'', component:HomeMainComponent},
+  {path:'homebarbershop/:id', component:HomeBarbershopComponent},
+  {path:'homecustomer/:id', component:HomeCustomerComponent},
   {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
   {path:'barbermeshshifts', component:BarberMeshShiftsComponent},
-  {path:'homebarber', component:HomeBarberComponent},
+  {path:'homebarber/:id', component:HomeBarberComponent},
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
@@ -59,9 +61,12 @@ const appRoutes: Routes = [
   {path:'list-barbershop', component:ListBarbershopComponent},
   {path:'show-publication', component:ToShowPublicationsComponent},
   {path:'upload-cuts', component:UploadCutsComponent},
+  {path:'manage-catalogue', component:ManageCatalogueComponent},
+  {path:'hola', component:PromotionComponent},
   {path:'profile-barber', component:ProfileBarberComponent},
   {path:'profile-barbershop', component:ProfileBarbershopComponent},
   {path:'profile-client', component:ProfileClientComponent},
+
 
 
 ]
@@ -93,9 +98,11 @@ const appRoutes: Routes = [
     ToShowPublicationsComponent,
     CardLoaderComponent,
     UploadCutsComponent,
-    ProfileBarberComponent,
+    PromotionListComponent,
+    LoginComponent,
     ProfileClientComponent,
     ProfileBarbershopComponent,
+
 
     
 
