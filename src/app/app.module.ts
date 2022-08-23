@@ -26,35 +26,54 @@ import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
-
-
 import { PromotionListComponent } from './components/promotion-list/promotion-list.component';
+import { AuthGuard } from './guards/auth.guard';
 import { ListBarberComponent } from './components/list-barber/list-barber.component';
-
-
 import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
-import { OpenModalComponent } from './components/open-modal/open-modal.component';
 import { LoadPublicityComponent } from './components/load-publicity/load-publicity.component';
 import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
 import { ListBarbershopComponent } from './components/list-barbershop/list-barbershop.component';
 import { ToShowPublicationsComponent } from './components/to-show-publications/to-show-publications.component';
 import { CardLoaderComponent } from './components/card-loader/card-loader.component';
 import { UploadCutsComponent } from './components/upload-cuts/upload-cuts.component';
+import { DetailsComponent } from './components/details/details.component';
+import { ProfileBarberComponent } from './components/profile-barber/profile-barber.component';
+import { ProfileClientComponent } from './components/profile-client/profile-client.component';
+import { ProfileBarbershopComponent } from './components/profile-barbershop/profile-barbershop.component';
+
 
 
 
 const appRoutes: Routes = [
 
+  {path:'', component:HomeMainComponent},
   {path:'homebarbershop', component:HomeBarbershopComponent},
-  {path:'homecustomer', component:HomeCustomerComponent},
+  {path:'homecustomer/:id', component:HomeCustomerComponent},
   {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
   {path:'barbermeshshifts', component:BarberMeshShiftsComponent},
-  {path:'homebarber', component:HomeBarberComponent},
+  {path:'homebarber/:id', component:HomeBarberComponent},
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
+<<<<<<< HEAD
   {path:'h', component:ManageCatalogueComponent},
   {path:'hola', component:PromotionComponent},
+=======
+  {path:'p', component:LoadPublicityComponent},
+  {path:'promotions', component:PromotionComponent},
+  {path:'list-barber', component:ListBarberComponent},
+  {path:'list-barbershop', component:ListBarbershopComponent},
+  {path:'show-publication', component:ToShowPublicationsComponent},
+  {path:'upload-cuts', component:UploadCutsComponent},
+  {path:'manage-catalogue', component:ManageCatalogueComponent},
+  {path:'hola', component:PromotionComponent},
+  {path:'profile-barber', component:ProfileBarberComponent},
+  {path:'profile-barbershop', component:ProfileBarbershopComponent},
+  {path:'profile-client', component:ProfileClientComponent},
+
+
+
+>>>>>>> c2d733a685e1606a9777ee59baae029de994bf38
 ]
 
 @NgModule({
@@ -75,15 +94,22 @@ const appRoutes: Routes = [
     HomeBarberComponent,
     HistoriesCutsComponent,
     PromotionListComponent,
+    PromotionListComponent,
     ListBarberComponent,
     ManageCatalogueComponent,
     ListCatalogueComponent,
-    OpenModalComponent,
     LoadPublicityComponent,
+
     ListBarbershopComponent,
     ToShowPublicationsComponent,
     CardLoaderComponent,
     UploadCutsComponent,
+    DetailsComponent,
+    PromotionListComponent,
+    LoginComponent,
+    ProfileClientComponent,
+    ProfileBarbershopComponent,
+
 
     
 
@@ -100,6 +126,7 @@ const appRoutes: Routes = [
     
 
   ],
+  entryComponents:[DetailsComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

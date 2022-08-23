@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OpenModalComponent } from './open-modal.component';
+import { ProfileClientComponent } from './profile-client.component';
 
-describe('OpenModalComponent', () => {
-  let component: OpenModalComponent;
-  let fixture: ComponentFixture<OpenModalComponent>;
+describe('ProfileClientComponent', () => {
+  let component: ProfileClientComponent;
+  let fixture: ComponentFixture<ProfileClientComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OpenModalComponent ]
+      declarations: [ ProfileClientComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OpenModalComponent);
+    fixture = TestBed.createComponent(ProfileClientComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
