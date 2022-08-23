@@ -18,16 +18,9 @@
             <div class="login">
                 <a *ngIf="!authService.isAuthenticated()" [routerLink]="['/login']"><li class="boton"><img src="../../../assets/images/usuario.png" alt="login" alt="">Iniciar Sesion</li></a>
             </div>
-            <div class="signup">
-                <a [routerLink]="['/singup']"><li class="boton"><img src="../../../assets/images/agregar-simbolo-de-usuario.png" alt="">Registrarse</li></a>
+            <div *ngIf="!authService.isAuthenticated()" class="signup">
+                <a  [routerLink]="['/singup']"><li class="boton"><img src="../../../assets/images/agregar-simbolo-de-usuario.png" alt="">Registrarse</li></a>
             </div>
-
-            <div *ngIf="authService.isAuthenticated() == true" class="login">
-                
-                <button (click)="logout()" >Cerrar Sesion</button>
-
-            </div>
-
         </ul>
 
         
@@ -36,28 +29,21 @@
     </div>
 
 
-    <div *ngIf="barbershop" class="funciones">
+    <div *ngIf=" authService.isAuthenticated()" class="funciones">
 
         <div class="name" >
             <a>Name barbershop</a>
-        </div>
-
-
-        <div class="form-group-col-md-3">
-            <div class="wrapper" >
-                <div class="inputData" >
-                  <input class="intp" type="text" name="search" required>
-                  <label for="search">Buscar</label>
-                </div>
-            </div>
-
         </div>
  
         <ul class="links" >
             <li><a href="">Barberos</a></li>
             <li><a href="">Cuts</a></li>
             <li><a href="">Mayas de Turnos</a></li>
-            <li><a href="">Salir</a></li>
+            <div class="login">
+                
+                <button (click)="logout()" >Cerrar Sesion</button>
+
+            </div>
         </ul>
     </div>
 

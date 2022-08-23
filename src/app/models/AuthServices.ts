@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 import Swal from "sweetalert2";
 import { HeaderHomeComponent } from "../components/header-home/header-home.component";
-import { Usaurio } from "./Usuario";
+import { Usuario } from "./Usuario";
 
 
 @Injectable({
@@ -12,10 +12,12 @@ import { Usaurio } from "./Usuario";
 })
 
 export class AuthServices{
+  
 
 
-  private _usuario:Usaurio;
+  private _usuario:Usuario;
   private _token:string;
+  private _type : string;
 
 
   constructor(private http:HttpClient, private router:Router){
@@ -24,16 +26,16 @@ export class AuthServices{
 
   }
 
-  public get usuario():Usaurio{
+  public get usuario():Usuario{
 
     if(this._usuario != null) return this._usuario;
 
     else if (this._usuario == null && localStorage.getItem('usuario') != null){
-      this._usuario = JSON.parse(localStorage.getItem('usaurio')) as Usaurio;
+      this._usuario = JSON.parse(localStorage.getItem('usaurio')) as Usuario;
 
       return this._usuario
     }
-    return new Usaurio();
+    return new Usuario();
   }
 
 
@@ -51,7 +53,7 @@ export class AuthServices{
   }
 
 
-  login(usaurio:Usaurio):Observable<any>{
+  login(usaurio:Usuario):Observable<any>{
 
     const url = 'http://localhost:8080/oauth/token';
 
@@ -74,9 +76,10 @@ export class AuthServices{
 
     let payload = this.dataToken(accessToken)
 
-    this._usuario = new Usaurio();
+    this._usuario = new Usuario();
     this._usuario.id = payload.id;
     this._usuario.username = payload.user_name;
+    this._usuario.typeUser = payload.typeUser;
     this._usuario.email = payload.email;
     this._usuario.roles = payload.authorities;
 
@@ -92,6 +95,33 @@ export class AuthServices{
     this._token = accessToken;
     localStorage.setItem('token', accessToken)
 
+  }
+
+
+  saveTypeUser(tipo: string){
+
+    if (tipo == "1"){
+
+      this._type = "barbershop"
+      localStorage.setItem('tipo', JSON.stringify("barbershop"))
+
+    }
+    
+
+  }
+
+  public get typeUser():string{
+
+
+    if(this._type != null) return this._type;
+
+    else if (this._token == null && localStorage.getItem('tipo') != null){
+      this._type = localStorage.getItem('tipo');
+      console.log("tipoooo" + this._type);
+      
+      return this._type
+    }
+    return null;
   }
 
 

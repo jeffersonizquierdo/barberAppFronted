@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthServices } from 'src/app/models/AuthServices';
-import { Usaurio } from 'src/app/models/Usuario';
+import { Usuario } from 'src/app/models/Usuario';
 
 @Component({
   selector: 'app-home-barbershop',

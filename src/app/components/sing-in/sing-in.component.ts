@@ -8,7 +8,7 @@ import { CustomerService } from 'src/app/services/customer/customer.service';
 import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
 import { Customer } from 'src/app/models/Customer';
 import { Barber } from 'src/app/models/Barber';
-import { Usaurio } from 'src/app/models/Usuario';
+import { Usuario } from 'src/app/models/Usuario';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 
 
@@ -20,10 +20,10 @@ import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 export class SingInComponent implements OnInit {
 
 
-  usuario: Usaurio;
+  usuario: Usuario;
   constructor(private router: Router,private usuarioservice:UsuarioService ) {
 
-    this.usuario = new Usaurio()
+    this.usuario = new Usuario()
    }
 
   ngOnInit(): void { 

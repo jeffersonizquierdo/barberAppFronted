@@ -1,7 +1,7 @@
+import { Usuario } from './../../models/Usuario';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthServices } from 'src/app/models/AuthServices';
-import { Usaurio } from 'src/app/models/Usuario';
 import Swal from 'sweetalert2';
 
 
@@ -12,11 +12,11 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
 
-  usuario:Usaurio;
+  usuario:Usuario;
 
   constructor(private authServices:AuthServices, private router:Router) { 
 
-    this.usuario = new Usaurio()
+    this.usuario = new Usuario()
   }
 
   ngOnInit(): void {
@@ -41,26 +41,27 @@ export class LoginComponent implements OnInit {
         
       this.authServices.saveUser(response.access_token);
       this.authServices.saveToken(response.access_token);
+      this.authServices.saveTypeUser(response.typeUser);
 
       let usuario = this.authServices.usuario;
+      
+      Swal.fire('Login', 'Hola ' + usuario.username + ', bienvenido', 'success');
 
-      if(this.usuario.typeUser = 1){
+      if (response.typeUser == 1){
 
-        this.router.navigate(['/homebarbershop/1'])
-      }
+        this.router.navigate(['/homebarbershop'])
 
-      else if(this.usuario.typeUser == 2){
-        
-        this.router.navigate(['/homebarber/1'])
-      }
+      } else if(response.typeUser == 2){
 
-      else if(this.usuario.typeUser == 3){
-        
-        this.router.navigate(['/homecustomer/1'])
+        this.router.navigate(['/homebarber'])
+
+      } else if(response.typeUser == 3){
+
+        this.router.navigate(['/homecustomer'])
       }
 
       
-      Swal.fire('Login', 'Hola ' + usuario.username + ', bienvenido', 'success');
+      
     
     }, error => {
 
