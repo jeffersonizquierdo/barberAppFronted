@@ -21,7 +21,7 @@
 
 .bodyPage{
     display: flex;
-    flex-direction: row;
+
 }
 
 .medium{
@@ -29,4 +29,6 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
+    gap: 18%;
+    height: 703px;
 }
