@@ -13,6 +13,6 @@ export class PublicityService {
 
   savePublicity(newPublicity:Publicity): Observable<Publicity>{
 
-    return this.httpClient.post<Publicity>("http://localhost:8080/images/save", newPublicity)
+    return this.httpClient.post<Publicity>("http://localhost:8080/publication/save", newPublicity)
   }
 }

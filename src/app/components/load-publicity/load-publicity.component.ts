@@ -54,7 +54,6 @@ export class LoadPublicityComponent implements OnInit {
             this.reset();
             console.log(response);
             this.spinner.hide();
-            this.router.navigate(["/"])
           } 
       )}
     })
