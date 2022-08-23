@@ -10,6 +10,10 @@ export class HomeCustomerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    
   }
+
+  
 
 }

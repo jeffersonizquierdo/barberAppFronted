@@ -1,4 +1,6 @@
+import { Usuario } from './../../models/Usuario';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { AuthServices } from 'src/app/models/AuthServices';
 import Swal from 'sweetalert2';
 @Component({
@@ -8,23 +10,25 @@ import Swal from 'sweetalert2';
 })
 export class HeaderHomeComponent implements OnInit {
 
-  constructor(public authService: AuthServices) { }
+  constructor(public authService: AuthServices, private route: ActivatedRoute, private router: Router) { }
+
+  typeUser:string;
 
   ngOnInit(): void {
+
+    this.tipo= this.authService.typeUser
+    
   }
 
-  anonymous = false;
-  barbershop = true;
-  barber = false;
-  customer = false;
-
-
+  tipo: Number;
 
   logout():void{
 
-    
     this.authService.logout();
     Swal.fire('Login', `session cerrada`, 'success')
+    
+    
+    this.router.navigate(["/login"])
     
   }
 

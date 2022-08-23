@@ -48,10 +48,14 @@ const appRoutes: Routes = [
 
   {path:'', component:HomeMainComponent},
   {path:'homebarbershop', component:HomeBarbershopComponent},
+<<<<<<< HEAD
+  {path:'homecustomer', component:HomeCustomerComponent},
+=======
   {path:'homecustomer/:id', component:HomeCustomerComponent},
+>>>>>>> 3a0d409d78a8164bc18adb3e2a9518562589420b
   {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
   {path:'barbermeshshifts', component:BarberMeshShiftsComponent},
-  {path:'homebarber/:id', component:HomeBarberComponent},
+  {path:'homebarber', component:HomeBarberComponent},
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},

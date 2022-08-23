@@ -2,7 +2,7 @@ import { Barber } from "./Barber";
 import { Barbershop } from "./barbershop";
 import { Customer } from "./Customer";
 
-export class Usaurio{
+export class Usuario{
 
 id:Number;
 username:string;
