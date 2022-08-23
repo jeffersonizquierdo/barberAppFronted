@@ -22,13 +22,7 @@ export class HeaderHomeComponent implements OnInit {
 
   tipo: Number;
 
-  x : Number = 1
-
-
-
   logout():void{
-
-    
 
     this.authService.logout();
     Swal.fire('Login', `session cerrada`, 'success')
@@ -37,8 +31,5 @@ export class HeaderHomeComponent implements OnInit {
     this.router.navigate(["/login"])
     
   }
-
-
-
 
 }
