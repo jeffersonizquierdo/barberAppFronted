@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthServices } from 'src/app/models/AuthServices';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-header-home',
   templateUrl: './header-home.component.html',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public authService: AuthServices) { }
 
   ngOnInit(): void {
   }
@@ -16,5 +17,15 @@ export class HeaderHomeComponent implements OnInit {
   barbershop = true;
   barber = false;
   customer = false;
+
+
+
+  logout():void{
+
+    
+    this.authService.logout();
+    Swal.fire('Login', `session cerrada`, 'success')
+    
+  }
 
 }

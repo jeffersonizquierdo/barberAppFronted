@@ -27,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { PromotionListComponent } from './components/promotion-list/promotion-list.component';
+import { AuthGuard } from './guards/auth.guard';
 import { ListBarberComponent } from './components/list-barber/list-barber.component';
 import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
 import { LoadPublicityComponent } from './components/load-publicity/load-publicity.component';
@@ -35,19 +36,26 @@ import { ListBarbershopComponent } from './components/list-barbershop/list-barbe
 import { ToShowPublicationsComponent } from './components/to-show-publications/to-show-publications.component';
 import { CardLoaderComponent } from './components/card-loader/card-loader.component';
 import { UploadCutsComponent } from './components/upload-cuts/upload-cuts.component';
+<<<<<<< HEAD
 import { DetailsComponent } from './components/details/details.component';
 
+=======
+import { ProfileBarberComponent } from './components/profile-barber/profile-barber.component';
+import { ProfileClientComponent } from './components/profile-client/profile-client.component';
+import { ProfileBarbershopComponent } from './components/profile-barbershop/profile-barbershop.component';
+>>>>>>> 08e2862c056d464291ed2f78e5d69f5eaef77a5a
 
 
 
 
 const appRoutes: Routes = [
 
+  {path:'', component:HomeMainComponent},
   {path:'homebarbershop', component:HomeBarbershopComponent},
-  {path:'homecustomer', component:HomeCustomerComponent},
+  {path:'homecustomer/:id', component:HomeCustomerComponent},
   {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
   {path:'barbermeshshifts', component:BarberMeshShiftsComponent},
-  {path:'homebarber', component:HomeBarberComponent},
+  {path:'homebarber/:id', component:HomeBarberComponent},
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
@@ -57,6 +65,13 @@ const appRoutes: Routes = [
   {path:'list-barbershop', component:ListBarbershopComponent},
   {path:'show-publication', component:ToShowPublicationsComponent},
   {path:'upload-cuts', component:UploadCutsComponent},
+  {path:'manage-catalogue', component:ManageCatalogueComponent},
+  {path:'hola', component:PromotionComponent},
+  {path:'profile-barber', component:ProfileBarberComponent},
+  {path:'profile-barbershop', component:ProfileBarbershopComponent},
+  {path:'profile-client', component:ProfileClientComponent},
+
+
 
 ]
 
@@ -88,7 +103,16 @@ const appRoutes: Routes = [
     ToShowPublicationsComponent,
     CardLoaderComponent,
     UploadCutsComponent,
+<<<<<<< HEAD
     DetailsComponent,
+=======
+    PromotionListComponent,
+    LoginComponent,
+    ProfileClientComponent,
+    ProfileBarbershopComponent,
+
+
+>>>>>>> 08e2862c056d464291ed2f78e5d69f5eaef77a5a
     
 
   ],
