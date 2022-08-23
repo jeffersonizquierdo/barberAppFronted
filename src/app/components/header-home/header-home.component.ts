@@ -16,23 +16,24 @@ export class HeaderHomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.typeUser = localStorage.getItem('tipo')
-
-
+    this.tipo= this.authService.typeUser
+    
   }
 
+  tipo: Number;
 
-  anonymous = true;
-  barbershop = false;
-  barber = false;
-  customer = false;
+  x : Number = 1
 
 
 
   logout():void{
 
+    
+
     this.authService.logout();
     Swal.fire('Login', `session cerrada`, 'success')
+    
+    
     this.router.navigate(["/login"])
     
   }

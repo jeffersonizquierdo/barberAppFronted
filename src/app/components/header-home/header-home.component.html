@@ -4,7 +4,7 @@
         <img src="../../../assets/images/LogoBarberApp.jpg">
     </div>
 
-    <div *ngIf="anonymous" class="funciones">
+    <div class="funciones">
         <div class="form-group-col-md-3" >
             <div class="wrapper" >
                 <div class="inputData" >
@@ -29,7 +29,7 @@
     </div>
 
 
-    <div *ngIf=" authService.isAuthenticated()" class="funciones">
+    <div *ngIf=" authService.isAuthenticated() && tipo == 1 " class="funciones">
 
         <div class="name" >
             <a>Name barbershop</a>
@@ -48,49 +48,41 @@
     </div>
 
 
-    <div *ngIf="barber" class="funciones">
+    <div  *ngIf=" authService.isAuthenticated() && tipo == 2 " class="funciones">
 
         <div class="name" >
             <a>Name Barber</a>
         </div>
 
-        <div class="form-group-col-md-3" >
-            <div class="wrapper" >
-                <div class="inputData" >
-                  <input class="intp" type="text" name="search" required>
-                  <label for="search">Buscar</label>
-                </div>
-            </div>
-        </div>
  
         <ul class="links" >
             <li><a href="">Vinculaciones</a></li>
             <li><a href="">Cuts</a></li>
             <li><a href="">Catalogo</a></li>
             <li><a href="">Mayas de Turnos</a></li>
-            <li><a href="">Salir</a></li>
+            <div class="login">
+                
+                <button (click)="logout()" >Cerrar Sesion</button>
+
+            </div>
         </ul>
     </div>
 
 
-    <div *ngIf="customer" class="funciones">
+    <div *ngIf=" authService.isAuthenticated() && tipo == 3 "class="funciones">
 
         <div class="name" >
             <a href="" >Name Customer</a>
         </div>
 
-        <div class="form-group-col-md-3" >
-            <div class="wrapper" >
-                <div class="inputData" >
-                  <input class="intp" type="text" name="search" required>
-                  <label for="search">Buscar</label>
-                </div>
-            </div>
-        </div>
  
         <ul class="links" >
             <li><a href="">Reservar</a></li>
-            <li><a href="">Salir</a></li>
+            <div class="login">
+                
+                <button (click)="logout()" >Cerrar Sesion</button>
+
+            </div>
         </ul>
     </div>
 

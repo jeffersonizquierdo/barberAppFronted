@@ -2,8 +2,6 @@ import { HttpClient, HttpHeaders} from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
-import Swal from "sweetalert2";
-import { HeaderHomeComponent } from "../components/header-home/header-home.component";
 import { Usuario } from "./Usuario";
 
 
@@ -17,7 +15,7 @@ export class AuthServices{
 
   private _usuario:Usuario;
   private _token:string;
-  private _type : string;
+  private _type : Number;
 
 
   constructor(private http:HttpClient, private router:Router){
@@ -67,6 +65,8 @@ export class AuthServices{
     params.set('username', usaurio.username);
     params.set('password', usaurio.password);
     console.log(params.toString());
+
+    
     return this.http.post(url, params.toString(), {headers: httpHeadres})
 
   }
@@ -98,30 +98,29 @@ export class AuthServices{
   }
 
 
-  saveTypeUser(tipo: string){
-
-    if (tipo == "1"){
-
-      this._type = "barbershop"
-      localStorage.setItem('tipo', JSON.stringify("barbershop"))
-
-    }
+  saveTypeUser(tipo: Number){
+  
+    this._type = tipo
     
+    localStorage.setItem('tipo', JSON.stringify(tipo))
+
 
   }
 
-  public get typeUser():string{
+  public get typeUser():Number{
 
 
     if(this._type != null) return this._type;
 
     else if (this._token == null && localStorage.getItem('tipo') != null){
-      this._type = localStorage.getItem('tipo');
-      console.log("tipoooo" + this._type);
+
+      let tipo2 =  localStorage.getItem('tipo');
+      
+      this._type = parseInt(tipo2)
       
       return this._type
     }
-    return null;
+    return this._type;
   }
 
 

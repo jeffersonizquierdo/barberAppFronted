@@ -13,7 +13,7 @@ export class HomeBarbershopComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
+   
   }
 
   
