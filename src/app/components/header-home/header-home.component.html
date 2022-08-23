@@ -13,26 +13,6 @@
                 </div>
             </div>
         </div>
-        <section class=botones>
-        <ul class="linksAnonymous" >
-            <div class="login">
-                <a *ngIf="!authService.isAuthenticated()" [routerLink]="['/login']"><li class="boton"><img src="../../../assets/images/usuario.png" alt="login" alt="">Iniciar Sesion</li></a>
-            </div>
-            <div class="signup">
-                <a [routerLink]="['/singup']"><li class="boton"><img src="../../../assets/images/agregar-simbolo-de-usuario.png" alt="">Registrarse</li></a>
-            </div>
-
-            <div *ngIf="authService.isAuthenticated() == true" class="login">
-                
-                <button (click)="logout()" >Cerrar Sesion</button>
-
-            </div>
-
-        </ul>
-
-        
-
-        </section>
     </div>
 
 
@@ -52,31 +32,31 @@
             </div>
 
         </div>
-<<<<<<< HEAD
         <div class="menu_bar">
             <a href="#" class="bt-menu">⁝</a>
             <nav>
                 <ul class="links" >
+                    <li><a href="/list-barber">Gestionar Barberos</a></li>
+                    <li><a href="/upload-cuts">Gestionar Cuts</a></li>
+                    <li><a href="">Mayas de Turnos</a></li>
+                    <li><a href="/manage-catalogue">Gestionar Catalogo</a></li>
+                    <li><a href="/promotions">Gestionar Promociones </a></li>
+                    <li><a href="/show-publication">Gestionar publicidad</a></li>
                     <li><a href="">Barberos</a></li>
                     <li><a href="">Cuts</a></li>
                     <li><a href="">Mayas de Turnos</a></li>
                     <li><a href="">Salir</a></li>
+                    <li><a href="">Cerrar Sesion</a></li>
                 </ul>
             </nav>
         </div>
         
-=======
+
  
         <ul class="links" >
-            <li><a href="/list-barber">Gestionar Barberos</a></li>
-            <li><a href="/upload-cuts">Gestionar Cuts</a></li>
-            <li><a href="">Mayas de Turnos</a></li>
-            <li><a href="/manage-catalogue">Gestionar Catalogo</a></li>
-            <li><a href="/promotions">Gestionar Promociones </a></li>
-            <li><a href="/show-publication">Gestionar publicidad</a></li>
-            <li><a href="">Cerrar Sesion</a></li>
+            
         </ul>
->>>>>>> c2d733a685e1606a9777ee59baae029de994bf38
+
     </div>
 
 

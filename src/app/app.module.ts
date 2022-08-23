@@ -55,25 +55,8 @@ const appRoutes: Routes = [
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
-<<<<<<< HEAD
   {path:'h', component:ManageCatalogueComponent},
   {path:'hola', component:PromotionComponent},
-=======
-  {path:'p', component:LoadPublicityComponent},
-  {path:'promotions', component:PromotionComponent},
-  {path:'list-barber', component:ListBarberComponent},
-  {path:'list-barbershop', component:ListBarbershopComponent},
-  {path:'show-publication', component:ToShowPublicationsComponent},
-  {path:'upload-cuts', component:UploadCutsComponent},
-  {path:'manage-catalogue', component:ManageCatalogueComponent},
-  {path:'hola', component:PromotionComponent},
-  {path:'profile-barber', component:ProfileBarberComponent},
-  {path:'profile-barbershop', component:ProfileBarbershopComponent},
-  {path:'profile-client', component:ProfileClientComponent},
-
-
-
->>>>>>> c2d733a685e1606a9777ee59baae029de994bf38
 ]
 
 @NgModule({
