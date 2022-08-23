@@ -6,6 +6,8 @@
 
 .containers{
     display: flex;
+    gap: 6%;
+    justify-content: center;
 }
 .header{
     display: flex;
@@ -43,12 +45,15 @@
     margin: 73px 0;
 }
 .container-medium{
+    border: 1px solid white;
+    height: 453px;
+    width: 27%;
     margin: 73px 0;
 }
 .container-rinht{
     
     border: 1px solid white;
-    width: 30px;
-    height: 30px;
+    height: 453px;
+    width: 27%;
     margin: 73px 0;
 }
