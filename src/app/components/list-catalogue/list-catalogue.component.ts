@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import {  NgxSpinnerService } from 'ngx-spinner';
 import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
 
@@ -43,7 +43,7 @@ export class ListCatalogueComponent implements OnInit {
     )
   }
 
-  openModal(){
+  openModal(name:string,url:string,descrition:string){
     alert("modal")
   }
 }
