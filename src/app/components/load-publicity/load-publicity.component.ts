@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Barbershop } from 'src/app/models/barbershop';
-import { Catalogue } from 'src/app/models/catalogue';
 import { Publicity } from 'src/app/models/Publicity';
 import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
 import { PublicityService } from 'src/app/services/publicity/publicity.service';

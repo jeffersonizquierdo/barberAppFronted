@@ -43,7 +43,7 @@ export class ListCatalogueComponent implements OnInit {
     )
   }
 
-  openModal(name:string,url:string,descrition:string){
+  openModal(){
     alert("modal")
   }
 }
