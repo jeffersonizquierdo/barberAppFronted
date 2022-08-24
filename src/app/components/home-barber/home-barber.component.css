@@ -9,15 +9,6 @@
     flex-direction: column;
 }
 
-.page::-webkit-scrollbar {
-	width: 15px;
-	background-color: #ff0000;
-}
-
-.page::-webkit-scrollbar-thumb {
-	background-color: #000000;
-    border-radius: 30px;
-}
 
 .bodyPage{
     display: flex;
