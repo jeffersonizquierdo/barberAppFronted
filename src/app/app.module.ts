@@ -92,7 +92,6 @@ const appRoutes: Routes = [
     ManageCatalogueComponent,
     ListCatalogueComponent,
     LoadPublicityComponent,
-
     ListBarbershopComponent,
     ToShowPublicationsComponent,
     CardLoaderComponent,

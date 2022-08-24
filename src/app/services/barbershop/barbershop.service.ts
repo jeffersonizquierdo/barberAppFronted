@@ -13,7 +13,22 @@ export class BarbershopService {
 
   constructor(private http: HttpClient, private router: Router, private authService: AuthServices) { }
 
-  private httpHeadres = new HttpHeaders({'Content-Type' : 'application/json'})
+  private httpHeadres = new HttpHeaders({ 'Content-Type' : 'application/json'})
+
+    private agregarAuthorizationHeader(){
+
+    let token = this.authService.token
+
+    if (token != null){
+      console.log(token + " tokennnnn");
+
+      return this.httpHeadres.append('Authorization', 'Bearer ' + token);
+    }
+
+    return this.httpHeadres
+
+  } 
+
 
   saveBarbeshop(newBarbershop:Barbershop): Observable<Barbershop>{
 
@@ -43,8 +58,27 @@ export class BarbershopService {
   listBarber():  Observable<Barber>{
 
     return  this.http.get<Barber>(`http://localhost:8080/barbershop/consultBarber/${1}`)
-  } 
+  }
 
+
+
+  getbarber(id : Number):  Observable<Barbershop>{
+
+    return  this.http.get<Barbershop>(`http://localhost:8080/barbershop/consult/${id}`, {headers: this.agregarAuthorizationHeader()}).pipe(
+
+      catchError(e =>{
+
+        this.isNoAuthorizado(e)
+        return throwError(e)
+
+      })
+
+    )
+  }
+
+
+
+  
 
   private isNoAuthorizado(e):Boolean{
 
