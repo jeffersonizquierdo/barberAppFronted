@@ -38,21 +38,22 @@
 }
 
 .container-left{
-    border: 1px solid white;
+
   
     height: 453px;
     width: 27%;
     margin: 73px 0;
+    text-align: center;
 }
 .container-medium{
-    border: 1px solid white;
+
     height: 453px;
     width: 27%;
     margin: 73px 0;
 }
 .container-rinht{
     
-    border: 1px solid white;
+
     height: 453px;
     width: 27%;
     margin: 73px 0;
