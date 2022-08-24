@@ -17,6 +17,19 @@ export class UsuarioService {
 
   private httpHeadres = new HttpHeaders({'Content-Type' : 'application/json'})
 
+  private agregarAuthorizationHeader(){
+
+    let token = this.authService.token
+
+    if (token != null){
+
+      return this.httpHeadres.append('Authorization', 'Bearer' + token);
+    }
+
+    return this.httpHeadres
+
+  }
+
 
   saveUsuario(newUsuario:Usuario): Observable<Usuario>{
 

@@ -7,9 +7,7 @@ export class Promotion{
     description: string;
     name: string;
     url: string;
-    owner: Number;
-
-
+    owner: Barbershop;
 
 }
 
