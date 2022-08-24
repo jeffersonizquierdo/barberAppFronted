@@ -1,4 +1,12 @@
 <div class="container-main">
+
+    <div class="header">
+        <div class="component-empty"></div>
+        <img src="../../../assets/images/profile.jpg" alt="">
+        <div class="info-barber">
+            <h1>Barberia</h1>
+            <button>Reservar</button>
+
     <div *ngFor="let barber  of barbershop">
         <div class="header">
             <dir class="images">
@@ -7,11 +15,26 @@
             </dir>
            
             <button >Reservar</button>
+
         </div>
     </div>
    
 
+    <hr>
+
     <div class="containers">
+
+        <div class="container-left">
+            <p>Ciudad: Armenia</p>
+            <p>Descripción: Contamos con 4 barberos quienes les daran un muy buen servicio.</p>
+
+        </div>
+
+
+
+        <div class="container-rigth">
+            <p>Publicaciones</p>
+
         <div class="container-left" *ngFor="let barber  of barbershop">
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br> Sunt rem dolores aperiam perspiciatis ut,<br> corporis optio quis, labore minima harum exercitationem <br> iste cum reiciendis aliquid pariatur hic quisquam. <br> Dicta, similique.</p>
 
@@ -40,8 +63,11 @@
 
             <h1>promotiones</h1>
             <app-promotion-list></app-promotion-list>
+
         </div>
+
+
     </div>
 
-  
+
 </div>

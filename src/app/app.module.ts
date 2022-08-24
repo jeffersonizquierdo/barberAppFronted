@@ -66,6 +66,12 @@ const appRoutes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
   {path:'h', component:ManageCatalogueComponent},
+
+  {path:'hola', component:PromotionComponent},
+  {path:'porfilebarber', component:ProfileBarberComponent},
+  {path:'porfilebarbershop', component:ProfileBarbershopComponent},
+  {path:'porfileclient', component:ProfileClientComponent},
+
   {path:'promotion', component:PromotionComponent},
   {path:'porfilebarber', component:ProfileBarberComponent}, 
   
