@@ -48,31 +48,15 @@ const appRoutes: Routes = [
 
   {path:'', component:HomeMainComponent},
   {path:'homebarbershop', component:HomeBarbershopComponent},
-<<<<<<< HEAD
   {path:'homecustomer', component:HomeCustomerComponent},
-=======
-  {path:'homecustomer/:id', component:HomeCustomerComponent},
->>>>>>> 3a0d409d78a8164bc18adb3e2a9518562589420b
   {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
   {path:'barbermeshshifts', component:BarberMeshShiftsComponent},
   {path:'homebarber', component:HomeBarberComponent},
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
-  {path:'p', component:LoadPublicityComponent},
-  {path:'promotions', component:PromotionComponent},
-  {path:'list-barber', component:ListBarberComponent},
-  {path:'list-barbershop', component:ListBarbershopComponent},
-  {path:'show-publication', component:ToShowPublicationsComponent},
-  {path:'upload-cuts', component:UploadCutsComponent},
-  {path:'manage-catalogue', component:ManageCatalogueComponent},
+  {path:'h', component:ManageCatalogueComponent},
   {path:'hola', component:PromotionComponent},
-  {path:'profile-barber', component:ProfileBarberComponent},
-  {path:'profile-barbershop', component:ProfileBarbershopComponent},
-  {path:'profile-client', component:ProfileClientComponent},
-
-
-
 ]
 
 @NgModule({
