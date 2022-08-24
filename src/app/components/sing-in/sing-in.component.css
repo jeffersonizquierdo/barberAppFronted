@@ -67,6 +67,10 @@ form h3{
     right: -20px;
 }
 
+.requerido{
+    color: red;
+}
+
 .container-home-next button a{
     color: white;
 }
@@ -97,18 +101,18 @@ form h3{
 
 .inputData input:focus ~ label,
 .inputData input:valid ~ label{
-    transform: translateY(-13px);
+    transform: translateY(-15px);
     font-size: 15px;
 }
 .wrapper input[type="email"]:focus ~ label,
 .inputData input:valid ~ labe{
-    transform: translateY(-13px);
+    transform: translateY(-15px);
     font-size: 15px;
 }
 
 .inputData label{
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     left: 0;
     color: rgb(145, 145, 145);
     pointer-events: none;

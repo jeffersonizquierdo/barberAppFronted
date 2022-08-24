@@ -15,4 +15,9 @@ export class PublicityService {
 
     return this.httpClient.post<Publicity>("http://localhost:8080/publication/save", newPublicity)
   }
+
+  listPublicity():  Observable<Publicity>{
+
+    return  this.httpClient.get<Publicity>("http://localhost:8080/publication/consultall")
+  }
 }

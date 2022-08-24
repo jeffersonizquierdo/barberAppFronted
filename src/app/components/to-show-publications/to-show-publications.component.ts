@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PublicityService } from 'src/app/services/publicity/publicity.service';
 
 @Component({
   selector: 'app-to-show-publications',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToShowPublicationsComponent implements OnInit {
 
-  constructor() { }
+  listPublicity:any=[];
+
+  constructor(private publicityService:PublicityService) { }
 
   ngOnInit(): void {
+    this.publicityService.listPublicity().subscribe(
+      data=>{
+        this.listPublicity=data;
+      }
+    )
   }
 
 }

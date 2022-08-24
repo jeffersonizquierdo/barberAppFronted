@@ -48,7 +48,17 @@ const appRoutes: Routes = [
 
   {path:'', component:HomeMainComponent},
   {path:'homebarbershop', component:HomeBarbershopComponent},
+
   {path:'homecustomer', component:HomeCustomerComponent},
+
+
+  {path:'homecustomer', component:HomeCustomerComponent},
+
+  {path:'homecustomer', component:HomeCustomerComponent},
+
+  {path:'homecustomer/:id', component:HomeCustomerComponent},
+
+
   {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
   {path:'barbermeshshifts', component:BarberMeshShiftsComponent},
   {path:'homebarber', component:HomeBarberComponent},
@@ -56,10 +66,15 @@ const appRoutes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
   {path:'h', component:ManageCatalogueComponent},
+
   {path:'hola', component:PromotionComponent},
   {path:'porfilebarber', component:ProfileBarberComponent},
   {path:'porfilebarbershop', component:ProfileBarbershopComponent},
   {path:'porfileclient', component:ProfileClientComponent},
+
+  {path:'promotion', component:PromotionComponent},
+  {path:'porfilebarber', component:ProfileBarberComponent}, 
+  
 ]
 
 @NgModule({
@@ -85,7 +100,6 @@ const appRoutes: Routes = [
     ManageCatalogueComponent,
     ListCatalogueComponent,
     LoadPublicityComponent,
-
     ListBarbershopComponent,
     ToShowPublicationsComponent,
     CardLoaderComponent,
