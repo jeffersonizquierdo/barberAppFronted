@@ -5,11 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './slider.component.html',
   styleUrls: ['./slider.component.css']
 })
-export class SliderComponent implements OnInit {
+export class SliderComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
