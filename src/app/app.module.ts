@@ -30,13 +30,13 @@ import { PromotionListComponent } from './components/promotion-list/promotion-li
 import { AuthGuard } from './guards/auth.guard';
 import { ListBarberComponent } from './components/list-barber/list-barber.component';
 import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
-import { OpenModalComponent } from './components/open-modal/open-modal.component';
 import { LoadPublicityComponent } from './components/load-publicity/load-publicity.component';
 import { ManageCatalogueComponent } from './components/manage-catalogue/manage-catalogue.component';
 import { ListBarbershopComponent } from './components/list-barbershop/list-barbershop.component';
 import { ToShowPublicationsComponent } from './components/to-show-publications/to-show-publications.component';
 import { CardLoaderComponent } from './components/card-loader/card-loader.component';
 import { UploadCutsComponent } from './components/upload-cuts/upload-cuts.component';
+import { DetailsComponent } from './components/details/details.component';
 import { ProfileBarberComponent } from './components/profile-barber/profile-barber.component';
 import { ProfileClientComponent } from './components/profile-client/profile-client.component';
 import { ProfileBarbershopComponent } from './components/profile-barbershop/profile-barbershop.component';
@@ -48,7 +48,13 @@ const appRoutes: Routes = [
 
   {path:'', component:HomeMainComponent},
   {path:'homebarbershop', component:HomeBarbershopComponent},
+
   {path:'homecustomer', component:HomeCustomerComponent},
+
+  {path:'homecustomer', component:HomeCustomerComponent},
+
+  {path:'homecustomer/:id', component:HomeCustomerComponent},
+
   {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
   {path:'barbermeshshifts', component:BarberMeshShiftsComponent},
   {path:'homebarber', component:HomeBarberComponent},
@@ -89,15 +95,17 @@ const appRoutes: Routes = [
     HomeBarberComponent,
     HistoriesCutsComponent,
     PromotionListComponent,
+    PromotionListComponent,
     ListBarberComponent,
     ManageCatalogueComponent,
     ListCatalogueComponent,
-    OpenModalComponent,
     LoadPublicityComponent,
+
     ListBarbershopComponent,
     ToShowPublicationsComponent,
     CardLoaderComponent,
     UploadCutsComponent,
+    DetailsComponent,
     PromotionListComponent,
     LoginComponent,
     ProfileClientComponent,
@@ -119,6 +127,7 @@ const appRoutes: Routes = [
     
 
   ],
+  entryComponents:[DetailsComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

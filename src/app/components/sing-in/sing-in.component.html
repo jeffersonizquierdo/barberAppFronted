@@ -1,55 +1,94 @@
 <div class="sing-in">
 
-  <form>
+  <form >
 
     <h3>Registro de usuario</h3>
 
-
     <div class="wrapper" >
       <div class="inputData" >
-        <input class="intp" type="text" name="nickname" autocomplete="off" required [(ngModel)] = "usuario.username">
+        <input class="intp" type="text" name="nickname" autocomplete="off" required [(ngModel)] = "usuario.username" #nickname="ngModel">
+        
         <div class="line" ></div>
-        <label for="nickname">Apodo</label>
+        <label for="nickname">Nombre</label>
+      </div>
+      <div class="requerido" *ngIf="nickname.invalid && (nickname.dirty) || nickname.touched">
+        <div *ngIf="nickname.hasError('required')">
+            el nombre es requerido
+        </div>
       </div>
     </div>
 
     <div class="wrapper" >
       <div class="inputData" >
-        <input class="intp" type="date" name="age" autocomplete="off" required  [(ngModel)]="usuario.date" >
+        <input class="intp" type="date" name="age" autocomplete="off" required  [(ngModel)]="usuario.date" #age="ngModel" >
+       
         <div class="line" ></div>
         <label style="margin-bottom: 10px;" for="age">Fecha de Nacimiento</label>
       </div>
+      <div class="requerido" *ngIf="age.invalid && (age.dirty) || age.touched">
+        <div *ngIf="age.hasError('required')">
+            la fecha de nacimiento es requerida
+        </div>
+      </div>
     </div>
 
     <div class="wrapper" >
       <div class="inputData" >
-        <input class="intp" type="text" name="city" autocomplete="off" required  [(ngModel)]="usuario.city" >
+        <input class="intp" type="text" name="city" autocomplete="off" required  [(ngModel)]="usuario.city" #city="ngModel" >
+       
         <div class="line" ></div>
         <label for="city">Ciudad</label>
       </div>
-    </div>
-
-    <div class="wrapper" >
-      <div class="inputData" >
-        <input class="intp" type="text" name="cellphone" autocomplete="off" required [(ngModel)]="usuario.cellphone" >
-        <div class="line" ></div>
-        <label for="cellphone">Telefono</label>
+      <div class="requerido" *ngIf="city.invalid && (city.dirty) || city.touched">
+        <div *ngIf="city.hasError('required')">
+            agregar la ciudad es requerida
+        </div>
       </div>
     </div>
 
     <div class="wrapper" >
       <div class="inputData" >
-        <input class="intp" type="text" name="email" autocomplete="off" required [(ngModel)]="usuario.email" >
+        <input class="intp" type="text" name="cellphone" autocomplete="off" required [(ngModel)]="usuario.cellphone" #celllphone="ngModel" >
+       
+        <div class="line" ></div>
+        <label for="cellphone">Telefono</label>
+      
+      </div>
+      <div class="requerido" *ngIf="celllphone.invalid && (celllphone.dirty) || celllphone.touched">
+        <div *ngIf="celllphone.hasError('required')">
+            el numero telefonico es requerido 
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper" >
+      <div class="inputData" >
+        <input class="intp" type="email" name="email" autocomplete="off" required email [(ngModel)]="usuario.email" #email="ngModel"  >
         <div class="line" ></div>
         <label for="email">Correo</label>
       </div>
+
+      <div class="requerido" *ngIf="email.invalid && (email.dirty) || email.touched">
+        <div *ngIf="email.hasError('required')">
+            el email es requerido
+        </div>
+        <div *ngIf="email.hasError('email')">
+          lo que esta ingresando no es correcto
+      </div>
+   
+      </div>
     </div>
 
     <div class="wrapper" >
       <div class="inputData" >
-        <input class="intp" type="password" name="constraseña" autocomplete="off" required [(ngModel)]="usuario.password">
+        <input class="intp" type="password" name="constraseña" autocomplete="off" required [(ngModel)]="usuario.password" #password="ngModel" >
         <div class="line" ></div>
         <label for="constraseña">Contraseña</label>
+      </div>
+      <div class="requerido" *ngIf="password.invalid && (password.dirty) || password.touched">
+        <div *ngIf="celllphone.hasError('required')">
+            el numero telefonico es requerido 
+        </div>
       </div>
     </div>
 
@@ -57,14 +96,14 @@
 
     <div class="btn-type">
       <label for=""><input (click)="dataTypeUser(3)" type="radio" name="type"/>Cliente</label>
-      <label for=""><input (click)="dataTypeUser(3)" type="radio" name="type"/>Barbero</label>
-      <label for=""><input (click)="dataTypeUser(3)" type="radio" name="type"/>Barberia</label>
+      <label for=""><input (click)="dataTypeUser(2)" type="radio" name="type"/>Barbero</label>
+      <label for=""><input (click)="dataTypeUser(1)" type="radio" name="type"/>Barberia</label>
     </div>
 
 
     <div class="container-home-next">
       <div class="home-sing-in"><a href=""><img src="../../../assets/images/icons8-casa-64.png" alt="" class="img-home-sing-in"></a></div>
-      <button (click)="saveUser()"><a>Siguiente</a></button>
+      <button (click)="saveUser()" ><a>Siguiente</a></button>
     </div>
 
     <a href="http://localhost:4200/login" class="sign-up">Ya tengo una cuenta</a>

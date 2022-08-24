@@ -4,7 +4,7 @@
         <img src="../../../assets/images/LogoBarberApp.jpg">
     </div>
 
-    <div *ngIf="anonymous" class="funciones">
+    <div class="funciones">
         <div class="form-group-col-md-3" >
             <div class="wrapper" >
                 <div class="inputData" >
@@ -18,16 +18,9 @@
             <div class="login">
                 <a *ngIf="!authService.isAuthenticated()" [routerLink]="['/login']"><li class="boton"><img src="../../../assets/images/usuario.png" alt="login" alt="">Iniciar Sesion</li></a>
             </div>
-            <div class="signup">
-                <a [routerLink]="['/singup']"><li class="boton"><img src="../../../assets/images/agregar-simbolo-de-usuario.png" alt="">Registrarse</li></a>
+            <div *ngIf="!authService.isAuthenticated()" class="signup">
+                <a  [routerLink]="['/singup']"><li class="boton"><img src="../../../assets/images/agregar-simbolo-de-usuario.png" alt="">Registrarse</li></a>
             </div>
-
-            <div *ngIf="authService.isAuthenticated() == true" class="login">
-                
-                <button (click)="logout()" >Cerrar Sesion</button>
-
-            </div>
-
         </ul>
 
         
@@ -36,78 +29,62 @@
     </div>
 
 
-    <div *ngIf="barbershop" class="funciones">
+    <div *ngIf=" authService.isAuthenticated() && tipo == 1 " class="funciones">
 
         <div class="name" >
             <a>Name barbershop</a>
-        </div>
-
-
-        <div class="form-group-col-md-3">
-            <div class="wrapper" >
-                <div class="inputData" >
-                  <input class="intp" type="text" name="search" required>
-                  <label for="search">Buscar</label>
-                </div>
-            </div>
-
         </div>
  
         <ul class="links" >
             <li><a href="/list-barber">Gestionar Barberos</a></li>
             <li><a href="/upload-cuts">Gestionar Cuts</a></li>
             <li><a href="">Mayas de Turnos</a></li>
-            <li><a href="/manage-catalogue">Gestionar Catalogo</a></li>
-            <li><a href="/promotions">Gestionar Promociones </a></li>
-            <li><a href="/show-publication">Gestionar publicidad</a></li>
-            <li><a href="">Cerrar Sesion</a></li>
+
+            <div class="login">
+                
+                <button (click)="logout()" >Cerrar Sesion</button>
+
+            </div>
+
         </ul>
     </div>
 
 
-    <div *ngIf="barber" class="funciones">
+    <div  *ngIf=" authService.isAuthenticated() && tipo == 2 " class="funciones">
 
         <div class="name" >
             <a>Name Barber</a>
         </div>
 
-        <div class="form-group-col-md-3" >
-            <div class="wrapper" >
-                <div class="inputData" >
-                  <input class="intp" type="text" name="search" required>
-                  <label for="search">Buscar</label>
-                </div>
-            </div>
-        </div>
  
         <ul class="links" >
             <li><a href="">Vinculaciones</a></li>
             <li><a href="">Cuts</a></li>
             <li><a href="">Catalogo</a></li>
             <li><a href="">Mayas de Turnos</a></li>
-            <li><a href="">Salir</a></li>
+            <div class="login">
+                
+                <button (click)="logout()" >Cerrar Sesion</button>
+
+            </div>
         </ul>
     </div>
 
 
-    <div *ngIf="customer" class="funciones">
+    <div *ngIf=" authService.isAuthenticated() && tipo == 3 "class="funciones">
 
         <div class="name" >
             <a href="" >Name Customer</a>
         </div>
 
-        <div class="form-group-col-md-3" >
-            <div class="wrapper" >
-                <div class="inputData" >
-                  <input class="intp" type="text" name="search" required>
-                  <label for="search">Buscar</label>
-                </div>
-            </div>
-        </div>
  
         <ul class="links" >
             <li><a href="">Reservar</a></li>
-            <li><a href="">Salir</a></li>
+            <div class="login">
+                
+                <button (click)="logout()" >Cerrar Sesion</button>
+
+            </div>
         </ul>
     </div>
 

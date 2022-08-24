@@ -1,7 +1,7 @@
+import { Usuario } from './../../models/Usuario';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthServices } from 'src/app/models/AuthServices';
-import { Usaurio } from 'src/app/models/Usuario';
 import Swal from 'sweetalert2';
 
 
@@ -12,23 +12,27 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
 
-  usuario:Usaurio;
+  usuario:Usuario;
 
   constructor(private authServices:AuthServices, private router:Router) { 
 
-    this.usuario = new Usaurio()
+    this.usuario = new Usuario()
   }
 
   ngOnInit(): void {
 
     
+    
+    
   }
+
+ 
 
   login():void{
      
     console.log(this.usuario);
 
-    if(  this.usuario.password == null || this.usuario.username == null){
+    if(this.usuario.password == null || this.usuario.username == null){
 
       Swal.fire('Error Login', 'usuario o consrtaseña vacias!', 'error')
       return;
@@ -42,25 +46,58 @@ export class LoginComponent implements OnInit {
       this.authServices.saveUser(response.access_token);
       this.authServices.saveToken(response.access_token);
 
+      this.authServices.saveTypeUser(parseInt(response.typeUser));
+
       let usuario = this.authServices.usuario;
 
-      if(this.usuario.typeUser = 1){
+      if (response.typeUser == 1){
 
-        this.router.navigate(['/homebarbershop/1'])
-      }
-
-      else if(this.usuario.typeUser == 2){
         
-        this.router.navigate(['/homebarber/1'])
-      }
+        this.router.navigate(['/homebarbershop'])
+        setTimeout(() => {
+          
+          window.location.reload();
+          
 
-      else if(this.usuario.typeUser == 3){
+        }, 1000);
+
+        Swal.fire('Login', 'Hola ' + usuario.username + ', bienvenido', 'success');
         
-        this.router.navigate(['/homecustomer/1'])
+        
+
+      } else if(response.typeUser == 2){
+
+
+        this.router.navigate(['/homebarber'])
+        setTimeout(() => {
+          
+          window.location.reload();
+          
+
+        }, 1000);
+
+        Swal.fire('Login', 'Hola ' + usuario.username + ', bienvenido', 'success');
+
+
+      } else if(response.typeUser == 3){
+
+
+        this.router.navigate(['/homecustomer'])
+        setTimeout(() => {
+          
+          window.location.reload();
+          
+
+        }, 1000);
+
+        Swal.fire('Login', 'Hola ' + usuario.username + ', bienvenido', 'success');
+
+        
+
       }
 
       
-      Swal.fire('Login', 'Hola ' + usuario.username + ', bienvenido', 'success');
+      
     
     }, error => {
 
@@ -68,10 +105,14 @@ export class LoginComponent implements OnInit {
         Swal.fire('Error Login', 'usuario o contraseña incorrecta!', 'error')
       }
 
-    }  
-   );
+    }
 
+    
+   );
    
+   setTimeout(() => {
+    
+   }, 200);
   }
  
 
