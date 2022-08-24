@@ -48,7 +48,17 @@ const appRoutes: Routes = [
 
   {path:'', component:HomeMainComponent},
   {path:'homebarbershop', component:HomeBarbershopComponent},
+
   {path:'homecustomer', component:HomeCustomerComponent},
+
+
+  {path:'homecustomer', component:HomeCustomerComponent},
+
+  {path:'homecustomer', component:HomeCustomerComponent},
+
+  {path:'homecustomer/:id', component:HomeCustomerComponent},
+
+
   {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
   {path:'barbermeshshifts', component:BarberMeshShiftsComponent},
   {path:'homebarber', component:HomeBarberComponent},

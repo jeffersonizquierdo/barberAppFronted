@@ -42,7 +42,7 @@ export class BarbershopService {
 
   listBarber():  Observable<Barber>{
 
-    return  this.http.get<Barber>(`http://localhost:8080/barbershop/consultBabrber/${1}`)
+    return  this.http.get<Barber>(`http://localhost:8080/barbershop/consultBarber/${1}`)
   } 
 
 

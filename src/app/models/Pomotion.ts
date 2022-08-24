@@ -7,15 +7,9 @@ export class Promotion{
     description: string;
     name: string;
     url: string;
-    owner: Barbershop;
+    owner: Number;
 
-    constructor(id:Number, description:string, name:string, url:string, owner:Barbershop) { 
-        this.id=id,
-        this.description=description,
-        this.name=name,
-        this.url=url,
-        this.owner=owner;
-    }
+
 
 }
 

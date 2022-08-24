@@ -1,15 +1,9 @@
 import  swal  from 'sweetalert2';
 import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
-
-import { Barbershop } from 'src/app/models/barbershop';
-import { BarberService } from 'src/app/services/barber/barber.service';
-import { CustomerService } from 'src/app/services/customer/customer.service';
-import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
-import { Customer } from 'src/app/models/Customer';
-import { Barber } from 'src/app/models/Barber';
 import { Usuario } from 'src/app/models/Usuario';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -20,6 +14,19 @@ import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 export class SingInComponent implements OnInit {
 
 
+ 
+  login= new FormGroup({
+
+    nickname: new FormControl("",[Validators.required]),
+    password: new FormControl("",[Validators.required]),
+    email: new FormControl("",[Validators.required,Validators.email]),
+    date: new FormControl("",[Validators.required]),
+    city:  new FormControl("",[Validators.required]),
+    cellphone: new FormControl("",[Validators.required]),
+  })
+
+    contacForm: FormGroup;
+
   usuario: Usuario;
   constructor(private router: Router,private usuarioservice:UsuarioService ) {
 
@@ -27,6 +34,7 @@ export class SingInComponent implements OnInit {
    }
 
   ngOnInit(): void { 
+   
   }
   
 
