@@ -6,6 +6,7 @@ import { AuthServices } from 'src/app/models/AuthServices';
 import { Barbershop } from 'src/app/models/barbershop';
 import { Promotion } from 'src/app/models/Pomotion';
 import { Usuario } from 'src/app/models/Usuario';
+import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
 import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
 import { PromotionService } from 'src/app/services/pormotion/promotion.service';
 
@@ -19,7 +20,7 @@ export class PromotionComponent implements OnInit {
   imagen:File;   
 
   description:string;
-  newBarbershop:Barbershop;
+  barbershop:Barbershop;
   imagenMin:File;
   images:any;
 
@@ -28,11 +29,12 @@ export class PromotionComponent implements OnInit {
   usuario:Usuario;
   
   constructor(private catalogueService:CatalogueService,private router:Router, private promotionService:PromotionService ,
-    private spinner:NgxSpinnerService, private authService: AuthServices) { }
+    private spinner:NgxSpinnerService, private authService: AuthServices, private servicebarbershop: BarbershopService) { }
 
   ngOnInit(): void {
 
     this.usuario = new Usuario()
+
     console.log(this.usuario);
     
     this.promotion = new Promotion()
@@ -55,18 +57,27 @@ export class PromotionComponent implements OnInit {
 
 
   savePromotion(){
+
     this.usuario = this.authService.usuario;
 
-    this.promotion.owner = this.usuario.id
-    this.newBarbershop = new Barbershop(1, "barber", "dsd", "dsddsd", "Cali", "3000", 1, "photo", "descriptionBarbershop", "locationBarbershop", 0);
+    this.servicebarbershop.getbarber(this.usuario.id).subscribe(
+      data => {
+        this.barbershop = data;
+        console.log(this.barbershop);
+        
+      }
+    );
+
     this.spinner.show();
     this.catalogueService.upload(this.imagen, "promotionsimages").subscribe( (response:any) => {
       if(response){
         console.log(response.url);
         this.promotion.url=response.url
 
+
+
         
-        
+        this.promotion.owner = this.barbershop
         this.promotionService.savePromotion(this.promotion).subscribe(
           response =>{
             this.reset();

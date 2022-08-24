@@ -15,18 +15,18 @@ export class PromotionListComponent implements OnInit {
 
   ngOnInit(): void {
 
-    //this.loaderImage();
+    this.loaderImage();
   }
 
-  // loaderImage():void{
-  //   this.promotionService.listPromotion().subscribe(
-  //     data =>{
-  //       this.images = data;
-  //       console.log(this.images);
+  loaderImage():void{
+    this.promotionService.listPromotion().subscribe(
+      data =>{
+        this.images = data;
+        console.log(this.images);
         
-  //     }
-  //   )
-  // }
+      }
+    )
+  }
 
   delete  (id:Number):void{
 
