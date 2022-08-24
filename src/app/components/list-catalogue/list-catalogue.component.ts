@@ -11,7 +11,7 @@ export class ListCatalogueComponent implements OnInit {
 
   images:any=[];
 
-  constructor(private imagenService:CatalogueService, private spinner2:NgxSpinnerService) { }
+  constructor(private imagenService:CatalogueService, private spinner2:NgxSpinnerService,) { }
 
   ngOnInit(): void {
    this.loaderImage();
