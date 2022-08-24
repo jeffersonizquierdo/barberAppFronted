@@ -56,8 +56,9 @@ const appRoutes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
   {path:'h', component:ManageCatalogueComponent},
-  {path:'hola', component:PromotionComponent},
-  {path:'porfilebarber', component:ProfileBarberComponent},
+  {path:'promotion', component:PromotionComponent},
+  {path:'porfilebarber', component:ProfileBarberComponent}, 
+  
 ]
 
 @NgModule({
