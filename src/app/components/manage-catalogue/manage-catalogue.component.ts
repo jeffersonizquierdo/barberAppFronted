@@ -3,6 +3,9 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Catalogue } from 'src/app/models/catalogue';
 import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
+import { AuthServices } from 'src/app/models/AuthServices';
+import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
+import { Usuario } from 'src/app/models/Usuario';
 
 
 @Component({
@@ -23,9 +26,11 @@ export class ManageCatalogueComponent implements OnInit {
   
 
   //object
-  newCatalogue: Catalogue
+  newCatalogue: Catalogue;
+  newBarbershop:Barbershop;
+  usuario:Usuario;
 
-  constructor(private catalogueService:CatalogueService,private spinner: NgxSpinnerService){}
+  constructor(private catalogueService:CatalogueService,private spinner: NgxSpinnerService, private authService: AuthServices, private servicebarbershop: BarbershopService){}
 
   ngOnInit(): void {
   }
@@ -45,11 +50,21 @@ export class ManageCatalogueComponent implements OnInit {
     fr.readAsDataURL(this.imagen);
   }
 
-  newBarbershop:Barbershop;
+
 
 
   onUpload(){
-    this.newBarbershop = new Barbershop(1, "barber", "dsd", "dsddsd", "Cali", "3000", 1, "photo", "descriptionBarbershop", "locationBarbershop", 0);
+    
+    this.usuario = this.authService.usuario;
+
+    this.servicebarbershop.getbarber(this.usuario.id).subscribe(
+      data => {
+        this.newBarbershop = data;
+        console.log(this.newBarbershop);
+        
+      }
+    );
+
     this.spinner.show();
     this.catalogueService.upload(this.imagen, "hairstyle").subscribe( (response:any) => {
       if(response){
