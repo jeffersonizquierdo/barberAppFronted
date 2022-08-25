@@ -11,7 +11,7 @@ import { Usuario } from 'src/app/models/Usuario';
 export class PromotionService {
 
   constructor(private httpClient: HttpClient, private authService: AuthServices) { 
-    
+  
   }
 
   private httpHeadres = new HttpHeaders({ 'Content-Type' : 'application/json'})
