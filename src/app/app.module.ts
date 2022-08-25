@@ -104,7 +104,7 @@ const appRoutes: Routes = [
     ToShowPublicationsComponent,
     CardLoaderComponent,
     UploadCutsComponent,
-    DetailsComponent,
+    // DetailsComponent,
     PromotionListComponent,
     LoginComponent,
     ProfileClientComponent,
