@@ -6,6 +6,7 @@ import { Barbershop } from 'src/app/models/barbershop';
 import { Router } from '@angular/router';
 import { AuthServices } from 'src/app/models/AuthServices';
 import { Barber } from 'src/app/models/Barber';
+import { Usuario } from 'src/app/models/Usuario';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,11 +14,27 @@ export class BarbershopService {
 
   constructor(private http: HttpClient, private router: Router, private authService: AuthServices) { }
 
-  private httpHeadres = new HttpHeaders({'Content-Type' : 'application/json'})
+  private httpHeadres = new HttpHeaders({ 'Content-Type' : 'application/json'})
+
+  usuario:Usuario = this.authService.usuario;
+
+  private agregarAuthorizationHeader(){
+
+    let token = this.authService.token
+
+    if (token != null){
+      console.log(token + " tokennnnn");
+
+      return this.httpHeadres.append('Authorization', 'Bearer ' + token);
+    }
+
+    return this.httpHeadres
+
+  } 
 
   saveBarbeshop(newBarbershop:Barbershop): Observable<Barbershop>{
 
-    return this.http.post<Barbershop>("http://localhost:8080/barbershop/save", newBarbershop, {headers: this.httpHeadres}).pipe(
+    return this.http.post<Barbershop>("http://localhost:8080/barbershop/save", newBarbershop, {headers: this.agregarAuthorizationHeader()}).pipe(
 
 
       catchError(e =>{
@@ -33,18 +50,31 @@ export class BarbershopService {
       }));
   }
 
-
-
   listBarbershop():  Observable<Barbershop>{
 
-    return  this.http.get<Barbershop>(`http://localhost:8080/barbershop/consultall`)
+    return  this.http.get<Barbershop>(`http://localhost:8080/barbershop/consultall`, {headers: this.agregarAuthorizationHeader()})
   } 
 
   listBarber():  Observable<Barber>{
 
-    return  this.http.get<Barber>(`http://localhost:8080/barbershop/consultBabrber/${1}`)
-  } 
+    return  this.http.get<Barber>(`http://localhost:8080/barbershop/consultBarber/${this.usuario.id}`, {headers: this.agregarAuthorizationHeader()})
+  }
 
+
+
+  getbarber(id : Number):  Observable<Barbershop>{
+
+    return  this.http.get<Barbershop>(`http://localhost:8080/barbershop/consult/${id}`, {headers: this.agregarAuthorizationHeader()}).pipe(
+
+      catchError(e =>{
+
+        this.isNoAuthorizado(e)
+        return throwError(e)
+
+      })
+
+    )
+  }
 
   private isNoAuthorizado(e):Boolean{
 
@@ -60,8 +90,6 @@ export class BarbershopService {
     return false;
 
   }
-
-
 
   private addAuthorizationHeader(){
 

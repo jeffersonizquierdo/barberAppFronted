@@ -52,12 +52,16 @@
     height: 453px;
     width: 25%;
     margin: 73px 0;
+
     background-color: #171f2a;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 90%);
     padding: 20px;
 }
 .container-rigth{
+    text-align: center;
+}
+.container-medium{
     height: 453px;
     width: 60%;
     margin: 73px 0;
@@ -74,3 +78,10 @@ hr{
     color: #000000;
     border: 1px solid black;
 }
+
+.container-rinht{
+    height: 453px;
+    width: 27%;
+    margin: 73px 0;
+}
+

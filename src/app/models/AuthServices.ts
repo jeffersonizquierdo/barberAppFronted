@@ -29,7 +29,7 @@ export class AuthServices{
     if(this._usuario != null) return this._usuario;
 
     else if (this._usuario == null && localStorage.getItem('usuario') != null){
-      this._usuario = JSON.parse(localStorage.getItem('usaurio')) as Usuario;
+      this._usuario = JSON.parse(localStorage.getItem('usuario')) as Usuario;
 
       return this._usuario
     }
@@ -78,9 +78,8 @@ export class AuthServices{
 
     this._usuario = new Usuario();
     this._usuario.id = payload.id;
-    this._usuario.username = payload.user_name;
+    this._usuario.username = payload.email;
     this._usuario.typeUser = payload.typeUser;
-    this._usuario.email = payload.email;
     this._usuario.roles = payload.authorities;
 
     //(this.usuario.roles)

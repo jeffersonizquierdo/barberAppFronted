@@ -39,7 +39,7 @@ export class LoadPublicityComponent implements OnInit {
 
 
   onUpload(){
-    this.newBarbershop = new Barbershop(1, "barber", "dsd", "dsddsd", "Cali", "3000", 1, "photo", "descriptionBarbershop", "locationBarbershop", 0);
+    // this.newBarbershop = new Barbershop(1, "barber", "dsd", "dsddsd", "Cali", "3000", 1, "photo", "descriptionBarbershop", "locationBarbershop", 0);
     this.spinner.show();
     this.catalogueService.upload(this.imagen, "publicity").subscribe( (response:any) => {
       if(response){
