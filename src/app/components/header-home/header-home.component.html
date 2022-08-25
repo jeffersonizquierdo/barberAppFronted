@@ -29,7 +29,7 @@
     </div>
 
 
-    <div *ngIf=" authService.isAuthenticated() && tipo == 1 "class="funciones">
+    <div *ngIf=" authService.isAuthenticated() && authService.usuario.typeUser == 1 "class="funciones">
 
         <div class="name" >
             <a>Name barbershop</a>
@@ -60,7 +60,7 @@
     </div>
 
 
-    <div *ngIf=" authService.isAuthenticated() && tipo == 2 " class="funciones">
+    <div *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 2 " class="funciones">
 
         <div class="name" >
             <a>Name Barber</a>
@@ -89,7 +89,7 @@
     </div>
 
 
-    <div *ngIf=" authService.isAuthenticated() && tipo == 3 " class="funciones">
+    <div *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 3 " class="funciones">
 
         <div class="name" >
             <a href="" >Name Customer</a>

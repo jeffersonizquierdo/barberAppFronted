@@ -40,6 +40,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { ProfileBarberComponent } from './components/profile-barber/profile-barber.component';
 import { ProfileClientComponent } from './components/profile-client/profile-client.component';
 import { ProfileBarbershopComponent } from './components/profile-barbershop/profile-barbershop.component';
+import { CreateBarbershopComponent } from './components/create-barbershop/create-barbershop.component';
 
 
 
@@ -109,6 +110,7 @@ const appRoutes: Routes = [
     LoginComponent,
     ProfileClientComponent,
     ProfileBarbershopComponent,
+    CreateBarbershopComponent,
 
 
     
