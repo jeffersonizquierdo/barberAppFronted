@@ -6,43 +6,10 @@
             <app-ranking></app-ranking>
         </div>
         
-        
     
         <div class="medium">
 
-            <div *ngIf="barbershop==null" >
-
-
-                <div class="wrapper" >
-                  <div class="inputData" >
-                    <input class="intp" type="text" name="description" autocomplete="off" required [(ngModel)]="barbershop.description" #description="ngModel"  minlength="10">
-                    <div class="line" ></div>
-                    <label for="description">Descripcion</label>
-                  </div>
-              
-                  <div class="requerido" *ngIf="description.invalid && (description.dirty) || description.touched">
-                    <div *ngIf="description.hasError('required')">
-                      la descripcion es requerida
-                    </div>
-                  </div>
-                </div>
-              
-                <div class="wrapper" >
-                  <div class="inputData" >
-                    <input class="intp" type="text" name="location" autocomplete="off" required [(ngModel)]="barbershop.location" #location="ngModel"  minlength="10">
-                    <div class="line" ></div>
-                    <label for="location">Direccion</label>
-                  </div>
-              
-                  <div class="requerido" *ngIf="location.invalid && (location.dirty) || location.touched">
-                    <div *ngIf="location.hasError('required')">
-                      la ubicacion es requerida
-                    </div>
-                  </div>
-                </div>
-              
-              </div>
-              
+            <app-create-barbershop *ngIf="!validateBarbershop()" ></app-create-barbershop>
           
             <app-histories-cuts></app-histories-cuts>
 

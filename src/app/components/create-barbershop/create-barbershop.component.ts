@@ -1,3 +1,4 @@
+import { ModalBarbershopService } from './../../services/Modales/modal-barbershop.service';
 import { Usuario } from 'src/app/models/Usuario';
 import { Barbershop } from 'src/app/models/barbershop';
 import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
@@ -11,15 +12,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateBarbershopComponent implements OnInit {
 
-  constructor(private auhtService: AuthServices, private barbershopService: BarbershopService) { }
+  constructor(private auhtService: AuthServices, private modalService: ModalBarbershopService, private barbershopService: BarbershopService) { }
 
   ngOnInit(): void {
+
   }
 
 
-
-
-
-
+  usuario:Usuario;
+  barbershop: Barbershop;
 
 }
