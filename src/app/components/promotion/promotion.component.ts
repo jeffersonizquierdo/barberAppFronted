@@ -62,9 +62,7 @@ export class PromotionComponent implements OnInit {
 
     this.servicebarbershop.getbarber(this.usuario.id).subscribe(
       data => {
-        this.barbershop = data;
-        console.log(this.barbershop);
-        
+        this.barbershop = data;     
       }
     );
 

@@ -1,3 +1,4 @@
+import { DetailsComponent } from './components/details/details.component';
 import { HomeBarberComponent } from './components/home-barber/home-barber.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -36,10 +37,10 @@ import { ListBarbershopComponent } from './components/list-barbershop/list-barbe
 import { ToShowPublicationsComponent } from './components/to-show-publications/to-show-publications.component';
 import { CardLoaderComponent } from './components/card-loader/card-loader.component';
 import { UploadCutsComponent } from './components/upload-cuts/upload-cuts.component';
-import { DetailsComponent } from './components/details/details.component';
 import { ProfileBarberComponent } from './components/profile-barber/profile-barber.component';
 import { ProfileClientComponent } from './components/profile-client/profile-client.component';
 import { ProfileBarbershopComponent } from './components/profile-barbershop/profile-barbershop.component';
+import { CreateBarbershopComponent } from './components/create-barbershop/create-barbershop.component';
 import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
 
 
@@ -50,17 +51,10 @@ const appRoutes: Routes = [
 
   {path:'', component:HomeMainComponent},
   {path:'homebarbershop', component:HomeBarbershopComponent},
-
   {path:'homecustomer', component:HomeCustomerComponent},
-
-
   {path:'homecustomer', component:HomeCustomerComponent},
-
   {path:'homecustomer', component:HomeCustomerComponent},
-
   {path:'homecustomer/:id', component:HomeCustomerComponent},
-
-
   {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
   {path:'barbermeshshifts', component:BarberMeshShiftsComponent},
   {path:'homebarber', component:HomeBarberComponent},
@@ -68,12 +62,10 @@ const appRoutes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
   {path:'h', component:ManageCatalogueComponent},
-
   {path:'hola', component:PromotionComponent},
   {path:'porfilebarber', component:ProfileBarberComponent},
   {path:'porfilebarbershop', component:ProfileBarbershopComponent},
   {path:'porfileclient', component:ProfileClientComponent},
-
   {path:'promotion', component:PromotionComponent},
   {path:'porfilebarber', component:ProfileBarberComponent}, 
   {path:'terminos', component:TermsAndConditionsComponent}, 
@@ -111,8 +103,9 @@ const appRoutes: Routes = [
     LoginComponent,
     ProfileClientComponent,
     ProfileBarbershopComponent,
+    CreateBarbershopComponent,
     TermsAndConditionsComponent,
-  
+
 
 
     

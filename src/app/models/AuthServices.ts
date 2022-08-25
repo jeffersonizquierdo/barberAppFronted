@@ -78,9 +78,8 @@ export class AuthServices{
 
     this._usuario = new Usuario();
     this._usuario.id = payload.id;
-    this._usuario.username = payload.user_name;
+    this._usuario.username = payload.email;
     this._usuario.typeUser = payload.typeUser;
-    this._usuario.email = payload.email;
     this._usuario.roles = payload.authorities;
 
     //(this.usuario.roles)
