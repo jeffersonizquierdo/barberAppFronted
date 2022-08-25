@@ -1,0 +1,15 @@
+*{
+    
+    color: white;    
+}
+.container-main {
+   text-align: center;
+   margin: 53px 96px;
+   font-size: 21px;
+}
+.titulo h1{
+    font-size: 23px;
+}
+.terminos{
+    border: 1px solid white;
+}

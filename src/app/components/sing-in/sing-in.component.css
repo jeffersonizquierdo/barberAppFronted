@@ -146,3 +146,6 @@ form a{
     color: rgb(186, 186, 186);
     text-align: center;
 }
+.terminos a label:hover{
+ color: rgb(17, 166, 235);
+}
