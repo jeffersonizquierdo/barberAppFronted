@@ -54,6 +54,7 @@ export class ManageCatalogueComponent implements OnInit {
 
 
   onUpload(){
+<<<<<<< HEAD
     
     this.usuario = this.authService.usuario;
 
@@ -65,6 +66,9 @@ export class ManageCatalogueComponent implements OnInit {
       }
     );
 
+=======
+    // this.newBarbershop = new Barbershop(1, "barber", "dsd", "dsddsd", "Cali", "3000", 1, "photo", "descriptionBarbershop", "locationBarbershop", 0);
+>>>>>>> d61f3c998d0d9a3edba9a1771b75d76fec5e77f5
     this.spinner.show();
     this.catalogueService.upload(this.imagen, "hairstyle").subscribe( (response:any) => {
       if(response){

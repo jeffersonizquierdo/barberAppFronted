@@ -3,7 +3,7 @@ export class Usuario{
 id:Number;
 username:string;
 password:string;
-email:string;
+nickname:string;
 typeUser:Number;
 enabled:boolean;
 date:Date;

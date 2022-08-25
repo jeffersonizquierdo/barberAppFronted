@@ -56,7 +56,7 @@ export class SingInComponent implements OnInit {
           response  => {
             
             console.log(response);
-            swal.fire('Nuevo Usuario',`Hola ${this.usuario.username} te damos la bienvenida a BarberApp` , 'success')
+            swal.fire('Nuevo Usuario',`Hola ${this.usuario.nickname} te damos la bienvenida a BarberApp` , 'success')
           }
           
         );
