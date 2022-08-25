@@ -40,6 +40,8 @@ import { DetailsComponent } from './components/details/details.component';
 import { ProfileBarberComponent } from './components/profile-barber/profile-barber.component';
 import { ProfileClientComponent } from './components/profile-client/profile-client.component';
 import { ProfileBarbershopComponent } from './components/profile-barbershop/profile-barbershop.component';
+import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
+
 
 
 
@@ -74,7 +76,7 @@ const appRoutes: Routes = [
 
   {path:'promotion', component:PromotionComponent},
   {path:'porfilebarber', component:ProfileBarberComponent}, 
-  
+  {path:'terminos', component:TermsAndConditionsComponent}, 
 ]
 
 @NgModule({
@@ -109,6 +111,8 @@ const appRoutes: Routes = [
     LoginComponent,
     ProfileClientComponent,
     ProfileBarbershopComponent,
+    TermsAndConditionsComponent,
+  
 
 
     
