@@ -1,3 +1,4 @@
+import { ModalBarbershopService } from './../../services/Modales/modal-barbershop.service';
 import { Barbershop } from './../../models/barbershop';
 import { BarbershopService } from './../../services/barbershop/barbershop.service';
 import { Component, OnInit } from '@angular/core';
@@ -12,7 +13,7 @@ import { Usuario } from 'src/app/models/Usuario';
 })
 export class HomeBarbershopComponent implements OnInit {
 
-  constructor(private auhtService: AuthServices, private barbershopService: BarbershopService) { }
+  constructor(private auhtService: AuthServices,private modalService: ModalBarbershopService, private barbershopService: BarbershopService) { }
 
   ngOnInit(): void {
 
@@ -25,7 +26,7 @@ export class HomeBarbershopComponent implements OnInit {
   barbershop: Barbershop;
 
 
-  validateBarbershop(){
+  validateBarbershop():Boolean{
 
     this.usuario = this.auhtService.usuario;
 
@@ -36,6 +37,20 @@ export class HomeBarbershopComponent implements OnInit {
         this.barbershop = data;
       }
     )
+
+
+    if (this.barbershop != null){
+
+      this.modalService.closeModal();
+      return true;
+
+
+    } else {
+
+      this.modalService.showModal();
+
+      return false;
+    }
 
   }
 
