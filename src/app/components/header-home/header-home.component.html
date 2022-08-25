@@ -65,18 +65,27 @@
         <div class="name" >
             <a>Name Barber</a>
         </div>
- 
-        <ul class="links" >
-            <li><a href="">Vinculaciones</a></li>
-            <li><a href="">Cuts</a></li>
-            <li><a href="">Catalogo</a></li>
-            <li><a href="">Mayas de Turnos</a></li>
-            <div class="login">
-                
-                <button (click)="logout()" >Cerrar Sesion</button>
 
-            </div>
-        </ul>
+
+        <div class="menu_bar">
+            <a href="#" class="bt-menu">⁝</a>
+        <nav>
+            <ul class="links" >
+                <li><a href="http://localhost:4200/promotion">Gestionar Promociones </a></li>
+                <li><a href="">Vinculaciones</a></li>
+                <li><a href="">Cuts</a></li>
+                <li><a href="">Catalogo</a></li>
+                <li><a href="">Mayas de Turnos</a></li>
+                <li><a href="http://localhost:4200/homebarber">Salir</a></li>
+                <div class="login">
+                    
+                    <button (click)="logout()" >Cerrar Sesion</button>
+    
+                </div>
+            </ul>
+        </nav>
+        </div>
+
     </div>
 
 
@@ -86,15 +95,19 @@
             <a href="" >Name Customer</a>
         </div>
 
- 
-        <ul class="links" >
-            <li><a href="">Reservar</a></li>
-            <div class="login">
-                
-                <button (click)="logout()" >Cerrar Sesion</button>
-
-            </div>
-        </ul>
+        <div class="menu_bar">
+            <a href="#" class="bt-menu">⁝</a>
+            <nav>
+                <ul class="links" >
+                    <li><a href="">Reservar</a></li>
+                    <div class="login">
+                        
+                        <button (click)="logout()" >Cerrar Sesion</button>
+        
+                    </div>
+                </ul>
+            </nav>
+        </div>
     </div>
 
 </div>
