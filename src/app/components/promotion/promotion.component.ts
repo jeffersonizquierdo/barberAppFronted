@@ -53,9 +53,6 @@ export class PromotionComponent implements OnInit {
     fr.readAsDataURL(this.imagen);
   }
 
-
-
-
   savePromotion(){
 
     this.usuario = this.authService.usuario;

@@ -6,6 +6,7 @@ import { Barbershop } from 'src/app/models/barbershop';
 import { Router } from '@angular/router';
 import { AuthServices } from 'src/app/models/AuthServices';
 import { Barber } from 'src/app/models/Barber';
+import { Usuario } from 'src/app/models/Usuario';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +16,9 @@ export class BarbershopService {
 
   private httpHeadres = new HttpHeaders({ 'Content-Type' : 'application/json'})
 
-    private agregarAuthorizationHeader(){
+  usuario:Usuario = this.authService.usuario;
+
+  private agregarAuthorizationHeader(){
 
     let token = this.authService.token
 
@@ -29,10 +32,9 @@ export class BarbershopService {
 
   } 
 
-
   saveBarbeshop(newBarbershop:Barbershop): Observable<Barbershop>{
 
-    return this.http.post<Barbershop>("http://localhost:8080/barbershop/save", newBarbershop, {headers: this.httpHeadres}).pipe(
+    return this.http.post<Barbershop>("http://localhost:8080/barbershop/save", newBarbershop, {headers: this.agregarAuthorizationHeader()}).pipe(
 
 
       catchError(e =>{
@@ -48,16 +50,14 @@ export class BarbershopService {
       }));
   }
 
-
-
   listBarbershop():  Observable<Barbershop>{
 
-    return  this.http.get<Barbershop>(`http://localhost:8080/barbershop/consultall`)
+    return  this.http.get<Barbershop>(`http://localhost:8080/barbershop/consultall`, {headers: this.agregarAuthorizationHeader()})
   } 
 
   listBarber():  Observable<Barber>{
 
-    return  this.http.get<Barber>(`http://localhost:8080/barbershop/consultBarber/${1}`)
+    return  this.http.get<Barber>(`http://localhost:8080/barbershop/consultBarber/${this.usuario.id}`, {headers: this.agregarAuthorizationHeader()})
   }
 
 
@@ -76,10 +76,6 @@ export class BarbershopService {
     )
   }
 
-
-
-  
-
   private isNoAuthorizado(e):Boolean{
 
     if(e.status == 401 || e.status == 403){
@@ -94,8 +90,6 @@ export class BarbershopService {
     return false;
 
   }
-
-
 
   private addAuthorizationHeader(){
 
