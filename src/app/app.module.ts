@@ -69,6 +69,12 @@ const appRoutes: Routes = [
   {path:'promotion', component:PromotionComponent},
   {path:'porfilebarber', component:ProfileBarberComponent}, 
   {path:'terminos', component:TermsAndConditionsComponent}, 
+  {path:'listabarber', component:TermsAndConditionsComponent}, 
+  {path:'publicaciones', component:ToShowPublicationsComponent}, 
+  {path:'publicidad', component:LoadPublicityComponent}, 
+
+  
+
 ]
 
 @NgModule({
