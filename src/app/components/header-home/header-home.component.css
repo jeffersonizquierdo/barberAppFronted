@@ -18,6 +18,18 @@
     padding: 0 0 0 150px;
 }
 
+nav{
+    display: none;
+    right: 120px;
+    top: 35px;
+    position: absolute;
+    padding: 0 3px 5px 10px;
+    z-index: 10000;
+    background-color: #171f2a;
+    box-shadow: -4px 5px 8px 2px rgb(0 0 0 / 52%);
+}
+
+
 .perfil{
     display: flex;
     flex-direction: row;
@@ -76,7 +88,7 @@
 
 .links {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     list-style: none;
     gap: 30px;
 }
@@ -94,9 +106,6 @@
     flex-direction: row;
 }
 
-.links li {
-
-}
 
 .links li a {
     
@@ -190,3 +199,136 @@
   width: 100%;
   border-radius: 18px;
   }
+
+.menu_bar{
+    display: block;
+    padding: 36px 0 36px 0;
+}
+
+.bt-menu{
+    display: block;
+    padding-right: 10px;
+}
+
+
+.menu_bar a{
+    text-decoration: none;
+    list-style: none;
+    color: #fff;
+}
+
+.menu_bar:hover nav{
+    display: block;
+    transition: 2s;
+}
+@media only screen and (min-width: 1919px) and (max-width: 2700){
+    nav{
+        right: 620px;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px){
+    nav{
+        right: 170px;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+    nav{
+        right: 55px;
+    }
+
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 768px){
+    body{
+        padding-top: 96px;
+    }
+    
+    .header{
+        padding: 0 0 0 10px;
+    }
+
+    nav{
+        display: none;
+        right: 3px;
+        top: 35px;
+        position: absolute;
+        padding: 0 3px 5px 10px;
+        z-index: 10000;
+        background-color: #171f2a;
+        box-shadow: -4px 5px 8px 2px rgb(0 0 0 / 52%);
+    }
+
+    .links{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bt-menu{
+        display: block;
+        padding-right: 10px;
+    }
+
+    .menu_bar a{
+        text-decoration: none;
+        list-style: none;
+        color: #fff;
+    }
+
+    .menu_bar:hover nav{
+        display: block;
+        transition: 2s;
+    }
+
+    .name{
+        padding-left: 70px;
+    }
+
+    .wrapper{
+        width: 75%;
+        height: 30px;
+    }
+
+    .inputData{
+        height: 27px;
+    }
+
+    .inputData input{
+        width: 90%;
+        height: 10px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    body{
+        padding-top: 96px;
+    }
+    
+    .header{
+        padding: 0 0 0 10px;
+    }
+    .inputData{
+        height: 32px;
+    }
+
+    .inputData input{
+        width: 95%;
+        height: 20px;
+    }
+    .wrapper{
+        width: 90%;
+        height: 35px;
+    }
+
+    .name{
+        padding-left: 55px;
+    }
+
+    .links{
+        gap: 20px;
+    }
+}

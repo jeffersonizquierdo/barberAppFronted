@@ -41,7 +41,7 @@ export class UploadCutsComponent implements OnInit {
 
 
   savecuts(){
-    this.newBarbershop = new Barbershop(1, "barber", "dsd", "dsddsd", "Cali", "3000", 1, "photo", "descriptionBarbershop", "locationBarbershop", 0);
+    //this.newBarbershop = new Barbershop(1, "barber", "dsd", "dsddsd", "Cali", "3000", 1, "photo", "descriptionBarbershop", "locationBarbershop", 0);
     this.spinner.show();
     this.catalogueService.upload(this.imagen, "cutslist").subscribe( (response:any) => {
       if(response){

@@ -1,10 +1,10 @@
 <div  class="header">
 
     <div class="perfil" >
-        <img src="../../../assets/images/LogoBarberApp.jpg">
+     <a href="/">   <img src="../../../assets/images/LogoBarberApp.jpg"></a>
     </div>
 
-    <div *ngIf="anonymous" class="funciones">
+    <div class="funciones">
         <div class="form-group-col-md-3" >
             <div class="wrapper" >
                 <div class="inputData" >
@@ -18,16 +18,9 @@
             <div class="login">
                 <a *ngIf="!authService.isAuthenticated()" [routerLink]="['/login']"><li class="boton"><img src="../../../assets/images/usuario.png" alt="login" alt="">Iniciar Sesion</li></a>
             </div>
-            <div class="signup">
-                <a [routerLink]="['/singup']"><li class="boton"><img src="../../../assets/images/agregar-simbolo-de-usuario.png" alt="">Registrarse</li></a>
+            <div *ngIf="!authService.isAuthenticated()" class="signup">
+                <a  [routerLink]="['/singup']"><li class="boton"><img src="../../../assets/images/agregar-simbolo-de-usuario.png" alt="">Registrarse</li></a>
             </div>
-
-            <div *ngIf="authService.isAuthenticated() == true" class="login">
-                
-                <button (click)="logout()" >Cerrar Sesion</button>
-
-            </div>
-
         </ul>
 
         
@@ -36,79 +29,85 @@
     </div>
 
 
-    <div *ngIf="barbershop" class="funciones">
+    <div *ngIf=" authService.isAuthenticated() && authService.usuario.typeUser == 1 "class="funciones">
 
         <div class="name" >
             <a>Name barbershop</a>
         </div>
-
-
-        <div class="form-group-col-md-3">
-            <div class="wrapper" >
-                <div class="inputData" >
-                  <input class="intp" type="text" name="search" required>
-                  <label for="search">Buscar</label>
-                </div>
-            </div>
-
-        </div>
  
-        <ul class="links" >
-            <li><a href="/list-barber">Gestionar Barberos</a></li>
-            <li><a href="/upload-cuts">Gestionar Cuts</a></li>
-            <li><a href="">Mayas de Turnos</a></li>
-            <li><a href="/manage-catalogue">Gestionar Catalogo</a></li>
-            <li><a href="/promotions">Gestionar Promociones </a></li>
-            <li><a href="/show-publication">Gestionar publicidad</a></li>
-            <li><a href="">Cerrar Sesion</a></li>
-        </ul>
+        <div class="menu_bar">
+            <a href="#" class="bt-menu">⁝</a>
+            <nav>
+                <ul class="links" >
+                    <li><a href="http://localhost:4200/homebarbershop">home</a></li>
+                    <li><a href="http://localhost:4200/list-barber">Gestionar Barberos</a></li>
+                    <li><a href="http://localhost:4200/upload-cuts">Gestionar Cuts</a></li>
+                    <li><a href="http://localhost:4200/">Mayas de Turnos</a></li>
+                    <li><a href="http://localhost:4200/manage-catalogue">Gestionar Catalogo</a></li>
+                    <li><a href="http://localhost:4200/promotions">Gestionar Promociones </a></li>
+                    <li><a href="http://localhost:4200/publicidad">Gestionar Publicaciones</a></li>
+                    <li><a href="http://localhost:4200/">Barberos</a></li>
+                    <li><a href="http://localhost:4200/">Cuts</a></li>
+                    <li><a href="http://localhost:4200/">Mayas de Turnos</a></li>
+                    <div class="login">
+                
+                        <button (click)="logout()" >Cerrar Sesion</button>
+        
+                    </div>
+                </ul>
+            </nav>
+        </div>
     </div>
 
 
-    <div *ngIf="barber" class="funciones">
+    <div *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 2 " class="funciones">
 
         <div class="name" >
             <a>Name Barber</a>
         </div>
 
-        <div class="form-group-col-md-3" >
-            <div class="wrapper" >
-                <div class="inputData" >
-                  <input class="intp" type="text" name="search" required>
-                  <label for="search">Buscar</label>
+
+        <div class="menu_bar">
+            <a href="#" class="bt-menu">⁝</a>
+        <nav>
+            <ul class="links" >
+                <li><a href="http://localhost:4200/promotion">Gestionar Promociones </a></li>
+                <li><a href="">Vinculaciones</a></li>
+                <li><a href="">Cuts</a></li>
+                <li><a href="">Catalogo</a></li>
+                <li><a href="">Mayas de Turnos</a></li>
+                <li><a href="http://localhost:4200/homebarber">Salir</a></li>
+                <div class="login">
+                    
+                    <button (click)="logout()" >Cerrar Sesion</button>
+    
                 </div>
-            </div>
+            </ul>
+        </nav>
         </div>
- 
-        <ul class="links" >
-            <li><a href="">Vinculaciones</a></li>
-            <li><a href="">Cuts</a></li>
-            <li><a href="">Catalogo</a></li>
-            <li><a href="">Mayas de Turnos</a></li>
-            <li><a href="">Salir</a></li>
-        </ul>
+
     </div>
 
 
-    <div *ngIf="customer" class="funciones">
+    <div *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 3 " class="funciones">
 
         <div class="name" >
             <a href="" >Name Customer</a>
         </div>
 
-        <div class="form-group-col-md-3" >
-            <div class="wrapper" >
-                <div class="inputData" >
-                  <input class="intp" type="text" name="search" required>
-                  <label for="search">Buscar</label>
-                </div>
-            </div>
+        <div class="menu_bar">
+            <a href="#" class="bt-menu">⁝</a>
+            <nav>
+                <ul class="links" >
+                    <li><a href="">Reservar</a></li>
+                    <div class="login">
+                        
+                        <button (click)="logout()" >Cerrar Sesion</button>
+        
+                    </div>
+                </ul>
+            </nav>
         </div>
- 
-        <ul class="links" >
-            <li><a href="">Reservar</a></li>
-            <li><a href="">Salir</a></li>
-        </ul>
     </div>
 
 </div>

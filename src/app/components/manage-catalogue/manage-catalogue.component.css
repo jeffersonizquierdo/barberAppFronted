@@ -1,6 +1,8 @@
 .catalogue{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    text-align: center;
 }
 .container-main{
     display: flex;
@@ -8,10 +10,16 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    border: 1px solid white;
+    background-color: #171f2a;
+    -webkit-box-shadow: -1px -1px 14px 4px rgba(0,0,0,0.71);
+    -moz-box-shadow: -1px -1px 14px 4px rgba(0,0,0,0.71);
+    box-shadow: -1px -1px 14px 4px rgba(0,0,0,0.71);
     width: 400px;
-    height: 400px;
+    height: auto;
     color: white;
+    position: absolute;
+    top: 30%;
+    left: 4%;
 }
 .postFile{
     width: 360px;
@@ -24,11 +32,12 @@
     padding-bottom: 20px;
     gap: 20px;
     border-radius: 5px;
+    margin-top: 15px;
 }
 
 
 .wrapper{
-    background-color: #ffffff;
+    background-color: transparent;
     width: 100%;
     padding: 15px 5px 0px 5px;
     height: 50px;
@@ -36,6 +45,7 @@
 
 }
 .inputData{
+    background: transparent;
     width: 100%;
     position: relative;
     border-radius: 10px;
@@ -47,7 +57,8 @@
     width: 100%;
     border: none;
     outline: none;
-    color: #000000;
+    color: #fff;
+    background: transparent;
 }
 
 .inputData input:focus ~ label,
@@ -70,7 +81,13 @@
     font-size: 13px;
 }
 
+.intp{
+    background-color: transparent;
+    color: #fff;
+}
 
-
+li{
+    list-style: none;
+}
 
 
