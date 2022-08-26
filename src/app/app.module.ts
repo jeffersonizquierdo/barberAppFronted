@@ -46,7 +46,6 @@ import { TermsAndConditionsComponent } from './components/terms-and-conditions/t
 
 
 
-
 const appRoutes: Routes = [
 
   {path:'', component:HomeMainComponent},
@@ -72,7 +71,7 @@ const appRoutes: Routes = [
   {path:'listabarber', component:TermsAndConditionsComponent}, 
   {path:'publicaciones', component:ToShowPublicationsComponent}, 
   {path:'publicidad', component:LoadPublicityComponent}, 
-
+  {path:'homeedit', component:HeaderHomeComponent}, 
   
 
 ]
