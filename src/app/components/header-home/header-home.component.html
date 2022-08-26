@@ -1,15 +1,15 @@
-<div  class="header">
+<div [ngClass]="{'header': !authService.isAuthenticated()}" >
 
     
    
-    <div  class="header_two">
+    <div *ngIf="!authService.isAuthenticated()">
         <nav class="nav_container">
             <div class="nav_logo">
                 <h2 class="nav_title">BarberApp</h2>
             </div>
-            <ul class="nav_link"> 
+            <ul *ngIf="!authService.isAuthenticated()" class="nav_link"> 
                 <li class="nav_items">
-                    <a *ngIf="!authService.isAuthenticated()" [routerLink]="['/login']" class="nav_links">Iniciar sesion</a>
+                    <a  [routerLink]="['/login']" class="nav_links">Iniciar sesion</a>
                    
                 </li>
                 <li class="nav_items">
@@ -33,7 +33,7 @@
 
 
 
-    <div *ngIf=" authService.isAuthenticated() && authService.usuario.typeUser == 1 "class="funciones">
+    <div *ngIf=" authService.isAuthenticated() "class="funciones">
 
         <div class="name" >
             <a>Name barbershop</a>
