@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
 
         }, 1000);
 
-        Swal.fire('Login', 'Hola ' + usuario.username + ', bienvenido', 'success');
+        Swal.fire('Login', 'Hola ' + usuario.nickname + ', bienvenido', 'success');
         
         
 
@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
 
         }, 1000);
 
-        Swal.fire('Login', 'Hola ' + usuario.username + ', bienvenido', 'success');
+        Swal.fire('Login', 'Hola ' + usuario.nickname + ', bienvenido', 'success');
 
 
       } else if(response.typeUser == 3){
@@ -90,7 +90,7 @@ export class LoginComponent implements OnInit {
 
         }, 1000);
 
-        Swal.fire('Login', 'Hola ' + usuario.username + ', bienvenido', 'success');
+        Swal.fire('Login', 'Hola ' + usuario.nickname + ', bienvenido', 'success');
 
         
 

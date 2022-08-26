@@ -61,14 +61,20 @@ const appRoutes: Routes = [
   {path:'historiescuts', component:HistoriesCutsComponent},
   {path:'login', component:LoginComponent},
   {path:'singup', component:SingInComponent},
-  {path:'h', component:ManageCatalogueComponent},
-  {path:'hola', component:PromotionComponent},
+  {path:'manage-catalogue', component:ManageCatalogueComponent},
+  {path:'promotions', component:PromotionComponent},
   {path:'porfilebarber', component:ProfileBarberComponent},
   {path:'porfilebarbershop', component:ProfileBarbershopComponent},
   {path:'porfileclient', component:ProfileClientComponent},
   {path:'promotion', component:PromotionComponent},
   {path:'porfilebarber', component:ProfileBarberComponent}, 
   {path:'terminos', component:TermsAndConditionsComponent}, 
+  {path:'listabarber', component:TermsAndConditionsComponent}, 
+  {path:'publicaciones', component:ToShowPublicationsComponent}, 
+  {path:'publicidad', component:LoadPublicityComponent}, 
+
+  
+
 ]
 
 @NgModule({
