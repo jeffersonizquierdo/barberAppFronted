@@ -1,21 +1,16 @@
 <div>
-
     <nav class="ranking">
     
         <h3>Ranking</h3>
-
-        <ul class="lista" >
-            <li><div class="elemento" ><span>1.</span><img src="../../../assets/images/pruebaperfil.jpg" alt=""> <a href="">barbershop</a><nav class="starts">🌟🌟🌟🌟🌟</nav> </div></li>
-            <li><div class="elemento" ><span>2.</span><img src="../../../assets/images/pruebaperfil.jpg" alt=""> <a href="">barbershop</a><nav class="starts">🌟🌟🌟🌟🌟</nav> </div></li>
-            <li><div class="elemento" ><span>3.</span><img src="../../../assets/images/pruebaperfil.jpg" alt=""> <a href="">barbershop</a><nav class="starts">🌟🌟🌟🌟🌟</nav> </div></li>
-            <li><div class="elemento" ><span>4.</span><img src="../../../assets/images/pruebaperfil.jpg" alt=""> <a href="">barbershop</a><nav class="starts">🌟🌟🌟🌟🌟</nav> </div></li>
-            <li><div class="elemento" ><span>5.</span><img src="../../../assets/images/pruebaperfil.jpg" alt=""> <a href="">barbershop</a><nav class="starts">🌟🌟🌟🌟🌟</nav> </div></li>
-            <li><div class="elemento" ><span>6.</span><img src="../../../assets/images/pruebaperfil.jpg" alt=""> <a href="">barbershop</a><nav class="starts">🌟🌟🌟🌟🌟</nav> </div></li>
-            <li><div class="elemento" ><span>7.</span><img src="../../../assets/images/pruebaperfil.jpg" alt=""> <a href="">barbershop</a><nav class="starts">🌟🌟🌟🌟🌟</nav> </div></li>
-            <li><div class="elemento" ><span>8.</span><img src="../../../assets/images/pruebaperfil.jpg" alt=""> <a href="">barbershop</a><nav class="starts">🌟🌟🌟🌟🌟</nav> </div></li>
-            <li><div class="elemento" ><span>9.</span><img src="../../../assets/images/pruebaperfil.jpg" alt=""> <a href="">barbershop</a><nav class="starts">🌟🌟🌟🌟🌟</nav> </div></li>
-            <li><div class="elemento10" ><span>10.</span><img src="../../../assets/images/pruebaperfil.jpg" alt=""> <a href="">barbershop</a><nav class="starts">🌟🌟🌟🌟🌟</nav> </div></li>
-        </ul>
+        <h4>Calificacion</h4>
+        <div *ngFor="let top of rankingBarber; let i=index">
+            <div class="elemento" >
+                <span>{{i}}</span>
+                <img src="{{top.photo}}" alt=""> 
+                <a href="">{{top.nickname}}</a>
+                <nav class="starts">{{top.qualification}}</nav> 
+            </div>
+        </div>
     </nav>
 
 
