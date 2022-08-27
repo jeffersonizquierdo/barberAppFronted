@@ -59,7 +59,7 @@ form h3{
 .container-home-next button{
 
     width: 80px;
-    background-color: rgb(22, 112, 216);
+    background-color: #1670d8;
     color: white;
     border: none;
     border-radius: 5px;
@@ -69,6 +69,7 @@ form h3{
 
 .requerido{
     color: red;
+    /*rojo alternativo-> #e95a5ae3 */
 }
 
 .container-home-next button a{
