@@ -17,7 +17,6 @@ export class RankingComponent implements OnInit {
     this.organizeRanking()
   }
 
-
   organizeRanking():void{
     this.serveceBarber.listBarber().subscribe(
       data=>{
@@ -40,11 +39,6 @@ export class RankingComponent implements OnInit {
           return 0;
         })
         this.rankingBarber=this.listBarber.slice(0, 10);
-        // this.listBarber.slice(0, 4).map(e=>{
-        //   this.rankingBarber=e;
-        // });
-        console.log("llego al for")
-        console.log(this.rankingBarber);
       })
   }
 }
