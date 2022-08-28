@@ -24,16 +24,16 @@
 
     <div class="wrapper" >
         <div class="inputData" >
-            <input class="intp" type="text" name="description" autocomplete="off" required [(ngModel)]="barbershop.description" #description="ngModel"  minlength="10">
+            <input class="intp" type="text" name="description" autocomplete="off" required [(ngModel)]="barbershop.description" minlength="10">
             <div class="line" ></div>
             <label for="description">Descripcion</label>
         </div>
     
-        <div class="requerido" *ngIf="description.invalid && (description.dirty) || description.touched">
+        <!-- <div class="requerido" *ngIf="description.invalid && (description.dirty) || description.touched">
             <div *ngIf="description.hasError('required')">
                 la descripcion es requerida
             </div>
-        </div>
+        </div> -->
     </div>
     
     <div class="wrapper">
