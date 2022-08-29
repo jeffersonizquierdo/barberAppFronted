@@ -42,6 +42,8 @@ import { ProfileClientComponent } from './components/profile-client/profile-clie
 import { ProfileBarbershopComponent } from './components/profile-barbershop/profile-barbershop.component';
 import { CreateBarbershopComponent } from './components/create-barbershop/create-barbershop.component';
 import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { DayService, MonthAgendaService, MonthService, RecurrenceEditorModule, ScheduleModule, WeekService, WorkWeekService } from '@syncfusion/ej2-angular-schedule';
 
 
 
@@ -70,6 +72,7 @@ const appRoutes: Routes = [
   {path:'publicaciones', component:ToShowPublicationsComponent}, 
   {path:'publicidad', component:LoadPublicityComponent}, 
   {path:'homeedit', component:HeaderHomeComponent}, 
+  {path:'calendar', component:CalendarComponent}, 
   
 
 ]
@@ -108,6 +111,7 @@ const appRoutes: Routes = [
     ProfileBarbershopComponent,
     CreateBarbershopComponent,
     TermsAndConditionsComponent,
+    CalendarComponent,
 
 
 
@@ -122,12 +126,14 @@ const appRoutes: Routes = [
     HttpClientModule,
     NgxSpinnerModule,
     NgbModalModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ScheduleModule,
+    RecurrenceEditorModule
     
 
   ],
   entryComponents:[DetailsComponent],
-  providers: [],
+  providers: [DayService, MonthAgendaService, WeekService, WorkWeekService, MonthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
