@@ -10,8 +10,7 @@
 }
 
 .header{
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     overflow: hidden;
     padding: var(--padding-container);
@@ -28,6 +27,20 @@
 }
 
 
+.header_two::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%), url('../../../assets/images/slider2.jpg');
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+    z-index: -1;
+}
+
+
 
 
 .nav_container {
@@ -35,6 +48,7 @@
     height: 100%;
     display: flex;
     align-items: center;
+    margin: 0 15%;
 }
 
 .nav__title {
@@ -43,7 +57,7 @@
 
 .nav_link {
     margin-left: auto;
-    padding: 0;
+
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: max-content;
@@ -70,6 +84,8 @@
     gap: 1em;
     padding-bottom: 100px;
     text-align: center;
+    padding: 68px;
+    margin: 0 21%;
 }
 
 .hero_title{

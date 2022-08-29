@@ -1,8 +1,9 @@
-<div [ngClass]="{'header': !authService.isAuthenticated()}" >
+<div class="header" [ngClass]="{'head': authService.isAuthenticated()}" >
 
     
    
-    <div *ngIf="!authService.isAuthenticated()">
+    <div class="header_two" *ngIf="!authService.isAuthenticated()">
+
         <nav class="nav_container">
             <div class="nav_logo">
                 <h2 class="nav_title">BarberApp</h2>
