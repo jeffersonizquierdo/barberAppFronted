@@ -8,21 +8,21 @@ import { BarberService } from 'src/app/services/barber/barber.service';
 })
 export class RankingComponent implements OnInit {
 
+  constructor(private serveceBarber:BarberService) { }
+
   listBarber:any=[];
   rankingBarber:any=[];
 
-  constructor(private serveceBarber:BarberService) { }
-
-
-
   ngOnInit(): void {
-    this.organizeRanking();
+    this.organizeRanking()
   }
 
   organizeRanking():void{
     this.serveceBarber.listBarber().subscribe(
       data=>{
         this.listBarber=data;
+        console.log("aqui llege");
+        console.log(this.listBarber);
         this.listBarber.sort((a,b)=>{
           if(a.qualification>b.qualification){
             return -1;
@@ -38,11 +38,7 @@ export class RankingComponent implements OnInit {
           }
           return 0;
         })
+        this.rankingBarber=this.listBarber.slice(0, 10);
       })
-
-      for(let i=0; i<10; i++){
-        this.rankingBarber.push(this.listBarber[i]);
-      }
   }
-
 }

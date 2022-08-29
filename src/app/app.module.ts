@@ -40,7 +40,6 @@ import { UploadCutsComponent } from './components/upload-cuts/upload-cuts.compon
 import { ProfileBarberComponent } from './components/profile-barber/profile-barber.component';
 import { ProfileClientComponent } from './components/profile-client/profile-client.component';
 import { ProfileBarbershopComponent } from './components/profile-barbershop/profile-barbershop.component';
-import { CreateBarbershopComponent } from './components/create-barbershop/create-barbershop.component';
 import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
 
 
@@ -106,7 +105,6 @@ const appRoutes: Routes = [
     LoginComponent,
     ProfileClientComponent,
     ProfileBarbershopComponent,
-    CreateBarbershopComponent,
     TermsAndConditionsComponent,
 
 
