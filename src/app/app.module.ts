@@ -46,13 +46,10 @@ import { TermsAndConditionsComponent } from './components/terms-and-conditions/t
 
 
 
-
 const appRoutes: Routes = [
 
   {path:'', component:HomeMainComponent},
   {path:'homebarbershop', component:HomeBarbershopComponent},
-  {path:'homecustomer', component:HomeCustomerComponent},
-  {path:'homecustomer', component:HomeCustomerComponent},
   {path:'homecustomer', component:HomeCustomerComponent},
   {path:'homecustomer/:id', component:HomeCustomerComponent},
   {path:'barbershopmeshshifts', component:BarbershopMeshShiftsComponent},
@@ -72,7 +69,7 @@ const appRoutes: Routes = [
   {path:'listabarber', component:TermsAndConditionsComponent}, 
   {path:'publicaciones', component:ToShowPublicationsComponent}, 
   {path:'publicidad', component:LoadPublicityComponent}, 
-
+  {path:'homeedit', component:HeaderHomeComponent}, 
   
 
 ]

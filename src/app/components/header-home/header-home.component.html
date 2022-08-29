@@ -1,35 +1,39 @@
-<div  class="header">
+<div [ngClass]="{'header': !authService.isAuthenticated()}" >
 
-    <div class="perfil" >
-     <a href="/">   <img src="../../../assets/images/LogoBarberApp.jpg"></a>
-    </div>
-
-    <div class="funciones">
-        <div class="form-group-col-md-3" >
-            <div class="wrapper" >
-                <div class="inputData" >
-                  <input class="intp" type="text" name="search" required>
-                  <label for="search">Buscar</label>
-                </div>
+    
+   
+    <div *ngIf="!authService.isAuthenticated()">
+        <nav class="nav_container">
+            <div class="nav_logo">
+                <h2 class="nav_title">BarberApp</h2>
             </div>
-        </div>
-        <section class=botones>
-        <ul class="linksAnonymous" >
-            <div class="login">
-                <a *ngIf="!authService.isAuthenticated()" [routerLink]="['/login']"><li class="boton"><img src="../../../assets/images/usuario.png" alt="login" alt="">Iniciar Sesion</li></a>
-            </div>
-            <div *ngIf="!authService.isAuthenticated()" class="signup">
-                <a  [routerLink]="['/singup']"><li class="boton"><img src="../../../assets/images/agregar-simbolo-de-usuario.png" alt="">Registrarse</li></a>
-            </div>
-        </ul>
-
-        
-
+            <ul *ngIf="!authService.isAuthenticated()" class="nav_link"> 
+                <li class="nav_items">
+                    <a  [routerLink]="['/login']" class="nav_links">Iniciar sesion</a>
+                   
+                </li>
+                <li class="nav_items">
+                    <a  [routerLink]="['/singup']" class="nav_links">Registrarse</a>
+                </li>
+             
+            </ul>
+        </nav>
+       
+    
+        <section class="hero_container">
+            <h1 class="hero_title">Bienvenidos A BarberApp </h1>
+            <p class="hero_parrafo">Una Herramienta que te ayudara a crear oportunidades de generar un estatus entre la competencia, brindándote la capacidad de solucionar la acumulación de citas, los largos tiempos de espera etc. "BarberApp" por qué las oportunidades no pasan, las Creas</p>
+            <a [routerLink]="['/login']" class="cta">EMPEZAR</a>
         </section>
     </div>
 
+   
 
-    <div *ngIf=" authService.isAuthenticated() && authService.usuario.typeUser == 1 "class="funciones">
+
+
+
+
+    <div *ngIf=" authService.isAuthenticated() "class="funciones">
 
         <div class="name" >
             <a>Name barbershop</a>
