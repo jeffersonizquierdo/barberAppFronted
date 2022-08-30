@@ -20,16 +20,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    
-    
-    
   }
 
- 
 
   login():void{
-     
     console.log(this.usuario);
 
     if(this.usuario.password == null || this.usuario.username == null){
@@ -42,7 +36,7 @@ export class LoginComponent implements OnInit {
     this.authServices.login(this.usuario).subscribe( response => {
     
       console.log(response);
-        
+
       this.authServices.saveUser(response.access_token);
       this.authServices.saveToken(response.access_token);
 
@@ -92,13 +86,8 @@ export class LoginComponent implements OnInit {
 
         Swal.fire('Login', 'Hola ' + usuario.nickname + ', bienvenido', 'success');
 
-        
-
       }
 
-      
-      
-    
     }, error => {
 
       if(error.status == 400){
@@ -109,11 +98,10 @@ export class LoginComponent implements OnInit {
 
     
    );
-   
+
    setTimeout(() => {
     
    }, 200);
   }
- 
 
 }
