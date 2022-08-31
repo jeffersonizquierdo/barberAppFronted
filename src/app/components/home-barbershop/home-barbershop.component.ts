@@ -17,16 +17,24 @@ export class HomeBarbershopComponent implements OnInit {
 
   constructor(private auhtService: AuthServices, private barbershopService: BarbershopService, private modalService:NgbModal) { }
 
+  usuario:Usuario;
+  barbershop: Barbershop;
+
   ngOnInit(): void {
+    this.usuario=this.auhtService.usuario;
+    this.abrirModal();
   }
 
   abrirModal(){
-    this.modalService.open(ModalBarbershopComponent);
+    this.barbershopService.getbarber(this.usuario.id).subscribe(data=>{
+      this.barbershop=data;
+    })
+    if(this.barbershop==null){
+      this.modalService.open(ModalBarbershopComponent);
+    };
   }
 
-  usuario:Usuario;
-  usuarioConsilt: Usuario;
-  barbershop: Barbershop;
+
 
 
   // validateBarbershop():Boolean{

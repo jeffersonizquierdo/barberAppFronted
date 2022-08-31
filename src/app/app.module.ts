@@ -41,6 +41,7 @@ import { ProfileClientComponent } from './components/profile-client/profile-clie
 import { ProfileBarbershopComponent } from './components/profile-barbershop/profile-barbershop.component';
 import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
 import { ModalBarbershopComponent } from './modals/modal-barbershop/modal-barbershop.component';
+import { ModalBarberComponent } from './modals/modal-barber/modal-barber.component';
 
 
 
@@ -107,6 +108,7 @@ const appRoutes: Routes = [
     ProfileBarbershopComponent,
     TermsAndConditionsComponent,
     ModalBarbershopComponent,
+    ModalBarberComponent,
 
 
 

@@ -3,7 +3,6 @@
     padding: 0%;
 }
 
-<<<<<<< HEAD
 .page{
 
     display: flex;
@@ -41,7 +40,7 @@
 .medium::-webkit-scrollbar {
     width: 20px;
 }
-  
+
 .medium::-webkit-scrollbar-track {
     background-color: #e4e4e4;
     border-radius: 100px;
@@ -53,5 +52,3 @@
     background-clip: content-box;
     background-color: #8070d4;
 }
-=======
->>>>>>> d79219673613c55925af7ec30737e455af5a6d2e
