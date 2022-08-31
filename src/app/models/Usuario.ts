@@ -8,7 +8,7 @@ typeUser:Number;
 enabled:boolean;
 date:Date;
 city: string;
-cellphone:String;
+cellphone:string;
 roles: string [] = []
 
 }
