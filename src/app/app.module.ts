@@ -1,4 +1,3 @@
-import { DetailsComponent } from './components/details/details.component';
 import { HomeBarberComponent } from './components/home-barber/home-barber.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -41,6 +40,8 @@ import { ProfileBarberComponent } from './components/profile-barber/profile-barb
 import { ProfileClientComponent } from './components/profile-client/profile-client.component';
 import { ProfileBarbershopComponent } from './components/profile-barbershop/profile-barbershop.component';
 import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
+import { ModalBarbershopComponent } from './modals/modal-barbershop/modal-barbershop.component';
+
 
 
 
@@ -100,12 +101,12 @@ const appRoutes: Routes = [
     ToShowPublicationsComponent,
     CardLoaderComponent,
     UploadCutsComponent,
-    // DetailsComponent,
     PromotionListComponent,
     LoginComponent,
     ProfileClientComponent,
     ProfileBarbershopComponent,
     TermsAndConditionsComponent,
+    ModalBarbershopComponent,
 
 
 
@@ -124,7 +125,7 @@ const appRoutes: Routes = [
     
 
   ],
-  entryComponents:[DetailsComponent],
+  entryComponents:[ModalBarbershopComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

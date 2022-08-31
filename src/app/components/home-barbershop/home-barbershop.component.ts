@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthServices } from 'src/app/models/AuthServices';
 import { Usuario } from 'src/app/models/Usuario';
+import { ModalBarbershopComponent } from 'src/app/modals/modal-barbershop/modal-barbershop.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home-barbershop',
@@ -13,12 +15,14 @@ import { Usuario } from 'src/app/models/Usuario';
 })
 export class HomeBarbershopComponent implements OnInit {
 
-  constructor(private auhtService: AuthServices, private barbershopService: BarbershopService) { }
+  constructor(private auhtService: AuthServices, private barbershopService: BarbershopService, private modalService:NgbModal) { }
 
   ngOnInit(): void {
-    // this.validateBarbershop();
   }
 
+  abrirModal(){
+    this.modalService.open(ModalBarbershopComponent);
+  }
 
   usuario:Usuario;
   usuarioConsilt: Usuario;
