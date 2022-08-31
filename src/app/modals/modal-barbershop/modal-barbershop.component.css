@@ -1,10 +1,68 @@
 form{
     width: 450px;
-    margin-top: 30%;
+    margin-top: 20%;
     background-color: rgba(255, 255, 255, 0.212);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(1px);
     padding: 20px 40px;
     border-radius: 5px;
     text-align: center;
+    color: white;
 }
+li{
+    list-style: none;
+}
+.intp{
+    width: 370px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.349);
+    border: none;
+    outline: none;
+    border-radius: 2px;
+}
+
+
+button{
+    width: 370px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.664);
+    border: none;
+    border-radius: 2px;
+    border: 1px solid black;
+    color: white;
+}
+
+
+img{
+    width: 150px;
+}
+
+.file-select {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.349);
+    border: none;
+    border-radius: 2px; 
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+  .carpeta{
+    width: 20px;
+    position: relative;
+    right: 110px;
+  }
+  .file-select::before {
+    background-color:transparent;
+    color:  #ffffff;
+    content: 'Elegir imagen';
+    position: relative;
+    right: 100px; /* testo por defecto */
+  }
+  
+  .file-select input[type="file"] {
+    opacity: 0;
+    width: 200px;
+    height: 32px;
+    display: inline-block;
+  }
