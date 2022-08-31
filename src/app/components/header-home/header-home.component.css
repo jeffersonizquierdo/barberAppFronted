@@ -165,9 +165,6 @@
   transition: all 500ms ease;
   opacity: 0;
   visibility: hidden;
-
-
-
 }
 #btn-menu:checked ~ .container-menu{
   opacity: 1;

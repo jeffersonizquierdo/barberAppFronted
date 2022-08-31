@@ -36,11 +36,6 @@ export class ManageCatalogueComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  // onSelect(e) { if (e.files.length > 5) { 
-  //   alert("Only 5 files accepted."); 
-  //   e.preventDefault(); 
-  //   } 
-  // }
 
 
   onFileChange(event){
@@ -57,9 +52,7 @@ export class ManageCatalogueComponent implements OnInit {
 
     this.servicebarbershop.getbarber(this.usuario.id).subscribe(
       data => {
-        this.newBarbershop = data;
-        console.log(this.newBarbershop);
-        
+        this.newBarbershop = data;        
       }
     );
     if(this.newBarbershop==null){
@@ -71,7 +64,6 @@ export class ManageCatalogueComponent implements OnInit {
       this.spinner.show();
       this.catalogueService.upload(this.imagen, "hairstyle").subscribe( (response:any) => {
         if(response){
-          console.log(response.url);
           this.imageURL=response.url
           this.newCatalogue = new Catalogue(this.id,  this.name, this.imageURL, this.description,this.newBarbershop);
           console.log(this.newCatalogue);
@@ -93,6 +85,7 @@ export class ManageCatalogueComponent implements OnInit {
     this.imagenMin = null;
   }
 
+  
   abrirModal(){
       this.modalService.open(ModalBarbershopComponent);
   }

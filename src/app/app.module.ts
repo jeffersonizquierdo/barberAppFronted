@@ -1,3 +1,4 @@
+import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
 import { HomeBarberComponent } from './components/home-barber/home-barber.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -40,8 +41,10 @@ import { ProfileBarberComponent } from './components/profile-barber/profile-barb
 import { ProfileClientComponent } from './components/profile-client/profile-client.component';
 import { ProfileBarbershopComponent } from './components/profile-barbershop/profile-barbershop.component';
 import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 import { ModalBarbershopComponent } from './modals/modal-barbershop/modal-barbershop.component';
 import { ModalBarberComponent } from './modals/modal-barber/modal-barber.component';
+
 
 
 
@@ -71,6 +74,7 @@ const appRoutes: Routes = [
   {path:'publicaciones', component:ToShowPublicationsComponent}, 
   {path:'publicidad', component:LoadPublicityComponent}, 
   {path:'homeedit', component:HeaderHomeComponent}, 
+  {path:'calendar', component:CalendarComponent}, 
   
 
 ]
@@ -107,8 +111,10 @@ const appRoutes: Routes = [
     ProfileClientComponent,
     ProfileBarbershopComponent,
     TermsAndConditionsComponent,
+    CalendarComponent,
     ModalBarbershopComponent,
     ModalBarberComponent,
+
 
 
 
@@ -123,10 +129,11 @@ const appRoutes: Routes = [
     HttpClientModule,
     NgxSpinnerModule,
     NgbModalModule,
-    BrowserAnimationsModule
-    
-
+    BrowserAnimationsModule,
+    ScheduleModule,
+    RecurrenceEditorModule
   ],
+
   entryComponents:[ModalBarbershopComponent],
   providers: [],
   bootstrap: [AppComponent]
