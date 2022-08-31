@@ -24,12 +24,21 @@ export class HomeBarberComponent implements OnInit {
   }
 
   abrirModal(){
+
     this.barberService.getbarber(this.usuario.id).subscribe(data=>{
       this.barber=data;
     })
-    if(this.barber==null){
-      this.modalService.open(ModalBarberComponent);
-    };
+
+    setTimeout(() => {
+
+      if(this.barber==null){
+        this.modalService.open(ModalBarberComponent);
+      };
+      
+    }, 500);
   }
+
+
+
 
 }
