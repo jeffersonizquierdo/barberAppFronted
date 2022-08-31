@@ -27,17 +27,12 @@ export class ModalBarberComponent implements OnInit {
   }
 
   saveBarber(){
-
     this.usuarioService.getUser(this.usuarioSesion.id).subscribe(
-
       data => {
-
         this.usuarioConsult = data;
         console.log(this.usuarioConsult);
-
     })
-
-
+    
     this.barber.id = this.usuarioConsult.id;
     this.barber.email = this.usuarioConsult.username;
     this.barber.password = this.usuarioConsult.password;

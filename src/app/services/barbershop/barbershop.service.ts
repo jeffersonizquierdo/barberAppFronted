@@ -34,8 +34,7 @@ export class BarbershopService {
 
   saveBarbeshop(newBarbershop:Barbershop): Observable<Barbershop>{
 
-    return this.http.post<Barbershop>("http://localhost:8080/barbershop/save", newBarbershop, {headers: this.agregarAuthorizationHeader()}).pipe(
-
+    return this.http.post<Barbershop>(`http://localhost:8080/barbershop/save`, newBarbershop, {headers: this.agregarAuthorizationHeader()}).pipe(
 
       catchError(e =>{
 

@@ -14,6 +14,18 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class SingInComponent implements OnInit {
 
 
+  contacForm: FormGroup;
+  usuario: Usuario;
+  
+  constructor(private router: Router,private usuarioservice:UsuarioService ) {
+
+    this.usuario = new Usuario()
+  }
+
+  ngOnInit(): void { 
+  
+  }
+
 
   login= new FormGroup({
 
@@ -24,18 +36,6 @@ export class SingInComponent implements OnInit {
     city:  new FormControl("",[Validators.required]),
     cellphone: new FormControl("",[Validators.required]),
   })
-
-    contacForm: FormGroup;
-
-  usuario: Usuario;
-  constructor(private router: Router,private usuarioservice:UsuarioService ) {
-
-    this.usuario = new Usuario()
-  }
-
-  ngOnInit(): void { 
-  
-  }
   
 
   dataTypeUser (value : number){
