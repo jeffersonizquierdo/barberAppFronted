@@ -1,4 +1,4 @@
-<div class="header" [ngClass]="{ head: authService.isAuthenticated() }">
+<div class="header" [ngClass]="{ 'head': authService.isAuthenticated() }">
   <div class="header_two" *ngIf="!authService.isAuthenticated()">
     <nav class="nav_container">
       <div class="nav_logo">
@@ -12,23 +12,18 @@
           <a [routerLink]="['/singup']" class="nav_links">Registrarse</a>
         </li>
       </ul>
+      <section class="hero_container">
+        <h1 class="hero_title">Bienvenidos A BarberApp</h1>
+        <p class="hero_parrafo">
+          Una Herramienta que te ayudara a crear oportunidades de generar un
+          estatus entre la competencia, brindándote la capacidad de solucionar la
+          acumulación de citas, los largos tiempos de espera etc. "BarberApp" por
+          qué las oportunidades no pasan, las Creas
+        </p>
+        <a [routerLink]="['/login']" class="cta">EMPEZAR</a>
+      </section>
     </nav>
-
-    <section class="hero_container">
-      <h1 class="hero_title">Bienvenidos A BarberApp</h1>
-      <p class="hero_parrafo">
-        Una Herramienta que te ayudara a crear oportunidades de generar un
-        estatus entre la competencia, brindándote la capacidad de solucionar la
-        acumulación de citas, los largos tiempos de espera etc. "BarberApp" por
-        qué las oportunidades no pasan, las Creas
-      </p>
-      <a [routerLink]="['/login']" class="cta">EMPEZAR</a>
-    </section>
   </div>
-
-
-
-
 
 
   <div *ngIf="authService.isAuthenticated()" class="funciones">
@@ -45,11 +40,57 @@
     
     </div>
     
+        <section class="hero_container">
+            <h1 class="hero_title">Bienvenidos A BarberApp </h1>
+            <p class="hero_parrafo">Una Herramienta que te ayudara a crear oportunidades de generar un estatus entre la competencia, brindándote la capacidad de solucionar la acumulación de citas, los largos tiempos de espera etc. "BarberApp" por qué las oportunidades no pasan, las Creas</p>
+            <a [routerLink]="['/login']" class="cta">EMPEZAR</a>
+        </section>
+    </div>
+
+
+    <div *ngIf=" authService.isAuthenticated() && authService.usuario.typeUser==1" class="funciones">
+
+        <div class="name" >
+            <a>Name barbershop</a>
+        </div>
+        <div class="menu_bar">
+            <a href="#" class="bt-menu">⁝</a>
+            <nav>
+                <ul class="links" >
+                    <li><a href="http://localhost:4200/homebarbershop">home</a></li>
+                    <li><a href="http://localhost:4200/list-barber">Gestionar Barberos</a></li>
+                    <li><a href="http://localhost:4200/upload-cuts">Gestionar Cuts</a></li>
+                    <li><a href="http://localhost:4200/">Mayas de Turnos</a></li>
+                    <li><a href="http://localhost:4200/manage-catalogue">Gestionar Catalogo</a></li>
+                    <li><a href="http://localhost:4200/promotions">Gestionar Promociones </a></li>
+                    <li><a href="http://localhost:4200/publicidad">Gestionar Publicaciones</a></li>
+                    <li><a href="http://localhost:4200/">Barberos</a></li>
+                    <li><a href="http://localhost:4200/">Cuts</a></li>
+                    <li><a href="http://localhost:4200/">Mayas de Turnos</a></li>
+                    <div class="login">
+                
+                        <button (click)="logout()" >Cerrar Sesion</button>
+        
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+    <div *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 2 " class="funciones">
+
+        <div class="name" >
+            <a>Name Barber</a>
+        </div>
+
+
+        <div class="menu_bar">
+            <a href="#" class="bt-menu">⁝</a>
   
     
     <input type="checkbox" id="btn-menu">
     <div class="container-menu">
-     
       <div class="cont-menu">
         <nav>
 
@@ -65,19 +106,6 @@
         <label for="btn-menu">✖️</label>
       </div>
     </div>
-
- 
-
-    
-
-
-
-
-
-
-
-
-
 
 
   <div

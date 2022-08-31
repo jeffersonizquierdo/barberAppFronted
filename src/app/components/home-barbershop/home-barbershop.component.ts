@@ -1,10 +1,12 @@
-import { ModalBarbershopService } from './../../services/Modales/modal-barbershop.service';
+
 import { Barbershop } from './../../models/barbershop';
 import { BarbershopService } from './../../services/barbershop/barbershop.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthServices } from 'src/app/models/AuthServices';
 import { Usuario } from 'src/app/models/Usuario';
+import { ModalBarbershopComponent } from 'src/app/modals/modal-barbershop/modal-barbershop.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home-barbershop',
@@ -13,48 +15,56 @@ import { Usuario } from 'src/app/models/Usuario';
 })
 export class HomeBarbershopComponent implements OnInit {
 
-  constructor(private auhtService: AuthServices,private modalService: ModalBarbershopService, private barbershopService: BarbershopService) { }
-
-  ngOnInit(): void {
-
-    this.validateBarbershop();
-  }
-
+  constructor(private auhtService: AuthServices, private barbershopService: BarbershopService, private modalService:NgbModal) { }
 
   usuario:Usuario;
-  usuarioConsilt: Usuario;
   barbershop: Barbershop;
 
-
-  validateBarbershop():Boolean{
-
-    this.usuario = this.auhtService.usuario;
-
-    this.barbershopService.getbarber(this.usuario.id).subscribe(
-
-      data => {
-
-        this.barbershop = data;
-      }
-    )
-
-
-    if (this.barbershop != null){
-
-      this.modalService.closeModal();
-      return true;
-
-
-    } else {
-
-      this.modalService.showModal();
-
-      return false;
-    }
-
+  ngOnInit(): void {
+    this.usuario=this.auhtService.usuario;
+    this.abrirModal();
   }
 
- 
+  abrirModal(){
+    this.barbershopService.getbarber(this.usuario.id).subscribe(data=>{
+      this.barbershop=data;
+    })
+    if(this.barbershop==null){
+      this.modalService.open(ModalBarbershopComponent);
+    };
+  }
+
+
+
+
+  // validateBarbershop():Boolean{
+
+  //   this.usuario = this.auhtService.usuario;
+
+  //   this.barbershopService.getbarber(this.usuario.id).subscribe(
+
+  //     data => {
+
+  //       this.barbershop = data;
+  //     }
+  //   )
+
+
+  //   if (this.barbershop != null){
+
+  //     this.modalService.closeModal();
+  //     return true;
+
+
+  //   } else {
+
+  //     this.modalService.showModal();
+
+  //     return false;
+  //   }
+
+  // }
+
 
 
 }

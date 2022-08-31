@@ -1,4 +1,3 @@
-import { DetailsComponent } from './components/details/details.component';
 import { HomeBarberComponent } from './components/home-barber/home-barber.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -40,8 +39,10 @@ import { UploadCutsComponent } from './components/upload-cuts/upload-cuts.compon
 import { ProfileBarberComponent } from './components/profile-barber/profile-barber.component';
 import { ProfileClientComponent } from './components/profile-client/profile-client.component';
 import { ProfileBarbershopComponent } from './components/profile-barbershop/profile-barbershop.component';
-import { CreateBarbershopComponent } from './components/create-barbershop/create-barbershop.component';
 import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
+import { ModalBarbershopComponent } from './modals/modal-barbershop/modal-barbershop.component';
+import { ModalBarberComponent } from './modals/modal-barber/modal-barber.component';
+
 
 
 
@@ -101,13 +102,13 @@ const appRoutes: Routes = [
     ToShowPublicationsComponent,
     CardLoaderComponent,
     UploadCutsComponent,
-    // DetailsComponent,
     PromotionListComponent,
     LoginComponent,
     ProfileClientComponent,
     ProfileBarbershopComponent,
-    CreateBarbershopComponent,
     TermsAndConditionsComponent,
+    ModalBarbershopComponent,
+    ModalBarberComponent,
 
 
 
@@ -126,7 +127,7 @@ const appRoutes: Routes = [
     
 
   ],
-  entryComponents:[DetailsComponent],
+  entryComponents:[ModalBarbershopComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
