@@ -31,8 +31,6 @@ export class HomeBarbershopComponent implements OnInit {
       console.log(data);
 
     })
-
-
     setTimeout(() => {
       if(this.barbershop == null){
         this.modalService.open(ModalBarbershopComponent);
