@@ -37,7 +37,7 @@ export class RankingComponent implements OnInit {
             return -1;
           }
           return 0;
-        })
+        })   
         this.rankingBarber=this.listBarber.slice(0, 10);
       })
   }

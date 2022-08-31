@@ -4,7 +4,7 @@
       <div class="nav_logo">
         <h2 class="nav_title">BarberApp</h2>
       </div>
-      <ul *ngIf="!authService.isAuthenticated()" class="nav_link">
+      <ul class="nav_link">
         <li class="nav_items">
           <a [routerLink]="['/login']" class="nav_links">Iniciar sesion</a>
         </li>
@@ -12,17 +12,19 @@
           <a [routerLink]="['/singup']" class="nav_links">Registrarse</a>
         </li>
       </ul>
-      <section class="hero_container">
-        <h1 class="hero_title">Bienvenidos A BarberApp</h1>
-        <p class="hero_parrafo">
-          Una Herramienta que te ayudara a crear oportunidades de generar un
-          estatus entre la competencia, brindándote la capacidad de solucionar la
-          acumulación de citas, los largos tiempos de espera etc. "BarberApp" por
-          qué las oportunidades no pasan, las Creas
-        </p>
-        <a [routerLink]="['/login']" class="cta">EMPEZAR</a>
-      </section>
+
     </nav>
+
+    <section class="hero_container">
+      <h1 class="hero_title">Bienvenidos A BarberApp</h1>
+      <p class="hero_parrafo">
+        Una Herramienta que te ayudara a crear oportunidades de generar un
+        estatus entre la competencia, brindándote la capacidad de solucionar la
+        acumulación de citas, los largos tiempos de espera etc. "BarberApp" por
+        qué las oportunidades no pasan, las Creas
+      </p>
+      <a [routerLink]="['/login']" class="cta">EMPEZAR</a>
+    </section>
   </div>
 
 
@@ -37,16 +39,6 @@
           <h1>BarberApp</h1>
         </div>
       </div>
-    
-    </div>
-    
-        <section class="hero_container">
-            <h1 class="hero_title">Bienvenidos A BarberApp </h1>
-            <p class="hero_parrafo">Una Herramienta que te ayudara a crear oportunidades de generar un estatus entre la competencia, brindándote la capacidad de solucionar la acumulación de citas, los largos tiempos de espera etc. "BarberApp" por qué las oportunidades no pasan, las Creas</p>
-            <a [routerLink]="['/login']" class="cta">EMPEZAR</a>
-        </section>
-    </div>
-
 
     <div *ngIf=" authService.isAuthenticated() && authService.usuario.typeUser==1" class="funciones">
 

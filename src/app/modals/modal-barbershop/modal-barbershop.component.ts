@@ -8,10 +8,13 @@ import { Barbershop } from 'src/app/models/barbershop';
 })
 export class ModalBarbershopComponent implements OnInit {
 
-  barbershop: Barbershop;
+  
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
+  barbershop: Barbershop = new Barbershop();
 
 }

@@ -28,10 +28,18 @@ export class HomeBarbershopComponent implements OnInit {
   abrirModal(){
     this.barbershopService.getbarber(this.usuario.id).subscribe(data=>{
       this.barbershop=data;
+      console.log(data);
+
     })
-    if(this.barbershop==null){
-      this.modalService.open(ModalBarbershopComponent);
-    };
+
+
+    setTimeout(() => {
+      if(this.barbershop == null){
+        this.modalService.open(ModalBarbershopComponent);
+      };
+    }, 1000);
+
+
   }
 
 
