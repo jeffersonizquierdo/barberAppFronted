@@ -4,7 +4,7 @@
 
     <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
       <!-- <p style="font-size: 20px; color: white">Subiendo promocion...</p> -->
-      <img src="../../../assets/images/LogoBarberApp.jpg" alt="">
+      <img src="../../../assets/images/cargando.gif" alt=""  >
     </ngx-spinner>
     <form novalidate enctype="multipart/form-data">
       <div class="postFile">
@@ -12,7 +12,7 @@
           <label for="imagen">Arrastre su Imagen</label>
           
           <div class="file-select" id="src-file1" >
-            <img src="../../../assets/images/carpeta.gif" alt="carpeta"  class="carpeta">
+            <img src="../../../assets/images/carpeta.png" alt="carpeta"  class="carpeta" >
             <input type="file"  id="imagen" #catalogueInputFile
           (change)="onFileChange($event)" accept="image/gif, image/jpeg, image/jpg, image/png, video/*" multiple="min=4 max=4" name="src-file1" aria-label="Archivo">
           </div>
