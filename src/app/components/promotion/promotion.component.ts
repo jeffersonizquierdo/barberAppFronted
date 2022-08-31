@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ModalBarbershopComponent } from 'src/app/modals/modal-barbershop/modal-barbershop.component';
 import { AuthServices } from 'src/app/models/AuthServices';
 
 import { Barbershop } from 'src/app/models/barbershop';
@@ -29,7 +31,7 @@ export class PromotionComponent implements OnInit {
   usuario:Usuario;
   
   constructor(private catalogueService:CatalogueService,private router:Router, private promotionService:PromotionService ,
-    private spinner:NgxSpinnerService, private authService: AuthServices, private servicebarbershop: BarbershopService) { }
+    private spinner:NgxSpinnerService, private authService: AuthServices, private servicebarbershop: BarbershopService,private modalService:NgbModal) { }
 
   ngOnInit(): void {
 
@@ -62,27 +64,32 @@ export class PromotionComponent implements OnInit {
         this.barbershop = data;     
       }
     );
+    if(this.barbershop==null){
+      this.reset();
+      this.abrirModal();
+    }else{
 
-    this.spinner.show();
-    this.catalogueService.upload(this.imagen, "promotionsimages").subscribe( (response:any) => {
-      if(response){
-        console.log(response.url);
-        this.promotion.url=response.url
+      this.spinner.show();
+      this.catalogueService.upload(this.imagen, "promotionsimages").subscribe( (response:any) => {
+        if(response){
+          console.log(response.url);
+          this.promotion.url=response.url
 
 
 
-        
-        this.promotion.owner = this.barbershop
-        this.promotionService.savePromotion(this.promotion).subscribe(
-          response =>{
-            this.reset();
-            console.log(response); 
-            this.spinner.hide();
-            window.location.reload();
-          } 
-      )}
-    })
-  }
+          
+          this.promotion.owner = this.barbershop
+          this.promotionService.savePromotion(this.promotion).subscribe(
+            response =>{
+              this.reset();
+              console.log(response); 
+              this.spinner.hide();
+              window.location.reload();
+            } 
+        )}
+      })
+      }
+    }
  
   reset(){
     this.imagen = null;
@@ -91,4 +98,8 @@ export class PromotionComponent implements OnInit {
     this.promotion.name="";
 
   }
+
+  abrirModal(){
+    this.modalService.open(ModalBarbershopComponent);
+}
 }
