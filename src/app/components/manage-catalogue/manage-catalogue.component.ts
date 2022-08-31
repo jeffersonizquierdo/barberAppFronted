@@ -58,9 +58,7 @@ export class ManageCatalogueComponent implements OnInit {
 
     this.servicebarbershop.getbarber(this.usuario.id).subscribe(
       data => {
-        this.newBarbershop = data;
-        console.log(this.newBarbershop);
-        
+        this.newBarbershop = data;        
       }
     );
     this.spinner.show();

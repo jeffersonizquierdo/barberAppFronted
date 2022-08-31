@@ -1,0 +1,20 @@
+<form >
+
+    <h3>Completar el registro del la Barberia</h3>
+
+    <div class="wrapper" >
+        <div class="inputData" >
+          <input class="intp" type="file" name="photo" autocomplete="off" required [(ngModel)] = "barber.photo" #photo="ngModel">  
+          <div class="line" ></div>
+          <label for="photo">Foto de perfil</label>
+        </div>
+      </div>
+      <div class="wrapper" >
+        <div class="inputData" >
+          <input class="intp" type="text" name="description" autocomplete="off" required [(ngModel)] = "barber.description" #description="ngModel">  
+          <div class="line" ></div>
+          <label for="photo">Describe tu Barberia</label>
+        </div>
+      </div>
+      <button>Commpletar Registro</button>
+  </form>
