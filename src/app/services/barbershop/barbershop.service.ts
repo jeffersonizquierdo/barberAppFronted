@@ -91,17 +91,4 @@ export class BarbershopService {
 
   }
 
-  private addAuthorizationHeader(){
-
-    let token = this.authService;
-
-    if (token != null){
-
-      return this.httpHeadres.append('Authorization', 'Bearer' + token)
-    }
-
-    return this.httpHeadres
-
-  }
-
 }
