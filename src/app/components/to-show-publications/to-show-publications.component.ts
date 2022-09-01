@@ -8,16 +8,13 @@ import { PublicityService } from 'src/app/services/publicity/publicity.service';
 })
 export class ToShowPublicationsComponent implements OnInit {
 
-  listPublicity:any=[];
+ public  listPublicity:any=[];
 
   constructor(private publicityService:PublicityService) { }
 
   ngOnInit(): void {
-    this.publicityService.listPublicity().subscribe(
-      data=>{
-        this.listPublicity=data;
-      }
-    )
+  
   }
 
+  
 }
