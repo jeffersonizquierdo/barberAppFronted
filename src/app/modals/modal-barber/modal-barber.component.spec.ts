@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateBarbershopComponent } from './create-barbershop.component';
+import { ModalBarberComponent } from './modal-barber.component';
 
-describe('CreateBarbershopComponent', () => {
-  let component: CreateBarbershopComponent;
-  let fixture: ComponentFixture<CreateBarbershopComponent>;
+describe('ModalBarberComponent', () => {
+  let component: ModalBarberComponent;
+  let fixture: ComponentFixture<ModalBarberComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateBarbershopComponent ]
+      declarations: [ ModalBarberComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateBarbershopComponent);
+    fixture = TestBed.createComponent(ModalBarberComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

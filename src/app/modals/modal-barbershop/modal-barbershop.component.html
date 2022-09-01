@@ -1,0 +1,72 @@
+<form>
+  <h3>Completar perfil...</h3>
+
+  <hr />
+
+  <div class="wrapper">
+    <div class="inputData">
+      <label for="location">Dirección de la barberia</label>
+      <input
+        class="intp"
+        type="text"
+        name="location"
+        autocomplete="off"
+        required
+        [(ngModel)]="barbershop.location"
+      />
+      <div class="line"></div>
+    </div>
+  </div>
+  <br>
+  <div class="wrapper">
+    <div class="inputData">
+      <label for="photo">Foto de perfil</label>
+      <div class="file-select" id="src-file1">
+        <img
+          src="../../../assets/images/carpeta-blanca.png"
+          alt="carpeta"
+          class="carpeta"
+        />
+        <input
+          class="intp"
+          type="file"
+          name="photo"
+          autocomplete="off"
+          required
+          accept="image/gif, image/jpeg, image/jpg, image/png,"
+          (change)="onFileChange($event)"
+        />
+      </div>
+      <div class="line"></div>
+    </div>
+  </div>
+  <div *ngIf="imagen" class="mt-5">
+    <h5>Vista Previa:</h5>
+    <div>
+      <li>
+        <img
+          class="image-thumbnail"
+          style="max-width: 200px"
+          [src]="imagenMin"
+        />
+      </li>
+    </div>
+  </div>
+  <br>
+  <div class="wrapper">
+    <div class="inputData">
+      <label for="description">Describe tu Barberia</label>
+      <input
+        class="intp"
+        type="text"
+        name="description"
+        autocomplete="off"
+        required
+        [(ngModel)]="barbershop.description"
+      />
+      <div class="line"></div>
+    </div>
+  </div>
+  <br />
+  <button>Commpletar Registro</button>
+</form>

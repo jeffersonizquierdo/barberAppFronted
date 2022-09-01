@@ -17,7 +17,7 @@ export class BarbershopService {
   private httpHeadres = new HttpHeaders({ 'Content-Type' : 'application/json'})
 
   usuario:Usuario = this.authService.usuario;
-
+.0
   private agregarAuthorizationHeader(){
 
     let token = this.authService.token
@@ -77,7 +77,7 @@ export class BarbershopService {
   }
 
   private isNoAuthorizado(e):Boolean{
-
+    
     if(e.status == 401 || e.status == 403){
 
       if (this.authService.isAuthenticated()){
@@ -88,19 +88,6 @@ export class BarbershopService {
     }
 
     return false;
-
-  }
-
-  private addAuthorizationHeader(){
-
-    let token = this.authService;
-
-    if (token != null){
-
-      return this.httpHeadres.append('Authorization', 'Bearer' + token)
-    }
-
-    return this.httpHeadres
 
   }
 

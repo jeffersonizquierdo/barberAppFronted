@@ -21,7 +21,6 @@ export class CatalogueService {
     let token = this.authService.token
 
     if (token != null){
-      console.log(token + " tokennnnn");
 
       return this.httpHeadres.append('Authorization', 'Bearer ' + token);
     }

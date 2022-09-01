@@ -1,25 +1,23 @@
 <div>
-
     <nav class="ranking">
     
         <h3>Ranking</h3>
-        <div class="titulos">
-            <h4>Puesto</h4>
-            <h4>Calificacion</h4>
-        </div>
-        <div>
+
+        <h4>Calificacion</h4>
+    
+        <div *ngFor="let barber of rankingBarber; let i=index">
             <a href="" style="text-decoration: none;">
                 <div class="elemento" >
                     
                     <div class="numeros">
-                        <span>3</span>
+                        <span>{{i+1}}</span>
                     </div>
                     <div class="mini_perfil">
                         <img class="images" src="../../../assets/images/LogoBarberApp.jpg" alt="imagen"> 
-                        <a href="">camilo barber</a>
+                        <a href="">{{barber.nickname}}</a>
                     </div>
                     <div class="numeros">
-                        <nav class="starts">3</nav> 
+                        <nav class="starts">{{barber.qualification}}</nav> 
                     </div>
                 </div>
             </a>

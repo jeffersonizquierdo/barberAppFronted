@@ -14,7 +14,20 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class SingInComponent implements OnInit {
 
 
- 
+
+  constructor(private router: Router,private usuarioservice:UsuarioService ) {
+
+  }
+
+  contacForm: FormGroup;
+  usuario: Usuario;
+
+
+  ngOnInit(): void { 
+    this.usuario = new Usuario()
+  }
+  
+
   login= new FormGroup({
 
     nickname: new FormControl("",[Validators.required]),
@@ -25,23 +38,10 @@ export class SingInComponent implements OnInit {
     cellphone: new FormControl("",[Validators.required]),
   })
 
-    contacForm: FormGroup;
-
-  usuario: Usuario;
-  constructor(private router: Router,private usuarioservice:UsuarioService ) {
-
-    this.usuario = new Usuario()
-   }
-
-  ngOnInit(): void { 
-   
-  }
-  
-
   dataTypeUser (value : number){
 
     if (value == 1) this.usuario.typeUser = 1
- 
+
     else if (value == 2) this.usuario.typeUser = 2
 
     else if (value == 3) this.usuario.typeUser = 3
@@ -49,18 +49,16 @@ export class SingInComponent implements OnInit {
   }
 
   saveUser() {
-
     this.usuario.enabled = true;
 
+    console.log(this.usuario);
+    
     this.usuarioservice.saveUsuario(this.usuario).subscribe(
           response  => {
-            
             console.log(response);
             swal.fire('Nuevo Usuario',`Hola ${this.usuario.nickname} te damos la bienvenida a BarberApp` , 'success')
           }
-          
         );
-
   }
 
 

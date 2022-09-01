@@ -31,6 +31,37 @@ export class UsuarioService {
   }
 
 
+  getUser(id : Number){
+
+    return this.http.get<Usuario>(`http://localhost:8080/usuario/consult/${id}`, {headers: this.agregarAuthorizationHeader()}).pipe(
+
+      catchError(e =>{
+
+        //this.isNoAuthorizado(e)
+        return throwError(e)
+
+      })
+    )
+
+  }
+
+
+  private isNoAuthorizado(e):Boolean{
+
+    if(e.status == 401 || e.status == 403){
+
+      if (this.authService.isAuthenticated()){
+        this.authService.logout();
+      }
+      this.router.navigate(['/login'])
+      return true;
+    }
+
+    return false;
+
+  }
+
+
   saveUsuario(newUsuario:Usuario): Observable<Usuario>{
 
     console.log(newUsuario);
@@ -39,7 +70,6 @@ export class UsuarioService {
     return this.http.post<Usuario>("http://localhost:8080/usuario/save", newUsuario, {headers: this.httpHeadres}).pipe(
 
       catchError(e =>{
-
 
         console.error(e.error.Mensaje);
         Swal.fire(e.error.Mensaje, e.error.Error, 'error');
@@ -50,5 +80,8 @@ export class UsuarioService {
     ))
 
   }
+
+
+
 
 }
