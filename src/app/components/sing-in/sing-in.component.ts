@@ -15,6 +15,19 @@ export class SingInComponent implements OnInit {
 
 
 
+  constructor(private router: Router,private usuarioservice:UsuarioService ) {
+
+  }
+
+  contacForm: FormGroup;
+  usuario: Usuario;
+
+
+  ngOnInit(): void { 
+    this.usuario = new Usuario()
+  }
+  
+
   login= new FormGroup({
 
     nickname: new FormControl("",[Validators.required]),
@@ -24,19 +37,6 @@ export class SingInComponent implements OnInit {
     city:  new FormControl("",[Validators.required]),
     cellphone: new FormControl("",[Validators.required]),
   })
-
-    contacForm: FormGroup;
-
-  usuario: Usuario;
-  constructor(private router: Router,private usuarioservice:UsuarioService ) {
-
-    this.usuario = new Usuario()
-  }
-
-  ngOnInit(): void { 
-  
-  }
-  
 
   dataTypeUser (value : number){
 
@@ -50,11 +50,13 @@ export class SingInComponent implements OnInit {
 
   saveUser() {
     this.usuario.enabled = true;
+
+    console.log(this.usuario);
+    
     this.usuarioservice.saveUsuario(this.usuario).subscribe(
           response  => {
             console.log(response);
             swal.fire('Nuevo Usuario',`Hola ${this.usuario.nickname} te damos la bienvenida a BarberApp` , 'success')
-            this.usuario=null;
           }
         );
   }
