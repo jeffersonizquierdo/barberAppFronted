@@ -2,3 +2,11 @@
 app-modal-barbershop{
     position: absolute;
 }
+ngb-modal-window{
+    background-color: rgba(255, 255, 255, 0.212);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(1px);
+}
+app-modal-barber{
+    position: absolute;
+}
