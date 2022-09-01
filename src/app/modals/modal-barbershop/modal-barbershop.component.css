@@ -1,13 +1,12 @@
 form{
     width: 450px;
     margin-top: 20%;
-    background-color: rgba(255, 255, 255, 0.212);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(1px);
+    background-color: #bbbbbb;
     padding: 20px 40px;
     border-radius: 5px;
     text-align: center;
     color: white;
+    box-shadow: 0px 0px 10px 2px black;
 }
 li{
     list-style: none;
@@ -15,7 +14,7 @@ li{
 .intp{
     width: 370px;
     height: 40px;
-    background-color: rgba(0, 0, 0, 0.349);
+    background-color: rgba(0, 0, 0, 0.5);
     border: none;
     outline: none;
     border-radius: 2px;
@@ -30,6 +29,7 @@ button{
     border-radius: 2px;
     border: 1px solid black;
     color: white;
+    box-shadow: inset 0px 0px 20px 1px black;
 }
 
 
@@ -39,7 +39,7 @@ img{
 
 .file-select {
     position: relative;
-    background-color: rgba(0, 0, 0, 0.349);
+    background-color: rgba(0, 0, 0, 0.5);
     border: none;
     border-radius: 2px; 
     display: flex;

@@ -12,7 +12,7 @@
       <ul class="nav_link">
 
         <li class="nav_items">
-          <a [routerLink]="['/login']" class="nav_links">Iniciar sesion</a>
+          <a [routerLink]="['/login']" class="nav_links"  >Iniciar sesion</a>
         </li>
 
         <li class="nav_items">
@@ -39,10 +39,6 @@
 
 
   </div>
-
-
-
-
   <div *ngIf="authService.isAuthenticated()" class="funciones">
 
     <div class="container_two">
@@ -59,50 +55,30 @@
             </div>
 
           </div>
-
-
         <div >
-
-    
         <input type="checkbox" id="btn-menu">
         <div class="container-menu">
           <div class="cont-menu">
             <nav>
               <a href="/homebarbershop" class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
-
-
-
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 1" class="funciones" >
-
-                <a href="#">Barberos</a>
-                <a href="#">Maya de turnos</a>
-                <a href="#">Catalogo</a>
-                <a href="#">Promociones</a>
-                <a href="#">Publicaciones</a>
-                <a (click)="logout()" href="#">Cerrar Sesion</a>
-
+                <a href="http://localhost:4200/listabarber">Barberos</a>
+                <a href="http://localhost:4200/calendar">Maya de turnos</a>
+                <a href="http://localhost:4200/manage-catalogue">Catalogo</a>
+                <a href="http://localhost:4200/promotion">Promociones</a>
+                <a href="http://localhost:4200/publicaciones">Publicaciones</a>
+                <a (click)="logout()" href="/">Cerrar Sesion</a>
               </nav>
-
-
-
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 2" class="funciones" >
-
                 <a href="#">Barberia</a>
                 <a href="#">Maya de turnos</a>
                 <a href="#">Publicaciones</a>
                 <a (click)="logout()" href="#">Cerrar Sesion</a>
-
               </nav>
-
-
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 3" class="funciones" >
-
                 <a href="#">Reservar</a>
                 <a (click)="logout()" href="#">Cerrar Sesion</a>
-
-              </nav>
-
-              
+              </nav>  
             </nav>
             <label for="btn-menu">✖️</label>
 
