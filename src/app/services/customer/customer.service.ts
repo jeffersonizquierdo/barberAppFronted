@@ -32,6 +32,23 @@ export class CustomerService {
 
   }
 
+
+
+    getCustomer(id : Number):  Observable<Customer>{
+
+    return  this.http.get<Customer>(`http://localhost:8080/customer/consult/${id}`, {headers: this.agregarAuthorizationHeader()}).pipe(
+
+      catchError(e =>{
+
+        return throwError(e)
+
+      })
+
+    )
+  }
+
+
+
   saveCustomer(newCustomer: Customer): Observable<any>{
 
   return this.http.post<Customer>("http://localhost:8080/customer/save", newCustomer, {headers: this.agregarAuthorizationHeader()}).pipe(
