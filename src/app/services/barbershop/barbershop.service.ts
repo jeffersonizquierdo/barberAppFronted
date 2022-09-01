@@ -34,13 +34,14 @@ export class BarbershopService {
 
   saveBarbeshop(newBarbershop:Barbershop): Observable<Barbershop>{
 
-    return this.http.post<Barbershop>("http://localhost:8080/barbershop/save", newBarbershop, {headers: this.agregarAuthorizationHeader()}).pipe(
-
-
+    return this.http.post<Barbershop>(`http://localhost:8080/barbershop/save`, newBarbershop, {headers: this.agregarAuthorizationHeader()}).pipe(
+     
       catchError(e =>{
-
+        console.log("entro a guardar")
         if(this.isNoAuthorizado(e)){
+          console.log("paila")
           return throwError(e)
+
         }
 
         console.error(e.error.Mensaje);
@@ -48,6 +49,7 @@ export class BarbershopService {
         
         return throwError(e);
       }));
+      
   }
 
   listBarbershop():  Observable<Barbershop>{

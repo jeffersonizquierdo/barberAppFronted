@@ -21,8 +21,6 @@ export class RankingComponent implements OnInit {
     this.serveceBarber.listBarber().subscribe(
       data=>{
         this.listBarber=data;
-        console.log("aqui llege");
-        console.log(this.listBarber);
         this.listBarber.sort((a,b)=>{
           if(a.qualification>b.qualification){
             return -1;
