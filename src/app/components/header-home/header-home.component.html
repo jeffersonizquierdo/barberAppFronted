@@ -1,80 +1,111 @@
-<div class="header" [ngClass]="{ 'head': authService.isAuthenticated() }">
+<div class="header" [ngClass]="{ 'head': authService.isAuthenticated()}">
+
+
   <div class="header_two" *ngIf="!authService.isAuthenticated()">
+
     <nav class="nav_container">
+
       <div class="nav_logo">
         <h2 class="nav_title">BarberApp</h2>
       </div>
+
       <ul class="nav_link">
+
         <li class="nav_items">
           <a [routerLink]="['/login']" class="nav_links">Iniciar sesion</a>
         </li>
+
         <li class="nav_items">
           <a [routerLink]="['/singup']" class="nav_links">Registrarse</a>
         </li>
+
       </ul>
 
     </nav>
 
     <section class="hero_container">
       <h1 class="hero_title">Bienvenidos A BarberApp</h1>
+
       <p class="hero_parrafo">
         Una Herramienta que te ayudara a crear oportunidades de generar un
         estatus entre la competencia, brindándote la capacidad de solucionar la
         acumulación de citas, los largos tiempos de espera etc. "BarberApp" por
         qué las oportunidades no pasan, las Creas
       </p>
+
       <a [routerLink]="['/login']" class="cta">EMPEZAR</a>
+
     </section>
+
+
   </div>
+
+
 
 
   <div *ngIf="authService.isAuthenticated()" class="funciones">
 
     <div class="container_two">
-      <div class="container_tree"> 
+
+      <div class="container_tree">
         <div class="btn-menu">
+
           <label for="btn-menu">☰</label>
-        </div>
-        <div class="logo">
-          <h1>BarberApp</h1>
-        </div>
-      </div>
 
-    <div *ngIf=" authService.isAuthenticated() && authService.usuario.typeUser==1" class="funciones">
+          </div>
 
-        <div class="name" >
-            <a>Name barbershop</a>
-        </div>
-        <div class="menu_bar">
-            <a href="#" class="bt-menu">⁝</a>
+            <div class="logo">
+              <h1>BarberApp</h1>
+            </div>
+
+          </div>
+
+
+        <div >
+
+    
+        <input type="checkbox" id="btn-menu">
+        <div class="container-menu">
+          <div class="cont-menu">
             <nav>
-                <ul class="links" >
-                    <li><a href="http://localhost:4200/homebarbershop">home</a></li>
-                    <li><a href="http://localhost:4200/list-barber">Gestionar Barberos</a></li>
-                    <li><a href="http://localhost:4200/upload-cuts">Gestionar Cuts</a></li>
-                    <li><a href="http://localhost:4200/">Mayas de Turnos</a></li>
-                    <li><a href="http://localhost:4200/manage-catalogue">Gestionar Catalogo</a></li>
-                    <li><a href="http://localhost:4200/promotions">Gestionar Promociones </a></li>
-                    <li><a href="http://localhost:4200/publicidad">Gestionar Publicaciones</a></li>
-                    <li><a href="http://localhost:4200/">Barberos</a></li>
-                    <li><a href="http://localhost:4200/">Cuts</a></li>
-                    <li><a href="http://localhost:4200/">Mayas de Turnos</a></li>
-                    <div class="login">
-                
-                        <button (click)="logout()" >Cerrar Sesion</button>
-        
-                    </div>
-                </ul>
+              <a href="/homebarbershop" class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
+
+
+
+              <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 1" class="funciones" >
+
+                <a href="#">Barberos</a>
+                <a href="#">Maya de turnos</a>
+                <a href="#">Catalogo</a>
+                <a href="#">Promociones</a>
+                <a href="#">Publicaciones</a>
+                <a (click)="logout()" href="#">Cerrar Sesion</a>
+
+              </nav>
+
+
+
+              <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 2" class="funciones" >
+
+                <a href="#">Barberia</a>
+                <a href="#">Maya de turnos</a>
+                <a href="#">Publicaciones</a>
+                <a (click)="logout()" href="#">Cerrar Sesion</a>
+
+              </nav>
+
+
+              <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 3" class="funciones" >
+
+                <a href="#">Reservar</a>
+                <a (click)="logout()" href="#">Cerrar Sesion</a>
+
+              </nav>
+
+              
             </nav>
-        </div>
-    </div>
+            <label for="btn-menu">✖️</label>
 
-
-    <div *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 2 " class="funciones">
-
-        <div class="name" >
-            <a>Name Barber</a>
-        </div>
 
 
     
@@ -100,51 +131,14 @@
   </div>
 
 
-  <div
-    *ngIf="authService.isAuthenticated() && authService.usuario.typeUser == 2"
-    class="funciones">
-    <div class="name">
-      <a>Name Barber</a>
+            
+
+
+
+
     </div>
 
-    <div class="menu_bar">
-      <a href="#" class="bt-menu">⁝</a>
-      <nav>
-        <ul class="links">
-          <li>
-            <a href="http://localhost:4200/promotion">Gestionar Promociones </a>
-          </li>
-          <li><a href="">Vinculaciones</a></li>
-          <li><a href="">Cuts</a></li>
-          <li><a href="">Catalogo</a></li>
-          <li><a href="">Mayas de Turnos</a></li>
-          <li><a href="http://localhost:4200/homebarber">Salir</a></li>
-          <div class="login">
-            <button (click)="logout()">Cerrar Sesion</button>
-          </div>
-        </ul>
-      </nav>
-    </div>
   </div>
 
-  <div
-    *ngIf="authService.isAuthenticated() && authService.usuario.typeUser == 3"
-    class="funciones"
-  >
-    <div class="name">
-      <a href="">Name Customer</a>
-    </div>
 
-    <div class="menu_bar">
-      <a href="#" class="bt-menu">⁝</a>
-      <nav>
-        <ul class="links">
-          <li><a href="">Reservar</a></li>
-          <div class="login">
-            <button (click)="logout()">Cerrar Sesion</button>
-          </div>
-        </ul>
-      </nav>
-    </div>
-  </div>
 </div>
