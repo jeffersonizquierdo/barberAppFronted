@@ -51,7 +51,7 @@ export class ModalBarberComponent implements OnInit {
     this.servicecatalogue.upload(this.imagenMin, "perfil").subscribe((response : any) => {
 
       if (response) {
-
+ 
         this.barber.photo = response.url
         console.log(response.url);
 
