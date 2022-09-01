@@ -70,7 +70,7 @@ const appRoutes: Routes = [
   {path:'promotion', component:PromotionComponent},
   {path:'porfilebarber', component:ProfileBarberComponent}, 
   {path:'terminos', component:TermsAndConditionsComponent}, 
-  {path:'listabarber', component:TermsAndConditionsComponent}, 
+  {path:'listabarber', component:ListBarberComponent }, 
   {path:'publicaciones', component:ToShowPublicationsComponent}, 
   {path:'publicidad', component:LoadPublicityComponent}, 
   {path:'homeedit', component:HeaderHomeComponent}, 
