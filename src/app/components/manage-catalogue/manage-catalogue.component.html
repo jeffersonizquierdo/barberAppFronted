@@ -8,8 +8,13 @@
         <div class="postFile">
           <div class="custom-file">
             <label for="imagen">Arrastre su Imagen</label>
-            <input type="file"  id="imagen" #catalogueInputFile
-            (change)="onFileChange($event)" accept="image/gif, image/jpeg, image/jpg, image/png, video/*" multiple="min=4 max=4">
+            
+            <div class="file-select" id="src-file1" >
+              <img src="../../../assets/images/carpeta.gif" alt="carpeta"  class="carpeta">
+              <input type="file"  id="imagen" #catalogueInputFile
+            (change)="onFileChange($event)" accept="image/gif, image/jpeg, image/jpg, image/png, video/*" multiple="min=4 max=4" name="src-file1" aria-label="Archivo">
+            </div>
+            
           </div>
         </div> 
         <div  style="margin-top: 30px;" class="wrapper" >
