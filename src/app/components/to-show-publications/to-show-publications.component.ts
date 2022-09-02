@@ -13,7 +13,18 @@ export class ToShowPublicationsComponent implements OnInit {
   constructor(private publicityService:PublicityService) { }
 
   ngOnInit(): void {
+    this.loader1();
   
+  }
+
+  loader1():void{
+    this.publicityService. listPublicity().subscribe(
+      data =>{
+        this.listPublicity =data;
+        console.log(this.listPublicity.description);
+        
+      }
+    )
   }
 
   
