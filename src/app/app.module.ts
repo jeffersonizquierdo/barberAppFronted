@@ -43,6 +43,7 @@ import { TermsAndConditionsComponent } from './components/terms-and-conditions/t
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { ModalBarbershopComponent } from './modals/modal-barbershop/modal-barbershop.component';
 import { ModalBarberComponent } from './modals/modal-barber/modal-barber.component';
+import { ListAllBarberComponent } from './components/list-all-barber/list-all-barber.component';
 
 
 
@@ -74,6 +75,7 @@ const appRoutes: Routes = [
   {path:'publicidad', component:LoadPublicityComponent}, 
   {path:'homeedit', component:HeaderHomeComponent}, 
   {path:'calendar', component:CalendarComponent}, 
+  {path:'list_all_barber', component:ListAllBarberComponent}, 
   
 
 ]
@@ -113,6 +115,7 @@ const appRoutes: Routes = [
     CalendarComponent,
     ModalBarbershopComponent,
     ModalBarberComponent,
+    ListAllBarberComponent,
 
 
 
