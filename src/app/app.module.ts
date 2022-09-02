@@ -28,7 +28,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { PromotionListComponent } from './components/promotion-list/promotion-list.component';
-import { AuthGuard } from './guards/auth.guard';
 import { ListBarberComponent } from './components/list-barber/list-barber.component';
 import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
 import { LoadPublicityComponent } from './components/load-publicity/load-publicity.component';
@@ -44,6 +43,7 @@ import { TermsAndConditionsComponent } from './components/terms-and-conditions/t
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { ModalBarbershopComponent } from './modals/modal-barbershop/modal-barbershop.component';
 import { ModalBarberComponent } from './modals/modal-barber/modal-barber.component';
+import { ListAllBarberComponent } from './components/list-all-barber/list-all-barber.component';
 
 
 
@@ -70,11 +70,12 @@ const appRoutes: Routes = [
   {path:'promotion', component:PromotionComponent},
   {path:'porfilebarber', component:ProfileBarberComponent}, 
   {path:'terminos', component:TermsAndConditionsComponent}, 
-  {path:'listabarber', component:TermsAndConditionsComponent}, 
+  {path:'listabarber', component: ListBarberComponent }, 
   {path:'publicaciones', component:ToShowPublicationsComponent}, 
   {path:'publicidad', component:LoadPublicityComponent}, 
   {path:'homeedit', component:HeaderHomeComponent}, 
   {path:'calendar', component:CalendarComponent}, 
+  {path:'list_all_barber', component:ListAllBarberComponent}, 
   
 
 ]
@@ -114,6 +115,7 @@ const appRoutes: Routes = [
     CalendarComponent,
     ModalBarbershopComponent,
     ModalBarberComponent,
+    ListAllBarberComponent,
 
 
 
