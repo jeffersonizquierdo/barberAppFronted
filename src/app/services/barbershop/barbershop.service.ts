@@ -57,6 +57,8 @@ export class BarbershopService {
     return  this.http.get<Barbershop>(`http://localhost:8080/barbershop/consultall`, {headers: this.agregarAuthorizationHeader()})
   } 
 
+
+
   listBarber():  Observable<Barber>{
 
     return  this.http.get<Barber>(`http://localhost:8080/barbershop/consultbarber/${this.usuario.id}`, {headers: this.agregarAuthorizationHeader()})

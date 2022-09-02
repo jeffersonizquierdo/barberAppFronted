@@ -194,10 +194,10 @@ section{
 }
 
 .franja{
-    border: 1px solid black;
-    height: 10px;
+    border: 1px solid gray;
+    height: 1px;
     width: 100%;
-    background-color: black;
+    background-color: gray;
     margin: 95px 0;
 }
 

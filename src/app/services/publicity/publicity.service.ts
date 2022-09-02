@@ -3,12 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthServices } from 'src/app/models/AuthServices';
 import { Publicity } from 'src/app/models/Publicity';
+import { Usuario } from 'src/app/models/Usuario';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class PublicityService {
+  usuario:Usuario = this.authService.usuario
 
   constructor(private httpClient: HttpClient, private authService: AuthServices) { }
 
@@ -23,6 +25,11 @@ export class PublicityService {
   listPublicity():  Observable<Publicity>{
 
     return  this.httpClient.get<Publicity>("http://localhost:8080/publication/consultall", {headers: this.agregarAuthorizationHeader()} )
+  }
+
+  
+  listpublicyid(){
+    return  this.httpClient.get<Publicity>(`http://localhost:8080/publication/consult/${this.usuario.id}`, {headers: this.agregarAuthorizationHeader()})
   }
 
 
