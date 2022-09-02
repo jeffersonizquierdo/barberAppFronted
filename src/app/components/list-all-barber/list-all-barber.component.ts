@@ -9,6 +9,7 @@ import { Usuario } from 'src/app/models/Usuario';
 import { BarberService } from 'src/app/services/barber/barber.service';
 import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
 import { LinkearService } from 'src/app/services/linkear/linkear.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list-all-barber',
@@ -34,15 +35,15 @@ export class ListAllBarberComponent implements OnInit {
     this.BarberService.listBarber().subscribe(
       data =>{
         this.barbers = data;
-        console.log(this.barbers);
       }
     )
-  }
+  } 
 
   linkear(id_barber:Number){
     this.barbershop=new Barbershop();
     this.serviceBarbershop.getbarber(this.usuario.id).subscribe((response:any)=>{
       this.barbershop=response;
+      
       if(this.barbershop==null){
         this.abrirModal();
       }else{
@@ -53,12 +54,22 @@ export class ListAllBarberComponent implements OnInit {
         this.BarberService.getbarber(id_barber).subscribe((response:any)=>{
           this.barbero=response;
           this.bonding.barber=this.barbero;
+          
         })
       }
     })
-    this.serveceLinkear.saveLinkear(this.bonding).subscribe(response=>{
-      console.log(response);
-    })
+
+
+    setTimeout(() => {
+
+      this.serveceLinkear.saveLinkear(this.bonding).subscribe(response=>{
+      })
+
+      swal.fire("Hecho", "Solicitud enviada", "success")
+      
+    }, 500);
+
+
   }
 
   abrirModal(){

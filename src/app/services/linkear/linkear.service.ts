@@ -24,7 +24,6 @@ export class LinkearService {
     let token = this.authService.token
 
     if (token != null){
-      console.log(token + " tokennnnn");
 
       return this.httpHeadres.append('Authorization', 'Bearer ' + token);
     }
@@ -33,9 +32,9 @@ export class LinkearService {
 
   }
 
-  saveLinkear(newLinkear: Linkear): Observable<any>{
-
-    return this.http.post<any>("http://localhost:8080/barber/save", newLinkear, {headers: this.agregarAuthorizationHeader()}).pipe(
+  saveLinkear(newLinkear: Linkear): Observable<Linkear>{
+  
+    return this.http.post<Linkear>(`http://localhost:8080/bonding/save`, newLinkear, {headers: this.agregarAuthorizationHeader()}).pipe(
 
     catchError(e =>{
 
