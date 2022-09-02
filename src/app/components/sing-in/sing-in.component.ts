@@ -18,7 +18,7 @@ export class SingInComponent implements OnInit {
   usuario: Usuario;
   
   constructor(private router: Router,private usuarioservice:UsuarioService ) {
-
+    console.log("d")
     this.usuario = new Usuario()
   }
 
@@ -39,7 +39,7 @@ export class SingInComponent implements OnInit {
 
   dataTypeUser (value : number){
 
-    if (value == 1) this.usuario.typeUser = 1
+    if (value == 1) this.usuario.typeUser = 1 
 
     else if (value == 2) this.usuario.typeUser = 2
 
