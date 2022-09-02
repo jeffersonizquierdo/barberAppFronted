@@ -22,7 +22,7 @@ export class HomeBarbershopComponent implements OnInit {
 
   ngOnInit(): void {
     this.usuario=this.auhtService.usuario;
-    this.abrirModal();
+    this.abrirModal();    
   }
 
   abrirModal(){

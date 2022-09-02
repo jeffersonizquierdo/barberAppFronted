@@ -67,7 +67,7 @@
                 <a href="http://localhost:4200/calendar">Maya de turnos</a>
                 <a href="http://localhost:4200/manage-catalogue">Catalogo</a>
                 <a href="http://localhost:4200/promotions">Promociones</a>
-                <a href="http://localhost:4200/publicaciones">Publicaciones</a>
+                <a href="http://localhost:4200/mypublications">Publicaciones</a>
                 <a (click)="logout()" href="/">Cerrar Sesion</a>
               </nav>
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 2" class="funciones" >

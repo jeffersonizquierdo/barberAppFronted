@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ModalBarbershopComponent } from 'src/app/modals/modal-barbershop/modal-barbershop.component';
+import { AuthServices } from 'src/app/models/AuthServices';
 import { Barbershop } from 'src/app/models/barbershop';
 import { Publicity } from 'src/app/models/Publicity';
+import { Usuario } from 'src/app/models/Usuario';
+import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
 import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
 import { PublicityService } from 'src/app/services/publicity/publicity.service';
 
@@ -17,13 +22,17 @@ export class LoadPublicityComponent implements OnInit {
   imagenMin:File;
   description:string;
   imageURL: string;
-  newPublicity: any;
+  newPublicity: Publicity;
   id: Number;
   
 
-  constructor(private publicityService:PublicityService,private catalogueService:CatalogueService,private router:Router,private spinner: NgxSpinnerService) { }
+  constructor(private publicityService:PublicityService,private catalogueService:CatalogueService,private router:Router,
+    private spinner: NgxSpinnerService, private authService: AuthServices, private servicebarbershop: BarbershopService, private modalService:NgbModal) { }
 
   ngOnInit(): void {
+
+    this.usuario = this.authService.usuario
+    this.newPublicity = new Publicity()    
   }
 
   onFileChange(event){
@@ -36,33 +45,63 @@ export class LoadPublicityComponent implements OnInit {
   }
 
   newBarbershop:Barbershop;
+  usuario:Usuario;
 
 
   onUpload(){
-    // this.newBarbershop = new Barbershop(1, "barber", "dsd", "dsddsd", "Cali", "3000", 1, "photo", "descriptionBarbershop", "locationBarbershop", 0);
-    this.spinner.show();
-    this.catalogueService.upload(this.imagen, "publicity").subscribe( (response:any) => {
-      if(response){
-        console.log(response.url);
-        this.imageURL=response.url
-        this.newPublicity = new Publicity (this.id, this.imageURL, this.description, this.newBarbershop);
-        console.log(this.newPublicity);
-        
-        this.publicityService.savePublicity(this.newPublicity).subscribe(
-          response =>{
-            this.reset();
-            console.log(response);
-            this.spinner.hide();
-          } 
-      )}
-    })
-    
-  }
+
+    this.servicebarbershop.getbarber(this.usuario.id).subscribe(
+      data => {
+
+        this.newBarbershop = data
+
+            
+      }
+    );
+
+
+    setTimeout(() => {
+
+      if(this.newBarbershop==null){
+
+        this.reset();
+        this.abrirModal();
+      }else{
+  
+      this.spinner.show();
+      this.catalogueService.upload(this.imagen, "publicity").subscribe( (response:any) => {
+
+        if(response){
+          
+          this.newPublicity.url=response.url
+          this.newPublicity.id_barbershop = this.newBarbershop
+          this.publicityService.savePublicity(this.newPublicity).subscribe(
+            response =>{
+              this.reset();
+              
+              console.log(response);
+              this.spinner.hide();
+            } 
+        )}
+      })
+      
+    }
+      
+    }, 500);
+
+
+    }
 
   reset(){
     this.imagen = null;
     this.imagenMin = null;
+
+
   }
-  
+
+  abrirModal(){
+    this.modalService.open(ModalBarbershopComponent);
+  }
+
 
 }
