@@ -44,6 +44,7 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { ModalBarbershopComponent } from './modals/modal-barbershop/modal-barbershop.component';
 import { ModalBarberComponent } from './modals/modal-barber/modal-barber.component';
 import { ListAllBarberComponent } from './components/list-all-barber/list-all-barber.component';
+import { BondingMessagesComponent } from './components/bonding-messages/bonding-messages.component';
 
 
 
@@ -116,6 +117,7 @@ const appRoutes: Routes = [
     ModalBarbershopComponent,
     ModalBarberComponent,
     ListAllBarberComponent,
+    BondingMessagesComponent,
 
 
 

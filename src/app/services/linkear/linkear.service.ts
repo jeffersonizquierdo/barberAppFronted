@@ -45,4 +45,12 @@ export class LinkearService {
     )
     
   }
+
+  listLinkear():  Observable<Linkear>{
+
+    return  this.http.get<Linkear>("http://localhost:8080/bonding/consultall", {headers: this.agregarAuthorizationHeader()} )
+  }
+
+  
+
 }
