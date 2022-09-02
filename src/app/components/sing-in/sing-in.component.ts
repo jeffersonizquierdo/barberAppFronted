@@ -14,14 +14,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class SingInComponent implements OnInit {
 
 
-
-  constructor(private router: Router,private usuarioservice:UsuarioService ) {
-
-  }
-
   contacForm: FormGroup;
   usuario: Usuario;
+  
+  constructor(private router: Router,private usuarioservice:UsuarioService ) {
 
+    this.usuario = new Usuario()
+  }
 
   ngOnInit(): void { 
     this.usuario = new Usuario()

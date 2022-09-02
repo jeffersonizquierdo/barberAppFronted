@@ -39,11 +39,8 @@ export class ModalBarberComponent implements OnInit {
   }
 
   saveBarber(){
-
     this.usuarioService.getUser(this.usuarioSesion.id).subscribe(
-
       data => {
-
         this.usuarioConsult = data;
 
     });
@@ -73,8 +70,27 @@ export class ModalBarberComponent implements OnInit {
       }
       
     })
+    
+    this.barber.id = this.usuarioConsult.id;
+    this.barber.email = this.usuarioConsult.username;
+    this.barber.password = this.usuarioConsult.password;
+    this.barber.nickname = this.usuarioConsult.nickname;
+    this.barber.city = this.usuarioConsult.city;
+    this.barber.cellphone = this.usuarioConsult.cellphone;
+    this.barber.typeUser = this.usuarioConsult.typeUser;
+    this.barber.age = this.usuarioConsult.date;
+
+    console.log(this.barber);
+    
 
 
+    this.barberServices.saveBarber(this.barber).subscribe(
+
+      response  => {
+        console.log(response);
+        swal.fire('Bien hecho',` ${this.barber.nickname} acabas de completar tu perfil` , 'success')
+      }
+    )
 
 
   }
