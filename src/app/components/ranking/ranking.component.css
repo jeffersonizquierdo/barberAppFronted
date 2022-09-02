@@ -4,14 +4,15 @@
 }
 
 .ranking{
-    height: auto;
-    padding: 20px;
+    height: 831px;
+    width: 460px;
+    max-width: 500px;
+    padding: 20px 0 20px 20px;
     background-color: #171f2a;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
     border-radius: 5px;
     -webkit-box-shadow: 4px 1px 9px -1px rgba(0,0,0,0.52);
     -moz-box-shadow: 4px 1px 9px -1px rgba(0,0,0,0.52);
@@ -56,8 +57,14 @@ span{
     height: 35px;
     padding-left: 3px;
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 4px;
     color: #fff;
+}
+
+.elemento:hover{
+    background: linear-gradient(to right, rgb(196, 255, 255), rgb(255, 255, 255));
+    color: black;
+    font-size: 30px;
 }
 
 
@@ -90,8 +97,8 @@ span{
 }
 
 .images{
-    height: 70px;
-    width: 32%;
+    height: 45px;
+    width: 20%;
     border-radius: 100%;
 }
 
@@ -105,7 +112,7 @@ span{
 .mini_perfil{
     gap: 7px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     width: 240px;
 }
@@ -117,4 +124,11 @@ span{
 .numeros{
     display: flex;
     justify-content: center;
+}
+
+.superior{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 20px;
+    gap: 230px;
 }

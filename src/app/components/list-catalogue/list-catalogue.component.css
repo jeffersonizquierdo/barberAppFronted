@@ -17,12 +17,12 @@ h1{
     grid-template-rows: 500px 500px;
     grid-template-columns: 300px 300px 300px 300px;
     justify-content: end;
-    background-color: #171f2a;
+    background-color: #fff;
     border-radius: 10px;
     margin-right: 4%;
-    -webkit-box-shadow: -1px -1px 14px 4px rgba(0,0,0,0.71);
-    -moz-box-shadow: -1px -1px 14px 4px rgba(0,0,0,0.71);
-    box-shadow: -1px -1px 14px 4px rgba(0,0,0,0.71);
+    -webkit-box-shadow: -1px -1px 14px 4px #58a8f6;
+    -moz-box-shadow: -1px -1px 14px 4px #58a8f6;
+    box-shadow: -1px -1px 14px 4px #58a8f6;
 }
 
 .padre{
@@ -42,4 +42,19 @@ h1{
     width: 200px;
     display: block;
     align-items: center;
+}
+
+@media only screen and (min-width: 1390px) and (max-width: 1800px) {
+    .intento{
+        grid-template-columns: 200px 200px 200px 200px;
+    }
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1390px) {
+    .intento{
+        grid-template-columns: 200px 200px 200px 200px;
+        position: absolute;
+        top: 580px;
+        left: 100px;
+    }
 }
