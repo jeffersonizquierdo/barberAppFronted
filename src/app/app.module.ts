@@ -28,7 +28,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { PromotionListComponent } from './components/promotion-list/promotion-list.component';
-import { AuthGuard } from './guards/auth.guard';
 import { ListBarberComponent } from './components/list-barber/list-barber.component';
 import { ListCatalogueComponent } from './components/list-catalogue/list-catalogue.component';
 import { LoadPublicityComponent } from './components/load-publicity/load-publicity.component';
@@ -70,7 +69,7 @@ const appRoutes: Routes = [
   {path:'promotion', component:PromotionComponent},
   {path:'porfilebarber', component:ProfileBarberComponent}, 
   {path:'terminos', component:TermsAndConditionsComponent}, 
-  {path:'listabarber', component:TermsAndConditionsComponent}, 
+  {path:'listabarber', component: ListBarberComponent }, 
   {path:'publicaciones', component:ToShowPublicationsComponent}, 
   {path:'publicidad', component:LoadPublicityComponent}, 
   {path:'homeedit', component:HeaderHomeComponent}, 

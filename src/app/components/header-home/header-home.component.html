@@ -53,81 +53,37 @@
           <label for="btn-menu">☰</label>
 
           </div>
-
             <div class="logo">
               <h1>BarberApp</h1>
             </div>
 
           </div>
-
-
-        <div >
-
-    
+        </div>
         <input type="checkbox" id="btn-menu">
         <div class="container-menu">
           <div class="cont-menu">
             <nav>
               <a href="/homebarbershop" class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
-
-
-
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 1" class="funciones" >
-
-                <a href="#">Barberos</a>
-                <a href="#">Maya de turnos</a>
-                <a href="#">Catalogo</a>
-                <a href="#">Promociones</a>
-                <a href="#">Publicaciones</a>
-                <a (click)="logout()" href="#">Cerrar Sesion</a>
-
+                <a href="http://localhost:4200/listabarber">Barberos</a>
+                <a href="http://localhost:4200/calendar">Maya de turnos</a>
+                <a href="http://localhost:4200/manage-catalogue">Catalogo</a>
+                <a href="http://localhost:4200/promotions">Promociones</a>
+                <a href="http://localhost:4200/publicaciones">Publicaciones</a>
+                <a (click)="logout()" href="/">Cerrar Sesion</a>
               </nav>
-
-
-
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 2" class="funciones" >
-
                 <a href="#">Barberia</a>
                 <a href="#">Maya de turnos</a>
                 <a href="#">Publicaciones</a>
                 <a (click)="logout()" href="#">Cerrar Sesion</a>
-
               </nav>
-
-
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 3" class="funciones" >
-
                 <a href="#">Reservar</a>
                 <a (click)="logout()" href="#">Cerrar Sesion</a>
-
-              </nav>
-
-              
+              </nav>  
             </nav>
             <label for="btn-menu">✖️</label>
-
-
-
-    
-            
-  
-    
-        <input type="checkbox" id="btn-menu">
-        <div class="container-menu">
-          <div class="cont-menu">
-            <nav>
-
-          <a href="#" class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
-          <a href="#">Gestionar Barberos</a>
-          <a href="#">Gestionar Cuts</a>
-          <a href="#">maya de turnos</a>
-          <a href="#">Gestionar Catalogo</a>
-          <a href="#">Gestionar Promosiones</a>
-          <a href="#">Gestionar Publicasiones</a>
-          <a href="#">Cerrar Sesion</a>
-        </nav>
-        <label for="btn-menu">✖️</label>
-      </div>
   </div>
 
 
