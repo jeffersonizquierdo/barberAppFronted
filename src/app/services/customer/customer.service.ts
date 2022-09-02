@@ -23,7 +23,7 @@ export class CustomerService {
     let token = this.authService.token
 
     if (token != null){
-      console.log(token + " tokennnnn");
+      console.log(token);
 
       return this.httpHeadres.append('Authorization', 'Bearer ' + token);
     }
@@ -31,6 +31,23 @@ export class CustomerService {
     return this.httpHeadres
 
   }
+
+
+
+    getCustomer(id : Number):  Observable<Customer>{
+
+    return  this.http.get<Customer>(`http://localhost:8080/customer/consult/${id}`, {headers: this.agregarAuthorizationHeader()}).pipe(
+
+      catchError(e =>{
+
+        return throwError(e)
+
+      })
+
+    )
+  }
+
+
 
   saveCustomer(newCustomer: Customer): Observable<any>{
 

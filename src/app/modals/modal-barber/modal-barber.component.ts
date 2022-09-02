@@ -42,7 +42,33 @@ export class ModalBarberComponent implements OnInit {
     this.usuarioService.getUser(this.usuarioSesion.id).subscribe(
       data => {
         this.usuarioConsult = data;
-        console.log(this.usuarioConsult);
+
+    });
+
+    this.servicecatalogue.upload(this.imagenMin, "perfil").subscribe((response : any) => {
+
+      if (response) {
+ 
+        this.barber.photo = response.url
+        console.log(response.url);
+
+        this.barber.id = this.usuarioConsult.id;
+        this.barber.email = this.usuarioConsult.username;
+        this.barber.password = this.usuarioConsult.password;
+        this.barber.nickname = this.usuarioConsult.nickname;
+        this.barber.city = this.usuarioConsult.city;
+        this.barber.cellphone = this.usuarioConsult.cellphone;
+        this.barber.typeUser = this.usuarioConsult.typeUser;
+        this.barber.age = this.usuarioConsult.date;
+        this.barber.qualification = 0;
+        
+        this.barberServices.saveBarber(this.barber).subscribe(
+          response  => {
+            console.log(response);
+            swal.fire('Bien hecho',` ${this.barber.nickname} acabas de completar tu perfil` , 'success')
+          })  
+      }
+      
     })
     
     this.barber.id = this.usuarioConsult.id;

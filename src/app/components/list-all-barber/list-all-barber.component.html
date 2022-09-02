@@ -15,7 +15,7 @@
           <th scope="row">{{barberos.id}}</th>
           <td class="imagen"><img src="{{barberos.photo}}" alt=""></td>
           <td class="apodo">{{barberos.nickname}}</td>
-          <td><button class="btn btn-outline-secondary">Vincular</button></td>
+          <td><button class="btn btn-outline-secondary" (click)="linkear(barberos.id)">Vincular</button></td>
         </tr>
 
       </tbody>
