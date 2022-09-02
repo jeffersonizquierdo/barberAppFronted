@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { AuthServices } from 'src/app/models/AuthServices';
 import { Barber } from 'src/app/models/Barber';
 import { Usuario } from 'src/app/models/Usuario';
+import { Publicity } from 'src/app/models/Publicity';
 @Injectable({
   providedIn: 'root'
 })
@@ -63,6 +64,11 @@ export class BarbershopService {
 
     return  this.http.get<Barber>(`http://localhost:8080/barbershop/consultbarber/${this.usuario.id}`, {headers: this.agregarAuthorizationHeader()})
   }
+    
+  listpublicyid(): Observable<Publicity>{
+    return  this.http.get<Publicity>(`http://localhost:8080/barbershop/consultpublication/${this.usuario.id}`, {headers: this.agregarAuthorizationHeader()})
+  }
+
 
 
 

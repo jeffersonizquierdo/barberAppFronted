@@ -18,6 +18,10 @@ export class PublicityService {
 
   savePublicity(newPublicity:Publicity): Observable<Publicity>{
 
+    console.log("llego");
+    console.log(newPublicity.id_barbershop);
+        
+
     return this.httpClient.post<Publicity>("http://localhost:8080/publication/save", newPublicity, {headers: this.agregarAuthorizationHeader()})
   }
 
@@ -27,10 +31,6 @@ export class PublicityService {
     return  this.httpClient.get<Publicity>("http://localhost:8080/publication/consultall", {headers: this.agregarAuthorizationHeader()} )
   }
 
-  
-  listpublicyid(){
-    return  this.httpClient.get<Publicity>(`http://localhost:8080/publication/consult/${this.usuario.id}`, {headers: this.agregarAuthorizationHeader()})
-  }
 
 
   private agregarAuthorizationHeader(){
