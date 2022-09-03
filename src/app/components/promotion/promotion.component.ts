@@ -40,6 +40,8 @@ export class PromotionComponent implements OnInit {
     console.log(this.usuario);
     
     this.promotion = new Promotion()
+
+
      
   }
 
@@ -101,5 +103,5 @@ export class PromotionComponent implements OnInit {
 
   abrirModal(){
     this.modalService.open(ModalBarbershopComponent);
-}
+  }
 }

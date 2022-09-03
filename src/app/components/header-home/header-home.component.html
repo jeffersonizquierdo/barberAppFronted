@@ -49,13 +49,14 @@
           <label for="btn-menu">☰</label>
 
           </div>
-
             <div class="logo">
               <h1>BarberApp</h1>
             </div>
 
           </div>
+        </div>
         <div >
+
         <input type="checkbox" id="btn-menu">
         <div class="container-menu">
           <div class="cont-menu">
@@ -65,8 +66,8 @@
                 <a href="http://localhost:4200/listabarber">Barberos</a>
                 <a href="http://localhost:4200/calendar">Maya de turnos</a>
                 <a href="http://localhost:4200/manage-catalogue">Catalogo</a>
-                <a href="http://localhost:4200/promotion">Promociones</a>
-                <a href="http://localhost:4200/publicaciones">Publicaciones</a>
+                <a href="http://localhost:4200/promotions">Promociones</a>
+                <a href="http://localhost:4200/publicidad">Publicaciones</a>
                 <a (click)="logout()" href="/">Cerrar Sesion</a>
               </nav>
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 2" class="funciones" >
@@ -81,10 +82,7 @@
               </nav>  
             </nav>
             <label for="btn-menu">✖️</label>
-
-
-
-
+  </div>
 
 
             

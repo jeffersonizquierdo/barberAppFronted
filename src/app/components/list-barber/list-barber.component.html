@@ -1,7 +1,7 @@
 <h1>Barber</h1>
 <div class="contenedor-main">
   
-    <table class="table"  *ngFor="let barberos of barber">
+    <table class="table"  >
         <thead>
           <tr>
             <th scope="col">id</th>
@@ -11,7 +11,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let barberos of barber">
             <th scope="row">{{barberos.id}}</th>
             <td class="imagen"><img src="{{barberos.photo}}" alt=""></td>
             <td class="apodo">{{barberos.nickname}}</td>
@@ -19,7 +19,7 @@
           </tr>
 
         </tbody>
-      </table>
+    </table>
     
 
    

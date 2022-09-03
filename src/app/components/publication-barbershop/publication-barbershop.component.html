@@ -1,10 +1,10 @@
 
-<div class="container-main" *ngFor="let n of listPublicity">
+<div class="container-main" *ngFor="let n of listPublicity2">
     <div class="medium">
         <div class="header">
         <div class="imagen">
-            <img src="../../../assets/images/pruebaperfil.jpg" alt="">
-            <p>Andres Camilo Serna Villegas</p>
+            <img src="{{n.photo}}" alt="">
+            <p>{{n.nickname}}</p>
         </div>
         <div class="description">
             <p>{{n.description}}</p>
@@ -16,7 +16,3 @@
 
     
 </div>
-
-
-
-
