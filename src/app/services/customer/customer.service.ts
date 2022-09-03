@@ -23,7 +23,7 @@ export class CustomerService {
     let token = this.authService.token
 
     if (token != null){
-      console.log(token + " tokennnnn");
+      console.log(token);
 
       return this.httpHeadres.append('Authorization', 'Bearer ' + token);
     }

@@ -6,6 +6,7 @@ import { AuthServices } from 'src/app/models/AuthServices';
 import Swal from 'sweetalert2';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 import { CustomerService } from 'src/app/services/customer/customer.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home-customer',
@@ -20,6 +21,7 @@ export class HomeCustomerComponent implements OnInit {
   ngOnInit(): void {
 
     this.usuarioSession = this.authService.usuario;
+    this.usuarioConsult = new Usuario();
     this.saveCustomer();
 
   }
@@ -32,21 +34,52 @@ export class HomeCustomerComponent implements OnInit {
 
   saveCustomer(){
 
-    this.usuarioService.getUser(this.usuarioSession.id).subscribe((response =>{
+    this.usuarioService.getUser(this.usuarioSession.id).subscribe(
+      data => {
+        this.usuarioConsult = data;
+    });
 
-      this.usuarioConsult = response;
+    this.customerService.getCustomer(this.usuarioSession.id).subscribe((data: any )=> {
+
+      console.log("data");
+      console.log(data);
+      this.customer = data;
+      setTimeout(() => {
+
+        console.log("customer");
+        
+        console.log(this.customer);
+        
+
+        if(this.customer==null){
+
+          this.customer = new Customer()
+          this.customer.id = this.usuarioConsult.id;
+          this.customer.email = this.usuarioConsult.username;
+          this.customer.password = this.usuarioConsult.password;
+          this.customer.nickname = this.usuarioConsult.nickname;
+          this.customer.city = this.usuarioConsult.city;
+          this.customer.cellphone = this.usuarioConsult.cellphone;
+          this.customer.typeUser = this.usuarioConsult.typeUser;
+          this.customer.age = this.usuarioConsult.date
+
+          this.customerService.saveCustomer(this.customer).subscribe(response => {
+            
+          })
+          
+
+        };
+        
+      }, 1000);
       
-      console.log(this.usuarioConsult);
-    }));
+
+
+
+       
+      })
 
     
-      // this.customerService.getCustomer(this.usuarioSession.id).subscribe((data:any) => {
 
-      //   this.customer = data.customer;
-
-      //   console.log("no entro");
-
-      // })
 
 
 
@@ -64,3 +97,12 @@ export class HomeCustomerComponent implements OnInit {
   }
 
 }
+
+
+
+
+
+
+
+
+
