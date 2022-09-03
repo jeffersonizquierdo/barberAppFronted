@@ -19,16 +19,23 @@ import swal from 'sweetalert2';
 export class ListAllBarberComponent implements OnInit {
 
   barbers:any=[];
-  constructor(private BarberService:BarberService, private auhtService: AuthServices, private serviceBarbershop:BarbershopService,private modalService:NgbModal,private serveceLinkear:LinkearService) { }
+  constructor(private BarberService:BarberService, private auhtService: AuthServices, private serviceBarbershop:BarbershopService,
+  private modalService:NgbModal,private serviceLinkear:LinkearService,) { }
+
+
+
   usuario:Usuario;
   usuarioConsult:Usuario;
   barbershop:Barbershop;
   bonding:Linkear;
   barbero:Barber;
+  listBindings: Linkear[];
 
   ngOnInit(): void {
     this.usuario=this.auhtService.usuario;
     this.loaderBarber();
+
+    this.changeButton()
   }
 
   loaderBarber():void{
@@ -37,7 +44,9 @@ export class ListAllBarberComponent implements OnInit {
         this.barbers = data;
       }
     )
-  } 
+  }
+
+  position: Number = 1
 
   linkear(id_barber:Number){
     this.barbershop=new Barbershop();
@@ -54,7 +63,7 @@ export class ListAllBarberComponent implements OnInit {
         this.BarberService.getbarber(id_barber).subscribe((response:any)=>{
           this.barbero=response;
           this.bonding.barber=this.barbero;
-          
+
         })
       }
     })
@@ -62,7 +71,7 @@ export class ListAllBarberComponent implements OnInit {
 
     setTimeout(() => {
 
-      this.serveceLinkear.saveLinkear(this.bonding).subscribe(response=>{
+      this.serviceLinkear.saveLinkear(this.bonding).subscribe(response=>{
       })
 
       swal.fire("Hecho", "Solicitud enviada", "success")
@@ -71,6 +80,29 @@ export class ListAllBarberComponent implements OnInit {
 
 
   }
+
+
+  changeButton():Number{
+
+
+    this.serviceLinkear.listBindings().subscribe((response: any) =>{
+
+
+      this.listBindings = response;
+
+      console.log(this.listBindings);
+      
+
+
+    })
+
+    return null;
+
+  }
+
+
+
+
 
   abrirModal(){
     this.modalService.open(ModalBarbershopComponent);
