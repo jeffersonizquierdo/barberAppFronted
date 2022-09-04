@@ -45,6 +45,7 @@ import { ModalBarbershopComponent } from './modals/modal-barbershop/modal-barber
 import { ModalBarberComponent } from './modals/modal-barber/modal-barber.component';
 import { ListAllBarberComponent } from './components/list-all-barber/list-all-barber.component';
 import { PublicationBarbershopComponent } from './components/publication-barbershop/publication-barbershop.component';
+import { BondingMessagesComponent } from './components/bonding-messages/bonding-messages.component';
 
 
 
@@ -118,6 +119,7 @@ const appRoutes: Routes = [
     ModalBarberComponent,
     ListAllBarberComponent,
     PublicationBarbershopComponent,
+    BondingMessagesComponent,
 
 
 
