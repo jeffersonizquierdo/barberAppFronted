@@ -3,13 +3,9 @@
         <div class="perfil-usuario-portada ">
             <div class="perfil-usuario-avatar">
                 <img src="{{ barbershops.photo}}" alt="img-avatar">
-                <button type="button" class="boton-avatar">
-                    <i class="far fa-image"></i>
-                </button>
+              
             </div>
-            <button type="button" class="boton-portada">
-                <i class="far fa-image"></i> 
-            </button>
+        
         </div>
     </div>
     <div class="perfil-usuario-body" *ngFor="let barbershops  of barbershop">
@@ -19,16 +15,13 @@
         </div>
         <div class="perfil-usuario-footer">
             <ul class="lista-datos">
-                <li><i class="icono fas fa-map-signs"></i> Direccion de usuario:</li>
                 <li><i class="icono fas fa-phone-alt"></i> Telefono: {{ barbershops.cellphone}}</li>
                 <li><i class="icono fas fa-briefcase"></i> Trabaja en: {{barbershops.city}}</li>
                 <li><i class="icono fas fa-building"></i> Cargo : Barberia</li>
             </ul>
             <ul class="lista-datos">
                 <li><i class="icono fas fa-map-marker-alt"></i> Ubicacion: {{ barbershops.location}}</li>
-                <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento.</li>
                 <li><i class="icono fas fa-user-check"></i> Registro.</li>
-                <li><i class="icono fas fa-share-alt"></i> Redes sociales.</li>
             </ul>
         </div>
         <div class="redes-sociales">
@@ -38,3 +31,4 @@
         </div>
     </div>
 </section>
+

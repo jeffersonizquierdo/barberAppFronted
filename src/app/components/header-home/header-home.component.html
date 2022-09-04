@@ -73,12 +73,14 @@
               </nav>
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 2" class="funciones" >
                 <a href="#">Barberia</a>
-                <a href="#">Maya de turnos</a>
-                <a href="#">Publicaciones</a>
+                <a href="http://localhost:4200/calendar">Maya de turnos</a>
+                <a href="http://localhost:4200/publicidad">Publicaciones</a>
+                <a href="http://localhost:4200/porfilebarber">Ver Perfil</a>
                 <a (click)="logout()" href="#">Cerrar Sesion</a>
               </nav>
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 3" class="funciones" >
-                <a href="#">Reservar</a>
+                <a href="ttp://localhost:4200/calendar">Reservar</a>
+                <a href="http://localhost:4200/porfileclient">Ver Perfil</a>
                 <a (click)="logout()" href="#">Cerrar Sesion</a>
               </nav>  
             </nav>
