@@ -45,4 +45,24 @@ export class LinkearService {
     )
     
   }
+
+  listLinkear():  Observable<Linkear>{
+
+    return  this.http.get<Linkear>("http://localhost:8080/bonding/consultall", {headers: this.agregarAuthorizationHeader()} )
+  }
+
+  updateLinkear(linkear: Linkear): Observable<Linkear>{
+  
+    return this.http.put<Linkear>(`http://localhost:8080/bonding/update/${linkear.id}`, linkear, {headers: this.agregarAuthorizationHeader()}).pipe(
+
+    catchError(e =>{
+
+      console.error(e.error.Mensaje);
+      swal.fire(e.error.Mensaje, e.error.Error, 'error');
+      return throwError(e);
+    })
+    )
+    
+  }
+
 }

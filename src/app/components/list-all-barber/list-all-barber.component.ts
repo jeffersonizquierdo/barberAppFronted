@@ -35,6 +35,7 @@ export class ListAllBarberComponent implements OnInit {
     this.BarberService.listBarber().subscribe(
       data =>{
         this.barbers = data;
+        console.log(this.barbers);
       }
     )
   } 
