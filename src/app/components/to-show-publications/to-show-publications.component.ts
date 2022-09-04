@@ -18,7 +18,7 @@ export class ToShowPublicationsComponent implements OnInit {
   }
 
   loader1():void{
-    this.publicityService. listPublicity().subscribe(
+    this.publicityService.listPublicity().subscribe(
       data =>{
         this.listPublicity =data;
         console.log(this.listPublicity.description);

@@ -16,10 +16,11 @@ export class LoginComponent implements OnInit {
 
   constructor(private authServices:AuthServices, private router:Router) { 
 
-    this.usuario = new Usuario()
   }
 
   ngOnInit(): void {
+    this.usuario = new Usuario();
+    this.usuario = this.authServices.usuario;
   }
 
 
@@ -42,7 +43,7 @@ export class LoginComponent implements OnInit {
 
       this.authServices.saveTypeUser(parseInt(response.typeUser));
 
-      let usuario = this.authServices.usuario;
+      
 
       if (response.typeUser == 1){
 
@@ -55,7 +56,7 @@ export class LoginComponent implements OnInit {
 
         }, 1000);
 
-        Swal.fire('Login', 'Hola ' + usuario.nickname + ', bienvenido', 'success');
+        Swal.fire('Login', 'Hola ' + response.nickname + ', bienvenido', 'success');
         
         
 
@@ -70,7 +71,7 @@ export class LoginComponent implements OnInit {
 
         }, 1000);
 
-        Swal.fire('Login', 'Hola ' + usuario.nickname + ', bienvenido', 'success');
+        Swal.fire('Login', 'Hola ' + response.nickname + ', bienvenido', 'success');
 
 
       } else if(response.typeUser == 3){
@@ -84,7 +85,7 @@ export class LoginComponent implements OnInit {
 
         }, 1000);
 
-        Swal.fire('Login', 'Hola ' + usuario.nickname + ', bienvenido', 'success');
+        Swal.fire('Login', 'Hola ' + response.nickname + ', bienvenido', 'success');
 
       }
 
