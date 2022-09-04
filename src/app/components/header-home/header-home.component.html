@@ -68,6 +68,7 @@
                 <a href="http://localhost:4200/manage-catalogue">Catalogo</a>
                 <a href="http://localhost:4200/promotions">Promociones</a>
                 <a href="http://localhost:4200/publicidad">Publicaciones</a>
+                <a href="http://localhost:4200/porfilebarbershop">Ver Perfil</a>
                 <a (click)="logout()" href="/">Cerrar Sesion</a>
               </nav>
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 2" class="funciones" >
