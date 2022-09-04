@@ -16,7 +16,7 @@ export class PublicationBarbershopComponent implements OnInit {
   }
 
   loader3():void{
-    this.BarbershopService. listpublicyid().subscribe(
+    this.BarbershopService.listpublicyid().subscribe(
       data =>{
         this.listPublicity2 =data;
         console.log(this.listPublicity2.description);

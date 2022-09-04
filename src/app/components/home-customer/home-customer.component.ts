@@ -39,10 +39,17 @@ export class HomeCustomerComponent implements OnInit {
         this.usuarioConsult = data;
     });
 
-    this.customerService.getCustomer(this.usuarioSession.id).subscribe(data => {
+    this.customerService.getCustomer(this.usuarioSession.id).subscribe((data: any )=> {
 
+      console.log("data");
+      console.log(data);
       this.customer = data;
       setTimeout(() => {
+
+        console.log("customer");
+        
+        console.log(this.customer);
+        
 
         if(this.customer==null){
 
@@ -63,7 +70,7 @@ export class HomeCustomerComponent implements OnInit {
 
         };
         
-      }, 500);
+      }, 1000);
       
 
 
