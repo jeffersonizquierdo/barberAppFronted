@@ -71,8 +71,8 @@ export class UsuarioService {
 
       catchError(e =>{
 
-        console.error(e.error.Mensaje);
-        Swal.fire(e.error.Mensaje, e.error.Error, 'error');
+        console.error(e.error.mensaje);
+        Swal.fire(e.error.mensaje, e.error.Error, 'error');
         
         return throwError(e);
       }
