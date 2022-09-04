@@ -16,7 +16,7 @@ import Swal from 'sweetalert2';
 })
 export class BondingMessagesComponent implements OnInit {
 
-  constructor( private auhtService: AuthServices,private serveceLinkear:LinkearService,private BabrebrshopService:BarbershopService, private serviceBarber:BarberService) { }
+  constructor( private auhtService: AuthServices,private serviceLinkear:LinkearService,private BarbershopService:BarbershopService, private serviceBarber:BarberService) { }
   Linkers:any=[];
   listLinkear:any=[];
   barbershops:Barbershop[]=[];
@@ -32,7 +32,7 @@ export class BondingMessagesComponent implements OnInit {
   }
 
   loaderBondingMessages(){
-    this.serveceLinkear.listLinkear().subscribe((response:any)=>{
+    this.serviceLinkear.listLinkear().subscribe((response:any)=>{
       this.Linkers=response;
       console.log(this.Linkers);
       setTimeout(() => {
@@ -46,7 +46,7 @@ export class BondingMessagesComponent implements OnInit {
       setTimeout(() => {
         this.barbershop=new Barbershop();
         this.listLinkear.map(e=>{
-          this.BabrebrshopService.getbarber(e.barbershop.id).subscribe((response:any)=>{
+          this.BarbershopService.getbarber(e.barbershop.id).subscribe((response:any)=>{
             this.barbershop=response;
             this.barbershops.push(this.barbershop);
           })
@@ -65,7 +65,7 @@ export class BondingMessagesComponent implements OnInit {
       this.listLinkear.every(e=>{
             if(e.barbershop.id==idbarbershop){
               e.acceptance=true;
-              this.serveceLinkear.updateLinkear(e).subscribe((response:any)=>{
+              this.serviceLinkear.updateLinkear(e).subscribe((response:any)=>{
                 console.log(response)
                 setTimeout(() => {
                   this.serviceBarber.getbarber(e.barber.id).subscribe((response:any)=>{
