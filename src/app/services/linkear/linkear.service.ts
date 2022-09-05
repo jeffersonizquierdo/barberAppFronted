@@ -65,5 +65,8 @@ export class LinkearService {
     
   }
 
+  deleteLinker(id:Number):any{
+    return  this.http.delete<Linkear>(`http://localhost:8080/bonding/delete/${id}`, {headers: this.agregarAuthorizationHeader()})
+  }
 
 }
