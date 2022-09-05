@@ -59,6 +59,21 @@ export class BarberService {
   listBarber():  Observable<Barber>{
     return  this.http.get<Barber>(`http://localhost:8080/barber/consultall`, {headers: this.agregarAuthorizationHeader()})
   }
+  
+  updateBarber(barber: Barber): Observable<Barber>{
+  
+    return this.http.put<Barber>(`http://localhost:8080/barber/update/${barber.id}`, barber, {headers: this.agregarAuthorizationHeader()}).pipe(
+
+    catchError(e =>{
+
+      console.error(e.error.Mensaje);
+      swal.fire(e.error.Mensaje, e.error.Error, 'error');
+      return throwError(e);
+    })
+    )
+    
+  }
+
   } 
 
 

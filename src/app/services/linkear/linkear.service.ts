@@ -24,7 +24,6 @@ export class LinkearService {
     let token = this.authService.token
 
     if (token != null){
-      console.log(token + " tokennnnn");
 
       return this.httpHeadres.append('Authorization', 'Bearer ' + token);
     }
@@ -33,9 +32,9 @@ export class LinkearService {
 
   }
 
-  saveLinkear(newLinkear: Linkear): Observable<any>{
-
-    return this.http.post<any>("http://localhost:8080/barber/save", newLinkear, {headers: this.agregarAuthorizationHeader()}).pipe(
+  saveLinkear(newLinkear: Linkear): Observable<Linkear>{
+  
+    return this.http.post<Linkear>(`http://localhost:8080/bonding/save`, newLinkear, {headers: this.agregarAuthorizationHeader()}).pipe(
 
     catchError(e =>{
 
@@ -46,4 +45,28 @@ export class LinkearService {
     )
     
   }
+
+  listLinkear():  Observable<Linkear>{
+
+    return  this.http.get<Linkear>("http://localhost:8080/bonding/consultall", {headers: this.agregarAuthorizationHeader()} )
+  }
+
+  updateLinkear(linkear: Linkear): Observable<Linkear>{
+  
+    return this.http.put<Linkear>(`http://localhost:8080/bonding/update/${linkear.id}`, linkear, {headers: this.agregarAuthorizationHeader()}).pipe(
+
+    catchError(e =>{
+
+      console.error(e.error.Mensaje);
+      swal.fire(e.error.Mensaje, e.error.Error, 'error');
+      return throwError(e);
+    })
+    )
+    
+  }
+
+  deleteLinker(id:Number):any{
+    return  this.http.delete<Linkear>(`http://localhost:8080/bonding/delete/${id}`, {headers: this.agregarAuthorizationHeader()})
+  }
+
 }

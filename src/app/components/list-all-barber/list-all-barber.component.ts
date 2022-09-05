@@ -9,6 +9,7 @@ import { Usuario } from 'src/app/models/Usuario';
 import { BarberService } from 'src/app/services/barber/barber.service';
 import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
 import { LinkearService } from 'src/app/services/linkear/linkear.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list-all-barber',
@@ -18,16 +19,23 @@ import { LinkearService } from 'src/app/services/linkear/linkear.service';
 export class ListAllBarberComponent implements OnInit {
 
   barbers:any=[];
-  constructor(private BarberService:BarberService, private auhtService: AuthServices, private serviceBarbershop:BarbershopService,private modalService:NgbModal,private serveceLinkear:LinkearService) { }
+  constructor(private BarberService:BarberService, private auhtService: AuthServices, private serviceBarbershop:BarbershopService,
+  private modalService:NgbModal,private serviceLinkear:LinkearService,) { }
+
+
+
   usuario:Usuario;
   usuarioConsult:Usuario;
   barbershop:Barbershop;
   bonding:Linkear;
   barbero:Barber;
+  listBindings: Linkear[];
 
   ngOnInit(): void {
     this.usuario=this.auhtService.usuario;
     this.loaderBarber();
+
+    // this.changeButton()
   }
 
   loaderBarber():void{
@@ -39,10 +47,13 @@ export class ListAllBarberComponent implements OnInit {
     )
   }
 
+  position: Number = 1
+
   linkear(id_barber:Number){
     this.barbershop=new Barbershop();
     this.serviceBarbershop.getbarber(this.usuario.id).subscribe((response:any)=>{
       this.barbershop=response;
+      
       if(this.barbershop==null){
         this.abrirModal();
       }else{
@@ -53,13 +64,46 @@ export class ListAllBarberComponent implements OnInit {
         this.BarberService.getbarber(id_barber).subscribe((response:any)=>{
           this.barbero=response;
           this.bonding.barber=this.barbero;
+
         })
       }
     })
-    this.serveceLinkear.saveLinkear(this.bonding).subscribe(response=>{
-      console.log(response);
-    })
+
+
+    setTimeout(() => {
+
+      this.serviceLinkear.saveLinkear(this.bonding).subscribe(response=>{
+      })
+
+      swal.fire("Hecho", "Solicitud enviada", "success")
+      
+    }, 500);
+
+
   }
+
+
+  // changeButton():Number{
+
+
+  //   this.serviceLinkear.listBindings().subscribe((response: any) =>{
+
+
+  //     this.listBindings = response;
+
+  //     console.log(this.listBindings);
+      
+
+
+  //   })
+
+  //   return null;
+
+  // }
+
+
+
+
 
   abrirModal(){
     this.modalService.open(ModalBarbershopComponent);
