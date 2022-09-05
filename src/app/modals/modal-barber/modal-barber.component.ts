@@ -51,7 +51,7 @@ export class ModalBarberComponent implements OnInit {
  
         this.barber.photo = response.url
         console.log(response.url);
-
+        
         this.barber.id = this.usuarioConsult.id;
         this.barber.email = this.usuarioConsult.username;
         this.barber.password = this.usuarioConsult.password;
@@ -64,34 +64,15 @@ export class ModalBarberComponent implements OnInit {
         
         this.barberServices.saveBarber(this.barber).subscribe(
           response  => {
-            console.log(response);
             swal.fire('Bien hecho',` ${this.barber.nickname} acabas de completar tu perfil` , 'success')
+            console.log(response);
           })  
       }
       
     })
-    
-    this.barber.id = this.usuarioConsult.id;
-    this.barber.email = this.usuarioConsult.username;
-    this.barber.password = this.usuarioConsult.password;
-    this.barber.nickname = this.usuarioConsult.nickname;
-    this.barber.city = this.usuarioConsult.city;
-    this.barber.cellphone = this.usuarioConsult.cellphone;
-    this.barber.typeUser = this.usuarioConsult.typeUser;
-    this.barber.age = this.usuarioConsult.date;
-
+   
     console.log(this.barber);
-    
-
-
-    this.barberServices.saveBarber(this.barber).subscribe(
-
-      response  => {
-        console.log(response);
-        swal.fire('Bien hecho',` ${this.barber.nickname} acabas de completar tu perfil` , 'success')
-      }
-    )
-
+  
 
   }
 

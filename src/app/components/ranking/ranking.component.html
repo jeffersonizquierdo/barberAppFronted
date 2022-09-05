@@ -1,6 +1,8 @@
-<div>
-    <nav class="ranking">
-    
+
+<div class="desplegable">
+    <button class="boton">holi</button>
+    <div class="link" >
+        
         <h3>Ranking</h3>
 
         <div class="superior">
@@ -8,23 +10,20 @@
             <h4>Calificacion</h4>
             <h4>Puesto</h4>
         </div>
-    
-        <div *ngFor="let barber of rankingBarber; let i=index">
-            <a href="" style="text-decoration: none;">
-                <div class="elemento" >
-                    
-                    <div class="numeros">
-                        <span>{{i+1}}</span>
-                    </div>
-                    <div class="mini_perfil">
-                        <img class="images" src="../../../assets/images/LogoBarberApp.jpg" alt="imagen"> 
-                        <a href="">{{barber.nickname}}</a>
-                    </div>
-                    <div class="numeros">
-                        <nav class="starts">{{barber.qualification}}</nav> 
-                    </div>
+        <a href="" *ngFor="let barber of rankingBarber; let i=index">
+            <div class="elemento" >
+                
+                <div class="numeros">
+                    <span>{{i+1}}</span>
                 </div>
-            </a>
-        </div>
-    </nav>
+                <div class="mini_perfil">
+                    <img class="images" src="../../../assets/images/LogoBarberApp.jpg" alt="imagen"> 
+                    <a href="">{{barber.nickname}}</a>
+                </div>
+                <div class="numeros">
+                    <nav class="starts">{{barber.qualification}}</nav> 
+                </div>
+            </div>
+        </a>
+    </div>
 </div>

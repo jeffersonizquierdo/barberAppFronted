@@ -46,11 +46,27 @@ export class LinkearService {
     
   }
 
+  listLinkear():  Observable<Linkear>{
 
-  listBindings():  Observable<Linkear>{
+    return  this.http.get<Linkear>("http://localhost:8080/bonding/consultall", {headers: this.agregarAuthorizationHeader()} )
+  }
 
-    return  this.http.get<Linkear>(`http://localhost:8080/bonding/consultall`, {headers: this.agregarAuthorizationHeader()})
-  } 
+  updateLinkear(linkear: Linkear): Observable<Linkear>{
+  
+    return this.http.put<Linkear>(`http://localhost:8080/bonding/update/${linkear.id}`, linkear, {headers: this.agregarAuthorizationHeader()}).pipe(
 
+    catchError(e =>{
+
+      console.error(e.error.Mensaje);
+      swal.fire(e.error.Mensaje, e.error.Error, 'error');
+      return throwError(e);
+    })
+    )
+    
+  }
+
+  deleteLinker(id:Number):any{
+    return  this.http.delete<Linkear>(`http://localhost:8080/bonding/delete/${id}`, {headers: this.agregarAuthorizationHeader()})
+  }
 
 }

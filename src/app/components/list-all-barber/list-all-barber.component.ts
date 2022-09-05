@@ -35,13 +35,14 @@ export class ListAllBarberComponent implements OnInit {
     this.usuario=this.auhtService.usuario;
     this.loaderBarber();
 
-    this.changeButton()
+    // this.changeButton()
   }
 
   loaderBarber():void{
     this.BarberService.listBarber().subscribe(
       data =>{
         this.barbers = data;
+        console.log(this.barbers);
       }
     )
   }
@@ -83,23 +84,23 @@ export class ListAllBarberComponent implements OnInit {
   }
 
 
-  changeButton():Number{
+  // changeButton():Number{
 
 
-    this.serviceLinkear.listBindings().subscribe((response: any) =>{
+  //   this.serviceLinkear.listBindings().subscribe((response: any) =>{
 
 
-      this.listBindings = response;
+  //     this.listBindings = response;
 
-      console.log(this.listBindings);
+  //     console.log(this.listBindings);
       
 
 
-    })
+  //   })
 
-    return null;
+  //   return null;
 
-  }
+  // }
 
 
 
