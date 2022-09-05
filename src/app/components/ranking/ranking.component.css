@@ -3,132 +3,31 @@
     padding: 0%;
 }
 
-.ranking{
-    height: 831px;
-    width: 460px;
-    max-width: 500px;
-    padding: 20px 0 20px 20px;
-    background-color: #171f2a;
+.boton{
+    background-color: #456789;
     color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 5px;
-    -webkit-box-shadow: 4px 1px 9px -1px rgba(0,0,0,0.52);
-    -moz-box-shadow: 4px 1px 9px -1px rgba(0,0,0,0.52);
-    box-shadow: 4px 1px 9px -1px rgba(0,0,0,0.52);
+    border: none;
+    padding: 16px;
+
 }
 
-h3{
-    margin: 20px;
-}
-
-.lista{
-
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    list-style:none;
-    width: 100%;
-}
-
-.lista  img{
-
-    width: 20px;
-    height: 25px;
-    margin-left: 5px;
-}
-
-.lista li{
-
-    border-radius: 10px;
-    border: solid 1px white;
-}
-
-span{
-    margin-right: 6px;
-}
-
-.elemento{
-    display: flex;
-    flex-direction: row;
-    gap: 45px;
-    align-items: center;
-    height: 35px;
-    padding-left: 3px;
-    margin-top: 30px;
-    margin-bottom: 4px;
-    color: #fff;
-}
-
-.elemento:hover{
-    background: linear-gradient(to right, rgb(196, 255, 255), rgb(255, 255, 255));
+.link a{
+    text-decoration: none;
     color: black;
-    font-size: 30px;
+    list-style: none;
+    display: block;
+    padding: 13px;
+}
+.link{
+    background-color: #f9f9f9;
+    width: 185px;
+    display: none;
 }
 
-
-.elemento a{
-    text-decoration: none;
-    color: #fff;
+.link a:hover{
+    background-color: #f1f1f1;
 }
 
-.elemento10 a{
-    text-decoration: none;
-}
-
-.elemento10{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    height: 35px;
-    padding-left: 3px;
-}
-
-.elemento10 span{
-    margin-right:0px;
-}
-
-.starts{
-    display: flex;
-    flex-direction: row;
-    width: 110px;
-}
-
-.images{
-    height: 45px;
-    width: 20%;
-    border-radius: 100%;
-}
-
-.titulos{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.mini_perfil{
-    gap: 7px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 240px;
-}
-
-.mini_perfil a{
-    font-size: 22px;
-}
-
-.numeros{
-    display: flex;
-    justify-content: center;
-}
-
-.superior{
-    display: flex;
-    flex-direction: row-reverse;
-    margin-right: 20px;
-    gap: 230px;
+.desplegable:hover .link{
+    display:  block;
 }
