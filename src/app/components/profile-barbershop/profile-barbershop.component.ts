@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { AuthServices } from 'src/app/models/AuthServices';
+import { Barbershop } from 'src/app/models/barbershop';
+import { Usuario } from 'src/app/models/Usuario';
 import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
 
 @Component({
@@ -9,14 +12,16 @@ import { BarbershopService } from 'src/app/services/barbershop/barbershop.servic
 })
 export class ProfileBarbershopComponent implements OnInit {
 
-  constructor(private sniper3:NgxSpinnerService,private BabrebrshopService:BarbershopService) { }
-  barbershop:any=[];
+  constructor(private sniper3:NgxSpinnerService,private BabrebrshopService:BarbershopService, private authservices:AuthServices) { }
+  barbershop :Barbershop;
+  user:Usuario;
   ngOnInit(): void {
+    this.user=this.authservices.usuario;
     this.loader();
   }
 
   loader():void{
-    this.BabrebrshopService.listBarbershop().subscribe(
+    this.BabrebrshopService.getbarber(this.user.id).subscribe(
       data =>{
         this.barbershop =data;
         console.log(this.barbershop.description);
