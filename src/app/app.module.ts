@@ -46,6 +46,7 @@ import { ModalBarberComponent } from './modals/modal-barber/modal-barber.compone
 import { ListAllBarberComponent } from './components/list-all-barber/list-all-barber.component';
 import { PublicationBarbershopComponent } from './components/publication-barbershop/publication-barbershop.component';
 import { BondingMessagesComponent } from './components/bonding-messages/bonding-messages.component';
+import { BookingComponent } from './components/booking/booking.component';
 
 
 
@@ -76,9 +77,11 @@ const appRoutes: Routes = [
   {path:'publicaciones', component:ToShowPublicationsComponent}, 
   {path:'publicidad', component:LoadPublicityComponent}, 
   {path:'homeedit', component:HeaderHomeComponent}, 
-  {path:'calendar', component:CalendarComponent},
-  {path:'list_all_barber', component:ListAllBarberComponent},
+  {path:'calendar', component:CalendarComponent}, 
+  {path:'list_all_barber', component:ListAllBarberComponent}, 
   {path:'mypublications', component: PublicationBarbershopComponent},
+  {path:'booking', component: BookingComponent},
+
 
 ]
 
@@ -120,6 +123,7 @@ const appRoutes: Routes = [
     ListAllBarberComponent,
     PublicationBarbershopComponent,
     BondingMessagesComponent,
+    BookingComponent
 
 
 
