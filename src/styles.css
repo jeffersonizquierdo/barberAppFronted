@@ -15,3 +15,6 @@ body{
     background-color: 
     #f5f3f7;
 }
+body.cambio .header {
+    display: none;
+}

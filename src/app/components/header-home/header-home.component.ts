@@ -17,7 +17,7 @@ export class HeaderHomeComponent implements OnInit {
   ngOnInit(): void {
 
     this.tipo= this.authService.typeUser
-    
+
   }
 
   tipo: Number;
@@ -31,5 +31,6 @@ export class HeaderHomeComponent implements OnInit {
     this.router.navigate(["/login"])
     
   }
+
 
 }

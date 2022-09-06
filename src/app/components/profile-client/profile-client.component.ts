@@ -24,15 +24,15 @@ export class ProfileClientComponent implements OnInit {
 
   
   loader():void{
-    this.customerservices.getCustomer(this.user.id).subscribe((data:any ) =>{
-      console.log(this.user.id)
-      setTimeout(() => {
-        this.customer=data;
+    this.customerservices.getCustomer(this.user.id).subscribe(
+      data =>{
+        this.customer =data;
         console.log(data);
-      }, 500);
-     
-    })
+        
+      }
+    )
   }
+   
 
 
 }

@@ -1,5 +1,5 @@
 import  swal  from 'sweetalert2';
-import { Component, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/Usuario';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
@@ -11,7 +11,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './sing-in.component.html',
   styleUrls: ['./sing-in.component.css']
 })
-export class SingInComponent implements OnInit {
+export class SingInComponent implements OnInit ,OnDestroy{
 
 
   contacForm: FormGroup;
@@ -21,9 +21,14 @@ export class SingInComponent implements OnInit {
 
     this.usuario = new Usuario()
   }
+  ngOnDestroy(): void {
+    document.body.classList.remove("cambio")
+  }
 
   ngOnInit(): void { 
     this.usuario = new Usuario()
+    document.body.classList.add("cambio")
+    console.log(document.body.classList)
   }
   
 

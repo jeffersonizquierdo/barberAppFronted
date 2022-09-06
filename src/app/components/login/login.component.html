@@ -1,44 +1,41 @@
-<div class="login">
-
-  <form method="post " class="login-form">    
-
-  <h3>Iniciar sesion</h3>
-
-
-  <div class="wrapper">
-      <div class="inputData">
-        <input class="intp" type="text" name="email" autocomplete="off" autofocus required [(ngModel)]="usuario.username" #email="ngModel"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" >
-        <div class="line" ></div>
-        <label for="email">Correo</label>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="center">
+    <h1>Iniciar sesion</h1>
+    <form method="post " >
+  
+      <div class="txt_field">
+        <input type="text " name="email" autocomplete="off" autofocus required [(ngModel)]="usuario.username" #email="ngModel"  pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
+        <span></span>
+        <label for="">Correo</label>
       </div>
-      <div class="requerido" *ngIf="email.invalid && (email.dirty) || email.touched">
-        <div *ngIf="email.hasError('required')">
-              el email es requerido
-        </div>
-        <div *ngIf="email.hasError('pattern')">
-            lo que ingreso no se identifica como Correo
-        </div>
+ 
+      
+      <div class="txt_field">
+        <input type="password" name="constraseña" autocomplete="off" required  [(ngModel)]="usuario.password"  #password="ngModel">
+   
+        <label for="">Contraseña</label>
       </div>
-    </div>
-
-    <div class="wrapper" >
-      <div class="inputData" >
-        <input class="intp" type="password" name="constraseña" autocomplete="off" required  [(ngModel)]="usuario.password"  #password="ngModel" >
-        <div class="line" ></div>
-        <label for="constraseña">Contraseña</label>
+      <div class="pass">olvidaste tu contraseña</div>
+      <input  (click)="login()" type="submit"  value="Login" >
+      <div class="signup_link">
+        no tienes una cuenta? 
+        <a  routerLink="/singup"  >Registrarse</a>
       </div>
-      <div class="requerido" *ngIf="password.invalid && (password.dirty) || password.touched">
-        <div *ngIf="password.hasError('required')">
-            la Contraseña es requerida
-        </div>
+
+      <div class="link_devolver">
+        <a routerLink="/">Regresar</a>
       </div>
-    </div>
-
-    <input (click)="login()" type="submit"  value="Login" class="login-button"/>
-    <br>
-    <a  href="singup" class="sign-up">Registrarse!</a>
-    <br>
-    <h6 class="no-access">¿No puedes acceder a tu cuenta?</h6>
-  </form>
-
-</div>
+    
+    </form>
+  
+  </div>
+</body>
+</html>
