@@ -46,7 +46,6 @@ export class ModalBarberComponent implements OnInit {
     this.usuarioService.getUser(this.usuarioSesion.id).subscribe(
       data => {
         this.usuarioConsult = data;
-
     });
 
     this.servicecatalogue.upload(this.imagenMin, "perfil").subscribe((response : any) => {
