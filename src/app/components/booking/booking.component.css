@@ -1,0 +1,60 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+div {
+  text-align: center;
+  width: 300px;
+}
+
+ol{
+
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+
+}
+
+li{
+  font-size: 1.5ch;
+}
+
+h2{
+  margin-bottom:4px;
+}
+
+.first-day{
+  grid-column-start: var(--first-day-start, 0);
+}
+
+
+.day-name{
+  background-color: white;
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 2px;
+  padding: 4px;
+  text-align: center;
+}
+
+.header-calendar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+
+}
+
+.header-calendar h2{
+
+  width: 100%;
+  font-size: 13px;
+}
+
+.header-calendar button{
+  border:0;
+}
+
+
