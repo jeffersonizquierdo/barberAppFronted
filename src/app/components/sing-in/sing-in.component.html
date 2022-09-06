@@ -18,7 +18,7 @@
       </div>
   
       <div class="txt_field">
-        <input type="date" name="age" autocomplete="off" required  [(ngModel)]="usuario.date" #age="ngModel" >
+        <input type="date" name="age" autocomplete="off" required  [(ngModel)]="usuario.date" #age="ngModel" class="input_edit" >
         <span></span>
         <label for="">Fecha de Nacimiento</label>
       </div>
@@ -67,7 +67,7 @@
   
      
       <div class="container-home-next">
-        <button (click)="saveUser()"  [disabled]=""><a>Siguiente</a></button>
+        <button (click)="saveUser()"  [disabled]=""><a>Registrarse </a></button>
       </div>
      
       <div class="link_devolver">
