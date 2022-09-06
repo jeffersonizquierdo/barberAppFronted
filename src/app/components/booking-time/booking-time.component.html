@@ -1,0 +1,4 @@
+<div *ngFor="let h of hours; let i=index">
+    <button *ngIf="h.minutes != 0" (click)="captureTime(i)">{{h.hour}} : {{h.minutes}}</button> 
+    <button *ngIf="h.minutes == 0" (click)="captureTime(i)">{{h.hour}} : {{h.minutes}}0</button> 
+</div>

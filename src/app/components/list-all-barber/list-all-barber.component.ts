@@ -46,8 +46,9 @@ export class ListAllBarberComponent implements OnInit {
       }
     )
   }
+   
 
-  position: Number = 1
+
 
   linkear(id_barber:Number){
     this.barbershop=new Barbershop();
