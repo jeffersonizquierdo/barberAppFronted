@@ -41,17 +41,20 @@ export class HomeCustomerComponent implements OnInit {
 
     this.customerService.getCustomer(this.usuarioSession.id).subscribe((data: any )=> {
 
-      console.log("data");
-      console.log(data);
       this.customer = data;
+
+      console.log("customer consult");
+      
+      console.log(this.customer);
+      
       setTimeout(() => {
 
-        console.log("customer");
-        
-        console.log(this.customer);
-        
+        if(data==null){
 
-        if(this.customer==null){
+          console.log("customer");
+      
+          console.log(this.customer);
+
 
           this.customer = new Customer()
           this.customer.id = this.usuarioConsult.id;
@@ -62,27 +65,18 @@ export class HomeCustomerComponent implements OnInit {
           this.customer.cellphone = this.usuarioConsult.cellphone;
           this.customer.typeUser = this.usuarioConsult.typeUser;
           this.customer.age = this.usuarioConsult.date
+  
+            this.customerService.saveCustomer(this.customer).subscribe(response => {
 
-          this.customerService.saveCustomer(this.customer).subscribe(response => {
-            
-          })
-          
-
-        };
+              swal.fire("Registro","Melo mi papacho", 'success');
+              
+            })
+  
+          };
         
-      }, 1000);
-      
+      }, 2000);
 
-
-
-       
       })
-
-    
-
-
-
-
   }
 
 
@@ -95,14 +89,4 @@ export class HomeCustomerComponent implements OnInit {
     this.router.navigate(["/login"])
     
   }
-
 }
-
-
-
-
-
-
-
-
-

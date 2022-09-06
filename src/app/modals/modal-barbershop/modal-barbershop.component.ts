@@ -1,3 +1,4 @@
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Component, OnInit } from '@angular/core';
 import { AuthServices } from 'src/app/models/AuthServices';
 import { Barbershop } from 'src/app/models/barbershop';
@@ -29,7 +30,8 @@ export class ModalBarbershopComponent implements OnInit {
     fr.readAsDataURL(this.imagen);
   }
 
-  constructor(private catalogueService:CatalogueService,private servicebarbershop: BarbershopService,private auhtService: AuthServices, private usuarioService: UsuarioService,) { }
+  constructor(private catalogueService:CatalogueService,private servicebarbershop: BarbershopService,private auhtService: AuthServices, 
+    private usuarioService: UsuarioService, private spinner: NgxSpinnerService) { }
 
 
 
