@@ -41,17 +41,19 @@ export class HomeCustomerComponent implements OnInit {
 
     this.customerService.getCustomer(this.usuarioSession.id).subscribe((data: any )=> {
 
-      console.log("data");
-      console.log(data);
       this.customer = data;
 
-      console.log("customer");
+      console.log("customer consult");
       
       console.log(this.customer);
-
+      
       setTimeout(() => {
 
-        if(this.usuarioConsult==null){
+        if(data==null){
+
+          console.log("customer");
+      
+          console.log(this.customer);
 
 
           this.customer = new Customer()
@@ -65,28 +67,16 @@ export class HomeCustomerComponent implements OnInit {
           this.customer.age = this.usuarioConsult.date
   
             this.customerService.saveCustomer(this.customer).subscribe(response => {
+
+              swal.fire("Registro","Melo mi papacho", 'success');
               
             })
   
           };
         
-      }, 500);
+      }, 2000);
 
-
-        
-
-      
-
-
-
-       
       })
-
-    
-
-
-
-
   }
 
 
@@ -99,14 +89,4 @@ export class HomeCustomerComponent implements OnInit {
     this.router.navigate(["/login"])
     
   }
-
 }
-
-
-
-
-
-
-
-
-
