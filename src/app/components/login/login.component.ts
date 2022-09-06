@@ -1,5 +1,5 @@
 import { Usuario } from './../../models/Usuario';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthServices } from 'src/app/models/AuthServices';
 import Swal from 'sweetalert2';
@@ -10,17 +10,22 @@ import Swal from 'sweetalert2';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit ,OnDestroy{
 
   usuario:Usuario;
 
   constructor(private authServices:AuthServices, private router:Router) { 
 
   }
+  ngOnDestroy(): void {
+    document.body.classList.remove("cambio")
+  }
 
   ngOnInit(): void {
     this.usuario = new Usuario();
     this.usuario = this.authServices.usuario;
+    document.body.classList.add("cambio")
+    console.log(document.body.classList)
   }
 
 
@@ -104,5 +109,10 @@ export class LoginComponent implements OnInit {
     
    }, 200);
   }
+  
+
+ 
+
+
 
 }

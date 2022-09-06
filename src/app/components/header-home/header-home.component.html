@@ -12,7 +12,7 @@
       <ul class="nav_link">
 
         <li class="nav_items">
-          <a [routerLink]="['/login']" class="nav_links"  >Iniciar sesion</a>
+          <a [routerLink]="['/login']"  class="nav_links"  >Iniciar sesion</a>
         </li>
 
         <li class="nav_items">
@@ -64,13 +64,14 @@
              
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 1" class="funciones" >
                 <a href="/homebarbershop" class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
+                <a href="http://localhost:4200/porfilebarbershop">Ver Perfil</a>
                 <a href="http://localhost:4200/listabarber">Barberos</a>
                 <a href="http://localhost:4200/calendar">Maya de turnos</a>
                 <a href="http://localhost:4200/manage-catalogue">Catalogo</a>
                 <a href="http://localhost:4200/promotions">Promociones</a>
                 <a href="http://localhost:4200/publicidad">Publicaciones</a>
                 
-                <a (click)="logout()" href="/">Cerrar Sesion</a>
+                <a (click)="logout()"  routerLink="/">Cerrar Sesion</a>
               </nav>
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 2" class="funciones" >
                 <a href="/homebarber" class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
