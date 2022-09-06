@@ -1,0 +1,8 @@
+<div *ngFor="let barber of barbers">
+    <div (click)="selectBarber(barber.id)">
+        <div><img src="{{barber.photo}}" alt=""></div>
+        <p>{{barber.nickname}}</p>
+    </div>
+    
+</div>
+ 

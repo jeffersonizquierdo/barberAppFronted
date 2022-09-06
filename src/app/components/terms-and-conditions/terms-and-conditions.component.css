@@ -1,15 +1,22 @@
 *{
-    
-    color: white;    
+    margin:0;
+    padding:0;
 }
-.container-main {
-   text-align: center;
-   margin: 53px 96px;
-   font-size: 21px;
+
+body{
+    background:linear-gradient(120deg,#2980b9,#8e44ad);
+    height: 100vh;
 }
-.titulo h1{
-    font-size: 23px;
+.container-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 800px;
+    margin-left: 30%;
+    color: #f5f3f7f5;
+    font-size: 18px;
 }
-.terminos{
-    border: 1px solid white;
-}
+
+
