@@ -13,21 +13,25 @@ export class ProfileClientComponent implements OnInit {
 
   constructor(private customerservices:CustomerService, private authservices:AuthServices) { }
   customer:Customer;
+
   user:Usuario;
   ngOnInit(): void {
+    this.customer=new Customer();
     this.user=this.authservices.usuario;
+  
     this.loader();
   }
 
   
   loader():void{
-    this.customerservices.getCustomer(this.user.id).subscribe(
-      data =>{
+    this.customerservices.getCustomer(this.user.id).subscribe((data:any ) =>{
+      console.log(this.user.id)
+      setTimeout(() => {
         this.customer=data;
-        console.log(this.customer.city);
-        
-      }
-    )
+        console.log(data);
+      }, 500);
+     
+    })
   }
 
 

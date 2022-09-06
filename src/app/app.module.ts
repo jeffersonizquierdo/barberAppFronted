@@ -76,9 +76,9 @@ const appRoutes: Routes = [
   {path:'publicaciones', component:ToShowPublicationsComponent}, 
   {path:'publicidad', component:LoadPublicityComponent}, 
   {path:'homeedit', component:HeaderHomeComponent}, 
-  {path:'calendar', component:CalendarComponent}, 
-  {path:'list_all_barber', component:ListAllBarberComponent}, 
-  {path:'mypublications', component: PublicationBarbershopComponent}, 
+  {path:'calendar', component:CalendarComponent},
+  {path:'list_all_barber', component:ListAllBarberComponent},
+  {path:'mypublications', component: PublicationBarbershopComponent},
 
 ]
 

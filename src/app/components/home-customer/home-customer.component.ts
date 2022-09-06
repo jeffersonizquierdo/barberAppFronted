@@ -44,14 +44,15 @@ export class HomeCustomerComponent implements OnInit {
       console.log("data");
       console.log(data);
       this.customer = data;
+
+      console.log("customer");
+      
+      console.log(this.customer);
+
       setTimeout(() => {
 
-        console.log("customer");
-        
-        console.log(this.customer);
-        
+        if(this.usuarioConsult==null){
 
-        if(this.customer==null){
 
           this.customer = new Customer()
           this.customer.id = this.usuarioConsult.id;
@@ -62,15 +63,18 @@ export class HomeCustomerComponent implements OnInit {
           this.customer.cellphone = this.usuarioConsult.cellphone;
           this.customer.typeUser = this.usuarioConsult.typeUser;
           this.customer.age = this.usuarioConsult.date
-
-          this.customerService.saveCustomer(this.customer).subscribe(response => {
-            
-          })
-          
-
-        };
+  
+            this.customerService.saveCustomer(this.customer).subscribe(response => {
+              
+            })
+  
+          };
         
-      }, 1000);
+      }, 500);
+
+
+        
+
       
 
 
