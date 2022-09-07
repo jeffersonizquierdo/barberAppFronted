@@ -1,29 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" id="btn-modal">
+    <label for="btn-modal" class="lbl-modal">Abrir Modal</label>
+    <div class="modal">
+    <div class="contenedor">
+        <header>Ranking</header>
+        <label for="btn-modal">X</label>
+        <div class="contenido">
 
-<div class="desplegable">
-    <button class="boton">holi</button>
-    <div class="link" >
-        
-        <h3>Ranking</h3>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">puesto</th>
+                    <th scope="col">nombre</th>
+                    <th scope="col">Calificacion<th>
 
-        <div class="superior">
-
-            <h4>Calificacion</h4>
-            <h4>Puesto</h4>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let barber of rankingBarber; let i=index">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{barber.nickname}}</td>
+                    <td>{{barber.qualification}}</td>
+                  </tr>
+                </tbody>
+              </table>
         </div>
-        <a href="" *ngFor="let barber of rankingBarber; let i=index">
-            <div class="elemento" >
-                
-                <div class="numeros">
-                    <span>{{i+1}}</span>
-                </div>
-                <div class="mini_perfil">
-                    <img class="images" src="../../../assets/images/LogoBarberApp.jpg" alt="imagen"> 
-                    <a href="">{{barber.nickname}}</a>
-                </div>
-                <div class="numeros">
-                    <nav class="starts">{{barber.qualification}}</nav> 
-                </div>
-            </div>
-        </a>
     </div>
 </div>
+</body>
+</html>
+
+
+
+

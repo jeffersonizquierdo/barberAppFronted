@@ -49,6 +49,8 @@ import { BondingMessagesComponent } from './components/bonding-messages/bonding-
 import { ReserveBarbersListComponent } from './components/reserve-barbers-list/reserve-barbers-list.component';
 import { BookingTimeComponent } from './components/booking-time/booking-time.component';
 import { BookingComponent } from './components/booking/booking.component';
+import { StalkBarbershopComponent } from './components/stalk-barbershop/stalk-barbershop.component';
+import { StalkBarberComponent } from './components/stalk-barber/stalk-barber.component';
 
 
 
@@ -83,6 +85,8 @@ const appRoutes: Routes = [
   {path:'list_all_barber', component:ListAllBarberComponent}, 
   {path:'mypublications', component: PublicationBarbershopComponent},
   {path:'booking', component: BookingComponent},
+  {path:'stalk_barbershop', component: StalkBarbershopComponent },
+  {path:'stalk_barber', component:  StalkBarberComponent },
 
 
 ]
@@ -127,7 +131,9 @@ const appRoutes: Routes = [
     BondingMessagesComponent,
     ReserveBarbersListComponent,
     BookingTimeComponent,
-    BookingComponent
+    BookingComponent,
+    StalkBarbershopComponent,
+    StalkBarberComponent
 
 
 
