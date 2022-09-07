@@ -11,7 +11,6 @@
 
   <div class="wrapper">
     <div class="inputData">
-      <label for="location">Dirección de la barberia</label>
       <input
         class="intp"
         type="text"
@@ -20,12 +19,13 @@
         required
         [(ngModel)]="barbershop.location"
       />
-      <div class="line"></div>
+      <span></span>
+      <label for="location">Dirección de la barberia</label>
     </div>
   </div>
   <br>
   <div class="wrapper">
-    <div class="inputData">
+    <div class="oter">
       <label for="photo">Foto de perfil</label>
       <div class="file-select" id="src-file1">
         <img
@@ -61,7 +61,6 @@
   <br>
   <div class="wrapper">
     <div class="inputData">
-      <label for="description">Describe tu Barberia</label>
       <input
         class="intp"
         type="text"
@@ -70,9 +69,10 @@
         required
         [(ngModel)]="barbershop.description"
       />
-      <div class="line"></div>
+      <span></span>
+      <label for="description">Describe tu Barberia</label>
     </div>
   </div>
   <br />
-  <button (click)="saveBarbershop()">Commpletar Registro</button>
+  <button (click)="saveBarbershop()">Completar Registro</button>
 </form>
