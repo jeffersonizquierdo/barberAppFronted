@@ -80,8 +80,9 @@ const appRoutes: Routes = [
   {path:'list_all_barber', component:ListAllBarberComponent}, 
   {path:'mypublications', component: PublicationBarbershopComponent},
   {path:'booking', component: BookingComponent},
-  {path:'stalk_barbershop', component: StalkBarbershopComponent },
+  {path:'stalk_barbershop/:id', component: StalkBarbershopComponent },
   {path:'stalk_barber', component:  StalkBarberComponent },
+  {path:'allbarbershops', component:  ListBarbershopComponent},
 
 
 ]
@@ -126,10 +127,7 @@ const appRoutes: Routes = [
     BondingMessagesComponent,
     BookingComponent,
     StalkBarbershopComponent,
-    StalkBarberComponent
-
-
-
+    StalkBarberComponent,
 
     
 
