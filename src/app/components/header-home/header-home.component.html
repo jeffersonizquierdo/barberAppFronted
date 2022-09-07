@@ -63,13 +63,13 @@
             <nav>
              
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 1" class="funciones" >
-                <a routerLink="/homebarbershop" class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
-                <a routerLink="http://localhost:4200/porfilebarbershop">Ver Perfil</a>
-                <a routerLink="http://localhost:4200/listabarber">Barberos</a>
-                <a routerLink="http://localhost:4200/calendar">Maya de turnos</a>
-                <a routerLink="http://localhost:4200/manage-catalogue">Catalogo</a>
-                <a routerLink="http://localhost:4200/promotions">Promociones</a>
-                <a routerLink="http://localhost:4200/publicidad">Publicaciones</a>
+                <a [routerLink]="['/homebarbershop']"class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
+                <a [routerLink]="['/porfilebarbershop']">Ver Perfil</a>
+                <a [routerLink]="['/listabarber']" >Barberos</a>
+                <a [routerLink]="['/calendar']" >Maya de turnos</a>
+                <a [routerLink]="['/manage-catalogue']">Catalogo</a>
+                <a [routerLink]="['/promotions']" >Promociones</a>
+                <a [routerLink]="['/publicidad']" >Publicaciones</a>
                 
                 <a (click)="logout()"  routerLink="/">Cerrar Sesion</a>
               </nav>

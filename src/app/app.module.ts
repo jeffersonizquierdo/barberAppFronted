@@ -79,7 +79,7 @@ const appRoutes: Routes = [
   {path:'calendar', component:CalendarComponent}, 
   {path:'list_all_barber', component:ListAllBarberComponent}, 
   {path:'mypublications', component: PublicationBarbershopComponent},
-  {path:'booking', component: BookingComponent},
+  {path:'booking/:id', component: BookingComponent},
   {path:'stalk_barbershop/:id', component: StalkBarbershopComponent },
   {path:'stalk_barber', component:  StalkBarberComponent },
   {path:'allbarbershops', component:  ListBarbershopComponent},

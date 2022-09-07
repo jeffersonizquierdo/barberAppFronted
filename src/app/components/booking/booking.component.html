@@ -49,7 +49,7 @@
 
 
 
-<div *ngFor="let barber of barbers">
+<div *ngFor="let barber of barbershop.listBarbers">
   <div (click)="selectBarber(barber.id)">
       <div><img src="{{barber.photo}}" alt=""></div>
       <p>{{barber.nickname}}</p>

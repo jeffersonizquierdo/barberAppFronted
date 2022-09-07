@@ -3,6 +3,10 @@
         <div class="perfil-usuario-portada">
             <h3 class="titulo">{{barbershop.nickname}}</h3>
            
+            <div class="button">
+                <a [routerLink]="['/booking', barbershop.id]" >Reservar</a>
+            </div>
+
             <div class="perfil-usuario-avatar">
                 
                 <img src="{{barbershop.photo}}" alt="img-avatar">
@@ -10,16 +14,12 @@
                     <i class="far fa-image"></i>
                 </button>
                 
-
-                
+ 
             </div>
            
             <button type="button" class="boton-portada">
                 <i class="far fa-image"></i> Cambiar fondo
             </button>
-
-
-            
         </div>
     </div>
     <div class="perfil-usuario-body" >
