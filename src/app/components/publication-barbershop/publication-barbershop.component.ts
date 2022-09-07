@@ -8,7 +8,7 @@ import { PublicityService } from 'src/app/services/publicity/publicity.service';
   styleUrls: ['./publication-barbershop.component.css']
 })
 export class PublicationBarbershopComponent implements OnInit {
-  public  listPublicity2:any=[];
+  listPublicity2:any=[];
   constructor(private BarbershopService:BarbershopService) { }
 
   ngOnInit(): void {
@@ -16,8 +16,10 @@ export class PublicationBarbershopComponent implements OnInit {
   }
 
   loader3():void{
+    console.log("holi2")
     this.BarbershopService.listpublicyid().subscribe(
       data =>{
+        console.log(data)
         this.listPublicity2=data;
         console.log(this.listPublicity2.description);
         

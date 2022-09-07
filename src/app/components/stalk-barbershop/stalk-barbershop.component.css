@@ -92,8 +92,8 @@ h3{
 .seccion-perfil-usuario .perfil-usuario-body {
     width: 70%;
     position: relative;
-    max-width: 750px;
-    margin: 8px 46% 0 0;
+    max-width: 598px;
+    margin: 8px 59% 0 0;
 }
 
 .seccion-perfil-usuario .perfil-usuario-body .titulo {
@@ -179,7 +179,35 @@ h3{
     background: linear-gradient(45deg, #FF2DFD, #40A7FF);
 }
 .publication{
-    margin: -13% 61%;
+    margin: -12% 39%;
+    border: 1px solid black;
+    /* text-align: center; */
+    height: 35%;
+    width: 50%;
+}
+.button{
+    margin: 13% 91%;
+    text-align: center;
+    font-size: 16px;
+}
+.button a{
+    width: 75%;
+    height: 46px;
+    border: 1px solid #2691d9;
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9fafb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    padding: 5px 48px;
+    
+}
+
+.button :hover{
+    border-color:#2691d9 ;
+    transition: .5s;
 }
 
 
