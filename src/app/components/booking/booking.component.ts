@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import * as moment  from 'moment';
 import { ActivatedRoute } from '@angular/router';
 import { Barbershop } from '../../models/barbershop';
+import { Barber } from '../../models/Barber';
 
 @Component({
   selector: 'app-booking',
@@ -20,6 +21,7 @@ export class BookingComponent implements OnInit {
   dateDb:any;
   idBarbershop: number;
   barbershop: Barbershop;
+  barber:Barber;
 
 
   
@@ -144,15 +146,14 @@ export class BookingComponent implements OnInit {
         this.serviceBarbershop.getbarber(this.idBarbershop).subscribe(
           data =>{
             this.barbershop = data;
-            console.log(this.barbershop.listBarbers);
+            this.barbers = data.listBarbers
+            console.log(this.barbers);
             
           }
         )
       }
     
-      selectBarber(barberId:Number){
-    
-      }
+      
   
       // Booking
   
@@ -163,8 +164,18 @@ export class BookingComponent implements OnInit {
       }
 
 
+    // logica de creacion de reserva
 
+    name : string;
+    photo: string;
 
+    selectBarber(barber:Barber){
 
+      console.log(barber);
+      
+      this.name = barber.nickname;
+      this.photo = barber.photo;
+        
+    }1
 
 }
