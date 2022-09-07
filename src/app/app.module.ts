@@ -49,6 +49,7 @@ import { BondingMessagesComponent } from './components/bonding-messages/bonding-
 import { BookingComponent } from './components/booking/booking.component';
 import { StalkBarbershopComponent } from './components/stalk-barbershop/stalk-barbershop.component';
 import { StalkBarberComponent } from './components/stalk-barber/stalk-barber.component';
+import { PublicationBarberComponent } from './components/publication-barber/publication-barber.component';
 
 
 
@@ -82,6 +83,7 @@ const appRoutes: Routes = [
   {path:'booking', component: BookingComponent},
   {path:'stalk_barbershop', component: StalkBarbershopComponent },
   {path:'stalk_barber', component:  StalkBarberComponent },
+  {path:'publication_barber', component:  PublicationBarberComponent  },
 
 
 ]
@@ -126,7 +128,8 @@ const appRoutes: Routes = [
     BondingMessagesComponent,
     BookingComponent,
     StalkBarbershopComponent,
-    StalkBarberComponent
+    StalkBarberComponent,
+    PublicationBarberComponent
 
 
 
