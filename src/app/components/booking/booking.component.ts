@@ -1,3 +1,4 @@
+import { BarbershopService } from './../../services/barbershop/barbershop.service';
 import { Component, OnInit } from '@angular/core';
 import * as moment  from 'moment';
 
@@ -13,10 +14,12 @@ export class BookingComponent implements OnInit {
   monthSelect:any= []
   dateSelect: any;
   date:any;
+  barbers:any=[];
+  dateDb:any;
 
   
 
-  constructor() { }
+  constructor(private serviceBarbershop:BarbershopService) { }
 
  
 
@@ -25,12 +28,12 @@ export class BookingComponent implements OnInit {
     this.getDaysFromDate(9,2022)
   }
 
-
+  // CALENDARIO
   getDaysFromDate(month, year){
 
-    const startDate = moment.utc(`${year}/${month}/01`)
+    const startDate = moment.utc(`${year}/${month + 1}/01`)
     const endDate = startDate.clone().endOf('month')
-    this.dateSelect  =startDate
+    this.dateSelect = startDate
     const diffDays = endDate.diff(startDate, 'days', true)
     const numberDays =  Math.round(diffDays)
 
@@ -53,7 +56,7 @@ export class BookingComponent implements OnInit {
   changeMonth(flag){
 
     if(flag < 0){
-      const nextDate = this.dateSelect.clone().subtract(1, "month");
+      const nextDate = this.dateSelect.clone().subtract(2, "month");
       this.getDaysFromDate(nextDate.format("MM"), nextDate.format("YYYY")) 
     } else {
       const nextDate = this.dateSelect.clone().add(1, "month");
@@ -71,9 +74,82 @@ export class BookingComponent implements OnInit {
     console.log(parse);
     this.date = parse
     console.log(objectDay);
-
-    
   }
+
+
+    // horas
+    hours:any=[
+      {hour : 9, minutes: 0},
+      {hour : 9, minutes: 30},
+      {hour : 10, minutes: 0},
+      {hour : 10, minutes: 30},
+      {hour : 11, minutes: 0},
+      {hour : 11, minutes: 30},
+      {hour : 1, minutes: 0},
+      {hour : 1, minutes: 30},
+      {hour : 2, minutes: 0},
+      {hour : 2, minutes: 30},
+      {hour : 3, minutes: 0},
+      {hour : 3, minutes: 30},
+      {hour : 4, minutes: 0},
+      {hour : 4, minutes: 30},
+      {hour : 5, minutes: 0},
+      {hour : 5, minutes: 30},
+      {hour : 6, minutes: 0},
+      {hour : 6, minutes: 30},
+      {hour : 7, minutes: 0},
+      {hour : 7, minutes: 30}]
+  
+      mesof:number;
+  
+      captureTime(index:number){
+  
+  
+        let anio : Number = this.date.slice(0,4);
+        let dia : Number = this.date.slice(8,10);
+        
+        this.mesof = (this.date.slice(5,7)) - 2 
+  
+  
+        console.log(anio , this.mesof, dia);
+        
+        
+       this.dateDb = new Date(this.date.slice(0,4), this.mesof , this.date.slice(8,10),this.hours[index].hour, this.hours[index].minutes);
+
+       console.log(this.dateDb);
+       
+  
+  
+      }
+  
+  
+  
+      //barberos
+  
+      loaderBarber():void{
+        this.serviceBarbershop.listBarber().subscribe(
+          data =>{
+            this.barbers = data;
+            console.log(this.barbers);
+            
+          }
+        )
+      }
+    
+      selectBarber(barberId:Number){
+    
+      }
+  
+      // Booking
+  
+      saveBOoking(){
+  
+  
+  
+      }
+
+
+
 
 
 

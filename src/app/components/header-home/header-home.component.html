@@ -84,9 +84,7 @@
               </nav>
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 3" class="funciones" >
                 <a href="http://localhost:4200/booking">Reservar</a>
-                <a href="http://localhost:4200/porfileclient">Ver Perfil</a>
-                <a href="ttp://localhost:4200/calendar">Reservar</a>
-                
+                <a href="http://localhost:4200/porfileclient">Ver Perfil</a>                
                 <a (click)="logout()" href="#">Cerrar Sesion</a>
               </nav>  
             </nav>
