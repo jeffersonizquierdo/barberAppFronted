@@ -1,13 +1,65 @@
 form{
     width: 450px;
     margin-top: 20%;
-    background-color: #bbbbbb;
+    background-color: white;
     padding: 20px 40px;
-    border-radius: 5px;
+    border-radius: 10px;
     text-align: center;
-    color: white;
-    box-shadow: 0px 0px 10px 2px black;
+    color: black;
+  
 }
+
+
+
+.inputData {
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 15px;
+}
+
+.inputData input{
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.inputData label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.inputData span::before{
+  content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #2691d9;
+    transition: .5s;
+}
+
+.inputData input:focus  ~ label,
+.inputData input:valid  ~ label{
+
+    top: -5px;
+    color: #2691d9;
+
+}
+.inputData input:focus  ~ span::before,
+.inputData input:valid  ~ span::before{
+    width: 100%;
+}
+
 li{
     list-style: none;
 }
@@ -22,14 +74,22 @@ li{
 
 
 button{
-    width: 370px;
-    height: 40px;
-    background-color: rgba(0, 0, 0, 0.664);
-    border: none;
-    border-radius: 2px;
-    border: 1px solid black;
-    color: white;
-    box-shadow: inset 0px 0px 20px 1px black;
+  width: 75%;
+  height: 46px;
+  border: 1px solid;
+  background: #2691d9;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9fafb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  margin: 0 41px;
+}
+
+button:hover{
+  border-color:#2691d9 ;
+  transition: .5s;
 }
 
 
@@ -39,9 +99,9 @@ img{
 
 .file-select {
     position: relative;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.281);
     border: none;
-    border-radius: 2px; 
+    border-radius: 5px; 
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
