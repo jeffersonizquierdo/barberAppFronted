@@ -46,12 +46,7 @@ import { ModalBarberComponent } from './modals/modal-barber/modal-barber.compone
 import { ListAllBarberComponent } from './components/list-all-barber/list-all-barber.component';
 import { PublicationBarbershopComponent } from './components/publication-barbershop/publication-barbershop.component';
 import { BondingMessagesComponent } from './components/bonding-messages/bonding-messages.component';
-import { ReserveBarbersListComponent } from './components/reserve-barbers-list/reserve-barbers-list.component';
-import { BookingTimeComponent } from './components/booking-time/booking-time.component';
 import { BookingComponent } from './components/booking/booking.component';
-
-
-
 
 
 
@@ -125,8 +120,6 @@ const appRoutes: Routes = [
     ListAllBarberComponent,
     PublicationBarbershopComponent,
     BondingMessagesComponent,
-    ReserveBarbersListComponent,
-    BookingTimeComponent,
     BookingComponent
 
 
