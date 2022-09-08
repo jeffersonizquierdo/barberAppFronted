@@ -1,42 +1,96 @@
 *{
     padding: 0;
     margin: 0;
-    color: black;
+    box-sizing: border-box;
 }
-
-h1{
-    text-align: center;
-    height: 133px;
-    
-}
-.container-main{
+body{
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
 
-.imagen{
+.container{
+    width: 100%;
     display: flex;
-    gap: 20px;
+    max-width: 1100px;
 }
-.imagen p{
-    margin: 17px 0;
+
+.card{
+    width: 100%;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #fff;
+    color: black;
+    box-shadow: 0px 1px 10px  rgba(0, 0, 0, .2);
+    cursor: default;
+    transition: all 400ms ease;
 }
-.imagen img{
-    height: 57px;
-    width: 68px;
+
+.card:hover{
+    box-shadow: 5px 1px 10px rgba(0, 0, 0, .4);
+    transform: translateY(-3%);
+}
+.images2 img{
+    width: 100px;
+    height: 136px;
     background-repeat: no-repeat;
     background-position: 50%;
     border-radius: 50%;
-    background-size: 100% auto;
+    background-size: 100% auto
+}
+.images2{
+    display: flex;
+    gap: 52px;
+    margin: 40px 97px;
+}
+.images2 h3{
+    margin: 28px 0;
+}
+.card .contenido{
+    padding: 15px;
+    text-align: center;
 }
 
-.description{
-    height: 463px;
+.card .contenido p{
+    line-height: 1.5;
+    color: #6a6a6a;
+    padding: 0 119px;
+    height: 79px;
 }
-.description img{
-    width: 331px;
-    height: 73%;
-    margin: 30px 0;
+
+.card .contenido h3{
+    font-weight: 400;
+    margin-bottom: 15px;
 }
+
+.card .contenido a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    color: #2fb4cc;
+    border: 1px solid #2fb4cc ;
+    border-radius: 4px;
+    transition: all 400ms ease;
+}
+
+.card .contenido a:hover{
+    background: #2fb4cc;
+    color: #fff;
+}
+.images img{
+    width: 59%;
+    height: 403px;
+  
+}
+
+
+
+
+
+
+

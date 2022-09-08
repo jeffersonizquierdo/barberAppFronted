@@ -7,36 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="checkbox" id="btn-modal">
-    <label for="btn-modal" class="lbl-modal">Abrir Modal</label>
-    <div class="modal">
-    <div class="contenedor">
-        <header>Ranking</header>
-        <label for="btn-modal">X</label>
-        <div class="contenido">
+  <div>
+    <nav class="ranking">
+    
+        <h3>Ranking</h3>
+  
+        <ul class="lista" *ngFor="let barber of rankingBarber; let i=index">
+            <li><div class="elemento" ><span>{{i+1}}</span><img src="../../../assets/images/pruebaperfil.jpg" alt=""> <a href="">{{barber.nickname}}</a><nav class="starts">{{barber.qualification}}</nav> </div></li>
+        </ul>
+    </nav>
 
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">puesto</th>
-                    <th scope="col">nombre</th>
-                    <th scope="col">Calificacion<th>
+  </div>
 
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let barber of rankingBarber; let i=index">
-                    <th scope="row">{{i+1}}</th>
-                    <td>{{barber.nickname}}</td>
-                    <td>{{barber.qualification}}</td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>
-    </div>
-</div>
 </body>
 </html>
+
+
 
 
 
