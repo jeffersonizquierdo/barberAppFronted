@@ -1,3 +1,5 @@
+import { Booking } from './../../models/Booking';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Component, OnInit } from '@angular/core';
 import { AuthServices } from 'src/app/models/AuthServices';
 import { Barber } from 'src/app/models/Barber';
@@ -16,7 +18,8 @@ import Swal from 'sweetalert2';
 })
 export class BondingMessagesComponent implements OnInit {
 
-  constructor( private auhtService: AuthServices,private serviceLinkear:LinkearService,private BarbershopService:BarbershopService, private serviceBarber:BarberService) { }
+  constructor( private auhtService: AuthServices,private serviceLinkear:LinkearService,private BarbershopService:BarbershopService, 
+    private serviceBarber:BarberService, private snipper: NgxSpinnerService) { }
   Linkers:any=[];
   listLinkear:any=[];
   barbershops:Barbershop[]=[];
@@ -25,6 +28,8 @@ export class BondingMessagesComponent implements OnInit {
   barber:Barber;
   bonding:Linkear;
   acceptance:Boolean;
+  booking: Booking;
+
 
   ngOnInit(): void {
     this.usuario=this.auhtService.usuario;
@@ -56,41 +61,44 @@ export class BondingMessagesComponent implements OnInit {
   }
 
   linkUp(idbarbershop:Number){
-    console.log("w")
+ 
     this.listLinkear.every(e=>{
       return this.acceptance=e.acceptance==true
     })
-    if(this.acceptance==false){
-      console.log(this.acceptance)
-      this.listLinkear.every(e=>{
-            if(e.barbershop.id==idbarbershop){
-              e.acceptance=true;
-              this.serviceLinkear.updateLinkear(e).subscribe((response:any)=>{
-                console.log(response)
-                setTimeout(() => {
-                  this.serviceBarber.getbarber(e.barber.id).subscribe((response:any)=>{
-                    this.barber=response;
-                    this.barber.barbershop=e.barbershop;
-                    console.log(e.barbershop);
-                    console.log("barup");
-                    console.log(this.barber);
-                    this.serviceBarber.updateBarber(this.barber).subscribe((response:any)=>{
-                      console.log("todo bien")
-                      console.log(response);
-                      Swal.fire('Hecho',`Te vinculaste a la barberia` , 'success');
-                      setTimeout(() => {
-                        window.location.reload();
-                      }, 1000);
-                      return true;
+
+    setTimeout(() => {
+
+      this.snipper.show();
+      if(this.acceptance==false){
+        this.listLinkear.every(e=>{
+              if(e.barbershop.id==idbarbershop){
+                e.acceptance=true;
+                this.serviceLinkear.updateLinkear(e).subscribe((response:any)=>{
+                  setTimeout(() => {
+                    this.serviceBarber.getbarber(e.barber.id).subscribe((response:any)=>{
+                      this.barber=response;
+                      this.barber.barbershop=e.barbershop;
+                      console.log(e.barbershop);
+                      this.serviceBarber.updateBarber(this.barber).subscribe((response:any)=>{
+                        this.snipper.hide();
+                        Swal.fire('Hecho',`Te vinculaste a la barberia` , 'success');
+                        setTimeout(() => {
+                          window.location.reload();
+                        }, 1000);
+                        return true;
+                      })
                     })
-                  })
-                }, 500);
-              });
-            }
-          })
-        }else{
-          Swal.fire('Denegado',`Ya te vinculaste a una barberia desvinculate antes o adquiere una version premium ` , 'info');
-        }
+                  }, 500);
+                });
+              }
+            })
+          }else{
+            Swal.fire('Denegado',`Ya te vinculaste a una barberia desvinculate antes o adquiere una version premium ` , 'info');
+          }
+      
+    }, 500);
+
+
     }
 
 
