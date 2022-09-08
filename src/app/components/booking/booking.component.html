@@ -1,58 +1,89 @@
+<section  >
+
+
+
+  <div *ngFor="let b of barbers" >
+    <button  class="barbers" (click) = "selectBarber(b)">
+      <div class="barbers2" (click)="selectBarber(b.id)">
+          <img  src="{{b.photo}}" alt=""></div>
+          <p>{{b.nickname}}</p>
+    </button>
+  </div>
+
+
+
+
+
+
+
+
+  <nav class="mange-date">
+
+    <div>
+
+      <div class="header-calendar" >
+    
+        <div>
+          <button (click)="changeMonth(-1)" class="btn-prev" >Antes</button>
+        </div>
+    
+        <h2> {{dateSelect | date: 'MMMM, yyyy' }} </h2>
+    
+    
+        <div>
+          <button (click)="changeMonth(1)" class="btn-next" >Siguiente</button>
+        </div>
+    
+    
+      </div>
+    
+    
+      <ol>
+        <li  *ngFor="let day of week; let i=index" >{{day | slice: 0:3 }} </li>
+        <li (click)="clickDay(day)" [style.gridColumnStart]=" first ? day ?.indexWeek : 'auto' "
+          *ngFor="let day of monthSelect;let first = first">
+          <span>  {{day?.value}}</span>
+        </li>
+      </ol>
+    
+    
+      {{date}}
+    
+    
+    </div>
+
+    <div class="hours" *ngFor="let h of hours; let i=index">
+      <button *ngIf="h.minutes != 0" (click)="captureTime(i)">{{h.hour}} : {{h.minutes}}</button> 
+      <button *ngIf="h.minutes == 0" (click)="captureTime(i)">{{h.hour}} : {{h.minutes}}0</button> 
+    </div>
+
+  </nav>
+  
+  
+
+
+
+  
+</section>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
 <div>
 
-  <div class="header-calendar" >
-
-    <div>
-      <button (click)="changeMonth(-1)" class="btn-prev" >Antes</button>
-    </div>
-
-    <h2> {{dateSelect | date: 'MMMM, yyyy' }} </h2>
-
-
-    <div>
-      <button (click)="changeMonth(1)" class="btn-next" >Siguiente</button>
-    </div>
-
-
-  </div>
-
-
-
-
-  <ol>
-
-    <li  *ngFor="let day of week; let i=index" >{{day | slice: 0:3 }} </li>
-
-    <li (click)="clickDay(day)" [style.gridColumnStart]=" first ? day ?.indexWeek : 'auto' "
-      *ngFor="let day of monthSelect;let first = first">
-      <span>  {{day?.value}}</span>
-    </li>
-
     
-
-  </ol>
-
-
-  {{date}}
-
+  <p>Barbero seleccionado: <img class="" src="{{photo}}" alt=""> {{name}}</p>
+  
 
 </div>
 
 
 
 
-
-<div *ngFor="let h of hours; let i=index">
-  <button *ngIf="h.minutes != 0" (click)="captureTime(i)">{{h.hour}} : {{h.minutes}}</button> 
-  <button *ngIf="h.minutes == 0" (click)="captureTime(i)">{{h.hour}} : {{h.minutes}}0</button> 
-</div>
-
-
-
-<div *ngFor="let barber of barbers">
-  <div (click)="selectBarber(barber.id)">
-      <div><img src="{{barber.photo}}" alt=""></div>
-      <p>{{barber.nickname}}</p>
-  </div>
-
-</div>

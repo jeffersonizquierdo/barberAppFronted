@@ -1,6 +1,9 @@
 import { BarbershopService } from './../../services/barbershop/barbershop.service';
 import { Component, OnInit } from '@angular/core';
 import * as moment  from 'moment';
+import { ActivatedRoute } from '@angular/router';
+import { Barbershop } from '../../models/barbershop';
+import { Barber } from '../../models/Barber';
 
 @Component({
   selector: 'app-booking',
@@ -16,17 +19,30 @@ export class BookingComponent implements OnInit {
   date:any;
   barbers:any=[];
   dateDb:any;
+  idBarbershop: number;
+  barbershop: Barbershop;
+  barber:Barber;
+
 
   
 
-  constructor(private serviceBarbershop:BarbershopService) { }
+  constructor(private serviceBarbershop:BarbershopService, private route: ActivatedRoute ) { }
 
  
 
   ngOnInit(): void {
 
+    this.idBarbershop =  parseInt(this.route.snapshot.paramMap.get('id'));
+
+    console.log(this.idBarbershop);
+    
+
     this.getDaysFromDate(9,2022)
+
+    this.loaderBarber()
   }
+
+  
 
   // CALENDARIO
   getDaysFromDate(month, year){
@@ -127,18 +143,17 @@ export class BookingComponent implements OnInit {
       //barberos
   
       loaderBarber():void{
-        this.serviceBarbershop.listBarber().subscribe(
+        this.serviceBarbershop.getbarber(this.idBarbershop).subscribe(
           data =>{
-            this.barbers = data;
+            this.barbershop = data;
+            this.barbers = data.listBarbers
             console.log(this.barbers);
             
           }
         )
       }
     
-      selectBarber(barberId:Number){
-    
-      }
+      
   
       // Booking
   
@@ -149,8 +164,18 @@ export class BookingComponent implements OnInit {
       }
 
 
+    // logica de creacion de reserva
 
+    name : string;
+    photo: string;
 
+    selectBarber(barber:Barber){
 
+      console.log(barber);
+      
+      this.name = barber.nickname;
+      this.photo = barber.photo;
+        
+    }1
 
 }
