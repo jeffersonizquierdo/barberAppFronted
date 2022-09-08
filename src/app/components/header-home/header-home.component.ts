@@ -28,8 +28,6 @@ export class HeaderHomeComponent implements OnInit {
     Swal.fire('Login', `session cerrada`, 'success')
     
     
-    this.router.navigate(["/login"])
-    
   }
 
 
