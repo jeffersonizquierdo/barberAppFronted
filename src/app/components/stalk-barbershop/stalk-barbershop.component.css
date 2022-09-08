@@ -92,8 +92,8 @@ h3{
 .seccion-perfil-usuario .perfil-usuario-body {
     width: 70%;
     position: relative;
-    max-width: 598px;
-    margin: 8px 59% 0 0;
+    max-width: 512px;
+    margin: 6px 60% 0 0;
 }
 
 .seccion-perfil-usuario .perfil-usuario-body .titulo {
@@ -180,13 +180,12 @@ h3{
 }
 .publication{
     margin: -12% 39%;
-    border: 1px solid black;
     /* text-align: center; */
     height: 35%;
     width: 50%;
 }
 .button{
-    margin: 12% 88%;
+    margin: -3% 86%;
     text-align: center;
     font-size: 16px;
 }

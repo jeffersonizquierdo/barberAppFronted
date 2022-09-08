@@ -1,6 +1,10 @@
+import Swal  from 'sweetalert2';
 import { BarbershopService } from './../../services/barbershop/barbershop.service';
 import { Component, OnInit } from '@angular/core';
 import * as moment  from 'moment';
+import { ActivatedRoute } from '@angular/router';
+import { Barbershop } from '../../models/barbershop';
+import { Barber } from '../../models/Barber';
 
 @Component({
   selector: 'app-booking',
@@ -16,17 +20,30 @@ export class BookingComponent implements OnInit {
   date:any;
   barbers:any=[];
   dateDb:any;
+  idBarbershop: number;
+  barbershop: Barbershop;
+  barber:Barber;
+
 
   
 
-  constructor(private serviceBarbershop:BarbershopService) { }
+  constructor(private serviceBarbershop:BarbershopService, private route: ActivatedRoute ) { }
 
  
 
   ngOnInit(): void {
 
+    this.idBarbershop =  parseInt(this.route.snapshot.paramMap.get('id'));
+
+    console.log(this.idBarbershop);
+    
+
     this.getDaysFromDate(9,2022)
+
+    this.loaderBarber()
   }
+
+  
 
   // CALENDARIO
   getDaysFromDate(month, year){
@@ -68,12 +85,28 @@ export class BookingComponent implements OnInit {
 
   clickDay(day?){
 
-    const monthYear = this.dateSelect.format('YYYY-MM');
-    const parse = `${monthYear}-${day.value}`;
-    const objectDay = moment(parse)
-    console.log(parse);
-    this.date = parse
-    console.log(objectDay);
+    console.log(this.barber);
+    
+
+    if(this.photo != null) {
+
+      
+      const monthYear = this.dateSelect.format('YYYY-MM');
+      const parse = `${monthYear}-${day.value}`;
+      const objectDay = moment(parse)
+      console.log(parse);
+      this.date = parse
+      console.log(objectDay);
+
+      
+
+    } else {
+      Swal.fire("informacion", "Seleciona un barbero primero", "info")  
+
+    }
+
+    this.error = null;
+
   }
 
 
@@ -101,22 +134,28 @@ export class BookingComponent implements OnInit {
       {hour : 7, minutes: 30}]
   
       mesof:number;
+      hourSelect:any;
+      minutesSelect:any;
+      error: string;
   
       captureTime(index:number){
-  
-  
-        let anio : Number = this.date.slice(0,4);
-        let dia : Number = this.date.slice(8,10);
-        
-        this.mesof = (this.date.slice(5,7)) - 2 
-  
-  
-        console.log(anio , this.mesof, dia);
-        
-        
-       this.dateDb = new Date(this.date.slice(0,4), this.mesof , this.date.slice(8,10),this.hours[index].hour, this.hours[index].minutes);
 
-       console.log(this.dateDb);
+      if(this.date == null){
+
+        Swal.fire("informacion", "Selecionar una fecha primero", "info")
+      } else{
+
+        this.mesof = (this.date.slice(5,7)) - 2 
+        
+        this.dateDb = new Date(this.date.slice(0,4), this.mesof , this.date.slice(8,10),this.hours[index].hour, this.hours[index].minutes);
+        this.hourSelect = this.dateDb.getHours()
+        this.minutesSelect = this.dateDb.getMinutes();
+
+      }
+      
+
+
+
        
   
   
@@ -127,18 +166,17 @@ export class BookingComponent implements OnInit {
       //barberos
   
       loaderBarber():void{
-        this.serviceBarbershop.listBarber().subscribe(
+        this.serviceBarbershop.getbarber(this.idBarbershop).subscribe(
           data =>{
-            this.barbers = data;
+            this.barbershop = data;
+            this.barbers = data.listBarbers
             console.log(this.barbers);
             
           }
         )
       }
     
-      selectBarber(barberId:Number){
-    
-      }
+      
   
       // Booking
   
@@ -149,8 +187,18 @@ export class BookingComponent implements OnInit {
       }
 
 
+    // logica de creacion de reserva
 
+    name : string;
+    photo: string;
 
+    selectBarber(barber:Barber){
 
+      console.log(barber);
+      
+      this.name = barber.nickname;
+      this.photo = barber.photo;
+        
+    }1
 
 }

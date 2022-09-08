@@ -1,35 +1,38 @@
 <section class="seccion-perfil-usuario">
     <div class="perfil-usuario-header">
         <div class="perfil-usuario-portada">
+            <h3 class="titulo">{{barbershop.nickname}}</h3>
+           
             <div class="button">
-                <a>Reserva</a>
+                <a [routerLink]="['/booking', barbershop.id]" >Reservar</a>
             </div>
-            <h3 class="titulo">nombre</h3>
+
             <div class="perfil-usuario-avatar">
                 
-                <img src="" alt="img-avatar">
+                <img src="{{barbershop.photo}}" alt="img-avatar">
                 <button type="button" class="boton-avatar">
                     <i class="far fa-image"></i>
                 </button>
+                
+ 
             </div>
+           
             <button type="button" class="boton-portada">
                 <i class="far fa-image"></i> Cambiar fondo
             </button>
-           
         </div>
     </div>
     <div class="perfil-usuario-body" >
         <div class="perfil-usuario-bio">
-            <p class="texto"> descripcion</p>
+            <p class="texto"> descripcion {{barbershop.description}}</p>
         </div>
         <div class="perfil-usuario-footer">
             <ul class="lista-datos">
-                <li><i class="icono fas fa-phone-alt"></i> Telefono: 1212</li>
-                <li><i class="icono fas fa-briefcase"></i> Trabaja en: </li>
+                <li><i class="icono fas fa-phone-alt"></i> Telefono: {{barbershop.cellphone}}</li>
                 <li><i class="icono fas fa-building"></i> Cargo : Barberia</li>
             </ul>
             <ul class="lista-datos">
-                <li><i class="icono fas fa-map-marker-alt"></i> Ubicacion: </li>
+                <li><i class="icono fas fa-map-marker-alt"></i> Ubicacion: {{barbershop.location}}</li>
                 <li><i class="icono fas fa-user-check"></i> Registro.</li>
             </ul>
         </div>
@@ -38,6 +41,5 @@
 </section>
 
 <div class="publication">
-    <h1>hola</h1>
     <app-publication-barbershop></app-publication-barbershop>
 </div>

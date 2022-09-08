@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+section{
+  display: flex;
+  flex-direction: column;
+}
 
 div {
   text-align: center;
@@ -56,5 +60,46 @@ h2{
 .header-calendar button{
   border:0;
 }
+
+
+
+
+.barbers{
+  width: 145px;
+  height: 123px;
+  border-radius: 60px;
+
+}
+.barbers2 img{
+  width: 145px;
+  height: 123px;
+}
+
+
+.hours{
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.mange-date{
+  display: flex;
+  flex-direction: row;  
+}
+
+
+.imgbarber{
+
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+
+
+
+
+
+
 
 

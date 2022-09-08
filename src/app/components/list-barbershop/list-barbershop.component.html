@@ -11,7 +11,7 @@
             <h5 class="card-title">{{barber.nickname}}</h5>
             <p class="card-text">{{barber.description}}</p>
             <div class="form-group d-flex justify-content-center my-3">
-                <a href="#" class="btn btn-primary">Ver Perfil</a>
+                <a [routerLink]="['/stalk_barbershop', barber.id]" class="btn btn-primary">Ver Perfil</a>
             </div>
             </div>
         </div>

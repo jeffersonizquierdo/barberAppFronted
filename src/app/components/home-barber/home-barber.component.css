@@ -70,14 +70,15 @@ body, .notificacion{
 	opacity: 0;
 	visibility: hidden;
     width: 700px;
-    background-color: #1b1b1b8c;
+    background-color: #d3d3d38c;;
     border: 1px solid black;
     border-radius: 11px;
-    height: 500px;
+    height: 400px;
     position: absolute;
-    top: 10%;
+    top: 20%;
     left: 30%;
     padding: 20px;
+    box-shadow: 0px 0px 20px 1px black;
 }
 #btn-notificacion:checked ~ .notificacion{
 	opacity: 1;

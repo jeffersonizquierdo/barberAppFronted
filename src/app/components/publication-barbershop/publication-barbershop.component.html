@@ -1,18 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" *ngFor="let n of listPublicity2" >
+        <div class="card">
+            <div class="images2">
+                <img src="{{n.photo}}" alt="">
+                <h3>Nombre</h3> 
+            </div>
+            <div class="contenido">
+                <p>{{n.description}}</p>
+                <div class="images" >
+                    <img   src="{{n.url}}" alt="">
+                </div>
+               
+            </div>
 
-<div class="container-main" *ngFor="let n of listPublicity2">
-    <div class="medium">
-        <div class="header">
-        <div class="imagen">
-            <img src="{{n.photo}}" alt="">
-            <p>{{n.nickname}}</p>
-        </div>
-        <div class="description">
-            <p>{{n.description}}</p>
-            <img  src="{{n.url}}" alt="">
         </div>
     </div>
-    </div>
-    
+</body>
+</html>
 
-    
-</div>
+
