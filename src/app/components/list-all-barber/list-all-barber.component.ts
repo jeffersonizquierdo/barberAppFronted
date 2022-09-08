@@ -1,3 +1,4 @@
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBarbershopComponent } from 'src/app/modals/modal-barbershop/modal-barbershop.component';
@@ -20,7 +21,7 @@ export class ListAllBarberComponent implements OnInit {
 
   barbers:any=[];
   constructor(private BarberService:BarberService, private auhtService: AuthServices, private serviceBarbershop:BarbershopService,
-  private modalService:NgbModal,private serviceLinkear:LinkearService,) { }
+  private modalService:NgbModal,private serviceLinkear:LinkearService, private snipper: NgxSpinnerService) { }
 
 
 
@@ -51,6 +52,8 @@ export class ListAllBarberComponent implements OnInit {
 
 
   linkear(id_barber:Number){
+
+    this.snipper.show()
     this.barbershop=new Barbershop();
     this.serviceBarbershop.getbarber(this.usuario.id).subscribe((response:any)=>{
       this.barbershop=response;
@@ -68,6 +71,7 @@ export class ListAllBarberComponent implements OnInit {
 
         })
       }
+      this.snipper.hide()
     })
 
 
@@ -75,6 +79,7 @@ export class ListAllBarberComponent implements OnInit {
 
       this.serviceLinkear.saveLinkear(this.bonding).subscribe(response=>{
       })
+
 
       swal.fire("Hecho", "Solicitud enviada", "success")
       
