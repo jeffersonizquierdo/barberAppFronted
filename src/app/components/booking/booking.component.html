@@ -1,19 +1,13 @@
 <section  >
 
 
-
   <div *ngFor="let b of barbers" >
     <button  class="barbers" (click) = "selectBarber(b)">
       <div class="barbers2" (click)="selectBarber(b.id)">
-          <img  src="{{b.photo}}" alt=""></div>
+          <img class=""  src="{{b.photo}}" alt=""></div>
           <p>{{b.nickname}}</p>
     </button>
   </div>
-
-
-
-
-
 
 
 
@@ -45,10 +39,7 @@
           <span>  {{day?.value}}</span>
         </li>
       </ol>
-    
-    
-      {{date}}
-    
+      
     
     </div>
 
@@ -66,21 +57,17 @@
   
 </section>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
 
 <div>
 
-    
-  <p>Barbero seleccionado: <img class="" src="{{photo}}" alt=""> {{name}}</p>
+  <p>Barbero seleccionado: <img *ngIf="photo != null" class="imgbarber" src="{{photo}}" alt=""> {{name}}</p>
   
+  <p>Fecha seleccionada: {{date}}</p>
+
+
+
+  <p *ngIf="minutesSelect != 0">Hora seleccionada: {{hourSelect}}:{{minutesSelect}}</p>
+  <p *ngIf="minutesSelect == 0">Hora seleccionada: {{hourSelect + ":"}}{{minutesSelect}}0</p>
 
 </div>
 
