@@ -1,23 +1,28 @@
-
-<div class="page" >
+<div class="page">
 
 
     <nav class="bodyPage">
-        
+
         <app-ranking></app-ranking>
         <div class="medium">
-
+            <input type="checkbox" id="btn-notificacion">
+            <label for="btn-notificacion" class="lbl-notificacion"><img src="../../../assets/images/campana.png" alt=""><p class="butt" for="btn-notificacion">●</p></label>
+            
+            <div class="notificacion">
+                
+                <app-bonding-messages></app-bonding-messages>
+            </div>
             <div class="public">
                 <!-- <app-load-publicity></app-load-publicity>
                 <app-to-show-publications></app-to-show-publications>
                 <app-promotion-list></app-promotion-list> -->
-                <app-bonding-messages></app-bonding-messages>
+                
             </div>
-        
-    
+
+
         </div>
-    <app-table-appointment></app-table-appointment>
-        </nav>
-    
+        <app-table-appointment></app-table-appointment>
+    </nav>
+
 
 </div>

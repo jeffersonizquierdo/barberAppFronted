@@ -84,7 +84,7 @@ export class BondingMessagesComponent implements OnInit {
                       return true;
                     })
                   })
-                }, 500);
+                }, 1000);
               });
             }
           })

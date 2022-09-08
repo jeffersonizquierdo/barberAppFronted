@@ -1,9 +1,13 @@
+<label for="btn-notificacion">X</label>
 
-    <h1>Mensajes de vinculacion</h1>
+<div class="notification">
+
     <div *ngFor="let petition of barbershops; let i=index">
+        <h1>Mensajes de vinculacion</h1>
         <a href=""> 
-            <div class="imagebarbershop"><img src="" alt=""></div>
+            <div class="imagebarbershop"><img src="{{petition.photo}}" alt=""></div>
             <p>{{petition.nickname}}</p>
         </a>
         <button (click)="linkUp(petition.id)">Acetar vinculacion</button>
     </div>
+</div>
