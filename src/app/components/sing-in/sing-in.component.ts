@@ -60,7 +60,7 @@ export class SingInComponent implements OnInit ,OnDestroy{
     this.usuarioservice.saveUsuario(this.usuario).subscribe(
           response  => {
             console.log(response);
-            swal.fire('Nuevo Usuario',`Hola ${this.usuario.nickname} te damos la bienvenida a BarberApp` , 'success')
+            swal.fire('Registro exitoso',`Hola ${this.usuario.nickname} ya puedes iniciar sesion` , 'success')
 
             setTimeout(() => {
 

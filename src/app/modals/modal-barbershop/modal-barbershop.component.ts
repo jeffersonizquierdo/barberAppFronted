@@ -41,6 +41,7 @@ export class ModalBarbershopComponent implements OnInit {
   }
 
   saveBarbershop(){
+    this.spinner.show()
     this.catalogueService.upload(this.imagen, "perfil").subscribe( (response:any) => {
     this.barbershop.photo=response.url;
 
@@ -59,7 +60,13 @@ export class ModalBarbershopComponent implements OnInit {
           this.servicebarbershop.saveBarbeshop(this.barbershop).subscribe(
             response  => {
               console.log(response);
+              this.spinner.hide()
               swal.fire('Bien hecho',` ${this.barbershop.nickname} acabas de completar tu perfil` , 'success')
+
+              setTimeout(() => {
+                
+                window.location.reload()
+              }, 1000);
             }
           )
         }, 500);

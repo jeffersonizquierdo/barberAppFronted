@@ -37,7 +37,7 @@ export class BondingMessagesComponent implements OnInit {
       console.log(this.Linkers);
       setTimeout(() => {
         this.Linkers.map(e=>{
-          if(e.barber.id==this.usuario.id){
+          if(e.barber.id==this.usuario.id && e.acceptance == false){
             this.listLinkear.push(e);
             console.log(this.listLinkear)
           }
