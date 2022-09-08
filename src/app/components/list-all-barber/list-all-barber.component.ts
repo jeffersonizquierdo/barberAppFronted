@@ -57,20 +57,22 @@ export class ListAllBarberComponent implements OnInit {
     this.barbershop=new Barbershop();
     this.serviceBarbershop.getbarber(this.usuario.id).subscribe((response:any)=>{
       this.barbershop=response;
-      
-      if(this.barbershop==null){
-        this.abrirModal();
-      }else{
-        this.bonding= new Linkear();
-        this.bonding.barbershop=this.barbershop
-        this.bonding.acceptance=false;
-        this.barbero=new Barber();
-        this.BarberService.getbarber(id_barber).subscribe((response:any)=>{
-          this.barbero=response;
-          this.bonding.barber=this.barbero;
+      setTimeout(() => {
+        if(this.barbershop==null){
+          this.abrirModal();
+        }else{
+          this.bonding= new Linkear();
+          this.bonding.barbershop=this.barbershop
+          this.bonding.acceptance=false;
+          this.barbero=new Barber();
+          this.BarberService.getbarber(id_barber).subscribe((response:any)=>{
+            this.barbero=response;
+            this.bonding.barber=this.barbero;
+  
+          })
+        }
+      }, 500);
 
-        })
-      }
       this.snipper.hide()
     })
 
