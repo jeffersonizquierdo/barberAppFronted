@@ -165,14 +165,10 @@ export class BookingComponent implements OnInit {
         this.hourSelect = this.dateDb.getHours()
         this.minutesSelect = this.dateDb.getMinutes();
 
-        this.booking.reservationDate=this.dateDb
+        this.booking.reservation_date=this.dateDb
 
       }
-      
 
-
-
-  
   
       }
   
@@ -184,7 +180,7 @@ export class BookingComponent implements OnInit {
         this.serviceBarbershop.getbarber(this.idBarbershop).subscribe(
           data =>{
             this.barbershop = data;
-            this.booking.barbershop=this.barbershop;
+            this.booking.owner=this.barbershop;
             this.barbers = data.listBarbers;
             console.log(this.barbers);
             
