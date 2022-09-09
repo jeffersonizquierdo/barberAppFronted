@@ -69,6 +69,7 @@
 
   <p *ngIf="minutesSelect != 0">Hora seleccionada: {{hourSelect}}:{{minutesSelect}}</p>
   <p *ngIf="minutesSelect == 0">Hora seleccionada: {{hourSelect + ":"}}{{minutesSelect}}0</p>
+  <button (click)="saveBooking()">Reservar</button>
 
 </div>
 

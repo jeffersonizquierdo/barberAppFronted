@@ -40,7 +40,7 @@ export class PromotionService {
   }
 
   listPromotion():  Observable<Promotion>{
-    return  this.httpClient.get<Promotion>(` http://localhost:8080/barbershop/consultPromotion/${this.usuario.id}`, {headers: this.agregarAuthorizationHeader()})
+    return  this.httpClient.get<Promotion>(`http://localhost:8080/barbershop/consultpromotion/${this.usuario.id}`, {headers: this.agregarAuthorizationHeader()})
   } 
 
 
