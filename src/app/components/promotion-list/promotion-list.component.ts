@@ -19,9 +19,11 @@ export class PromotionListComponent implements OnInit {
   }
 
   loaderImage():void{
+    console.log("entro a listar")
     this.promotionService.listPromotion().subscribe(
       data =>{
         this.images = data;
+        console.log("las lista");
         console.log(this.images);
         
       }

@@ -68,11 +68,10 @@ export class PromotionComponent implements OnInit {
         console.log(this.barbershop);
       }
     );
-    if(this.barbershop==null){
+    if(this.barbershop===null){
       this.reset();
       this.abrirModal();
     }else{
-
       this.spinner.show();
       this.catalogueService.upload(this.imagen, "promotionsimages").subscribe( (response:any) => {
         if(response){
