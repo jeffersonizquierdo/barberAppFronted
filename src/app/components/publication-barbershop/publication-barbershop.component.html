@@ -10,8 +10,8 @@
     <div class="container" *ngFor="let n of listPublicity2" >
         <div class="card">
             <div class="images2">
-                <img src="{{n.photo}}" alt="">
-                <h3>Nombre</h3> 
+                <img src="{{n.id_barbershop.photo}}" alt="">
+                <h3>{{n.id_barbershop.nickname}}</h3> 
             </div>
             <div class="contenido">
                 <p>{{n.description}}</p>
