@@ -1,7 +1,9 @@
 
 
-<div class="container-main"> 
 
+
+<div class="container-main">
+  <app-promotion-list></app-promotion-list> 
     <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
       <!-- <p style="font-size: 20px; color: white">Subiendo promocion...</p> -->
       <img src="../../../assets/images/cargando.gif" alt=""  >
@@ -41,7 +43,7 @@
       </div>
 
         <div class="form-group d-flex justify-content-between my-3">
-            <button (click)="savePromotion"  type="submit" class="btn btn-outline-primary" [disabled]="!imagen"><i class="fas fa-upload"></i> Subir</button>
+            <button (click)="savePromotion()"  type="submit" class="btn btn-outline-primary" [disabled]="!imagen"><i class="fas fa-upload"></i> Subir</button>
             <button class="btn btn-outline-danger" [disabled]="!imagen" (click)="reset()"><i class="fas fa-sync-alt"></i> Reset</button>
         </div>
     </form>
