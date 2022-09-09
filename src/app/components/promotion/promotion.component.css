@@ -4,23 +4,6 @@
 }
 
 
-.container-main{
-  box-shadow: 0px 0px 0px 0px black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius:15px;
-  background-color: #171f2a00;
-  border: 1px solid  #58a8f6;
-  width: 400px;
-  height: auto;
-  color: rgb(0, 0, 0);
-  position: absolute;
-  top: 90%;
-  left: 40%;
-}
-
 .postFile{
   width: 360px;
   height: 115px;
@@ -129,4 +112,24 @@ li{
 
 
 
+.formulario{
+  box-shadow: 0px 0px 0px 0px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border: 2px solid;
+  border-image: linear-gradient(to bottom, #2980b9 0%, #8e44ad 100%) 1;
+  height: auto;
+  color: rgb(0, 0, 0);
+  width: 400px;
+  height: 375px;
+}
 
+.intento {
+  background-color: #fff;
+  border-radius: 10px;
+  border: 3px solid;
+  border-image: linear-gradient(to bottom, #2980b9 0%, #8e44ad 100%) 1;
+}
