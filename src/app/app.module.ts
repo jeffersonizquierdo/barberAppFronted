@@ -85,7 +85,7 @@ const appRoutes: Routes = [
   {path:'stalk_barber', component:  StalkBarberComponent },
   {path:'allbarbershops', component:  ListBarbershopComponent},
   {path:'publication_barber', component:  PublicationBarberComponent  },
-
+  {path:'promotion-list', component:  PromotionListComponent},
 
 ]
 
