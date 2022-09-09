@@ -1,28 +1,31 @@
-<h1>Barber</h1>
-<div class="contenedor-main">
-  
-    <table class="table"  >
-        <thead>
-          <tr>
-            <th scope="col">id</th>
-            <th scope="col">imagen</th>
-            <th scope="col">nombre</th>
-            <th scope="col">button</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let barberos of barber">
-            <th scope="row">{{barberos.id}}</th>
-            <td class="imagen"><img src="{{barberos.photo}}" alt=""></td>
-            <td class="apodo">{{barberos.nickname}}</td>
-            <td><button class="btn btn-outline-secondary" (click)="unlink(barberos)">desvincular</button></td>
-          </tr>
-        </tbody>
-    </table>
-</div>
 
 
-
-<app-list-all-barber></app-list-all-barber>
-
-
+<section>
+  <div class="listBarber">
+    <h1>Barberos vinculados</h1>
+    <div class="contenedor-main">
+      
+        <table class="table"  >
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">imagen</th>
+                <th scope="col">nombre</th>
+                <th scope="col">button</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let barberos of barber">
+                <th scope="row">{{barberos.id}}</th>
+                <td class="imagen"><img src="{{barberos.photo}}" alt=""></td>
+                <td class="apodo">{{barberos.nickname}}</td>
+                <td><button class="btn btn-outline-secondary" (click)="unlink(barberos)">desvincular</button></td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    
+    
+    <app-list-all-barber></app-list-all-barber>
+</section>

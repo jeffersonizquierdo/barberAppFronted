@@ -6,8 +6,7 @@
 
 .contenedor-main{
     padding: 10px;
-    width: 1200px;
-    margin: 22px 19%;
+    width: 800px;
     height: 90px;
 }
 
@@ -30,5 +29,11 @@ h1{
 }
 .apodo{
     margin: 0 0;
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
