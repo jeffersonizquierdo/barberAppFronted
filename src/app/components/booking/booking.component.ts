@@ -175,16 +175,14 @@ export class BookingComponent implements OnInit {
   
   
       }
-  
-  
-  
+
       //barberos
   
       loaderBarber():void{
         this.serviceBarbershop.getbarber(this.idBarbershop).subscribe(
           data =>{
             this.barbershop = data;
-            this.booking.barbershop=this.barbershop;
+            this.booking.barbershop=this.barbershop.id;
             this.barbers = data.listBarbers;
             console.log(this.barbers);
             
@@ -197,13 +195,14 @@ export class BookingComponent implements OnInit {
       saveBooking(){
         this.serviceBooking.saveBooking(this.booking).subscribe((response:any)=>{
           console.log("melo");
+          console.log(response);
         });
         setTimeout(() => {
           this.serviceBooking.listBooking().subscribe((data:any)=>{
             console.log("melo2");
             console.log(data);
           });
-        }, 200);
+        }, 500);
 
 
         console.log(this.booking)
