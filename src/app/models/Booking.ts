@@ -7,7 +7,7 @@ export class Booking {
     barber: Barber;
     barbershop: Number;
     customer:Customer;
-    reservation_date:Date;
+    reservationDate:Date;
     completed:Boolean;
 
 }
