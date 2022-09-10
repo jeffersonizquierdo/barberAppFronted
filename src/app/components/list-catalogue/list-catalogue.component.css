@@ -103,6 +103,7 @@
     @media only screen and (min-width: 1390px) and (max-width: 1800px) {
         .intento {
             grid-template-columns: 200px 200px 200px 200px;
+            height: 538px;
         }
     }
     

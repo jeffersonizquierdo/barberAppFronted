@@ -7,22 +7,27 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container" *ngFor="let n of listPublicity2" >
-        <div class="card">
-            <div class="images2">
-                <img src="{{n.id_barbershop.photo}}" alt="">
-                <h3>{{n.id_barbershop.nickname}}</h3> 
-            </div>
-            <div class="contenido">
-                <p>{{n.description}}</p>
-                <div class="images" >
-                    <img   src="{{n.url}}" alt="">
-                </div>
-               
-            </div>
 
+    <div class="padre">
+        <div class="intento">
+            <div class="container-card">
+        
+                <div class="card"  *ngFor="let n of listPublicity2">
+                    <figure>
+                        <img src="{{n.url}}">
+                    </figure>
+                    <div class="contenido-card">
+                        <h3>{{n.id_barbershop.nickname}}</h3>
+                        <p>{{n.description}}</p>
+                        <a  (click)="delete(n.id)">Eliminar</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+ 
+
+
 </body>
 </html>
 
