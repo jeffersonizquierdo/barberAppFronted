@@ -32,6 +32,7 @@ export class BookingComponent implements OnInit {
   booking:Booking;
   usuario:Usuario;
   customer:Customer;
+  
 
 
   
