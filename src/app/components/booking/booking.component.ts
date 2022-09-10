@@ -32,6 +32,7 @@ export class BookingComponent implements OnInit {
   booking:Booking;
   usuario:Usuario;
   customer:Customer;
+  
 
 
   
@@ -163,58 +164,61 @@ export class BookingComponent implements OnInit {
         this.minutesSelect = this.dateDb.getMinutes();
 
         this.booking.reservationDate=this.dateDb
+        console.log(this.booking.reservationDate)
 
       }
-      
 
-
-
-  
   
       }
-  
-  
-  
+
       //barberos
   
       loaderBarber():void{
         this.serviceBarbershop.getbarber(this.idBarbershop).subscribe(
           data =>{
             this.barbershop = data;
-            this.booking.barbershop=this.barbershop;
-            this.barbers = data.listBarbers;
-            console.log(this.barbers);
-            
+            this.booking.barbershop=this.barbershop.id;
+            this.barbers = data.listBarbers;            
           }
         )
       }
-
+      horacita:any;
+      horareserva:any;
       // Booking
-  
       saveBooking(){
-        this.serviceBooking.saveBooking(this.booking).subscribe((response:any)=>{
-          console.log("melo");
+        this.serviceBooking.listBooking().subscribe((data:any)=>{
+          console.log("melo2");
+          console.log(data);
+          data.map(e=>{
+            if(e.customer.id==this.customer.id && e.barbershop==this.barbershop.id){
+              Swal.fire("informacion", "Ya tienes una cita programada en esta barberia", "info")
+            }else{
+              if(e.barber.id==this.booking.barber.id){
+                this.horacita=new Date(e.reservationDate);
+                this.horareserva=new Date(this.booking.reservationDate);
+                if(this.horareserva.getHours()==this.horacita.getHours()){
+                  console.log("entre a la condicion")
+                  Swal.fire("informacion", "Esta Hora ya esta reservada", "info")
+                }else{
+                  console.log("entro a guardar")
+                  this.serviceBooking.saveBooking(this.booking).subscribe((response:any)=>{
+                    console.log("melo");
+                    console.log(response);
+                    Swal.fire("Hecho", "Tu cita esta programada ", "success")
+                  });
+                }
+              }
+            }
+          })
         });
-        setTimeout(() => {
-          this.serviceBooking.listBooking().subscribe((data:any)=>{
-            console.log("melo2");
-            console.log(data);
-          });
-        }, 200);
-
-
         console.log(this.booking)
-  
       }
-
+      
     // logica de creacion de reserva
     name : string;
     photo: string;
 
-    selectBarber(barber:Barber){
-
-      console.log(barber);
-      
+    selectBarber(barber:Barber){      
       this.name = barber.nickname;
       this.photo = barber.photo;
       this.booking.barber=barber;
