@@ -165,14 +165,10 @@ export class BookingComponent implements OnInit {
         this.hourSelect = this.dateDb.getHours()
         this.minutesSelect = this.dateDb.getMinutes();
 
-        this.booking.reservationDate=this.dateDb
+        this.booking.reservation_date=this.dateDb
 
       }
-      
 
-
-
-  
   
       }
 
