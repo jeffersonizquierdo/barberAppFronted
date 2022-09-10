@@ -1,25 +1,38 @@
-<div class="padre">
-  <div class="card" *ngFor="let imagen  of images">
-      <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
-        <p style="font-size: 20px; color: white"> Eliminando...</p>
-      </ngx-spinner>
-
-        <div class="intento">
-          <div class="title">
-            <h3 class="card-title">{{imagen .name}}</h3>
-          </div>
-           
-            <img  class="card-img-top"  style="display: block;" src="{{imagen.url}}" alt="">
-            
-            <div class="description">
-              <p class="card-text">{{imagen.description}}</p>
-            </div>
-            <div class="button">
-              <button  class="btn btn-outline-prymary"><i class="far fa-eye"></i> Ver</button>
-              <button  class="btn btn-outline-danger" (click)="delete(imagen.id)"><i class="far fa-trash-alt"></i>Borrar</button>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="padre ">
+    <div class="intento">
+      <div class="contenedor" *ngFor="let imagen  of images">
+        <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+          <p style="font-size: 20px; color: white"> Eliminando...</p>
+        </ngx-spinner>
+        <a [routerLink]="['/homebarbershop']">
+             <figure>
+                 <img src="{{imagen.url}}">
+                 <div class="capa">
+                     <h3>{{imagen .name}}</h3>
+                     <p>{{imagen.description}}</p>
+                     <button class="boton" (click)="delete(imagen.id)">Eliminar</button>
+                 </div>
+             </figure>
+         </a>
+      </div>
+    </div>
+   
   </div>
-</div>
+
+</body>
+</html>
+
+
+
+
 
 
