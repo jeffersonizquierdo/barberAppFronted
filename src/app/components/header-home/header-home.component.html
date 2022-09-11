@@ -83,7 +83,7 @@
                 <a (click)="logout()" href="#">Cerrar Sesion</a>  
               </nav>
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 3" class="funciones" >
-                <a href="/homebarber" class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
+                <a [routerLink]="['/homecustomer'] " class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
                 <a [routerLink]="['/allbarbershops']">Reservar</a>
                 <a [routerLink]="['/porfileclient']">Ver Perfil</a>                
                 <a (click)="logout()" href="#">Cerrar Sesion</a>

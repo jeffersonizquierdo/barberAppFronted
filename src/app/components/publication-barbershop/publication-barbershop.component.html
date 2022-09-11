@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    
 
     <div class="card-ward">
         <article class="card" *ngFor="let n of listPublicity2">
@@ -15,11 +16,13 @@
             </header>
             <header>
                 <footer class="footer-card">
-                    <div class="categoria-card">
-                        <span>Ver perfil</span>
+                    <div class="categoria-card" >
+                        <button *ngIf="variable== true"><span>Ver perfil</span></button>
+                        <button *ngIf="variable== false"><span>Borrar</span></button>
                     </div>
                     <div class="texto-card">
-                        <h3>Cambiar Titulo</h3>
+                        <br>
+                        <br>
                         <p>{{n.description}}</p>
                     </div>
                     <div class="perfil-card">

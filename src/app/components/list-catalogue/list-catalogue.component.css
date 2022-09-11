@@ -31,7 +31,7 @@
     }
     
     .card {
-        margin: 40px;
+        margin: 40px -41px;
         position: relative;
         min-width: 213px;
         max-width: 250px;
@@ -102,8 +102,9 @@
     
     @media only screen and (min-width: 1390px) and (max-width: 1800px) {
         .intento {
-            grid-template-columns: 200px 200px 200px 200px;
-            height: 538px;
+            grid-template-columns: 300px 300px 300px 300px;
+            height: 545px;
+            width: 64%;
         }
     }
     
