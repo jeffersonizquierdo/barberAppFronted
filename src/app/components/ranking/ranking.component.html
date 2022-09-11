@@ -13,7 +13,7 @@
         <h3>Ranking</h3>
   
         <ul class="lista" *ngFor="let barber of rankingBarber; let i=index">
-            <li><div class="elemento" ><span>{{i+1}}</span><img src="../../../assets/images/pruebaperfil.jpg" alt=""> <a href="">{{barber.nickname}}</a><nav class="starts">{{barber.qualification}}</nav> </div></li>
+            <li><div class="elemento" ><span>{{i+1}}</span><img src="{{barber.photo}}" alt=""> <a [routerLink]="['/stalk_barber/',barber.id]">{{barber.nickname}}</a><nav class="starts">{{barber.qualification}}</nav> </div></li>
         </ul>
     </nav>
 

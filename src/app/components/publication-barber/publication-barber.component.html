@@ -1,1 +1,39 @@
-<p>publication-barber works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card-ward">
+        <article class="card" *ngFor="let n of listPublicity2">
+            <header class="header-card">
+                <img src="{{n.url}}" alt="">
+            </header>
+            <header>
+                <footer class="footer-card">
+                    <div class="categoria-card">
+                        <span>Ver perfil</span>
+                    </div>
+                    <div class="texto-card">
+                        <h3>Cambiar Titulo</h3>
+                        <p>{{n.description}}</p>
+                    </div>
+                    <div class="perfil-card">
+                        <div class="img-perfil-card">
+                            <img src="{{n.id_barbershop.photo}}" alt="">
+                        </div>
+                        <div class="tex-perfil-card">
+                            <span>{{n.id_barbershop.nickname}}</span>
+                            <span>Fecha</span>
+                        </div>
+                    </div>
+                </footer>
+            </header>
+        </article>
+    
+    </div>
+</body>
+</html>

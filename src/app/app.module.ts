@@ -82,7 +82,7 @@ const appRoutes: Routes = [
   {path:'mypublications', component: PublicationBarbershopComponent},
   {path:'booking/:id', component: BookingComponent},
   {path:'stalk_barbershop/:id', component: StalkBarbershopComponent },
-  {path:'stalk_barber', component:  StalkBarberComponent },
+  {path:'stalk_barber/:id', component:  StalkBarberComponent },
   {path:'allbarbershops', component:  ListBarbershopComponent},
   {path:'publication_barber', component:  PublicationBarberComponent  },
   {path:'promotion-list', component:  PromotionListComponent},
