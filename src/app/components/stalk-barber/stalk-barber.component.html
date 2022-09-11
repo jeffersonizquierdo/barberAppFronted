@@ -4,10 +4,10 @@
             <div class="button">
                 <a>Reserva</a>
             </div>
-            <h3 class="titulo">nombre</h3>
+            <h3 class="titulo">{{barber.nickname}}</h3>
             <div class="perfil-usuario-avatar">
                 
-                <img src="" alt="img-avatar">
+                <img src="{{barber.photo}}" alt="img-avatar">
                 <button type="button" class="boton-avatar">
                     <i class="far fa-image"></i>
                 </button>
@@ -20,16 +20,15 @@
     </div>
     <div class="perfil-usuario-body" >
         <div class="perfil-usuario-bio">
-            <p class="texto"> descripcion</p>
+            <p class="texto"> descripcion {{barber.description}}</p>
         </div>
         <div class="perfil-usuario-footer">
             <ul class="lista-datos">
-                <li><i class="icono fas fa-phone-alt"></i> Telefono: 1212</li>
-                <li><i class="icono fas fa-briefcase"></i> Trabaja en: </li>
+                <li><i class="icono fas fa-phone-alt"></i> Telefono: {{barber.cellphone}}</li>
                 <li><i class="icono fas fa-building"></i> Cargo : Barbero</li>
             </ul>
             <ul class="lista-datos">
-                <li><i class="icono fas fa-map-marker-alt"></i> Ubicacion: </li>
+                <li><i class="icono fas fa-map-marker-alt"></i> Ubicacion: {{barber.city}} </li>
                 <li><i class="icono fas fa-user-check"></i> Registro.</li>
             </ul>
         </div>
@@ -38,7 +37,6 @@
 </section>
 
 <div class="publication">
-    <h1>hola</h1>
-    <app-publication-barbershop></app-publication-barbershop>
+    <app-publication-barber></app-publication-barber>
 </div>
 
