@@ -11,6 +11,7 @@ import { AuthServices } from 'src/app/models/AuthServices';
 import { CustomerService } from 'src/app/services/customer/customer.service';
 import { Customer } from 'src/app/models/Customer';
 import { BookingService } from 'src/app/services/booking/booking.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-booking',
@@ -32,11 +33,13 @@ export class BookingComponent implements OnInit {
   booking:Booking;
   usuario:Usuario;
   customer:Customer;
+  listReservation:any;
+  
 
 
   
 
-  constructor(private serviceBarbershop:BarbershopService, private route: ActivatedRoute, private authService:AuthServices, private serviceCustomer:CustomerService, private serviceBooking:BookingService ) { }
+  constructor(private serviceBarbershop:BarbershopService, private spinnerReservation: NgxSpinnerService,private route: ActivatedRoute, private authService:AuthServices, private serviceCustomer:CustomerService, private serviceBooking:BookingService ) { }
 
 
 
@@ -46,12 +49,9 @@ export class BookingComponent implements OnInit {
     this.usuario=this.authService.usuario;
     this.getCustomer()
     this.idBarbershop =  parseInt(this.route.snapshot.paramMap.get('id'));
-
     console.log(this.idBarbershop);
-    
-
+    this.loaderListBooking();
     this.getDaysFromDate(9,2022)
-
     this.loaderBarber()
   }
 
@@ -69,7 +69,7 @@ export class BookingComponent implements OnInit {
   // CALENDARIO
   getDaysFromDate(month, year){
 
-    const startDate = moment.utc(`${year}/${month + 1}/01`)
+    const startDate = moment.utc(`${year}/${month}/01`)
     const endDate = startDate.clone().endOf('month')
     this.dateSelect = startDate
     const diffDays = endDate.diff(startDate, 'days', true)
@@ -93,7 +93,7 @@ export class BookingComponent implements OnInit {
   changeMonth(flag){
 
     if(flag < 0){
-      const nextDate = this.dateSelect.clone().subtract(2, "month");
+      const nextDate = this.dateSelect.clone().subtract(1, "month");
       this.getDaysFromDate(nextDate.format("MM"), nextDate.format("YYYY")) 
     } else {
       const nextDate = this.dateSelect.clone().add(1, "month");
@@ -163,62 +163,92 @@ export class BookingComponent implements OnInit {
         this.minutesSelect = this.dateDb.getMinutes();
 
         this.booking.reservationDate=this.dateDb
+        console.log(this.booking.reservationDate)
 
       }
-      
 
-
-
-  
   
       }
-  
-  
-  
       //barberos
   
       loaderBarber():void{
         this.serviceBarbershop.getbarber(this.idBarbershop).subscribe(
           data =>{
             this.barbershop = data;
-            this.booking.barbershop=this.barbershop;
-            this.barbers = data.listBarbers;
-            console.log(this.barbers);
-            
+            this.booking.barbershop=this.barbershop.id;
+            this.barbers = data.listBarbers;            
           }
         )
       }
-
+      horacita:any;
+      horareserva:any;
       // Booking
-  
+      
       saveBooking(){
-        this.serviceBooking.saveBooking(this.booking).subscribe((response:any)=>{
-          console.log("melo");
-        });
-        setTimeout(() => {
-          this.serviceBooking.listBooking().subscribe((data:any)=>{
-            console.log("melo2");
-            console.log(data);
+        this.spinnerReservation.show();
+        if (this.listReservation.length === 0){
+          this.serviceBooking.saveBooking(this.booking).subscribe((response:any)=>{
+            console.log("melo");
+            console.log(response);
+            Swal.fire("Hecho", "Tu cita esta programada ", "success")
+            this.spinnerReservation.hide();
+            this.loaderListBooking();
           });
-        }, 200);
-
-
-        console.log(this.booking)
-  
+        }else{
+          this.listReservation.map(e=>{
+            if(e.customer.id===this.customer.id && e.barbershop===this.barbershop.id){
+              Swal.fire("informacion", "Ya tienes una cita programada en esta barberia", "info")
+              this.spinnerReservation.hide();
+            }else{
+              if(e.barber.id==this.booking.barber.id){
+                console.log("casi que no");
+                this.horacita=new Date(e.reservationDate);
+                this.horareserva=new Date(this.booking.reservationDate);
+                if(this.horareserva.getHours()===this.horacita.getHours()){
+                  console.log("entre a la condicion")
+                  Swal.fire("informacion", "Esta Hora ya esta reservada", "info")
+                  this.spinnerReservation.hide();
+                }else{
+                  console.log("entro a guardar")
+                  this.serviceBooking.saveBooking(this.booking).subscribe((response:any)=>{
+                    console.log("melo2");
+                    console.log(response);
+                    Swal.fire("Hecho", "Tu cita esta programada ", "success")
+                    this.spinnerReservation.hide();
+                    this.loaderListBooking();
+                  });
+                }
+              }else{
+                console.log("entro a guardar2")
+                this.serviceBooking.saveBooking(this.booking).subscribe((response:any)=>{
+                  console.log("melo");
+                  console.log(response);
+                  Swal.fire("Hecho", "Tu cita esta programada ", "success")
+                  this.spinnerReservation.hide();
+                  this.loaderListBooking();
+                });
+              }
+            }
+          })
+        }
+        
       }
-
+      loaderListBooking(){
+        this.serviceBooking.listBooking().subscribe((data:any)=>{
+          this.listReservation=data;
+        })
+      }
+      
     // logica de creacion de reserva
     name : string;
     photo: string;
 
-    selectBarber(barber:Barber){
-
-      console.log(barber);
-      
+    selectBarber(barber:Barber){      
       this.name = barber.nickname;
       this.photo = barber.photo;
       this.booking.barber=barber;
         
     }
+
 
 }
