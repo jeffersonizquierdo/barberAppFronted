@@ -3,6 +3,11 @@
   padding: 0;
 }
 
+.container{
+  display: flex;
+  flex-direction: row;
+
+}
 
 .postFile{
   width: 360px;
@@ -124,11 +129,12 @@ li{
   height: auto;
   color: rgb(0, 0, 0);
   width: 400px;
-  height: 375px;
 }
 
 .intento {
   background-color: #fff;
+  width: 800px;
+  height: 800px;
   border-radius: 10px;
   border: 3px solid;
   border-image: linear-gradient(to bottom, #2980b9 0%, #8e44ad 100%) 1;

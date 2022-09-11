@@ -54,7 +54,7 @@ body {
 
 .card .back {
     transform: perspective(600px) rotateY(180deg);
-    background: #2691d9;
+    background:linear-gradient(120deg,#2980b9,#8e44ad);
     padding: 15px;
     color: #f3f3f3;
     display: flex;
@@ -71,8 +71,27 @@ body {
 }
 
 .card .back .link a {
-    color: #f3f3f3;
+    width: 75%;
+    height: 46px;
+    background: #2691d9a9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9fafb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    margin: 0 41px;
+    text-decoration: none;
+    padding: 8px 53px;
+    
 }
+.card .back .link a:hover{
+    border-color:#fff ;
+    transition: .5s;
+    text-decoration: underline;
+}
+
+
 
 .card .back h3 {
     font-size: 30px;

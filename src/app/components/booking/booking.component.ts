@@ -5,6 +5,12 @@ import * as moment  from 'moment';
 import { ActivatedRoute } from '@angular/router';
 import { Barbershop } from '../../models/barbershop';
 import { Barber } from '../../models/Barber';
+import { Booking } from 'src/app/models/Booking';
+import { Usuario } from 'src/app/models/Usuario';
+import { AuthServices } from 'src/app/models/AuthServices';
+import { CustomerService } from 'src/app/services/customer/customer.service';
+import { Customer } from 'src/app/models/Customer';
+import { BookingService } from 'src/app/services/booking/booking.service';
 
 @Component({
   selector: 'app-booking',
@@ -23,16 +29,22 @@ export class BookingComponent implements OnInit {
   idBarbershop: number;
   barbershop: Barbershop;
   barber:Barber;
+  booking:Booking;
+  usuario:Usuario;
+  customer:Customer;
 
 
   
 
-  constructor(private serviceBarbershop:BarbershopService, private route: ActivatedRoute ) { }
+  constructor(private serviceBarbershop:BarbershopService, private route: ActivatedRoute, private authService:AuthServices, private serviceCustomer:CustomerService, private serviceBooking:BookingService ) { }
 
- 
+
 
   ngOnInit(): void {
-
+    this.booking=new Booking();
+    this.booking.completed=false;
+    this.usuario=this.authService.usuario;
+    this.getCustomer()
     this.idBarbershop =  parseInt(this.route.snapshot.paramMap.get('id'));
 
     console.log(this.idBarbershop);
@@ -43,7 +55,16 @@ export class BookingComponent implements OnInit {
     this.loaderBarber()
   }
 
-  
+  //customer
+  getCustomer(){
+    this.serviceCustomer.getCustomer(this.usuario.id).subscribe((response:any)=>{
+      this.customer=response;
+      console.log("traje el cliente");
+      console.log(this.customer);
+      this.booking.customer=this.customer;
+
+    })
+  }
 
   // CALENDARIO
   getDaysFromDate(month, year){
@@ -69,7 +90,6 @@ export class BookingComponent implements OnInit {
 
   }
 
-
   changeMonth(flag){
 
     if(flag < 0){
@@ -87,18 +107,14 @@ export class BookingComponent implements OnInit {
 
     console.log(this.barber);
     
-
     if(this.photo != null) {
-
-      
+  
       const monthYear = this.dateSelect.format('YYYY-MM');
       const parse = `${monthYear}-${day.value}`;
       const objectDay = moment(parse)
       console.log(parse);
       this.date = parse
       console.log(objectDay);
-
-      
 
     } else {
       Swal.fire("informacion", "Seleciona un barbero primero", "info")  
@@ -108,8 +124,6 @@ export class BookingComponent implements OnInit {
     this.error = null;
 
   }
-
-
     // horas
     hours:any=[
       {hour : 9, minutes: 0},
@@ -151,12 +165,13 @@ export class BookingComponent implements OnInit {
         this.hourSelect = this.dateDb.getHours()
         this.minutesSelect = this.dateDb.getMinutes();
 
+        this.booking.reservationDate=this.dateDb
+
       }
       
 
 
 
-       
   
   
       }
@@ -169,26 +184,33 @@ export class BookingComponent implements OnInit {
         this.serviceBarbershop.getbarber(this.idBarbershop).subscribe(
           data =>{
             this.barbershop = data;
-            this.barbers = data.listBarbers
+            this.booking.barbershop=this.barbershop;
+            this.barbers = data.listBarbers;
             console.log(this.barbers);
             
           }
         )
       }
-    
-      
-  
+
       // Booking
   
-      saveBOoking(){
-  
-  
+      saveBooking(){
+        this.serviceBooking.saveBooking(this.booking).subscribe((response:any)=>{
+          console.log("melo");
+        });
+        setTimeout(() => {
+          this.serviceBooking.listBooking().subscribe((data:any)=>{
+            console.log("melo2");
+            console.log(data);
+          });
+        }, 200);
+
+
+        console.log(this.booking)
   
       }
 
-
     // logica de creacion de reserva
-
     name : string;
     photo: string;
 
@@ -198,7 +220,8 @@ export class BookingComponent implements OnInit {
       
       this.name = barber.nickname;
       this.photo = barber.photo;
+      this.booking.barber=barber;
         
-    }1
+    }
 
 }
