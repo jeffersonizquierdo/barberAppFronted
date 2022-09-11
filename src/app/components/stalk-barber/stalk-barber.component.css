@@ -36,7 +36,7 @@
     */
 }
 h3{
-    margin: 7% 21%;
+    margin: -18% 20%
 }
 
 .seccion-perfil-usuario .perfil-usuario-portada .boton-portada {
@@ -93,7 +93,7 @@ h3{
     width: 70%;
     position: relative;
     max-width: 598px;
-    margin: 8px 59% 0 0;
+    margin: 8px 54% 0 0;
 }
 
 .seccion-perfil-usuario .perfil-usuario-body .titulo {
@@ -179,11 +179,10 @@ h3{
     background: linear-gradient(45deg, #FF2DFD, #40A7FF);
 }
 .publication{
-    margin: -12% 39%;
-    border: 1px solid black;
-    /* text-align: center; */
+    margin: -47% 39%;
     height: 35%;
     width: 50%;
+ 
 }
 .button{
     margin: 12% 88%;
