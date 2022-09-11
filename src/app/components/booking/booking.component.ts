@@ -69,7 +69,7 @@ export class BookingComponent implements OnInit {
   // CALENDARIO
   getDaysFromDate(month, year){
 
-    const startDate = moment.utc(`${year}/${month + 1}/01`)
+    const startDate = moment.utc(`${year}/${month}/01`)
     const endDate = startDate.clone().endOf('month')
     this.dateSelect = startDate
     const diffDays = endDate.diff(startDate, 'days', true)
@@ -93,7 +93,7 @@ export class BookingComponent implements OnInit {
   changeMonth(flag){
 
     if(flag < 0){
-      const nextDate = this.dateSelect.clone().subtract(2, "month");
+      const nextDate = this.dateSelect.clone().subtract(1, "month");
       this.getDaysFromDate(nextDate.format("MM"), nextDate.format("YYYY")) 
     } else {
       const nextDate = this.dateSelect.clone().add(1, "month");
@@ -169,7 +169,6 @@ export class BookingComponent implements OnInit {
 
   
       }
-
       //barberos
   
       loaderBarber():void{

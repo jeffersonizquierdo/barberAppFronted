@@ -51,7 +51,7 @@ export class BookingService {
         return throwError(e)
 
       })
-
+  
     )
   }
 
