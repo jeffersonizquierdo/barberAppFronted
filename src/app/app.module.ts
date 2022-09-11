@@ -1,4 +1,4 @@
-import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
+import { ScheduleModule, RecurrenceEditorModule, DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService} from '@syncfusion/ej2-angular-schedule';
 import { HomeBarberComponent } from './components/home-barber/home-barber.component';
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -40,7 +40,6 @@ import { ProfileBarberComponent } from './components/profile-barber/profile-barb
 import { ProfileClientComponent } from './components/profile-client/profile-client.component';
 import { ProfileBarbershopComponent } from './components/profile-barbershop/profile-barbershop.component';
 import { TermsAndConditionsComponent } from './components/terms-and-conditions/terms-and-conditions.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
 import { ModalBarbershopComponent } from './modals/modal-barbershop/modal-barbershop.component';
 import { ModalBarberComponent } from './modals/modal-barber/modal-barber.component';
 import { ListAllBarberComponent } from './components/list-all-barber/list-all-barber.component';
@@ -50,6 +49,8 @@ import { BookingComponent } from './components/booking/booking.component';
 import { StalkBarbershopComponent } from './components/stalk-barbershop/stalk-barbershop.component';
 import { StalkBarberComponent } from './components/stalk-barber/stalk-barber.component';
 import { PublicationBarberComponent } from './components/publication-barber/publication-barber.component';
+import { BookingsBarbershopComponent } from './components/bookings-barbershop/bookings-barbershop.component';
+import { BookingsBarberComponent } from './components/bookings-barber/bookings-barber.component';
 
 
 
@@ -77,7 +78,6 @@ const appRoutes: Routes = [
   {path:'publicaciones', component:ToShowPublicationsComponent}, 
   {path:'publicidad', component:LoadPublicityComponent}, 
   {path:'homeedit', component:HeaderHomeComponent}, 
-  {path:'calendar', component:CalendarComponent}, 
   {path:'list_all_barber', component:ListAllBarberComponent}, 
   {path:'mypublications', component: PublicationBarbershopComponent},
   {path:'booking/:id', component: BookingComponent},
@@ -87,6 +87,7 @@ const appRoutes: Routes = [
   {path:'publication_barber', component:  PublicationBarberComponent  },
   {path:'promotion-list', component:  PromotionListComponent},
   {path:'bonding', component:  BondingMessagesComponent  },
+  {path:'booking-barbershop', component:  BookingsBarbershopComponent  },
 
 ]
 
@@ -122,7 +123,6 @@ const appRoutes: Routes = [
     ProfileClientComponent,
     ProfileBarbershopComponent,
     TermsAndConditionsComponent,
-    CalendarComponent,
     ModalBarbershopComponent,
     ModalBarberComponent,
     ListAllBarberComponent,
@@ -131,7 +131,9 @@ const appRoutes: Routes = [
     BookingComponent,
     StalkBarbershopComponent,
     StalkBarberComponent,
-    PublicationBarberComponent
+    PublicationBarberComponent,
+    BookingsBarbershopComponent,
+    BookingsBarberComponent
 
 
 
@@ -153,7 +155,7 @@ const appRoutes: Routes = [
   ],
 
   entryComponents:[ModalBarbershopComponent],
-  providers: [],
+  providers: [DayService, WeekService, WorkWeekService, MonthService, MonthAgendaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
