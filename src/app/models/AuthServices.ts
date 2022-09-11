@@ -151,7 +151,7 @@ export class AuthServices{
     this._token = null;
     this._usuario = null;
     localStorage.clear()    
-    this.router.navigate(["/login"])
+    this.router.navigate([""])
 
   }
 
