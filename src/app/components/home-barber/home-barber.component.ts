@@ -15,13 +15,15 @@ export class HomeBarberComponent implements OnInit {
 
   constructor(private auhtService: AuthServices, private barberService: BarberService, private modalService:NgbModal) { }
 
-  usuario:Usuario;
-  barber: Barber;
 
   ngOnInit(): void {
     this.usuario=this.auhtService.usuario;
     this.abrirModal();
   }
+
+  
+  usuario:Usuario;
+  barber: Barber;
 
   abrirModal(){
 

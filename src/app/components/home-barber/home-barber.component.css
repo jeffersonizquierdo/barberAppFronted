@@ -46,7 +46,7 @@
     color: white;
 }
 
-/* .page{
+.page{
 
     display: flex;
     flex-direction: column;
@@ -148,4 +148,4 @@ body, .notificacion{
     width: 30px;
     top: 60px;
     right: 70px;
-} */
+}
