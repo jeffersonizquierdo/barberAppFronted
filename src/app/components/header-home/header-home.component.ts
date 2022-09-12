@@ -15,12 +15,11 @@ export class HeaderHomeComponent implements OnInit {
   typeUser:string;
 
   ngOnInit(): void {
-
-    this.tipo= this.authService.typeUser
-
+    
+    this.usuario = this.authService.usuario;
   }
 
-  tipo: Number;
+  usuario: Usuario;
 
   logout():void{
 

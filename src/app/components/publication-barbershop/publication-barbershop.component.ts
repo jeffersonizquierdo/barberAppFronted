@@ -1,6 +1,8 @@
+import { Usuario } from './../../models/Usuario';
+import { AuthServices } from './../../models/AuthServices';
+import { Barbershop } from 'src/app/models/barbershop';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { AuthServices } from 'src/app/models/AuthServices';
-import { Usuario } from 'src/app/models/Usuario';
 import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
 import { PublicityService } from 'src/app/services/publicity/publicity.service';
 
@@ -11,9 +13,9 @@ import { PublicityService } from 'src/app/services/publicity/publicity.service';
 })
 export class PublicationBarbershopComponent implements OnInit {
   listPublicity2:any=[];
-  barbershop: any;
+
   constructor(private BarbershopService:BarbershopService,private publicationServices:PublicityService,private autservese:AuthServices) { }
-  usuario:Usuario;
+
   variable:Boolean;
   ngOnInit(): void {
     this.loader3();
@@ -21,30 +23,37 @@ export class PublicationBarbershopComponent implements OnInit {
     this.usuario=this.autservese.usuario;
   }
   
-  verboton(){
-    if(this.usuario.id===this.barbershop.id){
-      console.log(this.usuario.id)
-      console.log(this.barbershop.id)
-      this.variable=true;
+ 
 
-    }else{
-      console.log(this.usuario.id)
-      console.log(this.barbershop.id)
-      this.variable=false;
-    }
-  }
-  
+  id : any;
+  usuario: Usuario;
+  barbershop : Barbershop;
 
   loader3():void{
+
+
+
     console.log("holi2")
-    this.BarbershopService.listpublicyid().subscribe(
-      data =>{
-        console.log(data)
-        this.listPublicity2=data;
-        console.log(this.listPublicity2.description);
-        this.verboton()
-      }
-    )
+
+    setTimeout(() => {
+
+      this.BarbershopService.listpublicyid(this.id).subscribe(
+        data =>{
+          console.log(data)
+          this.listPublicity2=data;
+          console.log(this.listPublicity2.description);
+          
+        }
+      )
+
+
+      this.BarbershopService.getbarber(this.id).subscribe((response: any) =>{
+
+        this.barbershop = response
+      })
+      
+    }, 100);
+
   }
   delete  (id:Number):void{
 

@@ -12,19 +12,19 @@ export class PublicationBarberComponent implements OnInit {
   constructor(private publicationServices:PublicityService,private BarbershopService:BarbershopService) { }
 
   ngOnInit(): void {
-    this.loader3();
+    // this.loader3();
   }
 
-  loader3():void{
-    console.log("holi2")
-    this.BarbershopService.listpublicyid().subscribe(
-      data =>{
-        console.log(data)
-        this.listPublicity2=data;
-        console.log(this.listPublicity2.description);
+  // loader3():void{
+  //   console.log("holi2")
+  //   this.BarbershopService.listpublicyid().subscribe(
+  //     data =>{
+  //       console.log(data)
+  //       this.listPublicity2=data;
+  //       console.log(this.listPublicity2.description);
         
-      }
-    )
-  }
+  //     }
+  //   )
+  // }
 
 }

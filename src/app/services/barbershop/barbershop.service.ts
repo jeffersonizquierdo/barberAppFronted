@@ -69,9 +69,9 @@ export class BarbershopService {
     return  this.http.get<Barber>(`http://localhost:8080/barbershop/consultbarber/${this.usuario.id}`, {headers: this.agregarAuthorizationHeader()})
   }
     
-  listpublicyid(): Observable<Publicity>{
-    console.log("holi")
-    return  this.http.get<Publicity>(` http://localhost:8080/barbershop/consultpublication/${this.usuario.id}`, {headers: this.agregarAuthorizationHeader()})
+  listpublicyid(id): Observable<Publicity>{
+    console.log("holi 3 " + id)
+    return  this.http.get<Publicity>(`http://localhost:8080/barbershop/consultpublication/${id}`, {headers: this.agregarAuthorizationHeader()})
   }
 
 
