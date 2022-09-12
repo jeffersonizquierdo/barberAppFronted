@@ -5,16 +5,25 @@
 .intento {
   grid-template-columns: 96px 100px 100px 100px;
   justify-content: end;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0);
   border-radius: 10px;
   margin-right: 6%;
-  border: 3px solid;
-  border-image: linear-gradient(to bottom, #2980b9 0%, #8e44ad 100%) 1;
-  margin: 2px -18px;
+  margin: -7px -18px;
   width: 64%;
-  height: 600px;
+  height: 800px;
   overflow: scroll;
+
 }
+.intento::-webkit-scrollbar{
+  width: 12px;
+  background-color: #efefef;
+}
+
+.intento::-webkit-scrollbar-thumb{
+  background-color: indianred;
+  border-radius: 5px;
+}
+
 
 .padre {
   display: flex;

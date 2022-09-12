@@ -152,10 +152,10 @@ section{
 .price__element--best{
     width: 370px;
     padding: 60px 40px;
-    background-color: #FF7143;
+    background-color: #2091f9;
     --color-plan: rgb(255 255 255 / 75%);
     --color-price: #fff;
-    --bg-cta: #9F3919;
+    --bg-cta: #114a80;
     --color-cta: #FFF;
     --color-items: #fff;
 }
