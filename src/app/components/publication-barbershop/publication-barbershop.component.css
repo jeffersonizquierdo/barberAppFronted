@@ -12,13 +12,13 @@ img{
 }
 
 article.card{
-    max-width: 750px;
+        max-width: 750px;
     background-color: #f8f8f8;
     border-radius: 8px;
-    margin: 7% 13%;
+    margin: 55% 49%;
     box-shadow: 0 0 12px #d7d7d7;
     height: 586px;
-    width: 122%;
+    width: 191%;
 }
 
 .header-card img{

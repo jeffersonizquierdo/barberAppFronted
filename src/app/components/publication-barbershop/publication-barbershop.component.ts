@@ -1,5 +1,5 @@
-import { Usuario } from 'src/app/models/Usuario';
-import { AuthServices } from 'src/app/models/AuthServices';
+import { Usuario } from './../../models/Usuario';
+import { AuthServices } from './../../models/AuthServices';
 import { Barbershop } from 'src/app/models/barbershop';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -13,16 +13,17 @@ import { PublicityService } from 'src/app/services/publicity/publicity.service';
 })
 export class PublicationBarbershopComponent implements OnInit {
   listPublicity2:any=[];
-  constructor(private route: ActivatedRoute, private BarbershopService:BarbershopService,private publicationServices:PublicityService, private authService :AuthServices) { }
 
+  constructor(private BarbershopService:BarbershopService,private publicationServices:PublicityService,private autservese:AuthServices) { }
+
+  variable:Boolean;
   ngOnInit(): void {
     this.loader3();
-
-    this.usuario = this.authService.usuario;
-
-    this.id = this.route.snapshot.paramMap.get('id')
     
+    this.usuario=this.autservese.usuario;
   }
+  
+ 
 
   id : any;
   usuario: Usuario;
