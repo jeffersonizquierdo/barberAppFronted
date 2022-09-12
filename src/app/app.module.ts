@@ -76,7 +76,7 @@ const appRoutes: Routes = [
   {path:'terminos', component:TermsAndConditionsComponent}, 
   {path:'listabarber', component: ListBarberComponent }, 
   {path:'publicaciones', component:ToShowPublicationsComponent}, 
-  {path:'publicidad', component:LoadPublicityComponent}, 
+  {path:'publicidad/:id', component:LoadPublicityComponent}, 
   {path:'homeedit', component:HeaderHomeComponent}, 
   {path:'list_all_barber', component:ListAllBarberComponent}, 
   {path:'mypublications', component: PublicationBarbershopComponent},

@@ -16,7 +16,10 @@
             <header>
                 <footer class="footer-card">
                     <div class="categoria-card">
-                        <span>Ver perfil</span>
+                        <span *ngIf="usuario.id != barbershop.id"  >Ver perfil</span>
+                    </div>
+                    <div class="categoria-card">
+                        <button *ngIf="usuario.id == barbershop.id"  >Eliminar</button>
                     </div>
                     <div class="texto-card">
                         <h3>Cambiar Titulo</h3>

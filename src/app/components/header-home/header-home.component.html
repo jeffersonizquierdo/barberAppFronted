@@ -69,7 +69,7 @@
                 <a [routerLink]="['/booking-barbershop']" >Maya de turnos</a>
                 <a [routerLink]="['/manage-catalogue']">Catalogo</a>
                 <a [routerLink]="['/promotions']" >Promociones</a>
-                <a [routerLink]="['/publicidad']" >Publicaciones</a>
+                <a [routerLink]="['/publicidad', usuario.id]" >Publicaciones</a>
                 
                 <a (click)="logout()"  routerLink="/">Cerrar Sesion</a>
               </nav>
