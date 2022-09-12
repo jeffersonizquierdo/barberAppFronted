@@ -3,7 +3,50 @@
     padding: 0%;
 }
 
-.page{
+.container-portada{
+    width: 100%;
+    height: 400px;
+    background-image: url(../../../assets/images/slider1.jpg);
+    background-size: 200%;
+    animation: movimiento 10s infinite linear alternate;
+    position: relative;
+}
+
+@keyframes movimiento {
+    from{
+        background-position: bottom left;
+    }to{
+        background-position: top right;
+    }
+}
+
+.capa{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: -webkit-linear-gradient(left,black,#0672d0);
+    opacity: 0.5;
+}
+
+.container-deails{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 38vh;
+   
+}
+
+.dealis{
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    top: 20px;
+    color: white;
+}
+
+/* .page{
 
     display: flex;
     flex-direction: column;
@@ -105,4 +148,4 @@ body, .notificacion{
     width: 30px;
     top: 60px;
     right: 70px;
-}
+} */

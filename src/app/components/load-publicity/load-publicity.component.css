@@ -1,123 +1,160 @@
-.container-main{
-    box-shadow: 0px 0px 0px 0px black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius:15px;
-    background-color: #171f2a00;
-    border: 1px solid  #58a8f6;
-    width: 400px;
-    height: auto;
-    color: rgb(0, 0, 0);
-    position: absolute;
-    left: 40%;
-  }
+*{
+  padding: 0;
+  margin: 0;
+}
+.intento {
+  grid-template-columns: 96px 100px 100px 100px;
+  justify-content: end;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  margin-right: 6%;
+  margin: -38px -18px;
+  width: 64%;
+  height: 800px;
+  overflow: scroll;
+}
+
+.padre {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  flex-wrap: wrap;
+  margin: 2% 5%;
+  text-align: center;
+
+}
+
+.contenido{
+  display: flex;
+  flex-wrap: wrap;
+  margin: -23% 0;
+  width: 34%;
+  height: 2px;
+}
+
+.container-main {
+  box-shadow: 0px 0px 0px 0px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background-color: #ffffff;
+  border: 2px solid;
+  border-image: linear-gradient(to bottom, #2980b9 0%, #8e44ad 100%) 1;
+  width: 400px;
+  height: auto;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  top: 30%;
+  left: 4%;
+}
+
   
-  .postFile{
-    width: 360px;
-    height: 115px;
-    border: 1px white dashed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    gap: 20px;
-    border-radius: 5px;
-    margin-top: 15px;
-    text-align: center;
-  }
+.postFile{
+  width: 360px;
+  height: 115px;
+  border: 1px white dashed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  gap: 20px;
+  border-radius: 5px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.wrapper{
+  background-color: transparent;
+  width: 100%;
+  padding: 15px 5px 0px 5px;
+  height: 50px;
+  border: n ;
+
+}
+.inputData{
+  background: transparent;
+  width: 100%;
+  position: relative;
+  border-radius: 10px;
+  border: none;
+}
+
+.inputData input{
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: rgb(0, 0, 0);
+  background: transparent;
+  box-shadow: inset 0px -1px 0px 0px #58a8f6;
+}
+
+.inputData input:focus ~ label,
+.inputData input:valid ~ label{
+  transform: translateY(-10px);
+  font-size: 15px;
+} 
+.wrapper input[type="email"]:focus ~ label,
+.inputData input:valid ~ labe{
+  transform: translateY(-13px);
+}
+
+.inputData label{
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: rgb(145, 145, 145);
+  pointer-events: none;
+  transition: all 0.4s ease;
+  font-size: 13px;
   
-  .wrapper{
-    background-color: transparent;
-    width: 100%;
-    padding: 15px 5px 0px 5px;
-    height: 50px;
-    border: n ;
-  
-  }
-  .inputData{
-    background: transparent;
-    width: 100%;
-    position: relative;
-    border-radius: 10px;
-    border: none;
-  }
-  
-  .inputData input{
-    height: 100%;
-    width: 100%;
-    border: none;
-    outline: none;
-    color: rgb(0, 0, 0);
-    background: transparent;
-    box-shadow: inset 0px -1px 0px 0px #58a8f6;
-  }
-  
-  .inputData input:focus ~ label,
-  .inputData input:valid ~ label{
-    transform: translateY(-10px);
-    font-size: 15px;
-  } 
-  .wrapper input[type="email"]:focus ~ label,
-  .inputData input:valid ~ labe{
-    transform: translateY(-13px);
-  }
-  
-  .inputData label{
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    color: rgb(145, 145, 145);
-    pointer-events: none;
-    transition: all 0.4s ease;
-    font-size: 13px;
-    
-  }
-  
-  .intp{
-    border: 1px solid  #58a8f6;
-    border-radius: 5px;
-    background-color: transparent;
-    color: #000;
-    width: 99%;
-  }
-  
-  li{
-    list-style: none;
-  }
-  
-  
-  
-  .file-select {
-    position: relative;
-    border: 1px solid  #58a8f6;
-    border-radius: 3px;  
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-  }
-  .carpeta{
-    width: 30px;
-    position: relative;
-    right: 110px;
-  }
-  .file-select::before {
-    background-color:transparent;
-    color:  #58a8f6;
-    content: 'Elegir imagen';
-    position: relative;
-    right: 100px; /* testo por defecto */
-  }
-  
-  .file-select input[type="file"] {
-    opacity: 0;
-    width: 200px;
-    height: 32px;
-    display: inline-block;
-  }
-  
+}
+
+.intp{
+  border: 1px solid  #58a8f6;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #000;
+  width: 99%;
+}
+
+li{
+  list-style: none;
+}
+
+
+
+.file-select {
+  position: relative;
+  border: 1px solid  #58a8f6;
+  border-radius: 3px;  
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+.carpeta{
+  width: 30px;
+  position: relative;
+  right: 110px;
+}
+.file-select::before {
+  background-color:transparent;
+  color:  #58a8f6;
+  content: 'Elegir imagen';
+  position: relative;
+  right: 100px; /* testo por defecto */
+}
+
+.file-select input[type="file"] {
+  opacity: 0;
+  width: 200px;
+  height: 32px;
+  display: inline-block;
+}
+
   
   

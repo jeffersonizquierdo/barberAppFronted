@@ -7,22 +7,41 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container" *ngFor="let n of listPublicity2" >
-        <div class="card">
-            <div class="images2">
-                <img src="{{n.id_barbershop.photo}}" alt="">
-                <h3>{{n.id_barbershop.nickname}}</h3> 
-            </div>
-            <div class="contenido">
-                <p>{{n.description}}</p>
-                <div class="images" >
-                    <img   src="{{n.url}}" alt="">
-                </div>
-               
-            </div>
+    
 
-        </div>
+    <div class="card-ward">
+        <article class="card" *ngFor="let n of listPublicity2">
+            <header class="header-card">
+                <img src="{{n.url}}" alt="">
+            </header>
+            <header>
+                <footer class="footer-card">
+                    <div class="categoria-card" >
+                        <button *ngIf="variable== true"><span>Ver perfil</span></button>
+                        <button *ngIf="variable== false"><span>Borrar</span></button>
+                    </div>
+                    <div class="texto-card">
+                        <br>
+                        <br>
+                        <p>{{n.description}}</p>
+                    </div>
+                    <div class="perfil-card">
+                        <div class="img-perfil-card">
+                            <img src="{{n.id_barbershop.photo}}" alt="">
+                        </div>
+                        <div class="tex-perfil-card">
+                            <span>{{n.id_barbershop.nickname}}</span>
+                            <span>Fecha</span>
+                        </div>
+                    </div>
+                </footer>
+            </header>
+        </article>
+    
     </div>
+ 
+
+
 </body>
 </html>
 

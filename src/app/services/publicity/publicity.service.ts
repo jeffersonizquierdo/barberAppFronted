@@ -31,6 +31,9 @@ export class PublicityService {
     return  this.httpClient.get<Publicity>("http://localhost:8080/publication/consultall", {headers: this.agregarAuthorizationHeader()} )
   }
 
+  deleteplubication(id: Number) {
+    return this.httpClient.delete<Publicity>( `http://localhost:8080/publication/delete/${id}`, {headers: this.agregarAuthorizationHeader()})
+  }
 
 
   private agregarAuthorizationHeader(){
