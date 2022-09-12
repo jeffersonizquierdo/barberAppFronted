@@ -51,7 +51,7 @@ export class BookingComponent implements OnInit {
     this.idBarbershop =  parseInt(this.route.snapshot.paramMap.get('id'));
     console.log(this.idBarbershop);
     this.loaderListBooking();
-    this.getDaysFromDate(9,2022)
+    this.getDaysFromDate(10,2022)
     this.loaderBarber()
   }
 
@@ -127,22 +127,24 @@ export class BookingComponent implements OnInit {
     // horas
     hours:any=[
       {hour : 9, minutes: 0},
+
       {hour : 10, minutes: 0},
+
       {hour : 11, minutes: 0},
 
-      {hour : 1, minutes: 0},
+      {hour : 13, minutes: 0},
 
-      {hour : 2, minutes: 0},
+      {hour : 14, minutes: 0},
    
-      {hour : 3, minutes: 0},
+      {hour : 15, minutes: 0},
   
-      {hour : 4, minutes: 0},
+      {hour : 16, minutes: 0},
      
-      {hour : 5, minutes: 0},
+      {hour : 17, minutes: 0},
     
-      {hour : 6, minutes: 0},
+      {hour : 18, minutes: 0},
     
-      {hour : 7, minutes: 0},]
+      {hour : 19, minutes: 0},]
   
       mesof:number;
       hourSelect:any;
