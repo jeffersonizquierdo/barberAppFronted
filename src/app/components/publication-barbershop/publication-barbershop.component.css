@@ -4,7 +4,9 @@
 
 }
 .card-ward{
-    margin: 70% 0;
+    float: right;
+    margin-right: 59%;
+    margin-top: 50%;
 }
 
 img{
@@ -12,13 +14,13 @@ img{
 }
 
 article.card{
-        max-width: 750px;
+    max-width: 750px;
     background-color: #f8f8f8;
     border-radius: 8px;
     margin: 55% 49%;
     box-shadow: 0 0 12px #d7d7d7;
     height: 586px;
-    width: 191%;
+    width: 400%;
 }
 
 .header-card img{

@@ -71,7 +71,7 @@ export class BarbershopService {
     
   listpublicyid(id): Observable<Publicity>{
     console.log("holi 3 " + id)
-    return  this.http.get<Publicity>(`http://localhost:8080/barbershop/consultpublication/${id}`, {headers: this.agregarAuthorizationHeader()})
+    return  this.http.get<Publicity>(`http://localhost:8080/barbershop/consultpublication/${7}`, {headers: this.agregarAuthorizationHeader()})
   }
 
 

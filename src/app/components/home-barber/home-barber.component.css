@@ -3,6 +3,12 @@
     padding: 0%;
 }
 
+.public{
+    float: right;
+    margin-right: 25%;
+    margin-top: -33%;
+}
+
 .container-portada{
     width: 100%;
     height: 400px;
@@ -35,6 +41,10 @@
     align-items: center;
     height: 38vh;
    
+}
+
+.continerranking{
+    margin: -60% 0%;
 }
 
 .dealis{
@@ -108,13 +118,13 @@ body, .notificacion{
 	align-items: flex-start;
 }
 .notificacion{
-	background: rgba(0,0,0,0.5);
 	transition: all 500ms ease;
 	opacity: 0;
 	visibility: hidden;
     width: 700px;
-    background-color: #d3d3d38c;;
+    background-color: #d3d3d3ee;;
     border: 1px solid black;
+    color: black;
     border-radius: 11px;
     height: 400px;
     position: absolute;
@@ -125,6 +135,7 @@ body, .notificacion{
 }
 #btn-notificacion:checked ~ .notificacion{
 	opacity: 1;
+    
 	visibility: visible;
 } 
 
