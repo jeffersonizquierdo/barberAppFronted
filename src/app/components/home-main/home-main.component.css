@@ -128,7 +128,8 @@ section{
 
 .price{
     text-align: center;
-    margin: 0 14%
+    margin: -80px 14%;
+    margin-top: -9%;
 }
 
 .price__table{
@@ -151,6 +152,9 @@ section{
     --bg-cta: #fff;
     --color-cta: #5454D4;
     --color-items: #696871;
+    -webkit-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
+	transition: all 0.25s ease;
 }
 .price__element--best{
     width: 370px;
@@ -161,6 +165,13 @@ section{
     --bg-cta: #114a80;
     --color-cta: #FFF;
     --color-items: #fff;
+}
+
+.price__element:hover{
+    -webkit-transform: scale(1.06);
+	-ms-transform: scale(1.06);
+	-o-transform: scale(1.06);
+	transform: scale(1.06);
 }
 
 
@@ -176,14 +187,16 @@ section{
 }
 
 .price__items{
-    margin-top: 35px;
-    display: grid;
-    gap: 1em;
+    margin-top: 20px;
     font-weight: 300;
     font-size: 1.2rem;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     color: var(--color-items);
+    display: flex;
+    flex-direction: column;
 }
+
+
 
 .price__cta{
     display: block;
@@ -267,4 +280,39 @@ section{
     border: none;
     height: 1px;
     background-color: #7a7a7a;
+}
+
+
+
+footer{
+    margin-top: -89px;
+}
+
+.price__cta.free{
+    transition: 0.5s;
+    color: #2091f9;
+}
+.price__cta.free:hover{
+    background-color: #2091f9;
+    color: white;
+    transition: 0.5s;
+}
+
+.price__cta.mes{
+    transition: 0.5s;
+}
+.price__cta.mes:hover{
+    background-color: white;
+    color: #114a80;
+    transition: 0.5s;
+}
+
+.price__cta.año{
+    transition: 0.5s;
+    color: #2091f9;
+}
+.price__cta.año:hover{
+    background-color: #2091f9;
+    color: white;
+    transition: 0.5s;
 }
