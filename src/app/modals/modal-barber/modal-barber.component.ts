@@ -1,3 +1,5 @@
+
+
 import { Component, OnInit } from '@angular/core';
 import { Barber } from 'src/app/models/Barber';
 import { AuthServices } from '../../models/AuthServices';
@@ -6,6 +8,7 @@ import { UsuarioService } from '../../services/usuario/usuario.service';
 import { BarberService } from '../../services/barber/barber.service';
 import swal from 'sweetalert2';
 import { CatalogueService } from '../../services/catalogue/catalogue.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-modal-barber',
@@ -14,7 +17,8 @@ import { CatalogueService } from '../../services/catalogue/catalogue.service';
 })
 export class ModalBarberComponent implements OnInit {
 
-  constructor(private auhtService: AuthServices, private usuarioService: UsuarioService, private barberServices : BarberService, private servicecatalogue: CatalogueService) { }
+  constructor(private auhtService: AuthServices, private usuarioService: UsuarioService, private barberServices : BarberService, 
+    private servicecatalogue: CatalogueService, private spinner: NgxSpinnerService) { }
 
   barber:Barber = new Barber();
   usuarioSesion: Usuario;
@@ -40,21 +44,19 @@ export class ModalBarberComponent implements OnInit {
 
   saveBarber(){
 
+    this.spinner.show()
     this.usuarioService.getUser(this.usuarioSesion.id).subscribe(
-
       data => {
-
         this.usuarioConsult = data;
-
     });
 
     this.servicecatalogue.upload(this.imagenMin, "perfil").subscribe((response : any) => {
 
       if (response) {
-
+ 
         this.barber.photo = response.url
         console.log(response.url);
-
+        
         this.barber.id = this.usuarioConsult.id;
         this.barber.email = this.usuarioConsult.username;
         this.barber.password = this.usuarioConsult.password;
@@ -67,15 +69,20 @@ export class ModalBarberComponent implements OnInit {
         
         this.barberServices.saveBarber(this.barber).subscribe(
           response  => {
-            console.log(response);
+            this.spinner.hide()
             swal.fire('Bien hecho',` ${this.barber.nickname} acabas de completar tu perfil` , 'success')
+            setTimeout(() => {
+
+              window.location.reload()
+              
+            }, 1500);
           })  
       }
       
     })
-
-
-
+   
+    console.log(this.barber);
+  
 
   }
 

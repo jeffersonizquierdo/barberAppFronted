@@ -1,32 +1,38 @@
-<div class="container-main">
-    <div class="header">
-        <div class="component-empty"></div>
-        <img src="../../../assets/images/profile.jpg" alt="">
-        <div class="info-barber">
-            <h1>Barbero</h1>
-            <button>Reservar</button>
+<section class="seccion-perfil-usuario">
+    <div class="perfil-usuario-header">
+        <div class="perfil-usuario-portada">
+            <div class="perfil-usuario-avatar">
+                <img src="{{barbers.photo}}" alt="img-avatar">
+                <button type="button" class="boton-avatar">
+                    <i class="far fa-image"></i>
+                </button>
+            </div>
+            <button type="button" class="boton-portada">
+                <i class="far fa-image"></i> Cambiar fondo
+            </button>
         </div>
     </div>
-
-    <hr>
-
-    <div class="containers">
-        <div class="container-left">
-            <p>Edad: 23 años</p>
-            <p>Ciudad: Armenia</p>
-            <p>Trabajo: Barbershop</p>
-            <p>Descripción: Llevo mas de 2 años trabajando como barbero.</p>
-
+    <div class="perfil-usuario-body" >
+        <div class="perfil-usuario-bio">
+            <h3 class="titulo">{{ barbers.nickname}}</h3>
+            <p class="texto">{{ barbers.description}}</p>
         </div>
-
-
-
-        <div class="container-rigth">
-            <p>Publicaciones</p>
+        <div class="perfil-usuario-footer">
+            <ul class="lista-datos">
+                <li><i class="icono fas fa-phone-alt"></i> Telefono: {{ barbers.cellphone}} </li>
+                <li><i class="icono fas fa-briefcase"></i> Trabaja en: {{ barbers.city}}</li>
+                <li><i class="icono fas fa-building"></i> Cargo : Barbero</li>
+            </ul>
+            <ul class="lista-datos">
+                <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento: {{ barbers.age}}</li>
+                <li><i class="icono fas fa-user-check"></i> Registro.</li>
+                <li><i class="icono fas fa-share-alt"></i> Redes sociales.</li>
+            </ul>
         </div>
-
-
+        <div class="redes-sociales">
+            <a href="" class="boton-redes facebook fab fa-facebook-f"><i class="icon-facebook"></i></a>
+            <a href="" class="boton-redes twitter fab fa-twitter"><i class="icon-twitter"></i></a>
+            <a href="" class="boton-redes instagram fab fa-instagram"><i class="icon-instagram"></i></a>
+        </div>
     </div>
-
-
-</div>
+</section>

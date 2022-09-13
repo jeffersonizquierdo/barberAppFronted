@@ -1,73 +1,38 @@
-<div class="container-main">
-
-    <div class="header">
-        <div class="component-empty"></div>
-        <img src="../../../assets/images/profile.jpg" alt="">
-        <div class="info-barber">
-            <h1>Barberia</h1>
-            <button>Reservar</button>
-
-    <div *ngFor="let barber  of barbershop">
-        <div class="header">
-            <dir class="images">
-                <img src="../../../assets/images/facebook.jpg" alt="">
-                <h1>{{barber.nickname}}</h1>
-            </dir>
-           
-            <button >Reservar</button>
-
-        </div>
-    </div>
-   
-
-    <hr>
-
-    <div class="containers">
-
-        <div class="container-left">
-            <p>Ciudad: Armenia</p>
-            <p>Descripción: Contamos con 4 barberos quienes les daran un muy buen servicio.</p>
-
-        </div>
-
-
-
-        <div class="container-rigth">
-            <p>Publicaciones</p>
-
-        <div class="container-left" *ngFor="let barber  of barbershop">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. <br> Sunt rem dolores aperiam perspiciatis ut,<br> corporis optio quis, labore minima harum exercitationem <br> iste cum reiciendis aliquid pariatur hic quisquam. <br> Dicta, similique.</p>
-
-            <div class="nav">
-                
-                <p>Ciudad: {{barber. city}} </p>
-
-            
-            
-                <p>Ubicacion: {{barber. location}} </p>
-
-                <p>Numero: {{barber. cellphone}}  </p>
+<section class="seccion-perfil-usuario">
+    <div class="perfil-usuario-header">
+        <div class="perfil-usuario-portada">
+            <div class="perfil-usuario-avatar">
+                <img src="{{barbershop.photo}}" alt="img-avatar">
+                <button type="button" class="boton-avatar">
+                    <i class="far fa-image"></i>
+                </button>
             </div>
-    
-            
+            <button type="button" class="boton-portada">
+                <i class="far fa-image"></i> Cambiar fondo
+            </button>
         </div>
-
-
-    
-    
-        <div class="container-medium">
-            <app-to-show-publications></app-to-show-publications>
-        </div>
-    
-        <div class="container-rinht">
-
-            <h1>promotiones</h1>
-            <app-promotion-list></app-promotion-list>
-
-        </div>
-
-
     </div>
+    <div class="perfil-usuario-body" >
+        <div class="perfil-usuario-bio">
+            <h3 class="titulo">{{barbershop.nickname}}</h3>
+            <p class="texto"> {{barbershop.description}}</p>
+        </div>
+        <div class="perfil-usuario-footer">
+            <ul class="lista-datos">
+                <li><i class="icono fas fa-phone-alt"></i> Telefono: {{ barbershop.cellphone}}</li>
+                <li><i class="icono fas fa-briefcase"></i> Trabaja en: {{barbershop.city}}</li>
+                <li><i class="icono fas fa-building"></i> Cargo : Barberia</li>
+            </ul>
+            <ul class="lista-datos">
+                <li><i class="icono fas fa-map-marker-alt"></i> Ubicacion: {{ barbershop.location}}</li>
+                <li><i class="icono fas fa-user-check"></i> Registro.</li>
+            </ul>
+        </div>
+        <div class="redes-sociales">
+            <a href="" class="boton-redes facebook fab fa-facebook-f"><i class="icon-facebook"></i></a>
+            <a href="" class="boton-redes twitter fab fa-twitter"><i class="icon-twitter"></i></a>
+            <a href="" class="boton-redes instagram fab fa-instagram"><i class="icon-instagram"></i></a>
+        </div>
+    </div>
+</section>
 
-
-</div>

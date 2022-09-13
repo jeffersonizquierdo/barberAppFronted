@@ -1,16 +1,33 @@
-<div>
-
-    <nav class="bodyPage">
-
-        <app-ranking></app-ranking>
-
-        <div class="medium">
-              
-            <app-promotion></app-promotion>
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-portada">
+        <div class="capa"></div>
+        <div class="container-deails">
+            <div class="dealis">
+                <h1>Bienvenido Usuario {{customer.nickname}}</h1>
+            </div>
         </div>
-    </nav>
+    </div>
 
+    <div class="container-div">
+        <div class="ranking">
+            <app-ranking></app-ranking>
+        </div>
     
+        <div class="publication">
+            <app-to-show-publications></app-to-show-publications>
+        </div>
+    </div>
 
-</div>
+   
+
+</body>
+</html>
+

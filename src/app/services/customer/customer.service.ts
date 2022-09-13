@@ -3,16 +3,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable} from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Customer } from 'src/app/models/Customer';
-import Swal from 'sweetalert2';
 import { AuthServices } from 'src/app/models/AuthServices';
 import { Usuario } from 'src/app/models/Usuario';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
 
-  constructor(private http: HttpClient, private authService: AuthServices) { }
+  constructor(private http: HttpClient, private authService: AuthServices, private router: Router) { }
 
   private httpHeadres = new HttpHeaders({'Content-Type' : 'application/json'})
 
@@ -23,7 +23,7 @@ export class CustomerService {
     let token = this.authService.token
 
     if (token != null){
-      console.log(token + " tokennnnn");
+      console.log(token);
 
       return this.httpHeadres.append('Authorization', 'Bearer ' + token);
     }
@@ -31,6 +31,24 @@ export class CustomerService {
     return this.httpHeadres
 
   }
+
+
+
+    getCustomer(id : Number):  Observable<Customer>{
+      console.log("holi")
+
+    return  this.http.get<Customer>(`http://localhost:8080/customer/consult/${id}`, {headers: this.agregarAuthorizationHeader()}).pipe(
+
+      catchError(e =>{
+        this.isNoAuthorizado(e)
+        return throwError(e)
+
+      })
+
+    )
+  }
+
+
 
   saveCustomer(newCustomer: Customer): Observable<any>{
 
@@ -45,6 +63,21 @@ export class CustomerService {
     }
 
   ));
+
+  }
+
+  private isNoAuthorizado(e):Boolean{
+    
+    if(e.status == 401 || e.status == 403){
+
+      if (this.authService.isAuthenticated()){
+        this.authService.logout();
+      }
+      this.router.navigate(['/login'])
+      return true;
+    }
+
+    return false;
 
   }
 }

@@ -1,11 +1,16 @@
 <form>
+
+
+  <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Complentando perfil</p>
+  </ngx-spinner>
+
   <h3>Completar perfil...</h3>
 
   <hr />
 
   <div class="wrapper">
     <div class="inputData">
-      <label for="location">Dirección de la barberia</label>
       <input
         class="intp"
         type="text"
@@ -14,12 +19,13 @@
         required
         [(ngModel)]="barbershop.location"
       />
-      <div class="line"></div>
+      <span></span>
+      <label for="location">Dirección de la barberia</label>
     </div>
   </div>
   <br>
   <div class="wrapper">
-    <div class="inputData">
+    <div class="oter">
       <label for="photo">Foto de perfil</label>
       <div class="file-select" id="src-file1">
         <img
@@ -55,7 +61,6 @@
   <br>
   <div class="wrapper">
     <div class="inputData">
-      <label for="description">Describe tu Barberia</label>
       <input
         class="intp"
         type="text"
@@ -64,9 +69,10 @@
         required
         [(ngModel)]="barbershop.description"
       />
-      <div class="line"></div>
+      <span></span>
+      <label for="description">Describe tu Barberia</label>
     </div>
   </div>
   <br />
-  <button>Commpletar Registro</button>
+  <button (click)="saveBarbershop()">Completar Registro</button>
 </form>

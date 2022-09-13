@@ -4,9 +4,17 @@ app-modal-barbershop{
 }
 ngb-modal-window{
     background-color: rgba(255, 255, 255, 0.212);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(1git 0px);
     -webkit-backdrop-filter: blur(1px);
 }
 app-modal-barber{
     position: absolute;
+}
+
+body{
+    background-color: 
+    #f5f3f7;
+}
+body.cambio .header {
+    display: none;
 }

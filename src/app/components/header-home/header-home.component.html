@@ -12,7 +12,7 @@
       <ul class="nav_link">
 
         <li class="nav_items">
-          <a [routerLink]="['/login']" class="nav_links">Iniciar sesion</a>
+          <a [routerLink]="['/login']"  class="nav_links"  >Iniciar sesion</a>
         </li>
 
         <li class="nav_items">
@@ -39,10 +39,6 @@
 
 
   </div>
-
-
-
-
   <div *ngIf="authService.isAuthenticated()" class="funciones">
 
     <div class="container_two">
@@ -53,62 +49,48 @@
           <label for="btn-menu">☰</label>
 
           </div>
-
             <div class="logo">
               <h1>BarberApp</h1>
             </div>
 
           </div>
-
-
+        </div>
         <div >
 
-    
         <input type="checkbox" id="btn-menu">
         <div class="container-menu">
           <div class="cont-menu">
             <nav>
-              <a href="/homebarbershop" class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
-
-
-
+             
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 1" class="funciones" >
-
-                <a href="#">Barberos</a>
-                <a href="#">Maya de turnos</a>
-                <a href="#">Catalogo</a>
-                <a href="#">Promociones</a>
-                <a href="#">Publicaciones</a>
-                <a (click)="logout()" href="#">Cerrar Sesion</a>
-
+                <a [routerLink]="['/homebarbershop']"class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
+                <a [routerLink]="['/porfilebarbershop']">Ver Perfil</a>
+                <a [routerLink]="['/listabarber']" >Barberos</a>
+                <a [routerLink]="['/booking-barbershop']" >Maya de turnos</a>
+                <a [routerLink]="['/manage-catalogue']">Catalogo</a>
+                <a [routerLink]="['/promotions']" >Promociones</a>
+                <a [routerLink]="['/publicidad', usuario.id]" >Publicaciones</a>
+                
+                <a (click)="logout()"  routerLink="/">Cerrar Sesion</a>
               </nav>
-
-
-
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 2" class="funciones" >
-
-                <a href="#">Barberia</a>
-                <a href="#">Maya de turnos</a>
-                <a href="#">Publicaciones</a>
-                <a (click)="logout()" href="#">Cerrar Sesion</a>
-
-              </nav>
-
-
-              <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 3" class="funciones" >
-
-                <a href="#">Reservar</a>
-                <a (click)="logout()" href="#">Cerrar Sesion</a>
-
-              </nav>
-
+                <a [routerLink]="['/homebarber']"class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
+                <a routerLink="#">Barberia</a>
+                <a [routerLink]="['/porfilebarber']">Ver Perfil</a>
+                <a [routerLink]="['/calendar']">Maya de turnos</a>
+                <a [routerLink]="['/publicidad']">Publicaciones</a>
               
+                <a (click)="logout()" href="#">Cerrar Sesion</a>  
+              </nav>
+              <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 3" class="funciones" >
+                <a [routerLink]="['/homecustomer'] " class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
+                <a [routerLink]="['/allbarbershops']">Reservar</a>
+                <a [routerLink]="['/porfileclient']">Ver Perfil</a>                
+                <a (click)="logout()" href="#">Cerrar Sesion</a>
+              </nav>  
             </nav>
             <label for="btn-menu">✖️</label>
-
-
-
-
+  </div>
 
 
             

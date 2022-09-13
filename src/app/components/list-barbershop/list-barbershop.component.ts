@@ -17,11 +17,11 @@ export class ListBarbershopComponent implements OnInit {
   barbershop:any=[];
   ngOnInit(): void {
 
-    this.loader();
+    this.loader1();
   }
 
 
-  loader():void{
+  loader1():void{
     this.BabrebrshopService.listBarbershop().subscribe(
       data =>{
         this.barbershop =data;

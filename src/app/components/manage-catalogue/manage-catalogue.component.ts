@@ -29,12 +29,14 @@ export class ManageCatalogueComponent implements OnInit {
 
   //object
   newCatalogue: Catalogue;
-  newBarbershop:Barbershop;
+  barbershop:Barbershop;
   usuario:Usuario;
 
   constructor(private catalogueService:CatalogueService,private spinner: NgxSpinnerService, private authService: AuthServices, private servicebarbershop: BarbershopService,private modalService:NgbModal){}
 
   ngOnInit(): void {
+
+
   }
 
 
@@ -52,32 +54,41 @@ export class ManageCatalogueComponent implements OnInit {
 
     this.servicebarbershop.getbarber(this.usuario.id).subscribe(
       data => {
-        this.newBarbershop = data;        
+        this.barbershop = data;        
       }
     );
-    if(this.newBarbershop==null){
-      this.reset();
-      this.abrirModal();
-    }else{
+    
 
-   
-      this.spinner.show();
-      this.catalogueService.upload(this.imagen, "hairstyle").subscribe( (response:any) => {
-        if(response){
-          this.imageURL=response.url
-          this.newCatalogue = new Catalogue(this.id,  this.name, this.imageURL, this.description,this.newBarbershop);
-          console.log(this.newCatalogue);
-          
-          this.catalogueService.saveCatalogue(this.newCatalogue).subscribe(
-            response =>{
-              this.reset();
-              console.log(response);
-              this.spinner.hide();
-              window.location.reload();
-            } 
-        )}
-      })
-    }
+    setTimeout(() => {
+
+      if(this.barbershop==null){
+        this.reset();
+        this.abrirModal();
+      }else{
+  
+     
+        this.spinner.show();
+        this.catalogueService.upload(this.imagen, "hairstyle").subscribe( (response:any) => {
+          if(response){
+            this.imageURL=response.url
+            this.newCatalogue = new Catalogue(this.id,  this.name, this.imageURL, this.description,this.barbershop);
+            console.log(this.newCatalogue);
+            
+            this.catalogueService.saveCatalogue(this.newCatalogue).subscribe(
+              response =>{
+                this.reset();
+                console.log(response);
+                this.spinner.hide();
+                window.location.reload();
+              } 
+          )}
+        })
+      }
+
+    }, 500);
+
+
+
   }
 
   reset(){

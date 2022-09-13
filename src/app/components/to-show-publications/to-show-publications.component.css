@@ -1,42 +1,64 @@
 *{
     padding: 0;
     margin: 0;
-    color: white;
+
+}
+.card-ward{
+    margin: 68% 0;
 }
 
-h1{
-    text-align: center;
-    height: 133px;
-    
+img{
+    max-width: 100%;
 }
-.container-main{
+
+article.card{
+    max-width: 627px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    margin: 10% 18%;
+    box-shadow: 0 0 12px #d7d7d7;
+    height: 586px;
+    width: 122%;
+}
+
+.header-card img{
+    border-radius: 8px 8px 0 0;
+    max-height: 393px;
+    height: 344px;
+    width: 100%;
+}
+.categoria-card{
+    margin-top: 1rem;
+}
+.categoria-card span{
+    background-color: #25c4d8;
+    color: #fff;
+    padding: .2rem .5rem;
+    border-radius: 4px;
+}
+
+.card footer{
+    padding: 0 1rem;
+
+}
+.perfil-card{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    
 }
-
-.imagen{
+.img-perfil-card{
     display: flex;
-    gap: 20px;
 }
-.imagen p{
-    margin: 17px 0;
-}
-.imagen img{
-    height: 57px;
-    width: 68px;
-    background-repeat: no-repeat;
-    background-position: 50%;
+.img-perfil-card img{
+    width: 50px;
+    margin: 1rem 1rem 1rem 0;
     border-radius: 50%;
-    background-size: 100% auto;
 }
-
-.description{
-    height: 463px;
+.tex-perfil-card{
+    display: flex;
+    flex-flow: column;
 }
-.description img{
-    width: 87%;
-    height: 73%;
+.tex-perfil-card span:nth-child(2)
+{
+    color: #cfcfcf;
 }
 

@@ -1,5 +1,5 @@
 import  swal  from 'sweetalert2';
-import { Component, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/models/Usuario';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
@@ -11,20 +11,24 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './sing-in.component.html',
   styleUrls: ['./sing-in.component.css']
 })
-export class SingInComponent implements OnInit {
+export class SingInComponent implements OnInit ,OnDestroy{
 
-
-
-  constructor(private router: Router,private usuarioservice:UsuarioService ) {
-
-  }
 
   contacForm: FormGroup;
   usuario: Usuario;
-
+  
+  constructor(private router: Router,private usuarioservice:UsuarioService ) {
+    console.log("d")
+    this.usuario = new Usuario()
+  }
+  ngOnDestroy(): void {
+    document.body.classList.remove("cambio")
+  }
 
   ngOnInit(): void { 
     this.usuario = new Usuario()
+    document.body.classList.add("cambio")
+    console.log(document.body.classList)
   }
   
 
@@ -40,7 +44,7 @@ export class SingInComponent implements OnInit {
 
   dataTypeUser (value : number){
 
-    if (value == 1) this.usuario.typeUser = 1
+    if (value == 1) this.usuario.typeUser = 1 
 
     else if (value == 2) this.usuario.typeUser = 2
 
@@ -56,7 +60,13 @@ export class SingInComponent implements OnInit {
     this.usuarioservice.saveUsuario(this.usuario).subscribe(
           response  => {
             console.log(response);
-            swal.fire('Nuevo Usuario',`Hola ${this.usuario.nickname} te damos la bienvenida a BarberApp` , 'success')
+            swal.fire('Registro exitoso',`Hola ${this.usuario.nickname} ya puedes iniciar sesion` , 'success')
+
+            setTimeout(() => {
+
+              this.router.navigate(["/login"])
+              
+            }, 1000);
           }
         );
   }

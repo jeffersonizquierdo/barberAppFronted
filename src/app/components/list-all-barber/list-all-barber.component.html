@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Enviando solicitud vinculacion</p>
+  </ngx-spinner>
+
+  <div class="padre ">
+    <h1>Todos Los Barberos</h1>
+    <div class="container-main">
+      <div class="card">
+        <table class="table" >
+          <thead >
+            <tr >
+              <th scope="col">id</th>
+              <th scope="col">Perfil</th>
+              <th scope="col">nombre</th>
+              <th scope="col">Vincular</th>
+              <th scope="col">Puntuacion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let barberos of barbers">
+              <th scope="row">{{barberos.id}}</th>
+              <td class="imagen"><img src="{{barberos.photo}}" alt=""></td>
+              <td class="apodo"><a [routerLink]="['/porfilebarber']">{{barberos.nickname}} </a> </td>
+              <td><button class="btn btn-outline-primary" (click)="linkear(barberos.id)">Vincular</button></td>
+              <td class="apodo">{{barberos. qualification}}</td>
+            </tr>
+  
+          </tbody>
+        </table>
+  
+      </div>
+  
+    </div>
+  </div>
+
+  
+  
+</body>
+</html>
+
+
+
+<<<<<<< HEAD
+<h1>Lista de Barberos</h1>
+<div class="container-main">
+   
+    <table class="table" >
+      <thead >
+        <tr >
+          <th scope="col">id</th>
+          <th scope="col">imagen</th>
+          <th scope="col">nombre</th>
+          <th scope="col">button</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let barberos of barbers">
+          <th scope="row">{{barberos.id}}</th>
+          <td class="imagen"><img src="{{barberos.photo}}" alt=""></td>
+          <td class="apodo">{{barberos.nickname}}</td>
+          <td><button class="btn btn-outline-secondary" (click)="linkear(barberos.id)">Vincular</button></td>
+        </tr>
+=======
+>>>>>>> 17dd25a4764260a5afb6ddde333b503f93cc1ed0
+

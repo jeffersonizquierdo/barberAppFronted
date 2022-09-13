@@ -40,6 +40,8 @@ export class PromotionComponent implements OnInit {
     console.log(this.usuario);
     
     this.promotion = new Promotion()
+
+
      
   }
 
@@ -56,28 +58,28 @@ export class PromotionComponent implements OnInit {
   }
 
   savePromotion(){
-
+    console.log("entro a guardar");
     this.usuario = this.authService.usuario;
 
     this.servicebarbershop.getbarber(this.usuario.id).subscribe(
       data => {
-        this.barbershop = data;     
+        this.barbershop = data; 
+        console.log("llego a guardar promociones");
+        console.log(this.barbershop);
       }
     );
-    if(this.barbershop==null){
+    if(this.barbershop===null){
       this.reset();
       this.abrirModal();
     }else{
-
       this.spinner.show();
       this.catalogueService.upload(this.imagen, "promotionsimages").subscribe( (response:any) => {
         if(response){
           console.log(response.url);
           this.promotion.url=response.url
+          console.log("guardo la promocion");
+          console.log(this.promotion);
 
-
-
-          
           this.promotion.owner = this.barbershop
           this.promotionService.savePromotion(this.promotion).subscribe(
             response =>{
@@ -101,5 +103,5 @@ export class PromotionComponent implements OnInit {
 
   abrirModal(){
     this.modalService.open(ModalBarbershopComponent);
-}
+  }
 }

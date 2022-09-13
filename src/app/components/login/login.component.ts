@@ -1,5 +1,5 @@
 import { Usuario } from './../../models/Usuario';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthServices } from 'src/app/models/AuthServices';
 import Swal from 'sweetalert2';
@@ -10,16 +10,22 @@ import Swal from 'sweetalert2';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit ,OnDestroy{
 
   usuario:Usuario;
 
   constructor(private authServices:AuthServices, private router:Router) { 
 
-    this.usuario = new Usuario()
+  }
+  ngOnDestroy(): void {
+    document.body.classList.remove("cambio")
   }
 
   ngOnInit(): void {
+    this.usuario = new Usuario();
+    this.usuario = this.authServices.usuario;
+    document.body.classList.add("cambio")
+    console.log(document.body.classList)
   }
 
 
@@ -42,7 +48,7 @@ export class LoginComponent implements OnInit {
 
       this.authServices.saveTypeUser(parseInt(response.typeUser));
 
-      let usuario = this.authServices.usuario;
+      
 
       if (response.typeUser == 1){
 
@@ -55,7 +61,7 @@ export class LoginComponent implements OnInit {
 
         }, 1000);
 
-        Swal.fire('Login', 'Hola ' + usuario.nickname + ', bienvenido', 'success');
+        Swal.fire('Login', 'Hola ' + response.nickname + ', bienvenido', 'success');
         
         
 
@@ -70,7 +76,7 @@ export class LoginComponent implements OnInit {
 
         }, 1000);
 
-        Swal.fire('Login', 'Hola ' + usuario.nickname + ', bienvenido', 'success');
+        Swal.fire('Login', 'Hola ' + response.nickname + ', bienvenido', 'success');
 
 
       } else if(response.typeUser == 3){
@@ -84,7 +90,7 @@ export class LoginComponent implements OnInit {
 
         }, 1000);
 
-        Swal.fire('Login', 'Hola ' + usuario.nickname + ', bienvenido', 'success');
+        Swal.fire('Login', 'Hola ' + response.nickname + ', bienvenido', 'success');
 
       }
 
@@ -103,5 +109,10 @@ export class LoginComponent implements OnInit {
     
    }, 200);
   }
+  
+
+ 
+
+
 
 }

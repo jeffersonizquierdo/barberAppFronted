@@ -1,39 +1,116 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-.header h1{
-    color: white;
-    text-align: center;
-}
-
-.header .input {
-    text-align: center;
-    margin: 49px 0;
-}
-
-.input input{
-    width: 49%;
-    height: 45px;
-    border-radius: 11px;
-    font-size: 21px;
-    text-align: center;
-
-}
-.contenedor-main{
+body {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-
+    
 }
-.card-title{
-    text-align: center;
+
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    margin: 20px;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0,0,0,.4);
+    text-align: center;
 }
 
-.card-text{
-    height: 115px;
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background:linear-gradient(120deg,#2980b9,#8e44ad);
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
 }
-a{
-    padding: 10px;
+
+.card .back .link {
+    border-top: solid 1px #f3f3f3;
+    height: 50px;
+    line-height: 50px;
 }
+
+.card .back .link a {
+    width: 75%;
+    height: 46px;
+    background: #2691d9a9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9fafb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    margin: 0 41px;
+    text-decoration: none;
+    padding: 8px 53px;
+    
+}
+.card .back .link a:hover{
+    border-color:#fff ;
+    transition: .5s;
+    text-decoration: underline;
+}
+
+
+
+.card .back h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.card .back p {
+    letter-spacing: 1px;
+} 
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+
+
+
+

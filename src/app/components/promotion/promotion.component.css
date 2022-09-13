@@ -4,21 +4,28 @@
 }
 
 
-.container-main{
+
+
+
+.container-list{
+  margin: 0 0;
+}
+.container-main {
   box-shadow: 0px 0px 0px 0px black;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius:15px;
-  background-color: #171f2a00;
-  border: 1px solid  #58a8f6;
+  border-radius: 15px;
+  background-color: #ffffff;
+  border: 2px solid;
+  border-image: linear-gradient(to bottom, #2980b9 0%, #8e44ad 100%) 1;
   width: 400px;
   height: auto;
   color: rgb(0, 0, 0);
   position: absolute;
-  top: 90%;
-  left: 40%;
+  top: 30%;
+  left: 4%;
 }
 
 .postFile{
@@ -88,7 +95,7 @@
   border: 1px solid  #58a8f6;
   border-radius: 5px;
   background-color: transparent;
-  color: #fff;
+  color: black;
   width: 99%;
 }
 
@@ -126,7 +133,4 @@ li{
   height: 32px;
   display: inline-block;
 }
-
-
-
-
+  

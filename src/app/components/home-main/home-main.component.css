@@ -155,10 +155,10 @@ section{
 .price__element--best{
     width: 370px;
     padding: 60px 40px;
-    background-color: #FF7143;
+    background-color: #2091f9;
     --color-plan: rgb(255 255 255 / 75%);
     --color-price: #fff;
-    --bg-cta: #9F3919;
+    --bg-cta: #114a80;
     --color-cta: #FFF;
     --color-items: #fff;
 }
@@ -197,10 +197,10 @@ section{
 }
 
 .franja{
-    border: 1px solid black;
-    height: 10px;
+    border: 1px solid gray;
+    height: 1px;
     width: 100%;
-    background-color: black;
+    background-color: gray;
     margin: 95px 0;
 }
 

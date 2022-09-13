@@ -12,6 +12,6 @@ export class Barber{
   age:Date;
   description: string;
   qualification:Number;
-  listBarbershpops: Barbershop[] = [];
+  barbershop: Barbershop;
 
 }
