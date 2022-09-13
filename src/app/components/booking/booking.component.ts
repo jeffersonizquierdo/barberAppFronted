@@ -281,7 +281,6 @@ export class BookingComponent implements OnInit {
         
     }
     empty(){
-      
       this.name=null;
       this.photo=null;
       this.mesof=null;
@@ -290,9 +289,9 @@ export class BookingComponent implements OnInit {
       this.booking=new Booking();
       // this.booking.barber = new Barber()
       this.reserve=null;
-      this.date=null
-      this.getCustomer()
-      this.loaderBarber()
+      this.date=null;
+      this.getCustomer();
+      this.loaderBarber();
       this.booking.completed=false;
       this.save=false;
       this.save2=false;
