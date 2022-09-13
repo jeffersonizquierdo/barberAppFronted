@@ -15,7 +15,8 @@
 .about {
     
     text-align: center;
-    margin: -6px 15%;
+    margin: -7% 15%;
+    margin-bottom: -6%;
 
 }
 
@@ -72,6 +73,8 @@ section{
     background-position: 0 0, 10px 10px;
     overflow: hidden;
     margin: 6% 0;
+    padding: 0px 9%;
+    height: 720px;
 }
 
 .inicio .image img{
