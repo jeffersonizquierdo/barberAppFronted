@@ -54,6 +54,7 @@ import { BookingsBarberComponent } from './components/bookings-barber/bookings-b
 
 
 
+
 const appRoutes: Routes = [
 
   {path:'', component:HomeMainComponent},
@@ -87,7 +88,9 @@ const appRoutes: Routes = [
   {path:'publication_barber', component:  PublicationBarberComponent  },
   {path:'promotion-list', component:  PromotionListComponent},
   {path:'bonding', component:  BondingMessagesComponent  },
-  {path:'booking-barbershop', component:  BookingsBarbershopComponent  },
+  {path:'booking-barbershop', component:  BookingsBarbershopComponent},
+  {path:'booking-barber', component:  BookingsBarberComponent},
+
 
 ]
 
@@ -133,7 +136,8 @@ const appRoutes: Routes = [
     StalkBarberComponent,
     PublicationBarberComponent,
     BookingsBarbershopComponent,
-    BookingsBarberComponent
+    BookingsBarberComponent,
+
 
 
 

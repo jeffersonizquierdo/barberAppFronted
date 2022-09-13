@@ -89,7 +89,7 @@ export class BookingsBarbershopComponent implements OnInit {
 
         this.data = 
           {Id: e.id,
-            Subject: e.barber.nickname,
+            Subject: "Cli: " + e.barber.nickname+ "Bar: " + e.customer.nickname,
             StartTime: new Date(this.fecha),
             EndTime: new Date(this.fechafin + (55 * 60000))}
         
