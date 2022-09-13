@@ -44,6 +44,7 @@ export class BookingComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.reserve=null
     this.booking=new Booking();
     this.booking.completed=false;
     this.usuario=this.authService.usuario;
@@ -184,61 +185,88 @@ export class BookingComponent implements OnInit {
       }
       horacita:any;
       horareserva:any;
+      save=false;
+      save2=false;
+      reserve:Number;
       // Booking
       
       saveBooking(){
         this.spinnerReservation.show();
         if (this.listReservation.length === 0){
-          this.serviceBooking.saveBooking(this.booking).subscribe((response:any)=>{
-            console.log("melo");
-            console.log(response);
-            Swal.fire("Hecho", "Tu cita esta programada ", "success")
-            this.spinnerReservation.hide();
-            this.loaderListBooking();
-          });
+          this.saveBookingBD();
+          this.loaderListBooking();
+          this.empty();
         }else{
           this.listReservation.map(e=>{
-            if(e.customer.id===this.customer.id && e.barbershop===this.barbershop.id){
-              Swal.fire("informacion", "Ya tienes una cita programada en esta barberia", "info")
-              this.spinnerReservation.hide();
-            }else{
-              if(e.barber.id==this.booking.barber.id){
-                console.log("casi que no");
-                this.horacita=new Date(e.reservationDate);
-                this.horareserva=new Date(this.booking.reservationDate);
-                if(this.horareserva.getHours()===this.horacita.getHours()){
-                  console.log("entre a la condicion")
-                  Swal.fire("informacion", "Esta Hora ya esta reservada", "info")
-                  this.spinnerReservation.hide();
-                }else{
-                  console.log("entro a guardar")
-                  this.serviceBooking.saveBooking(this.booking).subscribe((response:any)=>{
-                    console.log("melo2");
-                    console.log(response);
-                    Swal.fire("Hecho", "Tu cita esta programada ", "success")
-                    this.spinnerReservation.hide();
-                    this.loaderListBooking();
-                  });
-                }
+            if(this.booking && this.booking.barber){
+
+              if(e.customer.id===this.customer.id && e.barbershop===this.barbershop.id){
+                this.spinnerReservation.hide();
+                this.save=false;
+                this.save2=true;
               }else{
-                console.log("entro a guardar2")
-                this.serviceBooking.saveBooking(this.booking).subscribe((response:any)=>{
-                  console.log("melo");
-                  console.log(response);
-                  Swal.fire("Hecho", "Tu cita esta programada ", "success")
+                
+                if(e.barber.id==this.booking.barber.id){
+                  this.horacita=new Date(e.reservationDate);
+                  this.horareserva=new Date(this.booking.reservationDate);
+  
+                  if(this.reserve!=0){
+                    this.reserve=this.compare(this.horareserva,this.horacita);
+                  }
+                  
+  
+                  console.log("con");
+                  console.log(this.reserve);
+  
+                  if(this.reserve===0){
+                    Swal.fire("informacion", "Esta Hora ya esta reservada", "info")
+                    this.spinnerReservation.hide();
+                    this.save=false;
+                    this.empty();
+                  }else{
+                    this.save=true;
+                    this.spinnerReservation.hide();
+                    this.save2=true;
+                  }
+                }else{
+                  this.save=true;
                   this.spinnerReservation.hide();
-                  this.loaderListBooking();
-                });
+                }
               }
             }
           })
+          if(this.save==true){
+            this.saveBookingBD();
+            this.loaderListBooking();
+          }else if(this.save2==true){
+            Swal.fire("informacion", "Ya tienes una cita en esta barberia", "info")
+          }
         }
         
       }
       loaderListBooking(){
         this.serviceBooking.listBooking().subscribe((data:any)=>{
           this.listReservation=data;
+          console.log(this.listReservation);
+          
         })
+      }
+      compare(dateTimeA, dateTimeB) {
+        var momentA = moment(dateTimeA);
+        var momentB = moment(dateTimeB);
+        if (momentA > momentB) return 1;
+        else if (momentA < momentB) return -1;
+        else return 0;
+    }
+      saveBookingBD(){
+        this.serviceBooking.saveBooking(this.booking).subscribe((response:any)=>{
+          console.log("melo");
+          console.log(response);
+          Swal.fire("Hecho", "Tu cita esta programada ", "success")
+          this.spinnerReservation.hide();
+          this.loaderListBooking();
+          this.empty();
+        });
       }
       
     // logica de creacion de reserva
@@ -249,7 +277,25 @@ export class BookingComponent implements OnInit {
       this.name = barber.nickname;
       this.photo = barber.photo;
       this.booking.barber=barber;
+      
         
+    }
+    empty(){
+      
+      this.name=null;
+      this.photo=null;
+      this.mesof=null;
+      this.hourSelect=null;
+      this.minutesSelect=null;
+      this.booking=new Booking();
+      // this.booking.barber = new Barber()
+      this.reserve=null;
+      this.date=null
+      this.getCustomer()
+      this.loaderBarber()
+      this.booking.completed=false;
+      this.save=false;
+      this.save2=false;
     }
 
 
