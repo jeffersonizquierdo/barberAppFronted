@@ -146,7 +146,7 @@
 .container-hours {
     display: flex;
     flex-direction: column;
-    margin: -28% 41%;
+    margin: -27% 41%;
     height: 51%;
     width: 12%;
     margin-bottom: 40px;
@@ -187,14 +187,16 @@ hr {
 }
 
 .selecion {
-    margin: -24% 65%;
-    width: 15%;
-    height: 203px;
+    margin: -27% 60%;
+    width: 18%;
+    min-height: 100%;
     text-align: center;
     font-size: 28px;
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 68px;
+    border: 3px solid;
+    border-image: linear-gradient(to bottom, #2980b9 0%, #8e44ad 100%) 1;
 }
 
 .selecion button {
