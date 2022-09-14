@@ -13,16 +13,28 @@
         <p style="font-size: 20px; color: white">Reservando...</p>
     </ngx-spinner>
 
-    <div class="hola">
-        <div *ngFor="let b of barbers" class="images-barber">
-            <button class="barber" (click)="selectBarber(b)">
-        <div class="barber2" (click)="selectBarber(b.id)">
-            <img class=""  src="{{b.photo}}" alt=""></div>
-            <p class="p">{{b.nickname}}</p>
-      </button>
+    <div class="catalogoBarberos">
+        <div class="hola">
+            <div *ngFor="let b of barbers" class="images-barber">
+                <button class="barber" (click)="selectBarber(b)">
+                    <div class="barber2" (click)="selectBarber(b.id)">
+                    <img class=""  src="{{b.photo}}" alt=""></div>
+                    <p class="p">{{b.nickname}}</p>
+                </button>
+            </div>
+        </div>
+        <div class="hola">
+            <div *ngFor="let b of catalogue" class="images-barber">
+                <button class="barber" (click)="selectcatalogue(b)">
+                    <div class="barber2" (click)="selectcatalogue(b.id)">
+                    <img class=""  src="{{b.url}}" alt=""></div>
+                    <p class="p">{{b.name}}</p>
+                </button>
+            </div>
         </div>
     </div>
 
+    <hr class="superior">
     <div class="medio">
 
         <div class="calendar">

@@ -1,3 +1,4 @@
+import { Catalogue } from './../../models/catalogue';
 import Swal  from 'sweetalert2';
 import { BarbershopService } from './../../services/barbershop/barbershop.service';
 import { Component, OnInit } from '@angular/core';
@@ -34,7 +35,7 @@ export class BookingComponent implements OnInit {
   usuario:Usuario;
   customer:Customer;
   listReservation:any;
-  
+  catalogue:any=[];
 
 
   
@@ -179,6 +180,7 @@ export class BookingComponent implements OnInit {
           data =>{
             this.barbershop = data;
             this.booking.barbershop=this.barbershop.id;
+            this.catalogue=data.catalogue;
             this.barbers = data.listBarbers;            
           }
         )
@@ -280,6 +282,10 @@ export class BookingComponent implements OnInit {
       
         
     }
+    selectcatalogue(catalogue:Catalogue){
+      this.booking.corte=catalogue;
+    }
+
     empty(){
       
       this.name=null;
