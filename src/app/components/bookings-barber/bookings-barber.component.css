@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0%;
+}
+.calendar{
+  width: 800px;
+  background:linear-gradient(120deg,#5cbeff,#8e44ad);
+}
+
+.container{
+
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  height: 925px;
+  
+
+}
+
+.container ejs-schedule{
+
+  height: 100%;
+
+
+}
