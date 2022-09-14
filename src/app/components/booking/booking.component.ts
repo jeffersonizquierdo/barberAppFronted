@@ -280,6 +280,7 @@ export class BookingComponent implements OnInit {
       
         
     }
+    
     empty(){
       
       this.name=null;
