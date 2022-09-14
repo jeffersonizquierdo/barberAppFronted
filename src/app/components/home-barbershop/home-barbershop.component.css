@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0%;
     padding: 0%;
 }
@@ -55,4 +55,8 @@
     margin: -30% 44%;
     height: 50vh;
     width: 50%;
+} */
+.cotenedor{
+    width: 98%;
+    margin: auto;
 }
