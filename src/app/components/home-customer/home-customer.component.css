@@ -45,17 +45,19 @@
   top: 20px;
   color: white;
 }
-.ranking{
+/* .ranking{
   width: 99%;
   height: 1vh;
   margin: -28% 0%;
+} */
+.ranking{
+  margin-top: 20px;
 }
-
 .publication{
   margin: 0 19%;
   float: right;
 }
-
+/* 
 .container-div{
   
-}
+} */
