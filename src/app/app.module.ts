@@ -51,6 +51,7 @@ import { StalkBarberComponent } from './components/stalk-barber/stalk-barber.com
 import { PublicationBarberComponent } from './components/publication-barber/publication-barber.component';
 import { BookingsBarbershopComponent } from './components/bookings-barbershop/bookings-barbershop.component';
 import { BookingsBarberComponent } from './components/bookings-barber/bookings-barber.component';
+import { BookingCustomerComponent } from './components/booking-customer/booking-customer.component';
 
 
 
@@ -137,7 +138,7 @@ const appRoutes: Routes = [
     PublicationBarberComponent,
     BookingsBarbershopComponent,
     BookingsBarberComponent,
-
+    BookingCustomerComponent
 
 
 
