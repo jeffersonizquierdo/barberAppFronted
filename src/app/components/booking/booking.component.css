@@ -11,13 +11,13 @@
 
 .hola {
     display: flex;
-    display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     margin: 1% 0;
     height: 266px;
     gap: 10%;
+    overflow-x: scroll;
 }
 
 .medio {
@@ -31,14 +31,14 @@
 }
 
 .barber2 img {
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     border-radius: 100%;
 }
 
 .p {
     font-size: 25px;
-    margin: 19px 0;
+    margin: -40px 0;
 }
 
 .images-barber button {
