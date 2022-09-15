@@ -181,3 +181,12 @@ h3{
     text-decoration: none;
 }
 
+@media only screen and (max-width: 1024px) and(min-width: 768px) {
+    form  .txt_field{
+        margin: 10px 15px;
+    }
+
+    .center h1{
+        padding: 10px 0 10px;
+    }
+}
