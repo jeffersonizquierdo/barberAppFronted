@@ -71,4 +71,8 @@ export class BookingService {
     )
     
   }
+
+  deleteBooking(id:Number):any{
+    return  this.http.delete<Booking>(`http://localhost:8080/booking/delete/${id}`, {headers: this.agregarAuthorizationHeader()})
+  }
 }
