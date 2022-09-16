@@ -43,6 +43,10 @@ export class PromotionService {
     return  this.httpClient.get<Promotion>(`http://localhost:8080/barbershop/consultpromotion/${this.usuario.id}`, {headers: this.agregarAuthorizationHeader()})
   } 
 
+  listallPromotion():  Observable<Promotion>{
+    return  this.httpClient.get<Promotion>(` http://localhost:8080/promotions/consultall`, {headers: this.agregarAuthorizationHeader()})
+  } 
+
 
   deletepromotion(id: Number) {
     return this.httpClient.delete<Promotion>( ` http://localhost:8080/promotions/delete/${id}`, {headers: this.agregarAuthorizationHeader()})

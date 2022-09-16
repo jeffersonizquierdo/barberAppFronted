@@ -42,7 +42,7 @@ export class BookingsBarberComponent implements OnInit {
 
 
   public setDate: Date =  new Date();
-  public setView : View[] = ['Day', "Week", 'Month','TimelineYear' ];
+  public setView : View[] = ['Day', "Week", 'Month'];
 
 
   getBarber(){
@@ -72,7 +72,7 @@ export class BookingsBarberComponent implements OnInit {
 
       this.bookings.map(e => {
 
-        if(this.barber.id == e.barber.id){
+        if(this.barber.id == e.barber.id && e.completed == false && e.cancelled == false){
           this.bookingsBarbershop.push(e);          
         }
       })
@@ -118,12 +118,10 @@ export class BookingsBarberComponent implements OnInit {
 
   cancelBooking(booking: Booking){
 
-    booking.cancelled == true;
-    this.bookingService.updateBooking(booking).subscribe(
-  
-    )
+    booking.cancelled=true;
+    this.bookingService.updateBooking(booking).subscribe()
+    Swal.fire("Cita cancelada", `Se ha cancelado la reserva de ${booking.customer.nickname} con exito`, "success")
 
-    Swal.fire("Cita eliminada" , `Se ha cancelado la reserva de ${booking.customer.nickname} con exito`, "success")
 
     setTimeout(() => {
       

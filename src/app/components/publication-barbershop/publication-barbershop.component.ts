@@ -37,22 +37,26 @@ export class PublicationBarbershopComponent implements OnInit {
 
     setTimeout(() => {
 
-      this.BarbershopService.listpublicyid(this.id).subscribe(
-        data =>{
-          console.log(data)
-          this.listPublicity2=data;
-          console.log(this.listPublicity2.description);
-          
-        }
-      )
+
 
 
       this.BarbershopService.getbarber(this.id).subscribe((response: any) =>{
 
         this.barbershop = response
       })
+
+
+
+      this.BarbershopService.listpublicyid(this.id).subscribe(
+        (data: any) =>{
+          console.log(data)
+          this.listPublicity2=data;
+          console.log(this.listPublicity2.description);
+          
+        }
+      )
       
-    }, 100);
+    }, 500);
 
   }
   delete  (id:Number):void{

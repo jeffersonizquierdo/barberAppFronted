@@ -11,13 +11,21 @@
 
 .hola {
     display: flex;
-    display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 1% 0;
     height: 266px;
-    gap: 10%;
+    min-width: 750px;
+    max-width: 750px;
+    overflow-x: scroll;
+}
+
+.titulos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 
 .medio {
@@ -30,15 +38,20 @@
     border-radius: 100%;
 }
 
+.barber2:active{
+    background: linear-gradient(120deg, #297fb946, #8d44ad5e) ;
+    border-radius: 0%;
+}
+
 .barber2 img {
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
     border-radius: 100%;
 }
 
 .p {
     font-size: 25px;
-    margin: 19px 0;
+    margin: -40px 0;
 }
 
 .images-barber button {
@@ -191,12 +204,12 @@ hr {
 .selecion {
     margin: -27% 60%;
     width: 18%;
-    min-height: 100%;
+    min-height: 330px;
     text-align: center;
     font-size: 28px;
     display: flex;
     flex-direction: column;
-    gap: 68px;
+    padding: 5px;
     border: 3px solid;
     border-image: linear-gradient(to bottom, #2980b9 0%, #8e44ad 100%) 1;
 }
@@ -223,4 +236,16 @@ hr {
 
 .container-hours h4 {
     text-align: center;
+}
+
+.superior {
+    width: 98.5%;
+}
+
+.catalogoBarberos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 200px;
 }
