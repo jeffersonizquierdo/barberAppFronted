@@ -143,18 +143,6 @@
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-.selecion{
-  margin: -24% 65%;
-  width: 15%;
-  height: 203px;
-  text-align: center;
-  font-size: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  margin-bottom: 40px;
-=======
 .container-hours {
     display: flex;
     flex-direction: column;
@@ -164,7 +152,6 @@
     margin-bottom: 40px;
     border: 3px solid;
     border-image: linear-gradient(to bottom, #2980b9 0%, #8e44ad 100%) 1;
->>>>>>> b94a255043f232979b0af3132d1cc7b5c2c29947
 }
 
 hr {
