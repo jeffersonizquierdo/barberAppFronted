@@ -62,7 +62,7 @@
           <div class="cont-menu">
             <nav>
              
-              <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 1" class="funciones" >
+              <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 1" class="funciones"  >
                 <a [routerLink]="['/homebarbershop']"class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
                 <a [routerLink]="['/porfilebarbershop']">Ver Perfil</a>
                 <a [routerLink]="['/listabarber']" >Barberos</a>

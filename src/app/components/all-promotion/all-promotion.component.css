@@ -11,13 +11,13 @@
     }
     .contenedor figure{
         position: relative;
-        height: 340px;
+        height: 302px;
         cursor: pointer;
-        width: 712px;
+        width: 582px;
         overflow: hidden;
         border-radius: 6px;
         box-shadow: 0px 15px 25px rgb(0 0 0 / 50%);
-        margin: -44% 2%;
+        margin: -45% -8%;
     }
     .contenedor figure img{
         width: 100%;
@@ -79,29 +79,3 @@
         padding: 8px -50px;
         margin: 47px 0;
     }
-
-
-.intento {
-        /* display: grid; */
-    /* padding: 0px 0px 30px 0; */
-    /* grid-template-rows: 350px 350px; */
-    grid-template-columns: 100px 100px 100px 100px;
-    justify-content: end;
-    background-color: #fff;
-    border-radius: 10px;
-    margin-right: 6%;
-    border: 3px solid;
-    border-image: linear-gradient(to bottom, #2980b9 0%, #8e44ad 100%) 1;
-    width: 58%;
-    height: 430px;
-}
-
-.padre {
-    display: flex;
-    flex-direction: column;
-    align-content: flex-end;
-    flex-wrap: wrap;
-    margin: 5% 5%;
-    text-align: center;
-}
-

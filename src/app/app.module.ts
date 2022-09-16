@@ -52,6 +52,7 @@ import { PublicationBarberComponent } from './components/publication-barber/publ
 import { BookingsBarbershopComponent } from './components/bookings-barbershop/bookings-barbershop.component';
 import { BookingsBarberComponent } from './components/bookings-barber/bookings-barber.component';
 import { BookingCustomerComponent } from './components/booking-customer/booking-customer.component';
+import { AllPromotionComponent } from './components/all-promotion/all-promotion.component';
 
 
 
@@ -91,6 +92,7 @@ const appRoutes: Routes = [
   {path:'bonding', component:  BondingMessagesComponent  },
   {path:'booking-barbershop', component:  BookingsBarbershopComponent},
   {path:'booking-barber', component:  BookingsBarberComponent},
+  {path:'all', component:  AllPromotionComponent},
 
 
 ]
@@ -138,7 +140,8 @@ const appRoutes: Routes = [
     PublicationBarberComponent,
     BookingsBarbershopComponent,
     BookingsBarberComponent,
-    BookingCustomerComponent
+    BookingCustomerComponent,
+    AllPromotionComponent
 
 
 
