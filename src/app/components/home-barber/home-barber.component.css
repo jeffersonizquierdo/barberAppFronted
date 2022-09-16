@@ -3,6 +3,12 @@
     padding: 0%;
 }
 
+.public{
+    float: right;
+    margin-right: 25%;
+    margin-top: -33%;
+}
+
 .container-portada{
     width: 100%;
     height: 400px;
@@ -37,6 +43,10 @@
    
 }
 
+.continerranking{
+    margin: -60% 0%;
+}
+
 .dealis{
     text-align: center;
     width: 100%;
@@ -59,10 +69,10 @@
 }
 
 .medium{
-    margin:0 70px 0 25px ;
+    margin: -103% 72px 16px 29%;
     max-height: 750px;
     color: #e4e4e4;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     direction: ltr;
     scrollbar-color: #d4aa70 #e4e4e4;
     scrollbar-width: thin;
@@ -72,21 +82,7 @@
     align-items: center;
 }
 
-.medium::-webkit-scrollbar {
-    width: 20px;
-}
-  
-.medium::-webkit-scrollbar-track {
-    background-color: #e4e4e4;
-    border-radius: 100px;
-}
 
-.medium::-webkit-scrollbar-thumb{
-    border-radius: 100px;
-    border: 5px solid transparent;
-    background-clip: content-box;
-    background-color: #8070d4;
-}
 
 
 
@@ -108,13 +104,13 @@ body, .notificacion{
 	align-items: flex-start;
 }
 .notificacion{
-	background: rgba(0,0,0,0.5);
 	transition: all 500ms ease;
 	opacity: 0;
 	visibility: hidden;
     width: 700px;
-    background-color: #d3d3d38c;;
+    background-color: #d3d3d3ee;;
     border: 1px solid black;
+    color: black;
     border-radius: 11px;
     height: 400px;
     position: absolute;
@@ -125,6 +121,7 @@ body, .notificacion{
 }
 #btn-notificacion:checked ~ .notificacion{
 	opacity: 1;
+    
 	visibility: visible;
 } 
 
@@ -148,4 +145,7 @@ body, .notificacion{
     width: 30px;
     top: 60px;
     right: 70px;
+}
+.container-ranking{
+    margin: -52% 0 0 0;
 }

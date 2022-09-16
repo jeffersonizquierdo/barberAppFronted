@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { View, EventSettingsModel } from '@syncfusion/ej2-angular-schedule';
+import { View, EventSettingsModel, WorkHoursModel } from '@syncfusion/ej2-angular-schedule';
 import { Usuario } from '../../models/Usuario';
 import { Barbershop } from '../../models/barbershop';
 import { Booking } from '../../models/Booking';
@@ -7,6 +7,7 @@ import { BookingService } from '../../services/booking/booking.service';
 import { BarberService } from '../../services/barber/barber.service';
 import { AuthServices } from '../../models/AuthServices';
 import { Barber } from '../../models/Barber';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-bookings-barber',
@@ -20,7 +21,8 @@ export class BookingsBarberComponent implements OnInit {
   usuario: Usuario;
   barber: Barber
   bookings:Booking[]=[];
-  bookingsBarbershop:Booking[]=[];
+  bookingsBarber:Booking[]=[];
+  bookikingsBarberComplete: Booking[] = []
   eventSettings: EventSettingsModel;
   data: any;
   fecha: Date;
@@ -29,7 +31,7 @@ export class BookingsBarberComponent implements OnInit {
   showDates:any[]=[];
 
 
-  constructor(private serviceBooking : BookingService, private serviceBarber: BarberService, private authService: AuthServices) { }
+  constructor(private serviceBooking : BookingService, private serviceBarber: BarberService, private authService: AuthServices, private bookingService: BookingService) { }
 
   ngOnInit(): void {
 
@@ -42,7 +44,6 @@ export class BookingsBarberComponent implements OnInit {
 
   public setDate: Date =  new Date();
   public setView : View[] = ['Day', "Week", 'Month'];
-
 
 
   getBarber(){
@@ -73,12 +74,18 @@ export class BookingsBarberComponent implements OnInit {
       this.bookings.map(e => {
 
         if(this.barber.id == e.barber.id){
-          this.bookingsBarbershop.push(e);          
+          this.bookingsBarber.push(e);  
+          
+          if(this.barber.id == e.barber.id && e.completed == false && e.cancelled == false){
+
+            this.bookikingsBarberComplete.push(e)
+
+          }
         }
       })
 
 
-      this.bookingsBarbershop.map(e =>{
+      this.bookingsBarber.map(e =>{
 
         this.fecha = new Date(e.reservationDate);
 
@@ -91,7 +98,7 @@ export class BookingsBarberComponent implements OnInit {
 
         this.data = 
           {Id: e.id,
-            Subject: "Cli: "  + e.customer.nickname,
+            Subject: "Cli:  "  + e.customer.nickname,
             StartTime: new Date(this.fecha),
             EndTime: new Date(this.fechafin + (55 * 60000))}
         
@@ -103,6 +110,31 @@ export class BookingsBarberComponent implements OnInit {
       
       this.eventSettings = { dataSource: this.showDates};
     }, 1000);
+
+  }
+
+
+  completeBooking(booking:Booking){
+
+    booking.completed = true;
+    this.bookingService.updateBooking(booking).subscribe()
+    Swal.fire("Cita completada" , `Se ha completado el corte de ${booking.customer.nickname} con exito`, "success")
+  }
+
+
+
+  cancelBooking(booking: Booking){
+
+    booking.cancelled=true;
+    this.bookingService.updateBooking(booking).subscribe()
+    Swal.fire("Cita cancelada", `Se ha cancelado la reserva de ${booking.customer.nickname} con exito`, "success")
+
+
+    setTimeout(() => {
+      
+      window.location.reload()
+    }, 1500);
+
 
   }
 

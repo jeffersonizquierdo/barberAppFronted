@@ -55,6 +55,7 @@ p{
     align-items: center;
     width: 245px;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 hr{

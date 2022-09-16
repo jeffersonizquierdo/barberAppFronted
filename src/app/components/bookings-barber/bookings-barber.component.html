@@ -1,6 +1,6 @@
 <div class="container" >
 
-<ejs-schedule   class="calendar" [eventSettings]="eventSettings" height="900px%"> </ejs-schedule>
+<ejs-schedule startHour='09:00' endHour='20:00' class="calendar"  [eventSettings]="eventSettings" height="900px%"> </ejs-schedule>
 
 
   <nav>
@@ -9,15 +9,17 @@
         <tr>
           <th scope="col">Fecha</th>
           <th scope="col">Cliente</th>
+          <th scope="col">Corte</th>
   
         </tr>
       </thead>
       <tbody>
   
-        <tr *ngFor="let date of bookingsBarbershop">
-          <th scope="row">{{date.customer.nickname}}</th>
-          <td><button class="btn btn-outline-primary">Editar</button></td>
-          <td><button class="btn btn-outline-primary">Eliminar</button></td>
+        <tr *ngFor="let date of bookikingsBarberComplete">
+          <th scope="row">{{date.corte.name}} : {{date.customer.nickname}}</th>
+          <th scope="row">{{date.corte.url}}</th>
+          <td><button  (click)="completeBooking(date)" class="btn btn-outline-primary">Completado</button></td>
+          <td><button (click)="cancelBooking(date)"  class="btn btn-outline-primary">Cancelar</button></td>
         </tr>
   
       </tbody>

@@ -12,6 +12,7 @@ import { CustomerService } from 'src/app/services/customer/customer.service';
 import { Customer } from 'src/app/models/Customer';
 import { BookingService } from 'src/app/services/booking/booking.service';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { Catalogue } from 'src/app/models/catalogue';
 
 @Component({
   selector: 'app-booking',
@@ -41,6 +42,7 @@ export class BookingComponent implements OnInit {
   usuario: Usuario;
   customer: Customer;
   listReservation: any;
+  catalogue:any=[];
 
   constructor(
     private serviceBarbershop: BarbershopService,
@@ -55,6 +57,7 @@ export class BookingComponent implements OnInit {
     this.reserve = null;
     this.booking = new Booking();
     this.booking.completed = false;
+    this.booking.cancelled = false;
     this.usuario = this.authService.usuario;
     this.getCustomer();
     this.idBarbershop = parseInt(this.route.snapshot.paramMap.get('id'));
@@ -208,7 +211,6 @@ export class BookingComponent implements OnInit {
         'info'
       );
       this.empty();
-      console.log("no se puede reservar en el pasado")
     } else {
       this.spinnerReservation.show();
       if (this.listReservation.length === 0) {
@@ -267,6 +269,7 @@ export class BookingComponent implements OnInit {
             'Ya tienes una cita en esta barberia',
             'info'
           );
+          this.empty();
         }
       }
     }
@@ -303,6 +306,9 @@ export class BookingComponent implements OnInit {
     this.name = barber.nickname;
     this.photo = barber.photo;
     this.booking.barber = barber;
+  }
+  selectcatalogue(catalogue:Catalogue){
+    this.booking.corte=catalogue;
   }
   empty() {
     this.name = null;

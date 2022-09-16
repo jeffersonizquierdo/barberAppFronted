@@ -1,10 +1,10 @@
 <label for="btn-notificacion">⨂</label>
 
 <div class="notificacion">
-
+    <h1>Mensajes de vinculacion</h1>
+    <hr>
     <div *ngFor="let petition of barbershops; let i=index">
-        <h1>Mensajes de vinculacion</h1>
-        <hr>
+        
         <div class="mensaje">
             <a [routerLink]="['/stalk_barbershop',petition.id]" class="nameBarbershop">
                 <div class="imagebarbershop"><img src="{{petition.photo}}" alt=""></div>
