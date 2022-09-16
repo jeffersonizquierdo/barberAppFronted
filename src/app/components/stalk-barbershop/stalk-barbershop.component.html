@@ -4,7 +4,7 @@
             <h3 class="titulo">{{barbershop.nickname}}</h3>
            
             <div class="button">
-                <a [routerLink]="['/booking', barbershop.id]" >Reservar</a>
+                <a *ngIf="usuario.typeUser == 3"  [routerLink]="['/booking', barbershop.id]" >Reservar</a>
             </div>
 
             <div class="perfil-usuario-avatar">
