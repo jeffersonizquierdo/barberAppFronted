@@ -38,16 +38,18 @@ export class PublicationBarbershopComponent implements OnInit {
     setTimeout(() => {
 
 
-
+     
+      
 
       this.BarbershopService.getbarber(this.id).subscribe((response: any) =>{
 
         this.barbershop = response
       })
 
-
+      console.log("iddddd "  + this.id);
 
       this.BarbershopService.listpublicyid(this.id).subscribe(
+        
         (data: any) =>{
           console.log(data)
           this.listPublicity2=data;

@@ -1,7 +1,7 @@
 <section class="seccion-perfil-usuario">
     <div class="perfil-usuario-header">
         <div class="perfil-usuario-portada">
-            <h3 class="titulo">{{barbershop.nickname}}</h3>
+            <h3 class="titulo"></h3>
            
             <div class="button">
                 <a [routerLink]="['/booking', barbershop.id]" >Reservar</a>
@@ -40,6 +40,9 @@
     </div>
 </section>
 
-<div class="publication">
-    <app-publication-barbershop></app-publication-barbershop>
+<div *ngIf="barbershop.publications == null" class="publication">
+    <p class="vacio">No hay publicaciones.</p>
+    
 </div>
+
+<app-publication-barbershop *ngIf="barbershop.publications >= 0" ></app-publication-barbershop>
