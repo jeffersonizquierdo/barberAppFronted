@@ -116,13 +116,14 @@ export class BookingsBarberComponent implements OnInit {
 
 
 
-  deleteBooking(booking: Booking){
+  cancelBooking(booking: Booking){
 
-    this.bookingService.deleteBooking(booking.id).subscribe(
+    booking.cancelled == true;
+    this.bookingService.updateBooking(booking).subscribe(
   
     )
 
-    Swal.fire("Cita eliminada" , `Se ha eliminado la reserva de ${booking.customer.nickname} con exito`, "success")
+    Swal.fire("Cita eliminada" , `Se ha cancelado la reserva de ${booking.customer.nickname} con exito`, "success")
 
     setTimeout(() => {
       

@@ -17,7 +17,7 @@
         <tr *ngFor="let date of bookingsBarbershop">
           <th scope="row">{{date.customer.nickname}}</th>
           <td><button  (click)="completeBooking(date)" class="btn btn-outline-primary">Completado</button></td>
-          <td><button (click)="deleteBooking(date)"  class="btn btn-outline-primary">Eliminar</button></td>
+          <td><button (click)="cancelBooking(date)"  class="btn btn-outline-primary">Cancelar</button></td>
         </tr>
   
       </tbody>

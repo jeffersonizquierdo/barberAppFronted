@@ -9,5 +9,6 @@ export class Booking {
     customer:Customer;
     reservationDate:Date;
     completed:Boolean;
+    cancelled:Boolean;
 
 }
