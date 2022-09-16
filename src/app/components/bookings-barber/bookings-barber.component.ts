@@ -21,7 +21,8 @@ export class BookingsBarberComponent implements OnInit {
   usuario: Usuario;
   barber: Barber
   bookings:Booking[]=[];
-  bookingsBarbershop:Booking[]=[];
+  bookingsBarber:Booking[]=[];
+  bookikingsBarberComplete: Booking[] = []
   eventSettings: EventSettingsModel;
   data: any;
   fecha: Date;
@@ -72,13 +73,19 @@ export class BookingsBarberComponent implements OnInit {
 
       this.bookings.map(e => {
 
-        if(this.barber.id == e.barber.id && e.completed == false && e.cancelled == false){
-          this.bookingsBarbershop.push(e);          
+        if(this.barber.id == e.barber.id){
+          this.bookingsBarber.push(e);  
+          
+          if(this.barber.id == e.barber.id && e.completed == false && e.cancelled == false){
+
+            this.bookikingsBarberComplete.push(e)
+
+          }
         }
       })
 
 
-      this.bookingsBarbershop.map(e =>{
+      this.bookingsBarber.map(e =>{
 
         this.fecha = new Date(e.reservationDate);
 
