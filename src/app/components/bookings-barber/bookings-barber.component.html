@@ -9,13 +9,15 @@
         <tr>
           <th scope="col">Fecha</th>
           <th scope="col">Cliente</th>
+          <th scope="col">Corte</th>
   
         </tr>
       </thead>
       <tbody>
   
         <tr *ngFor="let date of bookingsBarbershop">
-          <th scope="row">{{date.customer.nickname}}</th>
+          <th scope="row">{{date.corte.name}} : {{date.customer.nickname}}</th>
+          <th scope="row">{{date.corte.url}}</th>
           <td><button  (click)="completeBooking(date)" class="btn btn-outline-primary">Completado</button></td>
           <td><button (click)="cancelBooking(date)"  class="btn btn-outline-primary">Cancelar</button></td>
         </tr>
