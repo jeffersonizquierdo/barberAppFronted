@@ -13,12 +13,11 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 1% 0;
     height: 266px;
-    min-width: 700px;
-    max-width: 700px;
-    gap: 10%;
+    min-width: 750px;
+    max-width: 750px;
     overflow-x: scroll;
 }
 
