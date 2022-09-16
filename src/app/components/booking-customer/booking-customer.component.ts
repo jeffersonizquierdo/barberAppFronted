@@ -16,8 +16,10 @@ export class BookingCustomerComponent implements OnInit {
 
   Bookings:any=[];
   BookingsIncomplete:any=[];
+  Bookingscomplete:any=[];
   usuario:Usuario;
-  barbershop: Barbershop;
+  barbershops: any=[];
+  barbershopsComplete: any=[];
   constructor(private snniperMensaje: NgxSpinnerService, private serviceBarbershop: BarbershopService, private auhtService: AuthServices,private serviceBooking: BookingService) { }
 
   ngOnInit(): void {
@@ -29,24 +31,39 @@ export class BookingCustomerComponent implements OnInit {
     this.serviceBooking.listBooking().subscribe((response:any)=>{
       this.Bookings=response;
       console.log(this.Bookings);
-
-      
-      setTimeout(() => {
-        this.serviceBarbershop.getbarber(this.Bookings.barbershop).subscribe((data) => {
-          this.barbershop = data;
-        });
-      }, 100);
-      
       setTimeout(() => {
         this.Bookings.map(e=>{
           if(e.customer.id==this.usuario.id && e.completed == false){
             this.BookingsIncomplete.push(e);
-            console.log(this.BookingsIncomplete);
           }
         })
       },300);
+      setTimeout(() => {
+        this.BookingsIncomplete.map(e=>{
+          this.serviceBarbershop.getbarber(e.barbershop).subscribe((data) => {
+            this.barbershops = data;
+          });
+        })
+      }, 500);
     })
   }
+
+  loaderBookingcompleted(){
+        this.Bookings.map(e=>{
+          if(e.customer.id==this.usuario.id && e.completed == true){
+            this.Bookingscomplete.push(e);
+          }
+        })
+      setTimeout(() => {
+        this.Bookingscomplete.map(e=>{
+          this.serviceBarbershop.getbarber(e.barbershop).subscribe((data) => {
+            this.barbershopsComplete = data;
+          });
+        })
+      }, 500);
+  }
+
+
 
   Cancel(id:Number){
     this.serviceBooking.deleteBooking(id).subscribe((response:any)=>{
@@ -55,5 +72,4 @@ export class BookingCustomerComponent implements OnInit {
       
     })
   }
- 
 }
