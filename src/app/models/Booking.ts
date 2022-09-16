@@ -11,5 +11,6 @@ export class Booking {
     reservationDate:Date;
     corte:Catalogue;
     completed:Boolean;
+    cancelled:Boolean;
 
 }
