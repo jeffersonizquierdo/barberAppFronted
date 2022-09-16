@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenedor" *ngFor="let imagen  of images">
+        <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+          <p style="font-size: 20px; color: white"> Eliminando...</p>
+        </ngx-spinner>
+        <a [routerLink]="['/homebarbershop']">
+             <figure>
+                 <img src="{{imagen.url}}">
+                 <div class="capa">
+                     <h3>{{imagen .name}}</h3>
+                     <p>{{imagen.description}}</p>
+                 </div>
+             </figure>
+         </a>
+      </div>
+    
+</body>
+</html>

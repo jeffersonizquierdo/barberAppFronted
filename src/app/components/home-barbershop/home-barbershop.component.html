@@ -7,28 +7,40 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container-portada">
-        <div class="capa"></div>
-        <div class="container-deails">
-            <div class="dealis">
-                <h1>Bienvenido Barberia {{usuario.nickname}}</h1>
+    <div class="contenido">
+        <div class="container-portada">
+            <div class="capa"></div>
+            <div class="container-deails">
+                <div class="dealis">
+                    <h1>Bienvenido Barberia <br> {{barbershop.nickname}}</h1>
+                </div>
             </div>
         </div>
-    </div>
-
-    
-  
-    <div class="medium">
-
-        <app-to-show-publications></app-to-show-publications> 
-
-    </div>
-
-    <div class="right">
-
-        <app-ranking></app-ranking>
         
+        
+        <div class="left">
+    
+                
+           
+            <app-all-promotion></app-all-promotion>
+         
+            
+        </div>
+      
+        <div class="medium">
+    
+            <app-to-show-publications></app-to-show-publications> 
+    
+        </div>
+    
+        <div class="right">
+    
+            <app-ranking></app-ranking>
+            
+        </div>
     </div>
+   
+
     
 </body>
 </html>
