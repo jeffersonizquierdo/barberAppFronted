@@ -75,7 +75,7 @@
               </nav>
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 2" class="funciones" >
                 <a [routerLink]="['/homebarber']"class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
-                <a  [routerLink]="['/stalk_barbershop', barber.barbershop.id]">Barberia</a>
+                <a *ngIf="barber.barbershop != null" [routerLink]="['/stalk_barbershop', barber.barbershop.id]">Barberia</a>
                 <a [routerLink]="['/porfilebarber']">Ver Perfil</a>
                 <a [routerLink]="['/calendar']">Maya de turnos</a>
                 <a [routerLink]="['/publicidad', usuario.id]">Publicaciones</a>
