@@ -6,19 +6,20 @@
   <nav>
     <table>
       <thead>
-        <tr>
+        <tr class="DatosCliente">
           <th scope="col">Fecha</th>
           <th scope="col">Cliente</th>
           <th scope="col">Corte</th>
   1
       </thead>
       <tbody>
-  
-        <tr *ngFor="let date of bookingsBarberComplete">
+ 
+        <tr *ngFor="let date of bookikingsBarberComplete" class="botones">
+
           <th scope="row">{{date.corte.name}} : {{date.customer.nickname}}</th>
           <th scope="row">{{date.corte.url}}</th>
-          <td><button  (click)="completeBooking(date)" class="btn btn-outline-primary">Completado</button></td>
-          <td><button (click)="cancelBooking(date)"  class="btn btn-outline-primary">Cancelar</button></td>
+          <td><button  (click)="completeBooking(date)" class="btnCompletado">Completado</button></td>
+          <td><button (click)="cancelBooking(date)"  class="btnCancelar">Cancelar</button></td>
         </tr>
   
       </tbody>
