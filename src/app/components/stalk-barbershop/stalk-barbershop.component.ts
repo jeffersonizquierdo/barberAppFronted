@@ -29,6 +29,8 @@ export class StalkBarbershopComponent implements OnInit {
   consullBarbershop(){
     this.serviceBarbershop.getbarber(this.idBarbershop).subscribe((resorse:any)=>{
       this.barbershop=resorse
+      console.log(resorse);
+      
     })
   }
 
