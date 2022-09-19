@@ -1,7 +1,7 @@
 import { BookingService } from './../../services/booking/booking.service';
 import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
 import { Component, OnInit } from '@angular/core';
-import { View, EventSettingsModel } from '@syncfusion/ej2-angular-schedule';
+import { View, EventSettingsModel, WorkHoursModel } from '@syncfusion/ej2-angular-schedule';
 import {DataManager, WebApiAdaptor} from '@syncfusion/ej2-data'
 import { AuthServices } from 'src/app/models/AuthServices';
 import { Usuario } from 'src/app/models/Usuario';
@@ -18,7 +18,6 @@ export class BookingsBarbershopComponent implements OnInit {
 
   public setDate: Date =  new Date();
   public setView : View[] = ['Day', "Week", 'Month'];
-
 
   usuario: Usuario;
   barbershop: Barbershop;
@@ -89,7 +88,7 @@ export class BookingsBarbershopComponent implements OnInit {
 
         this.data = 
           {Id: e.id,
-            Subject: e.barber.nickname,
+            Subject: "Cli: "+ e.customer.nickname+ "   Bar: " + e.barber.nickname,
             StartTime: new Date(this.fecha),
             EndTime: new Date(this.fechafin + (55 * 60000))}
         

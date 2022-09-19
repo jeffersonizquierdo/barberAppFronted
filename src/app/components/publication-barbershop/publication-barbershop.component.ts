@@ -2,7 +2,7 @@ import { Usuario } from './../../models/Usuario';
 import { AuthServices } from './../../models/AuthServices';
 import { Barbershop } from 'src/app/models/barbershop';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
 import { PublicityService } from 'src/app/services/publicity/publicity.service';
 
@@ -13,6 +13,8 @@ import { PublicityService } from 'src/app/services/publicity/publicity.service';
 })
 export class PublicationBarbershopComponent implements OnInit {
   listPublicity2:any=[];
+
+  @Input() idBarberia: number;
 
   constructor(private BarbershopService:BarbershopService,private publicationServices:PublicityService,private autservese:AuthServices) { }
 
@@ -25,7 +27,7 @@ export class PublicationBarbershopComponent implements OnInit {
   
  
 
-  id : any;
+
   usuario: Usuario;
   barbershop : Barbershop;
 
@@ -37,22 +39,28 @@ export class PublicationBarbershopComponent implements OnInit {
 
     setTimeout(() => {
 
-      this.BarbershopService.listpublicyid(this.id).subscribe(
-        data =>{
+
+     
+      
+
+      this.BarbershopService.getbarber(this.idBarberia).subscribe((response: any) =>{
+
+        this.barbershop = response
+      })
+
+      console.log("iddddd "  + this.idBarberia);
+
+      this.BarbershopService.listpublicyid(this.idBarberia).subscribe(
+        
+        (data: any) =>{
           console.log(data)
           this.listPublicity2=data;
           console.log(this.listPublicity2.description);
           
         }
       )
-
-
-      this.BarbershopService.getbarber(this.id).subscribe((response: any) =>{
-
-        this.barbershop = response
-      })
       
-    }, 100);
+    }, 500);
 
   }
   delete  (id:Number):void{

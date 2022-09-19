@@ -174,10 +174,19 @@ h3{
     font-weight: 700;
     cursor: pointer;
     outline: none;
-    margin: 30px 41px;
+    margin: 30px 61px;
 
 }
 .input_edit{
     text-decoration: none;
 }
 
+@media only screen and (max-width: 1024px) and(min-width: 768px) {
+    form  .txt_field{
+        margin: 10px 15px;
+    }
+
+    .center h1{
+        padding: 10px 0 10px;
+    }
+}

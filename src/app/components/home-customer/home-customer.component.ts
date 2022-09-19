@@ -68,8 +68,6 @@ export class HomeCustomerComponent implements OnInit {
   
             this.customerService.saveCustomer(this.customer).subscribe(response => {
 
-              swal.fire("Registro","Melo mi papacho", 'success');
-              
             })
   
           };

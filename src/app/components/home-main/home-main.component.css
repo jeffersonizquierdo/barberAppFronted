@@ -298,6 +298,13 @@ footer{
     margin-top: -89px;
 }
 
+.correo{
+    width: 22px;
+}
+.ig{
+    width: 19px;
+}
+
 .price__cta.free{
     transition: 0.5s;
     color: #2091f9;

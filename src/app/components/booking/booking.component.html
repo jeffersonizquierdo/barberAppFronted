@@ -1,73 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 
 <body class="body">
-  <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
-    <p style="font-size: 20px; color: white">Reservando...</p>
-  </ngx-spinner>
-
-  <div class="hola">
-    <div *ngFor="let b of barbers" class="images-barber" >
-      <button  class="barber" (click) = "selectBarber(b)">
-        <div class="barber2" (click)="selectBarber(b.id)">
-            <img class=""  src="{{b.photo}}" alt=""></div>
-            <p class="p">{{b.nickname}}</p>
-      </button>
+    <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+        <p style="font-size: 20px; color: white">Reservando...</p>
+    </ngx-spinner>
+    <div class="titulos">
+        <h2>Selecciona el Barbero</h2>
+        <h2>Selecciona el Corte</h2>
     </div>
-  </div>
-
-  <div class="medio">
-      <h1 class="title">Calendario </h1>
-
-      <div class="calendar">
-          <div class="calendar__info">
-              <div class="calendar__prev" id="prev-month"  (click)="changeMonth(-1)" class="btn-prev" >&#9664;</div>
-              <div class="calendar__month" id="month">{{dateSelect | date: 'MMMM, yyyy' }}</div>
-              <div class="calendar__next" id="next-month"  (click)="changeMonth(1)" class="btn-next" >&#9654;</div>
-          </div>
-
-          <div class="calendar__week">
-              <div class="calendar__day calendar__item"   *ngFor="let day of week; let i=index" >{{day | slice: 0:3 }} </div>
-              <div class="calendar__day calendar__item"(click)="clickDay(day)" [style.gridColumnStart]=" first ? day ?.indexWeek : 'auto' "
-              *ngFor="let day of monthSelect;let first = first">
-              <span>  {{day?.value}}</span>
-            
+    
+    <div class="catalogoBarberos">
+        <div class="hola">
+            <div *ngFor="let b of barbers" class="images-barber">
+                <button class="barber" (click)="selectBarber(b)">
+                    <div class="barber2" (click)="selectBarber(b.id)">
+                    <img class=""  src="{{b.photo}}" alt=""></div>
+                    <p class="p">{{b.nickname}}</p>
+                </button>
             </div>
-          
-          </div>
-
-          <div class="calendar__dates" id="dates"></div>
-      </div>
-
-      <div class="container-hours">
-        <h4>Horarios: </h4>
-        <div class="hours" *ngFor="let h of hours; let i=index">
-          <button *ngIf="h.minutes != 0" (click)="captureTime(i)">{{h.hour}} : {{h.minutes}}</button> 
-          <button *ngIf="h.minutes == 0" (click)="captureTime(i)">{{h.hour}} : {{h.minutes}}0</button> 
         </div>
-      </div>
+        <div class="hola">
+            <div *ngFor="let b of catalogue" class="images-barber">
+                <button class="barber" (click)="selectcatalogue(b)">
+                    <div class="barber2" (click)="selectcatalogue(b.id)">
+                    <img class=""  src="{{b.url}}" alt=""></div>
+                    <p class="p">{{b.name}}</p>
+                </button>
+            </div>
+        </div>
+    </div>
 
-      <div class="selecion">
+    <hr class="superior">
+    <div class="medio">
 
-        <p><span>Barbero seleccionado: <img *ngIf="photo != null" class="imgbarber" src="{{photo}}" alt=""> {{name}}</span></p>
-        
-        <p>Fecha seleccionada: {{date}}</p>
-      
-      
-      
-        <p *ngIf="minutesSelect != 0">Hora seleccionada: {{hourSelect}}:{{minutesSelect}}</p>
-        <p *ngIf="minutesSelect == 0">Hora seleccionada: {{hourSelect + ":"}}{{minutesSelect}}0</p>
-        <button (click)="saveBooking()">Reservar</button>
-      
-      </div>
-      
-  </div>
+        <div class="calendar">
+            <div class="calendar__info">
+                <div class="calendar__prev" id="prev-month" (click)="changeMonth(-1)" class="btn-prev">&#9664;</div>
+                <div class="calendar__month" id="month">{{dateSelect | date: 'MMMM, yyyy' }}</div>
+                <div class="calendar__next" id="next-month" (click)="changeMonth(1)" class="btn-next">&#9654;</div>
+            </div>
+
+            <div class="calendar__week">
+                <div class="calendar__day calendar__item" *ngFor="let day of week; let i=index">{{day | slice: 0:3 }} </div>
+                <div class="calendar__day calendar__item" (click)="clickDay(day)" [style.gridColumnStart]=" first ? day ?.indexWeek : 'auto' " *ngFor="let day of monthSelect;let first = first">
+                    <span>  {{day?.value}}</span>
+
+                </div>
+
+            </div>
+
+            <div class="calendar__dates" id="dates"></div>
+        </div>
+
+        <div class="container-hours">
+            <h4>Horarios: </h4>
+            <hr>
+            <div class="hours" *ngFor="let h of hours; let i=index">
+                <button *ngIf="h.minutes != 0" (click)="captureTime(i)">{{h.hour}} : {{h.minutes}}</button>
+                <button *ngIf="h.minutes == 0" (click)="captureTime(i)">{{h.hour}} : {{h.minutes}}0</button>
+                <hr>
+            </div>
+        </div>
+
+        <div class="selecion">
+
+            <p><span>Barbero seleccionado: <img *ngIf="photo != null" class="imgbarber" src="{{photo}}" alt=""> {{name}}</span></p>
+
+            <p>Fecha seleccionada: {{date}}</p>
+
+
+
+            <p *ngIf="minutesSelect != 0">Hora seleccionada: {{hourSelect}}:{{minutesSelect}}</p>
+            <p *ngIf="minutesSelect == 0">Hora seleccionada: {{hourSelect + ":"}}{{minutesSelect}}0</p>
+            <button (click)="saveBooking()">Reservar</button>
+
+        </div>
+
+    </div>
 
 
 </body>

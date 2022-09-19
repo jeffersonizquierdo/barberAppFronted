@@ -62,7 +62,7 @@
           <div class="cont-menu">
             <nav>
              
-              <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 1" class="funciones" >
+              <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 1" class="funciones"  >
                 <a [routerLink]="['/homebarbershop']"class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
                 <a [routerLink]="['/porfilebarbershop']">Ver Perfil</a>
                 <a [routerLink]="['/listabarber']" >Barberos</a>
@@ -75,9 +75,9 @@
               </nav>
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 2" class="funciones" >
                 <a [routerLink]="['/homebarber']"class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
-                <a routerLink="#">Barberia</a>
+                <!-- <a *ngIf="barber.barbershop != null" [routerLink]="['/stalk_barbershop', barber.barbershop.id]">Barberia</a> -->
                 <a [routerLink]="['/porfilebarber']">Ver Perfil</a>
-                <a [routerLink]="['/calendar']">Maya de turnos</a>
+                <a [routerLink]="['/booking-barber']">Maya de turnos</a>
                 <a [routerLink]="['/publicidad']">Publicaciones</a>
               
                 <a (click)="logout()" href="#">Cerrar Sesion</a>  
