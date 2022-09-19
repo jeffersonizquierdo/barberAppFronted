@@ -1,6 +1,6 @@
 <div class="container" >
 
-<ejs-schedule startHour='09:00' endHour='20:00' class="calendar" [eventSettings]="eventSettings" height="900px%"> </ejs-schedule>
+<ejs-schedule startHour='09:00' endHour='20:00' class="calendar"  [eventSettings]="eventSettings" height="900px%"> </ejs-schedule>
 
 
   <nav>
@@ -15,7 +15,7 @@
       </thead>
       <tbody>
   
-        <tr *ngFor="let date of bookingsBarbershop">
+        <tr *ngFor="let date of bookikingsBarberComplete">
           <th scope="row">{{date.corte.name}} : {{date.customer.nickname}}</th>
           <th scope="row">{{date.corte.url}}</th>
           <td><button  (click)="completeBooking(date)" class="btn btn-outline-primary">Completado</button></td>

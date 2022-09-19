@@ -38,6 +38,7 @@
   top: 20px;
   color: white;
 }
+<<<<<<< HEAD
 
 
 .right{
@@ -60,3 +61,21 @@
   border: none;
   background:none;
 }
+=======
+/* .ranking{
+  width: 99%;
+  height: 1vh;
+  margin: -28% 0%;
+} */
+.ranking{
+  margin-top: 20px;
+}
+.publication{
+  margin: 0 19%;
+  float: right;
+}
+/* 
+.container-div{
+  
+} */
+>>>>>>> 808fac82545db5b3fe641a341084582d72f2b171
