@@ -29,10 +29,10 @@ article.card{
     box-shadow: 0 0 12px #d7d7d7;
     height: 586px;
     width: 122%;
+    padding-top: 15px;
 }
 
 .header-card img{
-    border-radius: 8px 8px 0 0;
     max-height: 393px;
     height: 344px;
     width: 100%;

@@ -25,7 +25,7 @@
     <h1>Historial de citas</h1>
     <div class="mensaje" *ngFor="let bookings of Bookingscomplete; let i =index">
         <div><p>codigo: {{bookings.id}}</p></div>
-        <a  class="barbersho" *ngFor="let barbershop of barbershopsComplete2">
+        <a  class="barbersho" *ngFor="let barbershop of barbershopsComplete">
             <p>Barberia: {{barbershop.nickname}}</p>
             <div class=""><img src="{{barbershop.photo}}" alt=""></div>
             <p></p>
@@ -52,10 +52,10 @@
         </div>
     </div>
 
-    <!-- <h1>Citas</h1>
-    <div class="mensaje" *ngFor="let bookings of BookingsIncomplete; let i =index">
+    <h1>Citas Canceladas</h1>
+    <div class="mensaje" *ngFor="let bookings of Bookingscancelled2; let i =index">
         <div><p>codigo: {{bookings.id}}</p></div>
-        <a  class="barbersho" *ngFor="let barber of barbershops">
+        <a  class="barbersho" *ngFor="let barber of barbershopscancelled">
             <p>Barberia: {{barber.nickname}}</p>
             <div class=""><img src="{{barber.photo}}" alt=""></div>
             <p></p>
@@ -68,7 +68,10 @@
         <div>
             <p>Hora: {{bookings.reservationDate}}</p>
         </div>
-        <button (click)="Cancel(bookings.id)">Cancelar reserva</button>
-    </div> -->
+        <div>
+            <h2>Motivo</h2>
+            <p>{{bookings.descrition}}</p>
+        </div>
+        <button>Aceptar</button>
+    </div>
 </div>
-

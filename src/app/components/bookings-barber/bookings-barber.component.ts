@@ -22,7 +22,7 @@ export class BookingsBarberComponent implements OnInit {
   barber: Barber
   bookings:Booking[]=[];
   bookingsBarber:Booking[]=[];
-  bookikingsBarberComplete: Booking[] = []
+  bookingsBarberComplete:Booking[]=[];
   eventSettings: EventSettingsModel;
   data: any;
   fecha: Date;
@@ -74,13 +74,14 @@ export class BookingsBarberComponent implements OnInit {
       this.bookings.map(e => {
 
         if(this.barber.id == e.barber.id){
-          this.bookingsBarber.push(e);  
+          this.bookingsBarber.push(e); 
           
+          console.log("lista 1");
+          console.log(this.bookingsBarber);
           if(this.barber.id == e.barber.id && e.completed == false && e.cancelled == false){
-
-            this.bookikingsBarberComplete.push(e)
-
+            this.bookingsBarberComplete.push(e)
           }
+          
         }
       })
 
