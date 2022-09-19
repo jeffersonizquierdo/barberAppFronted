@@ -74,11 +74,19 @@ export class BookingsBarberComponent implements OnInit {
       this.bookings.map(e => {
 
         if(this.barber.id == e.barber.id){
+
           this.bookingsBarber.push(e);  
           
+          console.log("lista 1");
+          console.log(this.bookingsBarber);
           if(this.barber.id == e.barber.id && e.completed == false && e.cancelled == false){
 
             this.bookikingsBarberComplete.push(e)
+
+            console.log("otra lista");
+            
+            console.log(this.bookikingsBarberComplete);
+            
 
           }
         }

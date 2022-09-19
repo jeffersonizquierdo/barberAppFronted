@@ -13,15 +13,25 @@ import Swal from 'sweetalert2';
   styleUrls: ['./booking-customer.component.css']
 })
 export class BookingCustomerComponent implements OnInit {
-
+//variables de las reservas pendientes
   Bookings:any=[];
   BookingsIncomplete:any=[];
+  barbershops: any=[];
+
+  //variables de las reservas completas
   Bookingscomplete:any=[];
   Bookingscomplete2:any[];
-  usuario:Usuario;
-  barbershops: any=[];
   barbershopsComplete: any=[];
-  barbershopsComplete2: any=[];
+ 
+  
+  // variables reservas canceladas
+  Bookingscancelled:any[];
+  Bookingscancelled2:any=[];
+  barbershopscancelled:any=[];
+  usuario:Usuario;
+  
+  
+  
   
   noCitas="";
   constructor(private snniperMensaje: NgxSpinnerService, private serviceBarbershop: BarbershopService, private auhtService: AuthServices,private serviceBooking: BookingService) { }
@@ -30,6 +40,7 @@ export class BookingCustomerComponent implements OnInit {
     this.usuario=this.auhtService.usuario;
     this.loaderBookingMessages();
     this.loaderBookingcompleted();
+    this. loaderBookingCanceled();
   }
 
   loaderBookingMessages(){
@@ -38,7 +49,11 @@ export class BookingCustomerComponent implements OnInit {
       setTimeout(() => {
         this.Bookings.map(e=>{
           if(e.customer.id==this.usuario.id && e.completed == false){
-            this.BookingsIncomplete.push(e);     
+            if(e.cancelled == true){
+              console.log("cancelada");
+            }else{
+              this.BookingsIncomplete.push(e);  
+            }
           }
         })
       },100);
@@ -65,14 +80,29 @@ export class BookingCustomerComponent implements OnInit {
       setTimeout(() => {
         this.Bookingscomplete2.map(e=>{
           this.serviceBarbershop.getbarber(e.barbershop).subscribe((data) => {
-            this.barbershopsComplete2.push(data);
+            this.barbershopsComplete.push(data);
           });
         })
       }, 500);
     })
   }
-
-
+  loaderBookingCanceled(){
+    this.serviceBooking.listBooking().subscribe((response:any)=>{
+      this.Bookingscancelled=response;
+        this.Bookingscancelled.map(e=>{
+          if(e.cancelled == true) this.Bookingscancelled2.push(e);
+          console.log(this.Bookingscancelled2);
+        })
+      setTimeout(() => {
+        this.Bookingscancelled2.map(e=>{
+          this.serviceBarbershop.getbarber(e.barbershop).subscribe((data) => {
+            console.log(data);
+            this.barbershopscancelled.push(data);
+          });
+        })
+      }, 500);
+    })
+  }
 
   Cancel(id:Number){
     this.serviceBooking.deleteBooking(id).subscribe((response:any)=>{
