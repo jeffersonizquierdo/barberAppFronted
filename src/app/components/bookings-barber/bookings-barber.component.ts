@@ -76,6 +76,8 @@ export class BookingsBarberComponent implements OnInit {
         if(this.barber.id == e.barber.id){
           this.bookingsBarber.push(e); 
           
+          console.log("lista 1");
+          console.log(this.bookingsBarber);
           if(this.barber.id == e.barber.id && e.completed == false && e.cancelled == false){
             this.bookingsBarberComplete.push(e)
           }
