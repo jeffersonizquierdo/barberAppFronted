@@ -3,16 +3,10 @@
     padding: 0%;
 }
 
-.public{
-    float: right;
-    margin-right: 25%;
-    margin-top: -33%;
-}
-
 .container-portada{
     width: 100%;
     height: 400px;
-    background-image: url(../../../assets/images/slider1.jpg);
+    background-image: url(../../../assets/images/banner.jpg);
     background-size: 200%;
     animation: movimiento 10s infinite linear alternate;
     position: relative;
@@ -43,10 +37,6 @@
    
 }
 
-.continerranking{
-    margin: -60% 0%;
-}
-
 .dealis{
     text-align: center;
     width: 100%;
@@ -56,19 +46,30 @@
     color: white;
 }
 
+.right{
+    margin-top: 6%;
+    margin-left: 3%;
+}
+
+.medium{
+    position: absolute;
+    top: 0%;
+    left: 44%;
+    height: 48vh;
+    width: 39%;
+}
+
+
+
+
+/*campana*/
+
 .page{
 
     display: flex;
     flex-direction: column;
 }
-
-
-.bodyPage{
-    display: flex;
-    flex-direction: row;
-}
-
-.medium{
+.conMedium{
     margin: -103% 72px 16px 29%;
     max-height: 750px;
     color: #e4e4e4;
@@ -82,11 +83,10 @@
     align-items: center;
 }
 
-
-
-
-
-
+.bodyPage{
+    display: flex;
+    flex-direction: row;
+}
 
 
 .butt{
@@ -99,9 +99,6 @@
 body, .notificacion{
 	width: 100%;
 	height: 100vh;
-	display: flex;
-	justify-content: left;
-	align-items: flex-start;
 }
 .notificacion{
 	transition: all 500ms ease;

@@ -10,12 +10,11 @@
           <th scope="col">Fecha</th>
           <th scope="col">Cliente</th>
           <th scope="col">Corte</th>
-  
-        </tr>
+  1
       </thead>
       <tbody>
   
-        <tr *ngFor="let date of bookikingsBarberComplete">
+        <tr *ngFor="let date of bookingsBarberComplete">
           <th scope="row">{{date.corte.name}} : {{date.customer.nickname}}</th>
           <th scope="row">{{date.corte.url}}</th>
           <td><button  (click)="completeBooking(date)" class="btn btn-outline-primary">Completado</button></td>
@@ -26,7 +25,5 @@
     </table>
 
   </nav>
-  
-
 
 </div>
