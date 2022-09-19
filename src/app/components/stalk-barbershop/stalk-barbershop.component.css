@@ -210,3 +210,7 @@ h3{
 }
 
 
+.vacio{
+    z-index: -1;
+    padding-top: 105px;
+}
