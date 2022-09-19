@@ -111,12 +111,16 @@ section{
     padding: 0.8rem 3rem;
     border-radius: 5rem;
     background-color: #2091F9;
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 19px;
     cursor: pointer;
     transition: all .3s linear;
     text-decoration: none;
   
+}
+.button:hover{
+    background-color: #FFF;
+    color: #2091f9;
 }
 .button a{
     text-decoration: none;
@@ -286,6 +290,13 @@ section{
 
 footer{
     margin-top: -89px;
+}
+
+.correo{
+    width: 22px;
+}
+.ig{
+    width: 19px;
 }
 
 .price__cta.free{

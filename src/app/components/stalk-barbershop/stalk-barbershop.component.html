@@ -4,7 +4,7 @@
             <h3 class="titulo"></h3>
            
             <div class="button">
-                <a [routerLink]="['/booking', barbershop.id]" >Reservar</a>
+                <a *ngIf="usuario.typeUser == 3"  [routerLink]="['/booking', barbershop.id]" >Reservar</a>
             </div>
 
             <div class="perfil-usuario-avatar">
@@ -45,4 +45,4 @@
     
 </div>
 
-<app-publication-barbershop *ngIf="barbershop.publications >= 0" ></app-publication-barbershop>
+<app-publication-barbershop [idBarberia]= "barbershop.id" *ngIf="barbershop.publications >= 0" ></app-publication-barbershop>

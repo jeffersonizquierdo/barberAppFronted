@@ -75,6 +75,7 @@
     border-radius: 5px;
     height: 400px;
     font-size: 18px;
+
 }
 
 .calendar__info {
@@ -127,15 +128,16 @@
 .calendar__item {
     text-align: center;
     line-height: 2;
+    width: 40px;
+    height: 40px;
 }
 
 .calendar__item:hover {
     background-color: #fff;
     color: #000;
-}
+    transition: all 0.3s;
+    border-radius: 100%;
 
-.calendar__item span {
-    padding: 6px 26px;
 }
 
 .calendar__today {
