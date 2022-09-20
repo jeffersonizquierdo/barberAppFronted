@@ -38,19 +38,25 @@
   top: 20px;
   color: white;
 }
-/* .ranking{
-  width: 99%;
-  height: 1vh;
-  margin: -28% 0%;
-} */
-.ranking{
-  margin-top: 20px;
+
+
+.right{
+  margin-top: 6%;
+  margin-left: 3%;
 }
-.publication{
-  margin: 0 19%;
-  float: right;
+
+.medium{
+  position: absolute;
+  top: 0%;
+  left: 44%;
+  height: 48vh;
+  width: 39%;
 }
-/* 
-.container-div{
-  
-} */
+
+.left{
+  margin: 0 0;
+  width: 50%;
+  height: 50vh;
+  border: none;
+  background:none;
+}
