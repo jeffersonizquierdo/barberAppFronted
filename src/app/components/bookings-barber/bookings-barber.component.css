@@ -12,7 +12,6 @@
 
   display: flex;
   flex-direction: row;
-  gap: 50px;
   height: 925px;
   
 
@@ -36,32 +35,86 @@
   justify-content: space-between;
 }
 
-table{
+.containerDatos{
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-evenly;
   height: 148px;
   align-content: flex-end;
+  background: white;
+  margin-top: 30px;
+  min-width: 666px;
+  box-shadow: 0px 0px 0px 0px black;
+  margin-right: -524px;
+  margin-left: 58px;
+  border-radius: 10px;
+  padding: 15px;
+  min-height: 200px;
 }
 
+.containerDatos::after{
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "  ";
+  background-image: linear-gradient(120deg,#5cbeff,#8e44ad);
+  filter: blur(10px);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  
 
+}
 
 .btnCompletado{
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #CCFFCC;
-  border-top-width: 1px;
-  border-right-width: 1px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-top-style: solid;
-  border-right-style: solid;
-  border-bottom-style: solid;
-  border-left-style: solid;
-  border-top-color: #00FF00;
-  border-right-color: #00CC33;
-  border-bottom-color: #00CC33;
-  border-left-color: #00FF00;
-  color: #8CAE06;
-  font-weight: bold;
+  background-color: #5cbeff;
+  border: 2px solid  #5cbeff;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  transition: 0.6s;
+  box-shadow: 0 9px #999;
+}
+.btnCompletado:hover{
+  background-color: white;
+  border: 2px solid  #5cbeff;
+  color: black;
+  transition: 0.5s;
+}
+.btnCompletado:active {
+  background-color: #3777a1;
+  box-shadow: 0 5px #666;
+  border: 2px solid  #3777a1;
+  transform: translateY(4px);
+  color: white;
+  transition: 0s;
+
+}
+
+.btnCancelar{
+  background-color: #f44336;
+  border: 2px solid  #f44336;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  transition: 0.6s;
+  box-shadow: 0 9px #999; 
+}
+.btnCancelar:hover{
+  background-color: white;
+  border: 2px solid  #f44336;
+  color: black;
+  transition: 0.5s;
+}
+.btnCancelar:active {
+  background-color: #8c2f28;
+  border: 2px solid  #8c2f28;
+  box-shadow: 0 5px #666;
+  color: white;
+  transform: translateY(4px);
+  transition: 0s;
 }
