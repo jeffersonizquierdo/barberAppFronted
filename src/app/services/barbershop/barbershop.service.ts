@@ -81,8 +81,6 @@ export class BarbershopService {
     return  this.http.get<Barbershop>(`http://localhost:8080/barbershop/consult/${this.usuario.id}`, {headers: this.agregarAuthorizationHeader()})
   }
 
-
-
   listBarber():  Observable<Barber>{
 
     return  this.http.get<Barber>(`http://localhost:8080/barbershop/consultbarber/${this.usuario.id}`, {headers: this.agregarAuthorizationHeader()})
@@ -92,9 +90,6 @@ export class BarbershopService {
     console.log("holi 3 " + id)
     return  this.http.get<Publicity>(`http://localhost:8080/barbershop/consultpublication/${id}`, {headers: this.agregarAuthorizationHeader()})
   }
-
-
-
 
   getbarber(id : Number):  Observable<Barbershop>{
 
@@ -124,5 +119,7 @@ export class BarbershopService {
     return false;
 
   }
+
+  
 
 }
