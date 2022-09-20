@@ -18,7 +18,6 @@ export class BarbershopService {
   private httpHeadres = new HttpHeaders({ 'Content-Type' : 'application/json'})
 
   usuario:Usuario = this.authService.usuario;
-.0
   private agregarAuthorizationHeader(){
 
     let token = this.authService.token
@@ -51,6 +50,31 @@ export class BarbershopService {
         return throwError(e);
       }));
       
+  }
+
+
+  updateBarbershop(barbershop : Barbershop): Observable <Barbershop>{
+
+    console.log("barbershop");
+    
+    console.log(barbershop);
+    
+
+    return this.http.put<Barbershop>(`http://localhost:8080/barbershop/update/${barbershop.id}`, barbershop, {headers: this.agregarAuthorizationHeader()}).pipe(
+     
+      catchError(e =>{
+        if(this.isNoAuthorizado(e)){
+          console.log("paila")
+          return throwError(e)
+
+        }
+
+        // console.error(e.error.mensaje);
+        swal.fire(e.error.Mensaje, e.error.Error, 'error');
+        
+        return throwError(e);
+      }));
+
   }
 
   listBarbershop():  Observable<Barbershop>{
