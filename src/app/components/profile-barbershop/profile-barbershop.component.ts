@@ -4,6 +4,8 @@ import { AuthServices } from 'src/app/models/AuthServices';
 import { Barbershop } from 'src/app/models/barbershop';
 import { Usuario } from 'src/app/models/Usuario';
 import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
+import { CustomerService } from 'src/app/services/customer/customer.service';
+import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,13 +15,16 @@ import Swal from 'sweetalert2';
 })
 export class ProfileBarbershopComponent implements OnInit {
 
-  constructor(private sniper3:NgxSpinnerService,private BabrebrshopService:BarbershopService, private authservices:AuthServices) { }
+  constructor(private sniper3:NgxSpinnerService,private barberService:BarbershopService, private authservices:AuthServices, private usuarioService:UsuarioService) { }
   barbershop :Barbershop;
   user:Usuario;
+  usuario:Usuario;
+
+
   ngOnInit(): void {
     this.user=this.authservices.usuario;
     this.loader();
-    
+    this.getUser();    
   }
   editActive = true;
 
@@ -31,8 +36,14 @@ export class ProfileBarbershopComponent implements OnInit {
     this.editActive = !this.editActive;
   }
 
+  getUser(){
+    this.usuarioService.getUser(this.user.id).subscribe((response: any)=>{
+      this.usuario = response;
+    })
+  }
+
   loader():void{
-    this.BabrebrshopService.getbarber(this.user.id).subscribe(
+    this.barberService.getbarber(this.user.id).subscribe(
       data =>{
         this.barbershop =data;
         console.log(this.barbershop.description);
@@ -43,20 +54,24 @@ export class ProfileBarbershopComponent implements OnInit {
 
   updateBarbershop(){
 
+    this.user.city = this.barbershop.city;
+    this.user.cellphone = this.barbershop.cellphone;
 
-    console.log(this.cellphone, this.city, this.location);
-    
+  
+    this.barberService.updateBarbershop(this.barbershop).subscribe((response: any) => {
 
-    if(this.cellphone != null) this.barbershop.cellphone = this.cellphone;
-    else if (this.city != null) this.barbershop.city = this.city;
-    else if(this.location != null) this.barbershop.location = this.location;  
+
     
-    setTimeout(() => {
-      this.BabrebrshopService.updateBarbershop(this.barbershop).subscribe((response: any) => {
-      
-        if(response){ Swal.fire("Hecho", "Has actualizado tu perfil", "success")}
-      })
-    }, 200);
+      if(response){ 
+
+        this.usuarioService.updateUsuario(this.usuario).subscribe((data : any) => {
+          Swal.fire("Hecho", "Has actualizado tu perfil", "success")
+        })
+       
+        this.editTrue()
+      }
+    })
+
 
   
   }
