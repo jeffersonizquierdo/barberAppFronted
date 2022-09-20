@@ -65,7 +65,6 @@ export class BondingMessagesComponent implements OnInit {
     this.listLinkear.every(e=>{
       return this.acceptance=e.acceptance==true
     })
-
     setTimeout(() => {
 
       this.snipper.show();
@@ -95,7 +94,6 @@ export class BondingMessagesComponent implements OnInit {
           }else{
             Swal.fire('Denegado',`Ya te vinculaste a una barberia desvinculate antes o adquiere una version premium ` , 'info');
           }
-      
     }, 500);
 
 

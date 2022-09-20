@@ -42,21 +42,16 @@ export class ProfileBarbershopComponent implements OnInit {
   }
 
   updateBarbershop(){
-
-
-    console.log(this.cellphone, this.city, this.location);
+    
+    console.log(this.barbershop);
     
 
-    if(this.cellphone != null) this.barbershop.cellphone = this.cellphone;
-    else if (this.city != null) this.barbershop.city = this.city;
-    else if(this.location != null) this.barbershop.location = this.location;  
-    
-    setTimeout(() => {
+    /* setTimeout(() => {
       this.BabrebrshopService.updateBarbershop(this.barbershop).subscribe((response: any) => {
       
         if(response){ Swal.fire("Hecho", "Has actualizado tu perfil", "success")}
       })
-    }, 200);
+    }, 200); */
 
   
   }
