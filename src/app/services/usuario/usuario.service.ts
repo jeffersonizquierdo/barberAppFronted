@@ -37,7 +37,7 @@ export class UsuarioService {
     
     
 
-    return this.http.put<Usuario>("http://localhost:8080/usuario/update/"+usuario.id, {headers: this.agregarAuthorizationHeader()}).pipe(
+    return this.http.put<Usuario>("http://localhost:8080/usuario/update/"+usuario.id, usuario ,{headers: this.agregarAuthorizationHeader()}).pipe(
 
     )
 
