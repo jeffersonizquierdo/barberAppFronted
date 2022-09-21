@@ -25,53 +25,99 @@
     <h1>Historial de citas</h1>
     <div class="mensaje" *ngFor="let bookings of Bookingscomplete; let i =index">
         <div><p>codigo: {{bookings.id}}</p></div>
-        <a  class="barbersho" *ngFor="let barbershop of barbershopsComplete">
+        <div  class="barbersho" *ngFor="let barbershop of barbershopsComplete">
             <p>Barberia: {{barbershop.nickname}}</p>
             <div class=""><img src="{{barbershop.photo}}" alt=""></div>
             <p></p>
-        </a>
-        <a  class="barber">
-            <p>barbero: {{bookings.barber.nickname}}</p>
-            <div class=""><img src="{{bookings.barber.photo}}" alt=""></div>
-            <p></p>
-        </a>
-        <div>
-            <p>Hora: {{bookings.reservationDate}}</p>
-        </div>
+        
+            <a  class="barber">
+                <p>barbero: {{bookings.barber.nickname}}</p>
+                <div class=""><img src="{{bookings.barber.photo}}" alt=""></div>
+                <p></p>
+            </a>
+            <div>
+                <p  >fecha cita: {{bookings.reservationDate}}</p>
+            </div>
 
-        <div class="qualification">
-            <div>
-                <label for="">Califica el barbero</label>
-                <input type="number" name="" id="" min="1" max="5">
+            <div *ngIf="bookings.score==false" class="qualification">
+                <div>
+                    <label for="">Califica el barbero</label>
+                    <input type="number" name="" id="" min="1" max="5" [(ngModel)]="scoreBarber">
+                </div>
+                <div>
+                    <label for="">Califica la barberia</label>
+                    <input type="number" name="" id="" min="1" max="5" [(ngModel)]="scoreBarbershop">
+                </div>
             </div>
-            <div>
-                <label for="">Califica la barberia</label>
-                <input type="number" name="" id="" min="1" max="5">
-            </div>
-            <button>Aceptar</button>
+            <button (click)="score(bookings,barbershop)">Aceptar</button>
         </div>
     </div>
+    <section>
+        <input type="checkbox" id="btn-notificacion">
+        <label for="btn-notificacion" class="lbl-notificacion"><img src="../../../assets/images/campana.png" alt="">
+            <p class="butt" for="btn-notificacion">●</p>
+        </label>
+        <div class="notificacion">
+            <label for="btn-notificacion">⨂</label>
+            <div class="containerHistorial">
+                <h1>Historial de citas</h1>
+                <div class="mensaje" *ngFor="let bookings of Bookingscomplete; let i =index">
+                    <div>
+                        <p>codigo: {{bookings.id}}</p>
+                    </div>
+                    <a class="barbersho" *ngFor="let barbershop of barbershopsComplete">
+                        <p>Barberia: {{barbershop.nickname}}</p>
+                        <div class=""><img src="{{barbershop.photo}}" alt=""></div>
+                        <p></p>
+                    </a>
+                    <a class="barber">
+                        <p>barbero: {{bookings.barber.nickname}}</p>
+                        <div class=""><img src="{{bookings.barber.photo}}" alt=""></div>
+                        <p></p>
+                    </a>
+                    <div>
+                        <p>Hora: {{bookings.reservationDate}}</p>
+                    </div>
 
-    <h1>Citas Canceladas</h1>
-    <div class="mensaje" *ngFor="let bookings of Bookingscancelled2; let i =index">
-        <div><p>codigo: {{bookings.id}}</p></div>
-        <a  class="barbersho" *ngFor="let barber of barbershopscancelled">
-            <p>Barberia: {{barber.nickname}}</p>
-            <div class=""><img src="{{barber.photo}}" alt=""></div>
-            <p></p>
-        </a>
-        <a  class="barber">
-            <p>barbero: {{bookings.barber.nickname}}</p>
-            <div class=""><img src="{{bookings.barber.photo}}" alt=""></div>
-            <p></p>
-        </a>
-        <div>
-            <p>Hora: {{bookings.reservationDate}}</p>
+                    <div class="qualification">
+                        <div>
+                            <label for="">Califica el barbero</label>
+                            <input type="number" name="" id="" min="1" max="5">
+                        </div>
+                        <div>
+                            <label for="">Califica la barberia</label>
+                            <input type="number" name="" id="" min="1" max="5">
+                        </div>
+                        <button>Aceptar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="containerCanceladas">
+                <h1>Citas Canceladas</h1>
+                <div class="mensaje" *ngFor="let bookings of Bookingscancelled2; let i =index">
+                    <div>
+                        <p>codigo: {{bookings.id}}</p>
+                    </div>
+                    <a class="barbersho" *ngFor="let barber of barbershopscancelled">
+                        <p>Barberia: {{barber.nickname}}</p>
+                        <div class=""><img src="{{barber.photo}}" alt=""></div>
+                        <p></p>
+                    </a>
+                    <a class="barber">
+                        <p>barbero: {{bookings.barber.nickname}}</p>
+                        <div class=""><img src="{{bookings.barber.photo}}" alt=""></div>
+                        <p></p>
+                    </a>
+                    <div>
+                        <p>Hora: {{bookings.reservationDate}}</p>
+                    </div>
+                    <div>
+                        <h2>Motivo</h2>
+                        <p>{{bookings.descrition}}</p>
+                    </div>
+                    <button>Aceptar</button>
+                </div>
+            </div>
         </div>
-        <div>
-            <h2>Motivo</h2>
-            <p>{{bookings.descrition}}</p>
-        </div>
-        <button>Aceptar</button>
-    </div>
+    </section>
 </div>
