@@ -92,6 +92,10 @@
   margin-bottom: 20px;
 }
 
+br{
+  display: none;
+}
+
 .cta {
   display: inline-block;
   background-color: #2091f9;
@@ -313,110 +317,53 @@
   display: block;
   transition: 2s;
 }
-@media only screen and (min-width: 1919px) and (max-width: 2700) {
-  nav {
-    right: 620px;
+@media only screen and (min-width: 320px) and (max-width: 475px){
+  br{
+    display: block;
   }
-}
-
-@media only screen and (min-width: 1024px) and (max-width: 1440px) {
-  nav {
-    right: 170px;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  nav {
-    right: 55px;
-  }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-  body {
-    padding-top: 96px;
-  }
-
+  
   .header {
-    padding: 0 0 0 10px;
+    width: 207%;}
+
+  .nav_link{
+    gap: 3em;
   }
 
-  nav {
+  .nav_title{
     display: none;
-    right: 3px;
-    top: 35px;
-    position: absolute;
-    padding: 0 3px 5px 10px;
-    z-index: 10000;
-    background-color: #171f2a;
-    box-shadow: -4px 5px 8px 2px rgb(0 0 0 / 52%);
   }
-
-  .links {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .bt-menu {
-    display: block;
-    padding-right: 10px;
-  }
-
-  .menu_bar a {
-    text-decoration: none;
-    list-style: none;
-    color: #fff;
-  }
-
-  .menu_bar:hover nav {
-    display: block;
-    transition: 2s;
-  }
-
-  .name {
-    padding-left: 70px;
-  }
-
-  .wrapper {
-    width: 75%;
-    height: 30px;
-  }
-
-  .inputData {
-    height: 27px;
-  }
-
-  .inputData input {
-    width: 90%;
-    height: 10px;
-  }
+  .nav_container {
+    display: initial;
+    margin-left: 4%;
+    padding-top: 20px;
 }
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  body {
-    padding-top: 96px;
+  .header_two::before {
+    width: 48.3%;
+    height: 48%;
   }
 
-  .header {
-    padding: 0 0 0 10px;
-  }
-  .inputData {
-    height: 32px;
-  }
-
-  .inputData input {
-    width: 95%;
-    height: 20px;
-  }
-  .wrapper {
-    width: 90%;
-    height: 35px;
+  .hero_container{
+    display: initial;
+    position: absolute;
+    left: 9%;
+    top: 13%;
+    text-align: start;
+    padding: 0;
+    margin: 0;
   }
 
-  .name {
-    padding-left: 55px;
+  .cta{
+    position: absolute;
+    left: 20%;
   }
 
-  .links {
-    gap: 20px;
+  .hero_title{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .hero_parrafo{
+    display: none;
   }
 }
