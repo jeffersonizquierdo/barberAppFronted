@@ -15,19 +15,22 @@
     <div class="perfil-usuario-body">
         <div class="perfil-usuario-bio">
             <h3 class="titulo">{{customer.nickname}}</h3>
-            <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, cum nulla enim itaque veritatis, delectus asperiores, error doloribus quibusdam temporibus ullam natus ex quidem eveniet?</p>
-        </div>
+       </div>
         <div class="perfil-usuario-footer">
             <ul class="lista-datos">
-                <li><i class="icono fas fa-phone-alt"></i> Telefono: {{customer.cellphone}}</li>
-                <li><i class="icono fas fa-briefcase"></i> Trabaja en: {{customer.city}}</li>
+                <li><i class="icono fas fa-phone-alt"></i> Telefono: <input [disabled]="editActive" [(ngModel)]="customer.cellphone" type="text"> </li>
+                <li><i class="icono fas fa-briefcase"></i> Vive en:  <input [disabled]="editActive" [(ngModel)]="customer.city"></li>
                 <li><i class="icono fas fa-building"></i> Cargo: Cliente</li>
             </ul>
             <ul class="lista-datos">
-                <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento: {{customer.age}}</li>
+                <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento: <input [disabled]="editActive" type="date" [(ngModel)]="customer.age"></li>
                 <li><i class="icono fas fa-user-check"></i> Registro.</li>
                 <li><i class="icono fas fa-share-alt"></i> Redes sociales.</li>
             </ul>
+
+            
+            <input *ngIf="editActive" type="submit"   value="Editar"(click)="editTrue()">
+            <input *ngIf="editActive == false" type="submit"   value="Guardar"  (click)="updateCustomer()">
         </div>
         <div class="redes-sociales">
             <a href="" class="boton-redes facebook fab fa-facebook-f"><i class="icon-facebook"></i></a>

@@ -49,7 +49,7 @@
                     <input type="number" name="" id="" min="1" max="5" [(ngModel)]="scoreBarbershop">
                 </div>
             </div>
-            <button (click)="score(bookings,barbershop)">Aceptar</button>
+            <button *ngIf="bookings.score==false" (click)="score(bookings,barbershop)">Aceptar</button>
         </div>
     </div>
     <section>

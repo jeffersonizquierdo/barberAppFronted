@@ -46,11 +46,6 @@ export class ProfileBarbershopComponent implements OnInit {
         this.usuario = response;
       })
     }, 500);
-
-
- 
-    
-    
   }
 
   loader():void{
