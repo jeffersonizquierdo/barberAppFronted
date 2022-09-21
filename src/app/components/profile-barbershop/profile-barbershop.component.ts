@@ -15,10 +15,16 @@ import Swal from 'sweetalert2';
 })
 export class ProfileBarbershopComponent implements OnInit {
 
-  constructor(private sniper3:NgxSpinnerService,private barberService:BarbershopService, private authservices:AuthServices, private usuarioService:UsuarioService) { }
+
+  editActive = true;
+  cellphone:string;
+  city:string;
+  location:string;
   barbershop :Barbershop;
   user:Usuario;
   usuario:Usuario;
+
+  constructor(private sniper3:NgxSpinnerService,private barberService:BarbershopService, private authservices:AuthServices, private usuarioService:UsuarioService) { }
 
 
   ngOnInit(): void {
@@ -26,44 +32,43 @@ export class ProfileBarbershopComponent implements OnInit {
     this.loader();
     this.getUser();    
   }
-  editActive = true;
 
-  cellphone:string;
-  city:string;
-  location:string;
+
   
   editTrue(){
     this.editActive = !this.editActive;
   }
 
   getUser(){
-    this.usuarioService.getUser(this.user.id).subscribe((response: any)=>{
-      this.usuario = response;
-    })
+
+    setTimeout(() => {
+      this.usuarioService.getUser(this.barbershop.id).subscribe((response: any)=>{
+        this.usuario = response;
+      })
+    }, 500);
+
+
+ 
+    
+    
   }
 
   loader():void{
     this.barberService.getbarber(this.user.id).subscribe(
       data =>{
-        this.barbershop =data;
-        console.log(this.barbershop.description);
-        
+        this.barbershop =data;        
       }
     )
   }
 
   updateBarbershop(){
-
-    this.user.city = this.barbershop.city;
-    this.user.cellphone = this.barbershop.cellphone;
-
-  
     this.barberService.updateBarbershop(this.barbershop).subscribe((response: any) => {
 
+      if(response){
 
+        this.usuario.city = this.barbershop.city;
+        this.usuario.cellphone = this.barbershop.cellphone;
     
-      if(response){ 
-
         this.usuarioService.updateUsuario(this.usuario).subscribe((data : any) => {
           Swal.fire("Hecho", "Has actualizado tu perfil", "success")
         })
@@ -71,9 +76,6 @@ export class ProfileBarbershopComponent implements OnInit {
         this.editTrue()
       }
     })
-
-
-  
   }
 
 
