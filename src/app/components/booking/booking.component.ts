@@ -58,6 +58,7 @@ export class BookingComponent implements OnInit {
     this.booking = new Booking();
     this.booking.completed = false;
     this.booking.cancelled = false;
+    this.booking.score = false;
     this.usuario = this.authService.usuario;
     this.getCustomer();
     this.idBarbershop = parseInt(this.route.snapshot.paramMap.get('id'));

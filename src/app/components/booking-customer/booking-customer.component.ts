@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthServices } from 'src/app/models/AuthServices';
+import { Barber } from 'src/app/models/Barber';
 import { Barbershop } from 'src/app/models/barbershop';
+import { Booking } from 'src/app/models/Booking';
 import { Usuario } from 'src/app/models/Usuario';
+import { BarberService } from 'src/app/services/barber/barber.service';
 import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
 import { BookingService } from 'src/app/services/booking/booking.service';
 import Swal from 'sweetalert2';
@@ -29,12 +32,18 @@ export class BookingCustomerComponent implements OnInit {
   Bookingscancelled2:any=[];
   barbershopscancelled:any=[];
   usuario:Usuario;
-  
+
+
+  //puntajes
+  scoreBarbershop:any;
+  scoreBarber:any;
+  scorebro:any
+  scorebria:any
   
   
   
   noCitas="";
-  constructor(private snniperMensaje: NgxSpinnerService, private serviceBarbershop: BarbershopService, private auhtService: AuthServices,private serviceBooking: BookingService) { }
+  constructor(private snniperMensaje: NgxSpinnerService, private serviceBarbershop: BarbershopService, private serviceBarber: BarberService, private auhtService: AuthServices,private serviceBooking: BookingService) { }
 
   ngOnInit(): void {
     this.usuario=this.auhtService.usuario;
@@ -101,6 +110,25 @@ export class BookingCustomerComponent implements OnInit {
           });
         })
       }, 500);
+    })
+  }
+
+  score(bookings:Booking, barbershop:Barbershop){
+    bookings.barber.qualification= bookings.barber.qualification +this.scoreBarber;
+    this.serviceBarber.updateBarber(bookings.barber).subscribe((data:any)=>{
+      console.log("actualizaco")
+      console.log(data); 
+      barbershop.qualification=barbershop.qualification+this.scoreBarbershop;
+      this.serviceBarbershop.updateBarbershop(barbershop).subscribe((response:any)=>{
+        console.log(response);
+        
+        bookings.score = true;
+        console.log(bookings.score);
+        
+        this.serviceBooking.updateBooking(bookings).subscribe(data=>{
+          Swal.fire("Hecho", "Barberia y Barbero puntuados", "success");
+        })
+      })
     })
   }
 

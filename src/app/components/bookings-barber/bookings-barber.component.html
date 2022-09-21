@@ -22,9 +22,27 @@
           <td><button (click)="cancelBooking(date)"  class="btnCancelar">Cancelar</button></td>
         </tr>
   
-      </tbody>
-    </table>
-
-  </nav>
-
-</div>
+  
+    <nav>
+      <table>
+        <thead>
+          <tr class="DatosCliente">
+            <th scope="col">Fecha</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Corte</th>
+        </thead>
+        <tbody>
+   
+          <tr *ngFor="let date of bookingsBarberComplete" class="botones">
+  
+            <th scope="row">{{date.corte.name}} : {{date.customer.nickname}}</th>
+            <th scope="row">{{date.corte.url}}</th>
+            <td><button  (click)="completeBooking(date)" class="btnCompletado">Completado</button></td>
+            <td><button (click)="cancelBooking(date)"  class="btnCancelar">Cancelar</button></td>
+          </tr>
+    
+        </tbody>
+      </table>
+  
+    </nav>
+  

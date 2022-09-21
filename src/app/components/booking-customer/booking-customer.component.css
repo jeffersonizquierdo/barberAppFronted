@@ -1,0 +1,97 @@
+.components{
+    margin-top: 4%;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+app-ranking{
+    width: 100%;
+    margin-left: 70px;
+    margin-right: 110px;
+}
+
+.containerCitasProgramadas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0px;
+    margin-right: 200px;
+
+}
+
+p{
+    font-size: 18px;
+    color: white;
+    text-shadow: -1px 1px 0px #ff5900;
+}
+
+.imgBarberia{
+    width: 200px;
+    border: 5px solid white;
+}
+.imgBarbero{
+    width: 100px;
+    border: 5px solid white;
+    border-radius: 50%;
+}
+
+.mensaje{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 900px;
+    background-image: linear-gradient(120deg,#5cbeff,#8e44ad);
+    border-radius: 10px;
+}
+
+
+body, .notificacion{
+	width: 100%;
+	height: 100vh;
+}
+.notificacion{
+	transition: all 500ms ease;
+	opacity: 0;
+	visibility: hidden;
+    background-color: #d3d3d3ee;;
+    border: 1px solid black;
+    color: black;
+    border-radius: 11px;
+    height: 400px;
+    position: absolute;
+    top: 6%;
+    left: 81%;
+    width: 17%;
+    padding: 20px;
+    box-shadow: 0px 0px 20px 1px black;
+}
+#btn-notificacion:checked ~ .notificacion{
+	opacity: 1;
+    
+	visibility: visible;
+} 
+
+#btn-notificacion:checked ~ .notificacion {
+	transform: translateY(0%);
+} 
+
+
+#btn-notificacion{
+	display: none;
+}
+
+
+.lbl-notificacion{
+	padding: 10px 15px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.lbl-notificacion img {
+    position: absolute;
+    width: 30px;
+    top: 60px;
+    right: 70px;
+}
