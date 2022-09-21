@@ -15,16 +15,16 @@
     <div class="perfil-usuario-body" >
         <div class="perfil-usuario-bio">
             <h3 class="titulo">{{barbershop.nickname}}</h3>
-            <p class="texto"> {{barbershop.description}}</p>
+            <textarea [disabled]="editActive" [(ngModel)]="barbershop.description" class="texto"> {{barbershop.description}}</textarea>
         </div>
         <div class="perfil-usuario-footer">
             <ul class="lista-datos">
-                <li class="icono fas fa-phone-alt">Telefono: <input [disabled]="editActive" type="text" [ngModel]="cellphone"  [placeholder]="barbershop.cellphone"  ></li> 
-                <li class="icono fas fa-briefcase">Trabaja en: <input [disabled]="editActive" type="text" [ngModel]="city" [placeholder]="barbershop.city"> {{city}}</li>
+                <li class="icono fas fa-phone-alt">Telefono: <input [disabled]="editActive" type="text" [(ngModel)]="barbershop.cellphone" ></li> 
+                <li class="icono fas fa-briefcase">Trabaja en: <input [disabled]="editActive" type="text" [(ngModel)]="barbershop.city"> {{city}}</li>
                 <li><i class="icono fas fa-building"></i> Cargo : Barberia</li>
             </ul>
             <ul class="lista-datos">
-                <li class="icono fas fa-map-marker-alt">Ubicacion: <input [disabled]="editActive" type="text" [ngModel]="location"  [placeholder]="barbershop.location"></li>  
+                <li class="icono fas fa-map-marker-alt">Ubicacion: <input [disabled]="editActive" type="text" [(ngModel)]="barbershop.location"></li>  
                 <li><i class="icono fas fa-user-check"></i> Registro.</li>
             </ul>
 

@@ -55,11 +55,6 @@ export class BarbershopService {
 
   updateBarbershop(barbershop : Barbershop): Observable <Barbershop>{
 
-    console.log("barbershop");
-    
-    console.log(barbershop);
-    
-
     return this.http.put<Barbershop>(`http://localhost:8080/barbershop/update/${barbershop.id}`, barbershop, {headers: this.agregarAuthorizationHeader()}).pipe(
      
       catchError(e =>{
