@@ -28,8 +28,8 @@
                 <li><i class="icono fas fa-user-check"></i> Registro.</li>
             </ul>
 
-            <input type="submit"   value="Editar"(click)="editTrue()">
-            <input type="submit"   value="Guardar"  (click)="updateBarbershop()">
+            <input *ngIf="editActive" type="submit"   value="Editar"(click)="editTrue()">
+            <input *ngIf="editActive == false" type="submit"   value="Guardar"  (click)="updateBarbershop()">
         </div>
         <div class="redes-sociales">
             <a href="" class="boton-redes facebook fab fa-facebook-f"><i class="icon-facebook"></i></a>
