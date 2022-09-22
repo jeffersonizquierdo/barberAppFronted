@@ -12,7 +12,7 @@
             </button>
         </div>
     </div>
-    <div class="perfil-usuario-body" >
+    <div class="perfil-usuario-body">
         <div class="perfil-usuario-bio">
             <h3 class="titulo">{{barbers.nickname}}</h3>
             <textarea [disabled]="editActive" [(ngModel)]="barbers.description" class="texto"></textarea>
@@ -20,38 +20,39 @@
         <div class="perfil-usuario-footer">
             <ul class="lista-datos">
                 <div class="inputBox">
-                    <li><i class="icono1 fas fa-phone-alt"></i>Telefono:</li> 
-                    <input [disabled]="editActive" [(ngModel)]="barbers.cellphone" type="text" required>
-                    
-                    
+                    <li><i class="icono1 fas fa-phone-alt"></i>Telefono: <input [disabled]="editActive"
+                            [(ngModel)]="barbers.cellphone" type="text" required></li>
+
+
                 </div>
-                <li *ngIf="barbers.barbershop != null" ><i class="icono fas fa-briefcase"></i> Trabaja en: {{barbers.barbershop.nickname}}</li>
+                <li *ngIf="barbers.barbershop != null"><i class="icono fas fa-briefcase"></i> Trabaja en:
+                    {{barbers.barbershop.nickname}}</li>
                 <div class="inputBox">
-                    <li><i class="icono fas fa-briefcase"></i>Ciudad:</li> 
-                    <input [disabled]="editActive" type="text"  [(ngModel)]="barbers.city" required>
-                    
-                    
+                    <li><i class="icono fas fa-briefcase"></i>Ciudad: <input [disabled]="editActive" type="text"
+                            [(ngModel)]="barbers.city" required> </li>
+
                 </div>
                 <li><i class="icono fas fa-building"></i> Cargo : Barbero</li>
             </ul>
             <ul class="lista-datos">
                 <div class="inputBox">
-                    <li><i  class="icono fas fa-calendar-alt"></i>Fecha nacimiento</li> 
+                    <li><i class="icono fas fa-calendar-alt"></i>Fecha nacimiento</li>
                     <input [disabled]="editActive" [(ngModel)]="barbers.age" type="date" required>
-                    
+
                 </div>
                 <li><i class="icono fas fa-user-check"></i> Registro.</li>
 
             </ul>
             <div class="container">
-                <button  *ngIf="editActive" type="submit"   value="Editar"(click)="editTrue()" class="button type1">
+                <button *ngIf="editActive" type="submit" value="Editar" (click)="editTrue()" class="button type1">
                     Editar
                 </button>
-                <button *ngIf="editActive == false" type="submit"   value="Guardar"  (click)="updateBarber()"  class="button type1">
+                <button *ngIf="editActive == false" type="submit" value="Guardar" (click)="updateBarber()"
+                    class="button type1">
                     Guardar
                 </button>
             </div>
-            
+
 
         </div>
         <div class="redes-sociales">
