@@ -26,7 +26,7 @@ export class HomeBarbershopComponent implements OnInit {
   }
 
   abrirModal(){
-    this.barbershopService.getbarber(this.usuario.id).subscribe(data=>{
+    this.barbershopService.getbarber(this.usuario.id).subscribe((data: any )=>{
       this.barbershop=data;
       console.log(data);
 
