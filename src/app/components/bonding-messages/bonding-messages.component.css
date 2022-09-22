@@ -1,6 +1,5 @@
 .imagebarbershop img{
-    width: 80px;
-    border-radius: 50%;
+    width: 120px;
     border: 2px solid white;
 }
 
@@ -20,14 +19,14 @@ a{
     text-decoration: none;
 }
 a:hover{
-    text-shadow: -1px 0px 7px #2a00ff;
+    text-shadow: -1px 0px 7px #ffffff;
 }
 
 h1{
     text-align: center;
 }
 p{
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 20px;
 }
 
@@ -46,16 +45,18 @@ p{
     width: 600px;
     align-content: center;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    background-image: linear-gradient(120deg,#5cbeff,#8e44ad);
+    border-radius: 5px;
+    height: 77px;
 }
 
 .nameBarbershop{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: baseline;
     width: 245px;
     justify-content: space-between;
-    margin-bottom: 30px;
 }
 
 hr{
