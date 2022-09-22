@@ -19,20 +19,41 @@
         </div>
         <div class="perfil-usuario-footer">
             <ul class="lista-datos">
-                <li><i class="icono fas fa-phone-alt"></i> Telefono: <input [disabled]="editActive" [(ngModel)]="barbers.cellphone" type="text"></li>
+                <div class="inputBox">
+                    <li class="icono1 fas fa-phone-alt"></li> 
+                    <input [disabled]="editActive" [(ngModel)]="barbers.cellphone" type="text" required>
+                    <span>Telefono</span>
+                    
+                </div>
                 <li *ngIf="barbers.barbershop != null" ><i class="icono fas fa-briefcase"></i> Trabaja en: {{barbers.barbershop.nickname}}</li>
-                <li class="icono fas fa-briefcase">De: <input [disabled]="editActive" type="text"  [(ngModel)]="barbers.city"></li>
+                <div class="inputBox">
+                    <li class="icono fas fa-briefcase"></li> 
+                    <input [disabled]="editActive" type="text"  [(ngModel)]="barbers.city" required>
+                    <span>De</span>
+                    
+                </div>
                 <li><i class="icono fas fa-building"></i> Cargo : Barbero</li>
             </ul>
             <ul class="lista-datos">
-                <li><i class="icono fas fa-calendar-alt"></i> Fecha nacimiento: <input [disabled]="editActive" [(ngModel)]="barbers.age" type="date">{{barbers.age}}</li>
+                <div class="inputBox">
+                    <li class="icono fas fa-calendar-alt"></li> 
+                    <input [disabled]="editActive" [(ngModel)]="barbers.age" type="date" required>
+                    <span> Fecha nacimiento</span>
+                    
+                </div>
                 <li><i class="icono fas fa-user-check"></i> Registro.</li>
-                <li><i class="icono fas fa-share-alt"></i> Redes sociales.</li>
-            </ul>
 
+            </ul>
+            <div class="container">
+                <button  *ngIf="editActive" type="submit"   value="Editar"(click)="editTrue()" class="button type1">
+                    Editar
+                </button>
+                <button *ngIf="editActive == false" type="submit"   value="Guardar"  (click)="updateBarber()"  class="button type1">
+                    Guardar
+                </button>
+            </div>
             
-            <input *ngIf="editActive" type="submit"   value="Editar"(click)="editTrue()">
-            <input *ngIf="editActive == false" type="submit"   value="Guardar"  (click)="updateBarber()">
+
         </div>
         <div class="redes-sociales">
             <a href="" class="boton-redes facebook fab fa-facebook-f"><i class="icon-facebook"></i></a>
