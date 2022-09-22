@@ -12,7 +12,7 @@ import { AuthServices } from 'src/app/models/AuthServices';
 })
 export class StalkBarbershopComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,private serviceBarbershop:BarbershopService, private authService: AuthServices) { }
+  constructor(private route: ActivatedRoute,private serviceBarbershop:BarbershopService, private authService: AuthServices, private barbershopService:BarbershopService) { }
 
   ngOnInit(): void {
 
@@ -20,11 +20,13 @@ export class StalkBarbershopComponent implements OnInit {
     this.usuario = this.authService.usuario;
     console.log(this.idBarbershop);
     this.consullBarbershop();
+    this.publications()
   }
 
   idBarbershop: any;
   barbershop:any;
   usuario: Usuario;
+  listPublicity2:any=[];
 
   consullBarbershop(){
     this.serviceBarbershop.getbarber(this.idBarbershop).subscribe((resorse:any)=>{
@@ -32,6 +34,16 @@ export class StalkBarbershopComponent implements OnInit {
       console.log(resorse);
       
     })
+  }
+
+  publications(){
+
+    this.barbershopService.listpublicyid(this.idBarbershop).subscribe((data: any) =>{
+      this.listPublicity2=data;
+
+      
+    })
+
   }
 
 }

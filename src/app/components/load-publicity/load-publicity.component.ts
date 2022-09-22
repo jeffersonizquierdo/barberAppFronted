@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ModalBarbershopComponent } from 'src/app/modals/modal-barbershop/modal-barbershop.component';
@@ -23,17 +23,18 @@ export class LoadPublicityComponent implements OnInit {
   description:string;
   imageURL: string;
   newPublicity: Publicity;
-  id: Number;
+  id: any;
   
 
-  constructor(private publicityService:PublicityService,private catalogueService:CatalogueService,private router:Router,
+  constructor(private publicityService:PublicityService,private catalogueService:CatalogueService,private router:Router, private route: ActivatedRoute,
     private spinner: NgxSpinnerService, private authService: AuthServices, private servicebarbershop: BarbershopService, private modalService:NgbModal) { }
 
   ngOnInit(): void {
-
+    this.id =  this.route.snapshot.paramMap.get('id');
     this.usuario = this.authService.usuario
     this.newPublicity = new Publicity()    
   }
+  
 
   onFileChange(event){
     this.imagen = event.target.files[0];
@@ -54,6 +55,8 @@ export class LoadPublicityComponent implements OnInit {
       data => {
 
         this.newBarbershop = data
+
+        
 
             
       }
