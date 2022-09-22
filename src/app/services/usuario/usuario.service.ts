@@ -30,6 +30,19 @@ export class UsuarioService {
 
   }
 
+  updateUsuario(usuario:Usuario) : Observable<Usuario>{
+
+    console.log("id usuario");
+    console.log(usuario);
+    
+    
+
+    return this.http.put<Usuario>("http://localhost:8080/usuario/update/"+usuario.id, usuario ,{headers: this.agregarAuthorizationHeader()}).pipe(
+
+    )
+
+  }
+
 
   getUser(id : Number){
 

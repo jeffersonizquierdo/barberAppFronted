@@ -64,7 +64,7 @@
              
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 1" class="funciones"  >
                 <a [routerLink]="['/homebarbershop']"class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
-                <a [routerLink]="['/porfilebarbershop']">Ver Perfil</a>
+                <a [routerLink]="['/porfilebarbershop']">Mi perfil</a>
                 <a [routerLink]="['/listabarber']" >Barberos</a>
                 <a [routerLink]="['/booking-barbershop']" >Maya de turnos</a>
                 <a [routerLink]="['/manage-catalogue']">Catalogo</a>
@@ -76,7 +76,7 @@
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 2" class="funciones" >
                 <a [routerLink]="['/homebarber']"class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
                 <!-- <a *ngIf="barber.barbershop != null" [routerLink]="['/stalk_barbershop', barber.barbershop.id]">Barberia</a> -->
-                <a [routerLink]="['/porfilebarber']">Ver Perfil</a>
+                <a [routerLink]="['/porfilebarber']">Mi perfil</a>
                 <a [routerLink]="['/booking-barber']">Maya de turnos</a>
                 <a [routerLink]="['/publicidad']">Publicaciones</a>
               
@@ -84,8 +84,8 @@
               </nav>
               <nav *ngIf=" authService.isAuthenticated() &&  authService.usuario.typeUser  == 3" class="funciones" >
                 <a [routerLink]="['/homecustomer'] " class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
+                <a [routerLink]="['/porfileclient']">Mi perfil</a> 
                 <a [routerLink]="['/allbarbershops']">Reservar</a>
-                <a [routerLink]="['/porfileclient']">Ver Perfil</a>                
                 <a (click)="logout()" href="#">Cerrar Sesion</a>
               </nav>  
             </nav>

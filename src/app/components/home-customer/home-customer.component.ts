@@ -64,7 +64,7 @@ export class HomeCustomerComponent implements OnInit {
           this.customer.city = this.usuarioConsult.city;
           this.customer.cellphone = this.usuarioConsult.cellphone;
           this.customer.typeUser = this.usuarioConsult.typeUser;
-          this.customer.age = this.usuarioConsult.date
+          this.customer.age = this.usuarioConsult.age
   
             this.customerService.saveCustomer(this.customer).subscribe(response => {
 

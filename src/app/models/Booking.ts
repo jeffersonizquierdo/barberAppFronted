@@ -12,5 +12,6 @@ export class Booking {
     corte:Catalogue;
     completed:Boolean;
     cancelled:Boolean;
+    score: Boolean;
 
 }

@@ -76,6 +76,8 @@ export class BookingsBarberComponent implements OnInit {
         if(this.barber.id == e.barber.id){
           this.bookingsBarber.push(e); 
           
+          console.log("lista 1");
+          console.log(this.bookingsBarber);
           if(this.barber.id == e.barber.id && e.completed == false && e.cancelled == false){
             this.bookingsBarberComplete.push(e)
           }
@@ -124,15 +126,37 @@ export class BookingsBarberComponent implements OnInit {
 
   cancelBooking(booking: Booking){
 
-    booking.cancelled=true;
-    this.bookingService.updateBooking(booking).subscribe()
-    Swal.fire("Cita cancelada", `Se ha cancelado la reserva de ${booking.customer.nickname} con exito`, "success")
+    
+    
+    // Swal.fire("Cita cancelada", `Se ha cancelado la reserva de ${booking.customer.nickname} con exito`, "success")
+    Swal.fire({
+      title: 'Cancelar cita',
+      text: "¿Desea cancelar la cita?",
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Aceptar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        booking.cancelled=true;
+        this.bookingService.updateBooking(booking).subscribe()
+        Swal.fire(
+          'Cita cancelada',
+          `Se ha cancelado la reserva de ${booking.customer.nickname} con exito.`,
+          'success'
+        )
 
-
-    setTimeout(() => {
+        setTimeout(() => {
       
-      window.location.reload()
-    }, 1500);
+          window.location.reload()
+        }, 1000);
+
+      }
+    })
+
+
+    
 
 
   }

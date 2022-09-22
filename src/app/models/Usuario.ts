@@ -6,7 +6,7 @@ password:string;
 nickname:string;
 typeUser:Number;
 enabled:boolean;
-date:Date;
+age:Date;
 city: string;
 cellphone:string;
 roles: string [] = []
