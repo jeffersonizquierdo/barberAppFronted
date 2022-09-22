@@ -5,11 +5,10 @@
 
 }
 
-
-
-
-
-
+a{
+    color: black;
+    text-decoration: none;
+}
 
 
 .about {
@@ -55,6 +54,9 @@
     width: 83px;
 }
 
+.about__main a:hover{
+    color: #757575;
+}
 
 section{
     min-height: 3rem;
@@ -112,6 +114,7 @@ section{
     margin-top: 2rem;
     padding: 0.8rem 3rem;
     border-radius: 5rem;
+    border: 2px solid #2091F9;
     background-color: #2091F9;
     color: rgb(255, 255, 255);
     font-size: 19px;
@@ -120,9 +123,12 @@ section{
     text-decoration: none;
   
 }
+
 .button:hover{
-    background-color: #FFF;
-    color: #2091f9;
+    background-color: #ffffff;
+    transition: all 0.5s;
+    border: 2px solid #ffffff;
+    color: #1D293F;
 }
 .button a{
     text-decoration: none;
@@ -329,3 +335,12 @@ footer{
     color: white;
     transition: 0.5s;
 }
+
+.igIcon{
+    width: 20px;
+}
+
+.gmailIcon{
+    width: 22px;
+}
+
