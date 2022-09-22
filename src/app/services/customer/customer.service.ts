@@ -50,7 +50,7 @@ export class CustomerService {
 
   updatecustomer(customer:Customer) : Observable<Customer>{
 
-    return this.http.put<Customer>(`http://localhost:8080/customer/update/${customer.id}`, {headers: this.agregarAuthorizationHeader()}).pipe(
+    return this.http.put<Customer>("http://localhost:8080/customer/update/"+ customer.id, customer, {headers: this.agregarAuthorizationHeader()}).pipe(
 
       catchError(e =>{
         this.isNoAuthorizado(e)

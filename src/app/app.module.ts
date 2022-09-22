@@ -128,6 +128,7 @@ const appRoutes: Routes = [
     LoginComponent,
     ProfileClientComponent,
     ProfileBarbershopComponent,
+    ProfileBarberComponent,
     TermsAndConditionsComponent,
     ModalBarbershopComponent,
     ModalBarberComponent,

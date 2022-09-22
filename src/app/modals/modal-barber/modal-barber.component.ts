@@ -64,7 +64,7 @@ export class ModalBarberComponent implements OnInit {
         this.barber.city = this.usuarioConsult.city;
         this.barber.cellphone = this.usuarioConsult.cellphone;
         this.barber.typeUser = this.usuarioConsult.typeUser;
-        this.barber.age = this.usuarioConsult.date;
+        this.barber.age = this.usuarioConsult.age;
         this.barber.qualification = 0;
         
         this.barberServices.saveBarber(this.barber).subscribe(
