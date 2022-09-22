@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Quicksand:wght@600&display=swap');
+
 * {
   margin: 0%;
   padding: 0%;
@@ -50,6 +53,7 @@
 
 .nav__title {
   font-weight: 300;
+  font-family: 'Poppins', sans-serif;
 }
 
 .nav_link {
@@ -85,11 +89,17 @@
 }
 
 .hero_title {
-  font-size: 3rem;
+  font-size: 5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+span{
+  font-weight: 900;
 }
 
 .hero_parrafo {
   margin-bottom: 20px;
+  font-size: 20px;
 }
 
 .cta {
@@ -99,7 +109,16 @@
   color: #fff;
   text-decoration: none;
   padding: 13px 30px;
+  transition: all 0.5s;
   border-radius: 32px;
+  border: 2px solid #2091f9;
+}
+
+.cta:hover{
+  background-color: #ffffff;
+    transition: all 0.5s;
+    border: 2px solid #ffffff;
+    color: #1D293F;
 }
 
 .perfil {
