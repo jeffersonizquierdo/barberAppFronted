@@ -113,6 +113,14 @@
     background-color: #fff;
     border-radius: 15px;
     width: 100%;
+   
+}
+.seccion-perfil-usuario .perfil-usuario-footer,
+.seccion-perfil-usuario .perfil-usuario-bio textarea{
+    text-decoration: none;
+    background: none;
+    border: none;
+    list-style: none;
 }
 textarea{
     border: none;
@@ -132,11 +140,19 @@ textarea{
     list-style: none;
 }
 
-.seccion-perfil-usuario .lista-datos li {
+.seccion-perfil-usuario .lista-datos li  {
     padding: 5px 0;
 
 }
+.seccion-perfil-usuario .lista-datos li input{
+    background: none;
+    border: none;
+    width: 250px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #39c;
 
+}
 .seccion-perfil-usuario .lista-datos li>.icono {
     margin-right: 1rem;
     font-size: 1.2rem;

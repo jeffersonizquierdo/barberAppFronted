@@ -20,25 +20,24 @@
         <div class="perfil-usuario-footer">
             <ul class="lista-datos">
                 <div class="inputBox">
-                    <li class="icono1 fas fa-phone-alt"></li> 
+                    <li><i class="icono1 fas fa-phone-alt"></i>Telefono:</li> 
                     <input [disabled]="editActive" [(ngModel)]="barbers.cellphone" type="text" required>
-                    <span>Telefono</span>
+                    
                     
                 </div>
                 <li *ngIf="barbers.barbershop != null" ><i class="icono fas fa-briefcase"></i> Trabaja en: {{barbers.barbershop.nickname}}</li>
                 <div class="inputBox">
-                    <li class="icono fas fa-briefcase"></li> 
+                    <li><i class="icono fas fa-briefcase"></i>Ciudad:</li> 
                     <input [disabled]="editActive" type="text"  [(ngModel)]="barbers.city" required>
-                    <span>De</span>
+                    
                     
                 </div>
                 <li><i class="icono fas fa-building"></i> Cargo : Barbero</li>
             </ul>
             <ul class="lista-datos">
                 <div class="inputBox">
-                    <li class="icono fas fa-calendar-alt"></li> 
+                    <li><i  class="icono fas fa-calendar-alt"></i>Fecha nacimiento</li> 
                     <input [disabled]="editActive" [(ngModel)]="barbers.age" type="date" required>
-                    <span> Fecha nacimiento</span>
                     
                 </div>
                 <li><i class="icono fas fa-user-check"></i> Registro.</li>
