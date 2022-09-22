@@ -10,7 +10,7 @@
     height: 400px;
     background-image: url(../../../assets/images/banner.jpg);
     background-size: 200%;
-    animation: movimiento 10s infinite linear alternate;
+    animation: movimiento 35s infinite linear alternate;
     position: relative;
 }
 
