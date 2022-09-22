@@ -21,15 +21,14 @@
             
             <ul class="lista-datos">
                 <div class="inputBox">
-                    <li class="icono1 fas fa-phone-alt"></li> 
+                    <li><i class="icono1 fas fa-phone-alt"></i>Telefono:</li> 
                     <input [disabled]="editActive" type="text" [(ngModel)]="barbershop.cellphone" required >
-                    <span>Telefono</span>
+                    
                     
                 </div>
                 <div class="inputBox">
-                    <li class="icono fas fa-briefcase"></li> 
+                    <li><i class="icono fas fa-briefcase"></i>Tabaja en:</li> 
                     <input [disabled]="editActive" type="text" [(ngModel)]="barbershop.city" required >
-                    <span>Trabaja en</span>
                     
                 </div>
                 <li><i class="icono fas fa-building"></i> Cargo : Barberia</li>
@@ -37,9 +36,9 @@
             <ul class="lista-datos">
 
                 <div class="inputBox">
-                    <li class="icono fas fa-map-marker-alt"></li> 
+                    <li><i class="icono fas fa-map-marker-alt"></i>Ubicacion</li> 
                     <input [disabled]="editActive" type="text" [(ngModel)]="barbershop.location" required >
-                    <span >Ubicacion</span>
+                    
                     
                 </div>
                 <li><i class="icono fas fa-user-check"></i> Registro.</li>
