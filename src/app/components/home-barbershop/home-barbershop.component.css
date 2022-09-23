@@ -42,6 +42,11 @@
     color: white;
 }
 
+app-to-show-publications{
+    position: absolute;
+    top: 131%;
+    left: 110%;
+}
 
 .right{
     margin-top: 4%;
