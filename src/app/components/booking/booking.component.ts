@@ -223,7 +223,9 @@ export class BookingComponent implements OnInit {
           if (this.booking && this.booking.barber) {
             if (
               e.customer.id === this.customer.id &&
-              e.barbershop === this.barbershop.id
+              e.barbershop === this.barbershop.id &&
+              e.cancelled === false &&
+              e.completed === false
             ) {
               this.spinnerReservation.hide();
               this.save = false;

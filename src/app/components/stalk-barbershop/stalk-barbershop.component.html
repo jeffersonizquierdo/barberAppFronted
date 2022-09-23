@@ -45,4 +45,35 @@
     
 </div>
 
-<app-publication-barbershop [idBarberia]= "barbershop.id" *ngIf="barbershop.publications >= 0" ></app-publication-barbershop>
+<div class="card-ward">
+    <article class="card" *ngFor="let n of listPublicity2">
+        <header class="header-card">
+            <img src="{{n.url}}" alt="">
+        </header>
+        <header>
+            <footer class="footer-card">
+                <div class="categoria-card">
+                    <span *ngIf="usuario.id != barbershop.id"  >Ver perfil</span>
+                </div>
+                <div class="categoria-card">
+                    <button *ngIf="usuario.id == barbershop.id"  >Eliminar</button>
+                </div>
+                <div class="texto-card">
+                    <br>
+                    <br>
+                    <p>{{n.description}}</p>
+                </div>
+                <div class="perfil-card">
+                    <div class="img-perfil-card">
+                        <img src="{{n.id_barbershop.photo}}" alt="">
+                    </div>
+                    <div class="tex-perfil-card">
+                        <span>{{n.id_barbershop.nickname}}</span>
+                        <span>Fecha</span>
+                    </div>
+                </div>
+            </footer>
+        </header>
+    </article>
+
+</div>

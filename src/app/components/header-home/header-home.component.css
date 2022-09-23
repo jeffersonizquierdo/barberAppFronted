@@ -38,7 +38,7 @@
   background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%),
     url("../../../assets/images/slider2.jpg");
   background-size: cover;
-  background-position: 2px;
+  background-position: 0px;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
   z-index: -1;
 }
@@ -100,6 +100,10 @@ span{
 .hero_parrafo {
   margin-bottom: 20px;
   font-size: 20px;
+}
+
+br{
+  display: none;
 }
 
 .cta {
@@ -332,110 +336,47 @@ span{
   display: block;
   transition: 2s;
 }
-@media only screen and (min-width: 1919px) and (max-width: 2700) {
-  nav {
-    right: 620px;
+@media only screen and (min-width: 320px) and (max-width: 475px){
+  br{
+    display: block;
   }
-}
+  
 
-@media only screen and (min-width: 1024px) and (max-width: 1440px) {
-  nav {
-    right: 170px;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  nav {
-    right: 55px;
-  }
-}
-
-@media only screen and (min-width: 320px) and (max-width: 768px) {
-  body {
-    padding-top: 96px;
+  .nav_link{
+    gap: 3em;
   }
 
-  .header {
-    padding: 0 0 0 10px;
-  }
-
-  nav {
+  .nav_title{
     display: none;
-    right: 3px;
-    top: 35px;
+  }
+
+  .header_two::before {
+    width: 100%;
+    height: 50%;
+  }
+
+  .hero_container{
+    display: initial;
     position: absolute;
-    padding: 0 3px 5px 10px;
-    z-index: 10000;
-    background-color: #171f2a;
-    box-shadow: -4px 5px 8px 2px rgb(0 0 0 / 52%);
+    left: 9%;
+    top: 15%;
+    padding: 0;
   }
 
-  .links {
-    display: flex;
-    flex-direction: column;
+  .cta{
+    position: absolute;
+    left: 15%;
   }
 
-  .bt-menu {
-    display: block;
-    padding-right: 10px;
+  .hero_title{
+    margin-left: -22px;
+    font-size: 20px;
+    margin-bottom: 75px;
+    text-align: center;
   }
 
-  .menu_bar a {
-    text-decoration: none;
-    list-style: none;
-    color: #fff;
-  }
-
-  .menu_bar:hover nav {
-    display: block;
-    transition: 2s;
-  }
-
-  .name {
-    padding-left: 70px;
-  }
-
-  .wrapper {
-    width: 75%;
-    height: 30px;
-  }
-
-  .inputData {
-    height: 27px;
-  }
-
-  .inputData input {
-    width: 90%;
-    height: 10px;
+  .hero_parrafo{
+    display: none;
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  body {
-    padding-top: 96px;
-  }
-
-  .header {
-    padding: 0 0 0 10px;
-  }
-  .inputData {
-    height: 32px;
-  }
-
-  .inputData input {
-    width: 95%;
-    height: 20px;
-  }
-  .wrapper {
-    width: 90%;
-    height: 35px;
-  }
-
-  .name {
-    padding-left: 55px;
-  }
-
-  .links {
-    gap: 20px;
-  }
-}
