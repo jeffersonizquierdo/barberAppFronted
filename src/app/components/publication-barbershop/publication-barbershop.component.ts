@@ -16,51 +16,47 @@ export class PublicationBarbershopComponent implements OnInit {
 
   @Input() idBarberia: number;
 
-  constructor(private BarbershopService:BarbershopService,private publicationServices:PublicityService,private autservese:AuthServices) { }
+  constructor(private barbershopService:BarbershopService,private publicationServices:PublicityService,private autservese:AuthServices, private route: ActivatedRoute) { }
 
   variable:Boolean;
   ngOnInit(): void {
     this.loader3();
-    
+    this.idBarbershop =  this.route.snapshot.paramMap.get('id');
     this.usuario=this.autservese.usuario;
   }
-  
- 
 
 
   usuario: Usuario;
   barbershop : Barbershop;
+  idBarbershop : any;
 
   loader3():void{
 
 
-
-    console.log("holi2")
-
     setTimeout(() => {
 
-
-     
-      
-
-      this.BarbershopService.getbarber(this.idBarberia).subscribe((response: any) =>{
+      this.barbershopService.getbarber(this.idBarbershop).subscribe((response: any) =>{
 
         this.barbershop = response
+
+        this.barbershopService.listpublicyid(this.barbershop.id).subscribe(
+        
+          (data: any) =>{
+            console.log(data)
+            this.listPublicity2=data;
+            console.log(this.listPublicity2.description);
+
+            console.log("iddddd "  + this.barbershop.id);
+            console.log(this.barbershop);
+            
+          }
+        )
       })
 
-      console.log("iddddd "  + this.idBarberia);
-
-      this.BarbershopService.listpublicyid(this.idBarberia).subscribe(
-        
-        (data: any) =>{
-          console.log(data)
-          this.listPublicity2=data;
-          console.log(this.listPublicity2.description);
-          
-        }
-      )
-      
     }, 500);
+    
+
+      
 
   }
   delete  (id:Number):void{

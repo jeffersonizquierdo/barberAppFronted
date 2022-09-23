@@ -44,7 +44,7 @@
         <div class="calendar">
             <div class="calendar__info">
                 <div class="calendar__prev" id="prev-month" (click)="changeMonth(-1)" class="btn-prev">&#9664;</div>
-                <div class="calendar__month" id="month">{{dateSelect | date: 'MMMM, yyyy' }}</div>
+                <div class="calendar__month" id="month">{{dateSelect | date: 'MMMM - yyyy' }}</div>
                 <div class="calendar__next" id="next-month" (click)="changeMonth(1)" class="btn-next">&#9654;</div>
             </div>
 
@@ -72,15 +72,16 @@
 
         <div class="selecion">
 
-            <p><span>Barbero seleccionado: <img *ngIf="photo != null" class="imgbarber" src="{{photo}}" alt=""> {{name}}</span></p>
+            <p><span> <span class="weigth"> Barbero seleccionado:</span> <img *ngIf="photo != null" class="imgbarber" src="{{photo}}" alt=""> {{name}}</span></p>
+<hr>
+            <p><span class="weigth"> Fecha seleccionada: </span> {{date}}</p>
+<hr>
 
-            <p>Fecha seleccionada: {{date}}</p>
 
-
-
-            <p *ngIf="minutesSelect != 0">Hora seleccionada: {{hourSelect}}:{{minutesSelect}}</p>
-            <p *ngIf="minutesSelect == 0">Hora seleccionada: {{hourSelect + ":"}}{{minutesSelect}}0</p>
-            <button (click)="saveBooking()">Reservar</button>
+            <p *ngIf="minutesSelect == 0"><span class="weigth">Hora seleccionada:</span> {{hourSelect + ":"}}{{minutesSelect}}0</p>
+            <p *ngIf="minutesSelect != 0"><span class="weigth">Hora seleccionada:</span> {{hourSelect}}:{{minutesSelect}}</p>
+            <hr>
+            <button (click)="saveBooking()" >Reservar</button>
 
         </div>
 
