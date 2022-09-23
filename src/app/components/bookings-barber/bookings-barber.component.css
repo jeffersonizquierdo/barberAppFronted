@@ -26,10 +26,11 @@
 .DatosCliente{
   display: flex;
   flex-direction: column;
+  
 }
 
 .botones{
-  width: 250px;
+  width: 650px;
   display: flex;
   justify-content: space-between;
 }
@@ -50,7 +51,15 @@
   margin-left: 58px;
   border-radius: 10px;
   padding: 15px;
-  min-height: 200px;
+  min-height: 700px;
+  overflow: scroll;
+}
+
+.botones th{
+  font-size: 15px;
+  color: black;
+  width: 100px;
+  background-color: aquamarine;
 }
 
 .containerDatos::after{
