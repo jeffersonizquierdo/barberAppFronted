@@ -4,9 +4,11 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ModalBarbershopComponent } from 'src/app/modals/modal-barbershop/modal-barbershop.component';
 import { AuthServices } from 'src/app/models/AuthServices';
+import { Barber } from 'src/app/models/Barber';
 import { Barbershop } from 'src/app/models/barbershop';
 import { Publicity } from 'src/app/models/Publicity';
 import { Usuario } from 'src/app/models/Usuario';
+import { BarberService } from 'src/app/services/barber/barber.service';
 import { BarbershopService } from 'src/app/services/barbershop/barbershop.service';
 import { CatalogueService } from 'src/app/services/catalogue/catalogue.service';
 import { PublicityService } from 'src/app/services/publicity/publicity.service';
@@ -26,8 +28,8 @@ export class LoadPublicityComponent implements OnInit {
   id: any;
   
 
-  constructor(private publicityService:PublicityService,private catalogueService:CatalogueService,private router:Router, private route: ActivatedRoute,
-    private spinner: NgxSpinnerService, private authService: AuthServices, private servicebarbershop: BarbershopService, private modalService:NgbModal) { }
+  constructor(private publicityService:PublicityService,private catalogueService:CatalogueService, private route: ActivatedRoute,
+    private spinner: NgxSpinnerService, private authService: AuthServices,private servicebarber:BarberService, private servicebarbershop: BarbershopService, private modalService:NgbModal) { }
 
   ngOnInit(): void {
     this.id =  this.route.snapshot.paramMap.get('id');
@@ -46,48 +48,53 @@ export class LoadPublicityComponent implements OnInit {
   }
 
   newBarbershop:Barbershop;
+  newBarber:Barber;
   usuario:Usuario;
 
 
   onUpload(){
-
+    this.spinner.show();
     this.servicebarbershop.getbarber(this.usuario.id).subscribe(
       data => {
-
         this.newBarbershop = data
-
-        
-
-            
       }
     );
-
-
     setTimeout(() => {
-
       if(this.newBarbershop==null){
-
-        this.reset();
-        this.abrirModal();
+        this.servicebarber.getbarber(this.usuario.id).subscribe(
+          data => {
+            this.newBarber = data
+            setTimeout(() => {
+              this.catalogueService.upload(this.imagen, "publicity").subscribe( (response:any) => {
+                if(response){
+                  this.newPublicity.url=response.url
+                  this.newPublicity.id_barber = this.newBarber
+                  this.publicityService.savePublicity(this.newPublicity).subscribe(
+                    response =>{
+                      this.reset();
+                      console.log(response);
+                      this.spinner.hide();
+                    } 
+                )}
+              })
+              this.spinner.hide();
+            }, 200);
+          }
+        );
       }else{
-  
-      this.spinner.show();
       this.catalogueService.upload(this.imagen, "publicity").subscribe( (response:any) => {
-
         if(response){
-          
           this.newPublicity.url=response.url
           this.newPublicity.id_barbershop = this.newBarbershop
           this.publicityService.savePublicity(this.newPublicity).subscribe(
             response =>{
               this.reset();
-              
               console.log(response);
               this.spinner.hide();
             } 
         )}
       })
-      
+      this.spinner.hide();
     }
       
     }, 500);

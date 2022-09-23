@@ -12,7 +12,9 @@
   width: 64%;
   height: 800px;
   overflow: scroll;
-
+}
+.btn{
+  padding: 8px 8Px;
 }
 .intento::-webkit-scrollbar{
   width: 12px;
