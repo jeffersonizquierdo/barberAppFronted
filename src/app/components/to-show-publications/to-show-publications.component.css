@@ -6,7 +6,7 @@
 .lista{
     overflow: scroll;
     /* float: right; */
-    margin: 73% -36% 14% 16%;
+    margin: 94% -11% 14% 10%;
     height: 88vh;
 }
 .lista::-webkit-scrollbar{
