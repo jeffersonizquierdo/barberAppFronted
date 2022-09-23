@@ -27,7 +27,7 @@
               <th scope="col">Puntuacion</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody *ngIf="  barbers.length != 0">
             <tr *ngFor="let barberos of barbers">
               <th scope="row">{{barberos.id}}</th>
               <td class="imagen"><img src="{{barberos.photo}}" alt=""></td>
@@ -38,6 +38,9 @@
   
           </tbody>
         </table>
+        <div class="algo" *ngIf="barbers && barbers.length == 0" #alertavacio>
+          <p>En el sistema no se ha vinculado ningun barbero</p>
+        </div>
   
       </div>
   
