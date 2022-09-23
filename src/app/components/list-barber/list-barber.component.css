@@ -75,3 +75,12 @@ section{
     justify-content: space-evenly;
 }
 
+.algo{
+    height: 30vh;
+    
+}
+.algo p{
+    text-align: center;
+    font-size: 25px;
+    margin: 110px 0;
+}
