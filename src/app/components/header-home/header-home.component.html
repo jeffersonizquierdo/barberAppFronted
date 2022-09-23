@@ -24,7 +24,7 @@
     </nav>
 
     <section class="hero_container">
-      <h1 class="hero_title">Bienvenidos A BarberApp</h1>
+      <h1 class="hero_title">Bienvenidos A <span> BarberApp </span></h1>
 
       <p class="hero_parrafo">
         Una Herramienta que te ayudara a crear oportunidades de generar un
@@ -77,7 +77,7 @@
                 <a [routerLink]="['/homebarber']"class="images"><img src="../../../assets/images/LogoBarberApp.jpg" alt=""></a>
                 <!-- <a *ngIf="barber.barbershop != null" [routerLink]="['/stalk_barbershop', barber.barbershop.id]">Barberia</a> -->
                 <a [routerLink]="['/porfilebarber']">Mi perfil</a>
-                <a [routerLink]="['/booking-barber']">Maya de turnos</a>
+                <a [routerLink]="['/booking-barber']">Malla de turnos</a>
                 <a [routerLink]="['/publicidad']">Publicaciones</a>
               
                 <a (click)="logout()" href="#">Cerrar Sesion</a>  
@@ -89,7 +89,7 @@
                 <a (click)="logout()" href="#">Cerrar Sesion</a>
               </nav>  
             </nav>
-            <label for="btn-menu">✖️</label>
+            <label for="btn-menu">⨉</label>
   </div>
 
 

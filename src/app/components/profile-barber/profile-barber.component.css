@@ -2,7 +2,7 @@
 *{
     padding: 0;
     margin: 0;
-
+   
 }
 
 .seccion-perfil-usuario .perfil-usuario-body,
@@ -115,6 +115,22 @@
     border-radius: 15px;
     width: 100%;
 }
+textarea{
+    border: none;
+    background: none;
+    width: 106%;
+    height: 15vh;
+    text-align: center;
+    transition: .5s;
+    box-shadow: inset 0 -1px 20px #ddd;
+}
+
+textarea:disabled{
+    box-shadow: inset 0px 0px 0px 0px rgb(255, 255, 255);
+    transition: .5s;
+    border: 1px dotted #806bbd;
+    border-radius: 3px;
+}
 
 .seccion-perfil-usuario .perfil-usuario-bio {
     margin-bottom: 1.25rem;
@@ -128,6 +144,13 @@
 
 .seccion-perfil-usuario .lista-datos li {
     padding: 5px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icono1{
+    margin-right: 20px;
 }
 
 .seccion-perfil-usuario .lista-datos li>.icono {
@@ -173,4 +196,105 @@
 
 .seccion-perfil-usuario .boton-redes.instagram {
     background: linear-gradient(45deg, #FF2DFD, #40A7FF);
+}
+
+
+/*no se */
+.inputBox{
+    position: relative;
+    width: 250px;
+    
+}
+.inputBox input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: #fff;
+    border-radius: 5px;
+    outline: none;
+    color: black;
+    font-size: 1rem;
+    box-shadow: inset 0 -1px 20px #ddd;
+    transition: .5s;
+
+}
+.inputBox input:disabled{
+    box-shadow: inset 0px 0px 0px 0px rgb(255, 255, 255);
+}
+.inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.25) ;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.inputBox input:valid ~span,
+.inputBox input:focus ~span{
+    color: #00dfc4;
+    transform: translateX(28px) translateY(-23px);
+    font-size: 14px;
+    padding: 0 14px;
+    background-color: #fff;
+    border-left: 1px solid #00dfc4;
+    border-right: 1px solid #00dfc4;
+}
+
+
+
+.button{
+    position:relative;
+    padding: 5px;
+    border:none;
+    background-color: #efefef;
+    cursor:pointer;
+    outline:0;
+    font-size:18px;
+    margin:1em .8em;
+    width: 120px;
+    font-weight: 600;
+    transition: .5s;
+    
+}
+.button.type1{
+    transition: .5s;
+    color:#566473;
+}
+.button.type1.type1::after,
+.button.type1.type1::before{
+    content:"";
+    display:block;
+    position:absolute;
+    width:50%;
+    height:50%;
+    border:2px solid;
+    transition:all .6s ease;
+    border-radius:2px;
+}
+
+.button.type1.type1::after{
+    transition: .5s;
+    bottom:0;right:0;
+    border-color:transparent #566473 #566473 transparent;
+}
+.button.type1.type1::before{
+    top:0;
+    left:0;
+    transition: .5s;
+    border-color:#566473 transparent transparent #566473;
+}
+.button.type1.type1:hover:after,
+.button.type1.type1:hover:before{
+    transition: .5s;
+    width:100%;
+    height:100%;
+}
+.container{
+    border-top: 1px solid #806bbd;
+    margin-top: 20px;
+    transition: .5s;
+    
 }
