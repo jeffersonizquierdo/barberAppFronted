@@ -20,15 +20,20 @@
               <th scope="col">Desvincular</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody *ngIf="barber.length != 0">
             <tr *ngFor="let barberos of barber">
               <th scope="row">{{barberos.id}}</th>
               <td class="imagen"><img src="{{barberos.photo}}" alt=""></td>
               <td class="apodo">{{barberos.nickname}}</td>
               <td><button class="btn btn-outline-primary"(click)="unlink(barberos)">Desvincular</button></td>
             </tr>
+            
           </tbody>
+    
         </table>
+        <div class="algo" *ngIf="barber && barber.length == 0" #alertavacio>
+          <p>No tienes barberos vinculados</p>
+        </div>
       </div>
   
     </div>
