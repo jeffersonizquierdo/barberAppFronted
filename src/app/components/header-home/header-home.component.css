@@ -341,8 +341,6 @@ br{
     display: block;
   }
   
-  .header {
-    width: 207%;}
 
   .nav_link{
     gap: 3em;
@@ -351,24 +349,18 @@ br{
   .nav_title{
     display: none;
   }
-  .nav_container {
-    display: initial;
-    margin-left: 4%;
-    padding-top: 20px;
-}
+
   .header_two::before {
-    width: 48.3%;
-    height: 48%;
+    width: 100%;
+    height: 50%;
   }
 
   .hero_container{
     display: initial;
     position: absolute;
     left: 9%;
-    top: 13%;
-    text-align: start;
+    top: 15%;
     padding: 0;
-    margin: 0;
   }
 
   .cta{

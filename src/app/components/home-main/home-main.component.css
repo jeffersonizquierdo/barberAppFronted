@@ -403,6 +403,26 @@ footer{
         flex-wrap: nowrap;
         align-items: center;
     }
+
+    .price__element{
+        width: 320px;
+    }
+
+    .terms p{
+        font-size: 10px;
+    }
+
+    .box__footer{
+        padding: 24px;
+    }
+
+    .box__footer h2{
+        font-size: 15px;
+    }
+
+    .box__footer a{
+        font-size: 10px;
+    }
 }
 
 .igIcon{
