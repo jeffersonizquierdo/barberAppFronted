@@ -63,5 +63,8 @@
 
 
 .publication{
-  width: 67%;
+  width: 48%;
+    margin-top: -74%;
+    margin-left: 45%;
+    box-shadow: 0px 0px 1px 0px black;
 }
