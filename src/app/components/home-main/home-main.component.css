@@ -369,7 +369,7 @@ footer{
 
     .inicio{
         height: 500px;
-        margin: 40% 0;
+        margin: 60% 0;
     }
 
     .inicio .content h1 {
@@ -387,7 +387,7 @@ footer{
     }
 
     .price {
-        margin: -80px 0%;
+        margin: -160px 0%;
     }
 
     .subtitle{
