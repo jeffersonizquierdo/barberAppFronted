@@ -4,7 +4,7 @@
         <p style="font-size: 20px; color: white">Eliminando...</p>
     </ngx-spinner>
     <h1>Catalogo</h1>
-    <div class="intento">
+    <div class="intento" *ngIf="   images.length != 0">
         <div class="containerCatalogue" *ngFor="let image of images">
             <div class="catalogue">
                 <div class="card">
@@ -28,6 +28,9 @@
             </div>
 
         </div>
+    </div>
+    <div class="algo" *ngIf=" images &&  images.length == 0" #alertavacio>
+        <p>No tienes registrado ningun catalogo</p>
     </div>
 
 </div>

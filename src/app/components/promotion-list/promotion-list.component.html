@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="padre ">
-    <div class="intento">
+    <div class="intento" *ngIf="  images.length != 0">
       <div class="contenedor" *ngFor="let imagen  of images">
         <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
           <p style="font-size: 20px; color: white"> Eliminando...</p>
@@ -24,6 +24,9 @@
              </figure>
          </a>
       </div>
+    </div>
+    <div class="algo" *ngIf=" images &&  images.length == 0" #alertavacio>
+      <p>No tienes registrada ninguna promocion</p>
     </div>
    
   </div>
