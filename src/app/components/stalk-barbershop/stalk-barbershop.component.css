@@ -185,23 +185,34 @@ h3{
  
 }
 .button{
-    margin: -3% 86%;
+    margin: 0% 86%;
     text-align: center;
     font-size: 16px;
+    margin-bottom: -1%;
+    height: 64%;
+    padding-top: 6%;
+
 }
 .button a{
     width: 75%;
     height: 46px;
-    border: 1px solid #2691d9;
-    background: #2691d9;
+    border: 4px solid #035186;
+    background: #035186;
     border-radius: 25px;
-    font-size: 18px;
+    font-size: 22px;
     color: #e9fafb;
     font-weight: 700;
     cursor: pointer;
-    outline: none;
+    outline: none; 
     padding: 5px 48px;
-    
+    text-decoration: none;
+    box-shadow: 0 0 20px 0 #45aeff;
+    transition: all 0.5s;
+}
+.button a:hover{
+    background-color: #e9fafb ;
+    color: #035186;
+    border: 4px solid white;
 }
 
 .button :hover{

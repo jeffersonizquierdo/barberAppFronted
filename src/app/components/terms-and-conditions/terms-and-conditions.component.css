@@ -5,7 +5,7 @@
 
 body{
     background:linear-gradient(120deg,#2980b9,#8e44ad);
-    height: 100vh;
+    height: 113vh;
 }
 .container-main{
     display: flex;
@@ -17,6 +17,7 @@ body{
     margin-left: 30%;
     color: #f5f3f7f5;
     font-size: 18px;
+    text-align: justify;
 }
 
 

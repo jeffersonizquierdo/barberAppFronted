@@ -104,7 +104,11 @@ input[type="submit"]{
 
 input[type="submit"]:hover{
     border-color:#2691d9 ;
-    transition: .5s;
+    
+    -webkit-transform: scale(1.06);
+	-ms-transform: scale(1.06);
+	-o-transform: scale(1.06);
+	transform: scale(1.06);
 }
 .signup_link{
     margin: 30px;
