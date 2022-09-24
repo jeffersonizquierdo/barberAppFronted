@@ -45,8 +45,8 @@
     
 </div>
 
-<div class="card-ward">
-    <article class="card" *ngFor="let n of listPublicity2">
+<div class="card-ward" *ngIf="  listPublicity2.length != 0" >
+    <article class="card" *ngFor="let n of listPublicity2" >
         <header class="header-card">
             <img src="{{n.url}}" alt="">
         </header>
@@ -75,5 +75,8 @@
             </footer>
         </header>
     </article>
+    <div class="algo" *ngIf="listPublicity2 && listPublicity2.length == 0" #alertavacio>
+        <p>En el sistema no se ha vinculado ningun barbero</p>
+    </div>
 
 </div>
