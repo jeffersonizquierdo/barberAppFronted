@@ -22,6 +22,8 @@ export class ListBarberComponent implements OnInit {
 
   ngOnInit(): void {
     this.loaderBarber();
+    console.log(this.barber.length);
+    
   }
 
   loaderBarber():void{
@@ -48,6 +50,10 @@ export class ListBarberComponent implements OnInit {
             this.serviceBarber.updateBarber(barber).subscribe((response:any)=>{
               console.log(response);
               Swal.fire("Hecho", "Barbero desvinculado", "success");
+              setTimeout(() => {
+                window.location.reload()
+              },800);
+              
             })
           })         
         }else{
