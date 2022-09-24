@@ -1,5 +1,5 @@
 .components{
-    margin-top: 4%;
+    margin-top: 3%;
     display: flex;
     flex-direction: row;
     align-items: baseline;
@@ -18,7 +18,7 @@ app-ranking{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 0px;
+    margin-left: -55px;
     margin-right: 200px;
 }
 
@@ -47,7 +47,8 @@ p{
     background-image: linear-gradient(120deg,#5cbeff,#8e44ad);
     border-radius: 10px;
 }
-.mensajeHistorial{
+.mensajeHistorial
+.barbershops{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -57,6 +58,38 @@ p{
     box-shadow:  0px 0px 20px 0px black;
     background-image: linear-gradient(90deg, rgba(24,177,3,1) 0%, rgba(3,200,35,1) 28%, rgba(9,224,4,1) 53%, rgba(1,237,83,1) 81%, rgba(68,252,50,1) 100%);
 }
+.barbershops label{
+    font-size: 18px;
+    color: white;
+    text-shadow: -1px 1px 0px #ff5900;   
+}
+.barbershops input{
+    border: none;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: #9aff007d;
+    box-shadow: inset 0px 0px 20px 2px #085708;  
+    color: white;
+}
+.barbershops button{
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-size: 17px;
+    background-color: darkgreen;
+    box-shadow: 0 0 20px 0px #15740f;
+    color: white;
+    transition: all 1s;
+    text-shadow: -1px 1px 0px #ff5900;   
+}
+.barbershops button:hover{
+    background-color: white;
+    box-shadow: -1px 1px 0 0 #ff5900;
+    color: darkgreen;
+    text-shadow: none;   
+}
+
+
 .mensajeCanceladas{
     display: flex;
     flex-direction: row;
@@ -67,13 +100,48 @@ p{
     box-shadow:  0px 0px 20px 0px black;
     background-image: linear-gradient(90deg, rgba(217,6,6,1) 0%, rgba(200,3,33,1) 28%, rgba(224,4,4,1) 53%, rgba(255,0,0,1) 81%, rgba(252,50,50,1) 100%);
 }
+.mensajeCanceladas p{
+    text-shadow: -1px 1px 0px #000000;
+}
+.mensajeCanceladas .motivo{
+    width: 210px;
+}
+.mensajeCanceladas button{
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-size: 17px;
+    background-color: #77111f;
+    color: white;
+    text-shadow: -1px 1px 0px #ff5900;
+    box-shadow: 0 0 14px 0 #5e0510;
+    transition: all 0.5s;
+}
+.mensajeCanceladas button:hover{
+    background-color: #ffffff;
+    box-shadow: -1px 1px 0 0 #ff5900;
+    color: #77111f;
+    text-shadow: none;
+}
 
 
-.barbersho{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+.mensajeCitas button{
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-size: 17px;
+    background-color: #371f4e;
+    color: white;
+    text-shadow: -1px 1px 0px #ff5900;
+    box-shadow: 0 0 14px 0 #411872;
+    transition: all 0.4s;
+    
+}
+.mensajeCitas button:hover{
+    background-color: #ffffff;
+    box-shadow: -1px 1px 0 0 #ff5900;
+    color: #371f4e;
+    text-shadow: none;
 }
 
 body, .aplicacion{

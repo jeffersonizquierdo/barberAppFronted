@@ -270,6 +270,12 @@ section{
 
 .box__footer a:hover{
     opacity: 0.8;
+    text-decoration: underline;
+}
+
+
+.price h3{
+    width: 260px;
 }
 
 .box__footer a .fab{
