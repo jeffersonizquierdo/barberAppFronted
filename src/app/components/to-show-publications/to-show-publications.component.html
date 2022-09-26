@@ -25,11 +25,12 @@
                         </div>
                         <div class="perfil-card">
                             <div class="img-perfil-card">
-                                <img src="{{n.id_barbershop.photo}}" alt="">
+                                <img *ngIf="n.id_barbershop.photo" src="{{n.id_barbershop.photo}}" alt="">
+                                <img *ngIf="n.id_barber.photo" src="{{n.id_barber.photo}}" alt="">
                             </div>
                             <div class="tex-perfil-card">
-                                <span>{{n.id_barbershop.nickname}}</span>
-                                <span>Fecha</span>
+                                <span *ngIf="n.id_barbershop.photo" >{{n.id_barbershop.nickname}}</span>
+                                <span *ngIf="n.id_barber.photo" >{{n.id_barbershop.nickname}}</span>
                             </div>
                         </div>
                     </footer>
