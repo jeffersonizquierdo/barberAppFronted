@@ -7,39 +7,33 @@
     <div class="postFile">
       <div class="custom-file">
         <label for="imagen">Arrastre su Imagen</label>
-        
         <div class="file-select" id="src-file1" >
-          <img src="../../../assets/images/carpeta.png" alt="carpeta"  class="carpeta" >
+          <img src="../../../assets/images/carpeta.gif" alt="carpeta"  class="carpeta">
           <input type="file"  id="imagen" #catalogueInputFile
         (change)="onFileChange($event)" accept="image/gif, image/jpeg, image/jpg, image/png, video/*" multiple="min=4 max=4" name="src-file1" aria-label="Archivo">
         </div>
-        
       </div>
     </div> 
-
     <div style="margin-top: 30px;" class="wrapper">
       <div class="inputData" >
         <input class="intp" type="text" name="description" autocomplete="off" required  [(ngModel)]="promotion.name">
         <label for="description">Nombre</label>
       </div>
     </div>
-
     <div  style="margin-top: 30px;" class="des" >
       <div class="" >
-        <textarea class="intp" type="text" name="description" placeholder="Description" autocomplete="off" required  [(ngModel)]="promotion.description"></textarea>
+        <textarea class="intp" type="text" name="description" placeholder="Descripción" autocomplete="off" required  [(ngModel)]="promotion.description"></textarea>
       </div>
     </div>
-    
     <div *ngIf="imagen" class="mt-5">
         <h5>Vista Previa:</h5>
         <div>
             <li><img class="image-thumbnail" style="max-width: 100px" [src]="imagenMin"></li>
         </div>
     </div>
-
       <div class="form-group d-flex justify-content-between my-3">
           <button (click)="savePromotion()"  type="submit" class="btn btn-outline-success"  [disabled]="!imagen"><i class="fas fa-upload"></i> Subir</button>
-          <button class="btn btn-outline-danger" [disabled]="!imagen" (click)="reset()"><i class="fas fa-sync-alt"></i> Reset</button>
+          <button class="btn btn-outline-danger" [disabled]="!imagen" (click)="reset()"><i class="fas fa-sync-alt"></i> Cancelar</button>
       </div>
   </form>
 </div>

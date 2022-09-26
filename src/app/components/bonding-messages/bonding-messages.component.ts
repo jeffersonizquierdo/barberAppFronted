@@ -61,7 +61,7 @@ export class BondingMessagesComponent implements OnInit {
   }
 
   linkUp(idbarbershop:Number){
- 
+    
     this.listLinkear.every(e=>{
       return this.acceptance=e.acceptance==true
     })
