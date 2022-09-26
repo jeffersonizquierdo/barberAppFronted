@@ -22,7 +22,7 @@
 
       <div  style="margin-top: 30px;" class="des" >
         <div class="" >
-          <textarea class="intp" type="text" name="description" placeholder="Description" autocomplete="off" required  [(ngModel)]="newPublicity.description"></textarea>
+          <textarea class="intp" type="text" name="description" placeholder="Descripción" autocomplete="off" required  [(ngModel)]="newPublicity.description"></textarea>
         </div>
       </div>
         <div class="mt-5">
@@ -33,7 +33,11 @@
         </div>
         <div class="form-group d-flex justify-content-between my-3">
             <button (click)="onUpload()"  ype="submit" class="btn btn-outline-success" [disabled]="!imagen"><i class="fas fa-upload"></i> Subir</button>
+<<<<<<< HEAD
             <button class="btn btn-outline-danger" [disabled]="!imagen" (click)="reset()"><i class="fas fa-sync-alt"></i> Reiniciar</button>
+=======
+            <button class="btn btn-outline-danger" [disabled]="!imagen" (click)="reset()"><i class="fas fa-sync-alt"></i> Cancelar</button>
+>>>>>>> be74fba738fdc66e35abcd0f582a38c02381f52d
         </div>
     </form>      
 
