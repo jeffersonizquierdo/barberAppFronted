@@ -8,6 +8,7 @@ import { BarbershopService } from 'src/app/services/barbershop/barbershop.servic
 import { Usuario } from 'src/app/models/Usuario';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBarbershopComponent } from 'src/app/modals/modal-barbershop/modal-barbershop.component';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -50,45 +51,54 @@ export class ManageCatalogueComponent implements OnInit {
   }
 
   onUpload(){
-    this.usuario = this.authService.usuario;
-
-    this.servicebarbershop.getbarber(this.usuario.id).subscribe(
-      data => {
-        this.barbershop = data;        
-      }
-    );
-    
-
-    setTimeout(() => {
-
-      if(this.barbershop==null){
-        this.reset();
-        this.abrirModal();
-      }else{
-  
-     
+    Swal.fire({
+      title: 'Subir catálogo',
+      text: "¿Desea subir este catálogo?",
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Aceptar'
+    }).then((result) => {
+      if (result.isConfirmed) {
         this.spinner.show();
-        this.catalogueService.upload(this.imagen, "hairstyle").subscribe( (response:any) => {
-          if(response){
-            this.imageURL=response.url
-            this.newCatalogue = new Catalogue(this.id,  this.name, this.imageURL, this.description,this.barbershop);
-            console.log(this.newCatalogue);
-            
-            this.catalogueService.saveCatalogue(this.newCatalogue).subscribe(
-              response =>{
-                this.reset();
-                console.log(response);
-                this.spinner.hide();
-                window.location.reload();
-              } 
-          )}
-        })
+        this.usuario = this.authService.usuario;
+        this.servicebarbershop.getbarber(this.usuario.id).subscribe(
+          data => {
+            this.barbershop = data;        
+          }
+        );
+        setTimeout(() => {
+          if(this.barbershop==null){
+            this.reset();
+            this.abrirModal();
+          }else{
+            this.catalogueService.upload(this.imagen, "hairstyle").subscribe( (response:any) => {
+              if(response){
+                this.imageURL=response.url
+                this.newCatalogue = new Catalogue(this.id,  this.name, this.imageURL, this.description,this.barbershop);
+                console.log(this.newCatalogue);
+                this.catalogueService.saveCatalogue(this.newCatalogue).subscribe(
+                  response =>{
+                    this.reset();
+                    console.log(response);
+                    this.spinner.hide();
+                    window.location.reload();
+                  } 
+              )}
+            })
+          }
+        }, 500);
+        Swal.fire(
+          'Catálogo subido',
+          `Se ha subido el catálogo con exito.`,
+          'success'
+        )
+        setTimeout(() => {
+          window.location.reload()
+        }, 2000);
       }
-
-    }, 500);
-
-
-
+    })
   }
 
   reset(){
