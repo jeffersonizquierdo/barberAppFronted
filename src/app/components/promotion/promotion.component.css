@@ -3,9 +3,9 @@
   padding: 0;
 }
 
-
-
-
+.btn{
+  padding: 8px 8Px;
+}
 
 .container-list{
   margin: 0 0;
@@ -27,7 +27,6 @@
   top: 30%;
   left: 4%;
 }
-
 .postFile{
   width: 360px;
   height: 115px;
@@ -42,7 +41,6 @@
   margin-top: 15px;
   text-align: center;
 }
-
 
 .wrapper{
   background-color: transparent;
@@ -103,8 +101,6 @@ li{
   list-style: none;
 }
 
-
-
 .file-select {
   position: relative;
   border: 1px solid  #58a8f6;
@@ -133,4 +129,3 @@ li{
   height: 32px;
   display: inline-block;
 }
-  
