@@ -303,3 +303,18 @@ body, .canceladas{
     top: 60px;
     right: 70px;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 475px){
+    .lbl-aplicacion img{
+        top: 50px;
+    }
+
+    app-ranking {
+        margin-left: 20px;
+    }
+
+    .components{
+        display: flex;
+        flex-direction: column;
+    }
+}

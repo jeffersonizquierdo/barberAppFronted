@@ -99,3 +99,15 @@ span{
     flex-direction: row;
     width: 110px;
 }
+
+@media only screen and (min-width: 320px) and (max-width: 475px){
+    .ranking{
+        width: 50%;
+    }
+
+    .elemento{
+        gap: 40px;
+    }
+
+    
+}
