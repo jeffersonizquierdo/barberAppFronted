@@ -317,4 +317,24 @@ body, .canceladas{
         display: flex;
         flex-direction: column;
     }
+
+    .aplicacion{
+        top: 12%;
+        left: 11%;
+    }
+
+    .historial{
+        height: 400px;
+        top: 102%;
+        left: -13%;
+        width: 370px;
+    }
+
+    .mensajeCitas{
+        display: flex;
+        flex-direction: column;
+        min-width: 320px;
+        margin-left: 48%;
+        padding: 15px 0;
+    }
 }
