@@ -199,10 +199,15 @@ h3{
         font-size: 10px;
     }
 
+    body{
+        height: 100vh;
+    }
+
     .center{
         width: 300px;
         min-height: 650px;
         max-height: 700px;
+        margin: 0;
     }
 
     .center h1 {
