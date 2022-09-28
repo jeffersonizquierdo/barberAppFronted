@@ -80,7 +80,7 @@ export class UsuarioService {
     console.log(newUsuario);
     
 
-    return this.http.post<Usuario>("https://barberappfronted.pages.dev/usuario/save", newUsuario, {headers: this.httpHeadres}).pipe(
+    return this.http.post<Usuario>("https://barberappback.herokuapp.com/usuario/save", newUsuario, {headers: this.httpHeadres}).pipe(
 
       catchError(e =>{
 
