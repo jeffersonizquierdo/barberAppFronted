@@ -36,20 +36,20 @@ export class PromotionService {
   savePromotion(newCatalogue: Promotion): Observable<Promotion>{
 
 
-    return this.httpClient.post<Promotion>("http://localhost:8080/promotions/save", newCatalogue, {headers: this.agregarAuthorizationHeader()})
+    return this.httpClient.post<Promotion>("https://barberappback.herokuapp.com/promotions/save", newCatalogue, {headers: this.agregarAuthorizationHeader()})
   }
 
   listPromotion():  Observable<Promotion>{
-    return  this.httpClient.get<Promotion>(`http://localhost:8080/barbershop/consultpromotion/${this.usuario.id}`, {headers: this.agregarAuthorizationHeader()})
+    return  this.httpClient.get<Promotion>(`https://barberappback.herokuapp.com/consultpromotion/${this.usuario.id}`, {headers: this.agregarAuthorizationHeader()})
   } 
 
   listallPromotion():  Observable<Promotion>{
-    return  this.httpClient.get<Promotion>(` http://localhost:8080/promotions/consultall`, {headers: this.agregarAuthorizationHeader()})
+    return  this.httpClient.get<Promotion>(`https://barberappback.herokuapp.com/promotions/consultall`, {headers: this.agregarAuthorizationHeader()})
   } 
 
 
   deletepromotion(id: Number) {
-    return this.httpClient.delete<Promotion>( ` http://localhost:8080/promotions/delete/${id}`, {headers: this.agregarAuthorizationHeader()})
+    return this.httpClient.delete<Promotion>( `https://barberappback.herokuapp.com/promotions/delete/${id}`, {headers: this.agregarAuthorizationHeader()})
   }
 
 }

@@ -22,17 +22,17 @@ export class PublicityService {
     console.log(newPublicity.id_barbershop);
         
 
-    return this.httpClient.post<Publicity>("http://localhost:8080/publication/save", newPublicity, {headers: this.agregarAuthorizationHeader()})
+    return this.httpClient.post<Publicity>("https://barberappback.herokuapp.com/publication/save", newPublicity, {headers: this.agregarAuthorizationHeader()})
   }
 
   
   listPublicity():  Observable<Publicity>{
 
-    return  this.httpClient.get<Publicity>("http://localhost:8080/publication/consultall", {headers: this.agregarAuthorizationHeader()} )
+    return  this.httpClient.get<Publicity>("https://barberappback.herokuapp.com/publication/consultall", {headers: this.agregarAuthorizationHeader()} )
   }
 
   deleteplubication(id: Number) {
-    return this.httpClient.delete<Publicity>( `http://localhost:8080/publication/delete/${id}`, {headers: this.agregarAuthorizationHeader()})
+    return this.httpClient.delete<Publicity>( `https://barberappback.herokuapp.com/publication/delete/${id}`, {headers: this.agregarAuthorizationHeader()})
   }
 
 

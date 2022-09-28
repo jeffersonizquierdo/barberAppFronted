@@ -37,7 +37,7 @@ export class UsuarioService {
     
     
 
-    return this.http.put<Usuario>("http://localhost:8080/usuario/update/"+usuario.id, usuario ,{headers: this.agregarAuthorizationHeader()}).pipe(
+    return this.http.put<Usuario>("https://barberappback.herokuapp.com/usuario/update/"+usuario.id, usuario ,{headers: this.agregarAuthorizationHeader()}).pipe(
 
     )
 
@@ -46,7 +46,7 @@ export class UsuarioService {
 
   getUser(id : Number){
 
-    return this.http.get<Usuario>(`http://localhost:8080/usuario/consult/${id}`, {headers: this.agregarAuthorizationHeader()}).pipe(
+    return this.http.get<Usuario>(`https://barberappback.herokuapp.com/consult/${id}`, {headers: this.agregarAuthorizationHeader()}).pipe(
 
       catchError(e =>{
 
