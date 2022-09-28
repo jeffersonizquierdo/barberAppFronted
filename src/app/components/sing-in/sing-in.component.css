@@ -221,4 +221,17 @@ h3{
         width: 35%;
         margin: 10px 90px;
     }
+
+    .tipos .btn-type label{
+        padding: 10px 8px;
+        
+    }
+
+    input[type=checkbox], input[type=radio] {
+        margin-right: 5px;
+    }
+
+    .link_devolver{
+        padding-bottom: 10px;
+    }
 }
