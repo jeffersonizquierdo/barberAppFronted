@@ -199,10 +199,15 @@ h3{
         font-size: 10px;
     }
 
+    body{
+        height: 100vh;
+    }
+
     .center{
         width: 300px;
         min-height: 650px;
         max-height: 700px;
+        margin: 0;
     }
 
     .center h1 {
@@ -220,5 +225,18 @@ h3{
     .container-home-next button {
         width: 35%;
         margin: 10px 90px;
+    }
+
+    .tipos .btn-type label{
+        padding: 10px 8px;
+        
+    }
+
+    input[type=checkbox], input[type=radio] {
+        margin-right: 5px;
+    }
+
+    .link_devolver{
+        padding-bottom: 10px;
     }
 }
