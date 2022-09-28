@@ -36,7 +36,7 @@
         </label>
         <div class="aplicacion">
             <label for="btn-aplicacion" class="cerrar">⨂</label>
-            <div class="containerHistorial">
+            <div class="containerHistorial">dw
                 <!--  -->
                 <input type="checkbox" id="btn-historial">
                 <label for="btn-historial" class="lbl-historial">
@@ -46,11 +46,11 @@
                     <label for="btn-historial" class="cerrar">⨂</label>
                     <h1>Historial de citas</h1>
                     <hr>
-                    <div class="mensajeHistorial" *ngFor="let bookings of Bookingscomplete; let i =index">
-                        
+                    <div class="mensajeHistorial" *ngFor="let bookings of BookingsIncomplete; let i =index">
+                        <p>ID: {{bookings.id}}</p>
                         <div class="barbershops" *ngFor="let barbershop of barbershopsComplete">
                             <div>
-                                <p>ID: {{bookings.id}}</p>
+                                
                             </div>
                             <div class="barbersho">
                             <p>Barberia: {{barbershop.nickname}}</p>

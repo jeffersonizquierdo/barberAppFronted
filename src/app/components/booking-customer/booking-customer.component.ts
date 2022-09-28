@@ -94,6 +94,10 @@ export class BookingCustomerComponent implements OnInit {
         })
       }, 500);
     })
+    console.log("completadas");
+    
+    console.log(this.BookingsIncomplete);
+    
   }
   loaderBookingCanceled(){
     this.serviceBooking.listBooking().subscribe((response:any)=>{
