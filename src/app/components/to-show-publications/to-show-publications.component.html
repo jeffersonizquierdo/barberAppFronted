@@ -16,7 +16,7 @@
                 <header>
                     <footer class="footer-card">
                         <div class="categoria-card">
-                            <span>Ver perfil</span>
+                             <a  [routerLink]="['stalk_barbershop', n.id_barbershop]" ><span>Ver perfil</span></a>
                         </div>
                         <div class="texto-card">
                             <br>
@@ -25,11 +25,11 @@
                         </div>
                         <div class="perfil-card">
                             <div class="img-perfil-card">
-                                <img src="{{n.id_barbershop.photo}}" alt="">
+                                <img src="{{n.url}}" alt="">
                             </div>
                             <div class="tex-perfil-card">
-                                <span>{{n.id_barbershop.nickname}}</span>
-                                <span>Fecha</span>
+                                <span *ngIf="n.id_barbershop" >{{n.id_barbershop.nickname}}</span>
+                                <span *ngIf="n.id_barber" >{{n.id_barber.nickname}}</span>
                             </div>
                         </div>
                     </footer>
@@ -43,8 +43,6 @@
     
 </body>
 </html>
-
-
 
 
 

@@ -2,7 +2,7 @@ import Swal from 'sweetalert2';
 import { BarbershopService } from './../../services/barbershop/barbershop.service';
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Barbershop } from '../../models/barbershop';
 import { Barber } from '../../models/Barber';
 import { Booking } from 'src/app/models/Booking';
@@ -48,6 +48,7 @@ export class BookingComponent implements OnInit {
     private serviceBarbershop: BarbershopService,
     private spinnerReservation: NgxSpinnerService,
     private route: ActivatedRoute,
+    private router: Router,
     private authService: AuthServices,
     private serviceCustomer: CustomerService,
     private serviceBooking: BookingService
@@ -295,6 +296,9 @@ export class BookingComponent implements OnInit {
       console.log('melo');
       console.log(response);
       Swal.fire('Hecho', 'Tu cita esta programada ', 'success');
+      setTimeout(() => {
+        this.router.navigate(["/homecustomer"])
+      }, 800);
       this.spinnerReservation.hide();
       this.loaderListBooking();
       this.empty();

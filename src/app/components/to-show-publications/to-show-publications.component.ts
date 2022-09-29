@@ -21,6 +21,7 @@ export class ToShowPublicationsComponent implements OnInit {
     this.publicityService.listPublicity().subscribe(
       data =>{
         this.listPublicity =data;
+        this.listPublicity.Math.random()
         console.log(this.listPublicity.description);
         
       }
