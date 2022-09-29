@@ -80,8 +80,9 @@ export class BookingsBarberComponent implements OnInit {
           console.log(this.bookingsBarber);
           if(this.barber.id == e.barber.id && e.completed == false && e.cancelled == false){
             this.bookingsBarberComplete.push(e)
+            
           }
-          
+          console.log(this.bookingsBarber)
         }
       })
 
@@ -99,7 +100,7 @@ export class BookingsBarberComponent implements OnInit {
 
         this.data = 
           {Id: e.id,
-            Subject: "Cli:  "  + e.customer.nickname,
+            Subject: "ID:"+ e.id + " - Cli: " + e.customer.nickname,
             StartTime: new Date(this.fecha),
             EndTime: new Date(this.fechafin + (55 * 60000))}
         

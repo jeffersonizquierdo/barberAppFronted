@@ -46,11 +46,11 @@
                     <label for="btn-historial" class="cerrar">⨂</label>
                     <h1>Historial de citas</h1>
                     <hr>
-                    <div class="mensajeHistorial" *ngFor="let bookings of Bookingscomplete; let i =index">
-                        
+                    <div class="mensajeHistorial" *ngFor="let bookings of BookingsIncomplete; let i =index">
+                        <p>ID: {{bookings.id}}</p>
                         <div class="barbershops" *ngFor="let barbershop of barbershopsComplete">
                             <div>
-                                <p>ID: {{bookings.id}}</p>
+                                
                             </div>
                             <div class="barbersho">
                             <p>Barberia: {{barbershop.nickname}}</p>

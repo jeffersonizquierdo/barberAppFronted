@@ -4,20 +4,16 @@
       <nav>
       <table class="containerDatos">
         <thead>
-          <tr *ngFor="let date of bookingsBarberComplete" class="DatosCliente">
-            <th scope="col">Fecha:</th><th scope="row">{{date.corte.url}}</th>
+          <tr *ngFor="let date of bookingsBarber" class="DatosCliente">
+            <th scope="col">ID:</th><th scope="row">{{date.id}}</th>
+            <th scope="col">Fecha:</th><th scope="row">{{date.reservationDate}}</th>
             <th scope="col">Cliente:</th><th scope="row">{{date.customer.nickname}}</th>
-            <th scope="col">Corte:</th><th scope="row">{{date.corte.name}}</th>
             <td><button  (click)="completeBooking(date)" class="btnCompletado">Completado</button></td>
             <td><button (click)="cancelBooking(date)"  class="btnCancelar">Cancelar</button></td>
         </thead>
         <tbody>
    
           <tr *ngFor="let date of bookingsBarberComplete" class="botones">
-  
-            
-            
-            
             <br><br><br>
           </tr>
           

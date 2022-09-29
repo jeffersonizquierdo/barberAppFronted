@@ -80,8 +80,8 @@
 
 .inputData label{
   position: absolute;
-  bottom: 10px;
-  left: 0;
+  bottom: 20px;
+  left: 10px;
   color: rgb(145, 145, 145);
   pointer-events: none;
   transition: all 0.4s ease;
@@ -95,6 +95,7 @@
   background-color: transparent;
   color: black;
   width: 99%;
+  padding: 10px;
 }
 
 li{
